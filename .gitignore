@@ -1,0 +1,7 @@
+*.*~
+*.log
+*.aux
+*.dvi
+sampleart.*
+.settings
+doit.bat
