@@ -2,6 +2,7 @@
 *.log
 *.aux
 *.dvi
+*.out
 sampleart.*
 .settings
 doit.bat
