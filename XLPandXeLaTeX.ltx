@@ -33,7 +33,7 @@
 \maketitle
 
 \begin{abstract}
-We discuss the use of \TeX technologies by XLingPaper, an authoring
+We discuss the use of \TeX\ technologies by XLingPaper, an authoring
 tool for producing academically oriented publications with features
 required for linguistic publishing. We present the \TeX\ modules used,
 and the rationale for the history of its development.
@@ -41,19 +41,19 @@ and the rationale for the history of its development.
 
 \section{Introduction}
 
-Within the publishing industry there several notable products for
+Within the publishing industry there are several notable products for
 producing complex documents in beautiful formats. \TeX
 \cite{knuth:1984},\cite{knuth:1986} is one of the well known
 publishing technologies used to meet these needs. Since 2000, \XML
 based technologies such as
 XSL-FO\footnote{\url{https://www.w3.org/TR/xsl11}} or the TeXML
 project\footnote{\url{http://getfo.org/texml/}} have also seen use to
-integrate content and compose complex documents such as text books,
+integrate content and compose complex documents such as text books
 and maintenance manuals. Requirements for composing these documents
 birthed the development of tools like
 XMLmind\footnote{\url{https://www.xmlmind.com/xmleditor}} and
 Xpublisher.\footnote{\url{https://www.xpublisher.com/products}} These
-can be used to compose the content within defined \XML structures.
+can be used to compose the content within defined \XML\ structures.
 
 XLingPaper is a plug-in to the XMLmind XML Editor. XLingPaper benefits
 from XMLmind's Java-based implementation, which allows it to be used
@@ -118,7 +118,7 @@ output to XLingPaper, it already had the ability to produce
 RenderX, the output contained a watermark.  Andy realized that if he
 added an ability to produce \PDF\ via \XeLaTeX, there would be no
 issues with having to live with a watermark or having to purchase a
-product to be able to produce \PDF output.
+product to be able to produce \PDF\ output.
 
 At the time, XLingPaper had a way to format output per a user-created
 publisher style sheet.  This meant he needed to be able to map from an
@@ -173,7 +173,7 @@ this process.
 When Andy began implementing the \XeLaTeX{}-based output, he found TeXML, but understood it to have two infelicities:
 
 \begin{enumerate}
-\item TeXML requires Python and he did not want to force XLingPaper users to have to install a version of Python for TeXML when that version may conflict with other versions of Python they might already have installed.  Furthermore, this approach would make the installation package much smaller (no need to include Python).
+\item TeXML required Python and he did not want to force XLingPaper users to have to install a version of Python for TeXML when that version may conflict with other versions of Python they might already have installed.  Furthermore, this approach would make the installation package much larger because of needing to include Python.
 \item He also needed some extensions for formatting white space (more finely as far as he could tell).
 \end{enumerate}
 
@@ -190,7 +190,7 @@ At the time Andy began implementing the \XeLaTeX{}-based output, he discovered t
 
 \section{Typesetting tasks XLingPaper users often encounter}
 
-Linguistic documents have several formatting needs that other kinds of documentso not. This section discusses some of them.
+Linguistic documents have several formatting needs that other kinds of documents do not. This section discusses some of them.
 
 \subsection{Numbered example layouts}
 
@@ -212,7 +212,7 @@ Many linguists want to include interlinear glossed text in their document.  XLin
 
 \subsection{Gloss abbreviations}
 
-Linguists standardly use glosses for indicating the meaning of peices of words (morphemes).  XLingPaper allows the author to define a set of abbreviations and their definitions.  When producing the output, XLingPaper creates hyperlinks between the abbreviation and its definition.
+Linguists standardly use glosses for indicating the meaning of pieces of words (morphemes).  XLingPaper allows the author to define a set of abbreviations and their definitions.  When producing the output, XLingPaper creates hyperlinks between the abbreviation and its definition.
 
 \section{Outputs \LaTeX{} allow that others do not}
 
@@ -248,7 +248,7 @@ When one wants a totally blank even-numbered page between a final odd-numbered p
 
 Background color is not available for section titles.
 
-Section 11.17.1.1 “Known limitations of using \XeLaTeX{}” in the user documentation lists known problems.%  See \tbsurl{software.sil.org/downloads/r/xlingpaper/resources/documentation/xxe7/UserDocXMLmind.htm#sXeTeXLimitations}.
+Section 11.17.1.1 “Known limitations of using \XeLaTeX{}” in the XLingPaper user documentation lists known problems.%  See \tbsurl{software.sil.org/downloads/r/xlingpaper/resources/documentation/xxe7/UserDocXMLmind.htm#sXeTeXLimitations}.
 
 \subsection{List of \LaTeX{} packages used}
 
