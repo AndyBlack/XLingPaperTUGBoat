@@ -46,28 +46,27 @@ producing complex documents in beautiful formats. \TeX
 \cite{knuth:1984},\cite{knuth:1986} is one of the well known
 publishing technologies used to meet these needs. Since 2000, \XML
 based technologies such as
-XSL-FO\footnote{\url{https://www.w3.org/TR/xsl11}} or the \TeXML
-projec\cite{lovell:1999}\footnote{\url{http://getfo.org/texml}} have also seen use to
-integrate content and compose complex documents such as text books
+XSL-FO\footnote{\url{https://www.w3.org/TR/xsl11}} or the TeXML
+project\cite{lovell:1999}\footnote{\url{http://getfo.org/texml}} have also seen use to
+integrate content and compose complex documents such as textbooks
 and maintenance manuals. Requirements for composing these large, inter-linked documents
 birthed the development of tools like XMLmind\footnote{\url{https://www.xmlmind.com/xmleditor}} and
 Xpublisher.\footnote{\url{https://www.xpublisher.com/products}} These
-can be used to compose the content within pre-defined \XML\ structures.
+can be used to compose the content within predefined \XML\ structures.
 
-XLingPaper\cite{black:2009},\cite{black:2017} is a plug-in to the XMLmind \XML Editor. XLingPaper\footnote{\url{https://software.sil.org/xlingpaper}} benefits from XMLmind's Java-based implementation, which allows it to be used
+XLingPaper\cite{blackandblack:2012},\cite{black:2009},\cite{black:2017} is a plug-in to the XMLmind XML Editor. XLingPaper\footnote{\url{https://software.sil.org/xlingpaper}} benefits from XMLmind's Java-based implementation, which allows it to be used
 on MacOS, Windows, and Linux. XLingPaper, via a DTD, defines several
-document classes (articles, books, chapters, etc.).
-
-\begin{figure*}
-\includegraphics[scale=1.4]{Several-different-document-types.png}
-\caption{XLingPaper predefined document types via DTD}
-\end{figure*}
-
-In each case providing document layout sections (paragraphs, examples, endnotes,
+document classes (articles, books, chapters, etc., as illustrated in Figure~1),
+in each case providing document layout sections (paragraphs, examples, endnotes,
 etc.). By working within the user-interface of XMLmind, formatting
 errors are reduced because users are constrained on where in the
 document flow they can introduce block and line level document elements.
 That is, authors cannot input \XeLaTeX\ code directly into the document and the introduction of layout sections within the document flow is constrained via the DTD.
+
+\begin{figure*}
+\includegraphics[scale=.5]{Several-different-document-types.png}
+\caption{XLingPaper predefined document types via DTD}
+\end{figure*}
 
 \section{What is XLingPaper?}
 
@@ -75,30 +74,25 @@ As mentioned above, XLingPaper is an \XML- and Java-based computer
 plug-in for the XMLmind XML Editor.  It is designed to make writing,
 reading, and publishing linguistic papers, grammars, and books better
 and more consistent. XLingPaper can produce linguistic documents with
-at least five outputs, all from the same source document: \PDF (version 1.5), Web
+at least five outputs, all from the same source document: \PDF{} (version 1.5), Web
 pages (HTML 4), Microsoft Word (.doc), Open Office Writer (.odt), and ePUB. It automatically
-numbers sections, figures, tables, and examples. It keeps track of internal references to these entites along with citation references, and glosses/abbreviations keeping numbering and reference links dependable and automated. It also
+numbers sections, figures, tables, and examples. It keeps track of internal references to these entites along with citation references and gloss abbreviations.  This keeps numbering and reference links dependable and automated. It also
 automatically generates abbreviations used and references cited (using a custom references implimentation).
 
-Unlike most editing programs based on the WYSIWYG paradigm or text editors (used to code or produce markdown), XLingPaper (via the XMLmind \XML Editor)
+Unlike most editing programs which are based on either the WYSIWYG paradigm or as text editors used to code or produce markdown, XLingPaper (via the XMLmind XML Editor)
 is a structured editor. Rather than making the document look the way
 it is to be formatted, the author “marks up” the items in the document
-according to their styling needs.  One of the many values this gives is that
+according to their kind.  One of the many values this gives is that
 there is a “grammar” of what a well-formed linguistic document looks
 like.  This makes it easy to move and shift sections and chapters and
 examples and prevents users from inadvertently creating ill-formed
 documents.
 
-%Since the XMLmind XML Editor runs as a desktop program on Windows,
-%Linux, and MacOS and since XLingPaper is a set of configuration files
-%added to the XMLmind XML Editor, XLingPaper can be used on all three
-%platforms.
-
 This paper is about the \XeLaTeX{}-produced \PDF{} output.  
 
 The official website for XLingPaper is
 \tbsurl{https://software.sil.org/xlingpaper}.  A list of advantages for the
-author, the reader, and the publisher can be found at under the “Why
+author, the reader, and the publisher can be found at the “Why
 XLingPaper?”\cite{black:2017} portion of the documentation.
 
 \section{XLingPaper and \TeX{}}
@@ -114,8 +108,8 @@ license most likely would be able to afford to purchase (or have their
 organization purchase) a professional version of the XMLmind XML
 Editor.  The actual XLingPaper plugin has always been free.
 
-Prior to 2009 XLingPaper used RenderX{\footnote{\url{http://www.renderx.com}} to produce \PDF documents. However, in 2009 plans were made to add \XeLaTeX-based output to XLingPaper because while there was a free version of
-RenderX, the output contained a watermark.  By implementing the ability to export to \PDF via \XeLaTeX, there would be no water marks in PDF documents.
+Prior to 2009 XLingPaper used RenderX{\footnote{\url{http://www.renderx.com}} to produce \PDF{} documents. However, in 2009 plans were made to add \XeLaTeX-based output to XLingPaper because while there was a free version of
+RenderX, the output contained a watermark.  By implementing the ability to export to \PDF{} via \XeLaTeX, there would be no water marks in PDF documents.
 
 At the time, XLingPaper had a way to format output per a user-created
 publisher style sheet.  This meant the developer (Andrew Black) needed to be able to map from an
@@ -155,9 +149,9 @@ very much.
 \subsection{PDFx production}
 
 When an author has XLingPaper produce \PDF\ output via \XeLaTeX,
-XLingPaper produces a \TeXML-like \XML\ file.  This is then
+XLingPaper produces a TeXML-like \XML\ file.  This is then
 converted into \LaTeX\ format via a set of XSLT transforms and given
-to \XeLaTeX\ which produces the \PDF.  Figure~1 contains a diagram of
+to \XeLaTeX\ which produces the \PDF.  Figure~2 contains a diagram of
 this process.
 
 \begin{figure*}
@@ -167,18 +161,18 @@ this process.
 
 \subsection{TeXML}
 
-When Andy began implementing the \XeLaTeX{}-based output, he found \TeXML, but understood it to have two infelicities:
+When Andy began implementing the \XeLaTeX{}-based output, he found TeXML, but understood it to have two infelicities:
 
 \begin{enumerate}
-\item \TeXML required Python and he did not want to force XLingPaper users to have to install a version of Python for \TeXML when that version may conflict with other versions of Python they might already have installed.  Furthermore, this approach would make the installation package much larger because of needing to include Python.
+\item TeXML required Python and he did not want to force XLingPaper users to have to install a version of Python for TeXML when that version may conflict with other versions of Python they might already have installed.  Furthermore, this approach would make the installation package much larger because of needing to include Python.
 \item He also needed some extensions for formatting white space (more finely as far as he could tell).
 \end{enumerate}
 
-He did implement some Java code to deal with mapping certain characters used in \TeX commands to their \TeX{} equivalents.  He used Java because the XMLmind XML Editor is written in Java and XLingPaper already used Java code to improve the user experience in the XMLmind XML Editor.
+He did implement some Java code to deal with mapping certain characters used in \TeX{} commands to their \TeX{} equivalents.  He used Java because the XMLmind XML Editor is written in Java and XLingPaper already used Java code to improve the user experience in the XMLmind XML Editor.
 
 \subsection{Ling-TeX}
 
-At the time Andy began implementing the \XeLaTeX{}-based output, he discovered the Ling-TeX group.  From what he could tell, the packages that help with interlinear texts did not allow for the larger number of capabilities XLingPaper already dealt with.  So he rolled his own.  Figure~2 contains an example output with some of the special capabilities XLingPaper offers.
+At the time Andy began implementing the \XeLaTeX{}-based output, he discovered the Ling-TeX group.  From what he could tell, the packages that help with interlinear texts did not allow for the larger number of capabilities XLingPaper already dealt with.  So he rolled his own.  Figure~3 contains an example output with some of the special capabilities XLingPaper offers.
 
 \begin{figure*}
 \includegraphics[scale=.97]{ExamplePDFInterlinear.png}
@@ -191,7 +185,7 @@ Linguistic documents have several formatting needs that other kinds of documents
 
 \subsection{Numbered example layouts}
 
-Linguistic documents usually have many numbered examples.  The prose often refers to examples near the material or to previous examples.  XLingPaper automatically keeps track of the numbers.  Besides table-like layouts, linguists also need lists of words along with their glosses (as shown in Figure~3), interlinear clauses (as shown in Figure~2), and even having headings in portions of the example.
+Linguistic documents usually have many numbered examples.  The prose often refers to examples near the material or to previous examples.  XLingPaper automatically keeps track of the numbers.  Besides table-like layouts, linguists also need lists of words along with their glosses (as shown in Figure~4), interlinear clauses (as shown in Figure~3), and even having headings in portions of the example.
 
 \begin{figure*}
 \includegraphics[scale=1.0]{GraphitePDF-Slide24.png}
@@ -200,7 +194,7 @@ Linguistic documents usually have many numbered examples.  The prose often refer
 
 \subsection{Automatically wrapping interlinear texts}
 
-Many linguists want to include interlinear glossed text in their document.  XLingPaper allows these to be wrapped automatically which makes the author's job much easier.  Figure~4 shows one such text portion.
+Many linguists want to include interlinear glossed text in their document.  XLingPaper allows these to be wrapped automatically which makes the author's job much easier.  Figure~5 shows one such text portion.
 
 \begin{figure*}
 \includegraphics[scale=0.97]{TextPDF-Slide21.png}
@@ -288,12 +282,11 @@ While the XLingPaper approach to writing linguistic documents has great value in
 %\bibliography{xampl}       % xampl.bib comes with BibTeX
 \begin{thebibliography}{99}
 
+\bibitem{blackandblack:2012}{Black, Cheryl A., and H. Andrew Black. 2012. {\em Grammars for the People, by the People, Made Easier Using PAWS and XlingPaper}. In Electronic Grammaticography, edited by Sebastian Nordoff, 103–28. LD\&C Special Publication 4. Honolulu, Hawai’i: University of Hawai’i Press. \url{http://hdl.handle.net/10125/4532}.}
 
 \bibitem{black:2009}{Black, H. Andrew. 2009. Writing Linguistic Papers in the Third Wave.  {\em SIL Forum for Language Fieldwork} 2009 (004): 11 pages. \url{https://www.sil.org/resources/publications/entry/7790}.}
 
-\bibitem{black:2017}(Black, H Andrew. 2017. {\em Why Learn to Use XLingPaper}. Dallas, Texas: SIL International. \url{http://software.sil.org/downloads/r/xlingpaper/resources/documentation/WhyUseXLingPaper.pdf}.}
-
-\bibitem{blackandblack:2012}{Black, Cheryl A., and H. Andrew Black. 2012. {\em Grammars for the People, by the People, Made Easier Using PAWS and XlingPaper}. In Electronic Grammaticography, edited by Sebastian Nordoff, 103–28. LD&C Special Publication 4. Honolulu, Hawai’i: University of Hawai’i Press. \url{http://hdl.handle.net/10125/4532}.}
+\bibitem{black:2017}{Black, H Andrew. 2017. {\em Why Learn to Use XLingPaper}. Dallas, Texas: SIL International. \url{http://software.sil.org/downloads/r/xlingpaper/resources/documentation/WhyUseXLingPaper.pdf}.}
 
 \bibitem{kew:mcconnel}{Kew, Jonathan and Stephen McConnel. 1990.
   {\em Formatting Interlinear Text.} Occasional Publications in
@@ -308,7 +301,7 @@ While the XLingPaper approach to writing linguistic documents has great value in
     program.} B. Computers \& typesetting. Addison-Wesley. Reading,
   Massachusetts.}
 
-\bibitem{lovell:1999}{Lovell, Douglas.  1999. \TEXML: Typesetting \XML with \TeX. {\em TUGboat}. 20 (3): 176–183.}
+\bibitem{lovell:1999}{Lovell, Douglas.  1999. TEXML: Typesetting \XML with \TeX. {\em TUGboat}. 20 (3): 176–183.}
 
 \end{thebibliography}
 
