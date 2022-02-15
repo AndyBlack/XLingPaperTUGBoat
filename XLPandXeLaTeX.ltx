@@ -22,7 +22,7 @@
 \author{Hugh J.\ Paterson III}
 %\address{Street Address \\ Town, Postal \\ Country}
 \netaddress{i (at) hp3 dot me}
-\personalURL{https://hp3.me}
+\personalURL{http://hp3.me}
 %\ORCID{0}
 % To receive a physical copy of the TUGboat issue, please include the
 % mailing address we should use, as a comment if you prefer it not be printed.
@@ -46,74 +46,69 @@ producing complex documents in beautiful formats. \TeX
 \cite{knuth:1984},\cite{knuth:1986} is one of the well known
 publishing technologies used to meet these needs. Since 2000, \XML
 based technologies such as
-XSL-FO\footnote{\url{https://www.w3.org/TR/xsl11}} or the TeXML
+XSL‑FO\footnote{\url{https://www.w3.org/TR/xsl11}} or the \TeXML
 project\cite{lovell:1999}\footnote{\url{http://getfo.org/texml}} have also seen use to
 integrate content and compose complex documents such as textbooks
 and maintenance manuals. Requirements for composing these large, inter-linked documents
-birthed the development of tools like XMLmind\footnote{\url{https://www.xmlmind.com/xmleditor}} and
+birthed the development of tools like \XMLmind\footnote{\url{https://www.xmlmind.com/xmleditor}} and
 Xpublisher.\footnote{\url{https://www.xpublisher.com/products}} These
 can be used to compose the content within predefined \XML\ structures.
+% Why do some "XML" items have a forward slash before and after while others only before, and why do some have a forward slash and curlley brackets "{}" followin the text?
+XLingPaper\cite{blackandblack:2012},\cite{black:2009},\cite{black:2017} seeks to provide a constrained enviroment in which authors of complex works dealing with language descriptions and linguistic analysese can focus on content structure independently from the styling requirments of publishers. The software has a growing number of users who have succesfully typeset complex documents including: Master Theses\cite{Wood:2012},\cite{lamicela:2020},\cite{paterson:2021}, Doctorial Dissertations\cite{ebarb:2014},\cite{rasmussen:2018}, Textbooks\cite{marlett:2019}, Linguistic Grammars\cite{buck:2018}, Journal Articles\cite{brownie:2013}, and Bi-lingual Software Documentation Manuals\cite{BeadleandLee:2020a},\cite{BeadleandLee:2020b}.
 
-XLingPaper\cite{blackandblack:2012},\cite{black:2009},\cite{black:2017} is a plug-in to the XMLmind XML Editor. XLingPaper\footnote{\url{https://software.sil.org/xlingpaper}} benefits from XMLmind's Java-based implementation, which allows it to be used
-on MacOS, Windows, and Linux. XLingPaper, via a DTD, defines several
+XLingpaper\footnote{\url{https://software.sil.org/xlingpaper}} is a plug-in to the \XMLmind \XML Editor. XLingPaper benefits from \XMLmind's Java-based implementation, which allows it to be used on MacOS, Windows, and Linux. XLingPaper, via a DTD, defines several
 document classes (articles, books, chapters, etc., as illustrated in Figure~1),
 in each case providing document layout sections (paragraphs, examples, endnotes,
-etc.). By working within the user-interface of XMLmind, formatting
+etc.). By working within the user-interface of \XMLmind, formatting
 errors are reduced because users are constrained on where in the
 document flow they can introduce block and line level document elements.
-That is, authors cannot input \XeLaTeX\ code directly into the document and the introduction of layout sections within the document flow is constrained via the DTD.
+That is, first, authors cannot input \XeLaTeX\ code directly into the document and second, the introduction of layout sections within the document flow is constrained via the DTD.
 
-\begin{figure*}
-\includegraphics[scale=.5]{Several-different-document-types.png}
+% I took the astrix out following the labe "figure" below in the figure class because that was what I read online which is supposed to make the figure fit only in one column. Centering the figure within the column is still desired but I don't know the stylesheet well enough to know if that is allowed.
+\begin{figure}
+\includegraphics[scale=.3]{Several-different-document-types.png}
 \caption{XLingPaper predefined document types via DTD}
-\end{figure*}
+\end{figure}
 
 \section{What is XLingPaper?}
 
 As mentioned above, XLingPaper is an \XML- and Java-based computer
-plug-in for the XMLmind XML Editor.  It is designed to make writing,
+plug-in for the \XMLmind \XML Editor.  It is designed to make writing,
 reading, and publishing linguistic papers, grammars, and books better
-and more consistent. XLingPaper can produce linguistic documents with
+and more consistent. A full list of benefits to all parties in the publishing workflow is available.\cite{black:2017} XLingPaper can produce linguistic documents with
 at least five outputs, all from the same source document: \PDF{} (version 1.5), Web
 pages (HTML 4), Microsoft Word (.doc), Open Office Writer (.odt), and ePUB. It automatically
-numbers sections, figures, tables, and examples. It keeps track of internal references to these entites along with citation references and gloss abbreviations.  This keeps numbering and reference links dependable and automated. It also
+numbers sections, figures, tables, and examples. It keeps track of internal references to these entites along with citation references, and glosses/abbreviations keeping numbering and reference links dependable and automated. It also
 automatically generates abbreviations used and references cited (using a custom references implimentation).
 
-Unlike most editing programs which are based on either the WYSIWYG paradigm or as text editors used to code or produce markdown, XLingPaper (via the XMLmind XML Editor)
-is a structured editor. Rather than making the document look the way
+Unlike most editing programs which are based on either the \WYSIWYG paradigm or as text editors used to code or produce markdown, XLingPaper (via the \XMLmind \XML Editor)
+is a structured editor. Rather than visually structuring the document look the way
 it is to be formatted, the author “marks up” the items in the document
-according to their kind.  One of the many values this gives is that
+according to their styling needs.  One of the many values this gives is that
 there is a “grammar” of what a well-formed linguistic document looks
-like.  This makes it easy to move and shift sections and chapters and
-examples and prevents users from inadvertently creating ill-formed
+like.  This makes moving, replacing, switching, or reordering sections, chapters, and
+examples less error prone becasue it prevents users from inadvertently creating ill-formed
 documents.
 
-This paper is about the \XeLaTeX{}-produced \PDF{} output.  
-
-The official website for XLingPaper is
-\tbsurl{https://software.sil.org/xlingpaper}.  A list of advantages for the
-author, the reader, and the publisher can be found at the “Why
-XLingPaper?”\cite{black:2017} portion of the documentation.
+The following sections of this paper discuss the\TeX{} technologies used. 
 
 \section{XLingPaper and \TeX{}}
 
-We now describe how XLingPaper uses \TeX{} technologies.
+Due to the heavy reliance on Unicode in modern language documentation and linguistic work, XLingPaper specifically uses \XeLaTeX{} and compatible packages to produce \PDF{} outputs.  The following sections provide more detial on the design requirments and packages used.
 
 \subsection{Design desiderata for \TeX{} with XLingPaper}
 
-From the outset, XLingPaper was designed to be free.  The XMLmind XML Editor had a Personal
-Use License that fit the bill for the vast majority of the target
+From the outset, XLingPaper was designed to be free.  The XMLmind XML Editor had a Personal Use License that fit the bill for the vast majority of the target
 audience of XLingPaper.  The few that did not meet the terms of that
 license most likely would be able to afford to purchase (or have their
 organization purchase) a professional version of the XMLmind XML
 Editor.  The actual XLingPaper plugin has always been free.
 
-Prior to 2009 XLingPaper used RenderX{\footnote{\url{http://www.renderx.com}} to produce \PDF{} documents. However, in 2009 plans were made to add \XeLaTeX-based output to XLingPaper because while there was a free version of
+Prior to 2009 XLingPaper used RenderX{\footnote{\url{http://www.renderx.com}} to produce \PDF{} documents. However, in 2009 plans were made to add \XeLaTeX-based output to XLingPaper because, while there was a free version of
 RenderX, the output contained a watermark.  By implementing the ability to export to \PDF{} via \XeLaTeX, there would be no water marks in PDF documents.
 
 At the time, XLingPaper had a way to format output per a user-created
-publisher style sheet.  This meant the developer (Andrew Black) needed to be able to map from an
-XLingPaper publisher style sheet to \XeLaTeX.  This is the second
+publisher style sheet.  This meant the developer (Andrew Black) needed to be able to map from an XLingPaper publisher style sheet to \XeLaTeX.  This was the second
 criterion.  He knew that he wanted to use \LaTeX\ but that pure
 \LaTeX\ came with predefined output formatting for front matter,
 chapters, sections, back matter, etc.  Pure \LaTeX, then, would not
@@ -164,7 +159,7 @@ this process.
 When Andy began implementing the \XeLaTeX{}-based output, he found TeXML, but understood it to have two infelicities:
 
 \begin{enumerate}
-\item TeXML required Python and he did not want to force XLingPaper users to have to install a version of Python for TeXML when that version may conflict with other versions of Python they might already have installed.  Furthermore, this approach would make the installation package much larger because of needing to include Python.
+\item \TeXML required Python and he did not want to force XLingPaper users to have to install a version of Python for \TeXML when that version may conflict with other versions of Python they might already have installed.  Furthermore, this approach would make the installation package much larger because of needing to include Python.
 \item He also needed some extensions for formatting white space (more finely as far as he could tell).
 \end{enumerate}
 
@@ -282,11 +277,21 @@ While the XLingPaper approach to writing linguistic documents has great value in
 %\bibliography{xampl}       % xampl.bib comes with BibTeX
 \begin{thebibliography}{99}
 
-\bibitem{blackandblack:2012}{Black, Cheryl A., and H. Andrew Black. 2012. {\em Grammars for the People, by the People, Made Easier Using PAWS and XlingPaper}. In Electronic Grammaticography, edited by Sebastian Nordoff, 103–28. LD\&C Special Publication 4. Honolulu, Hawai’i: University of Hawai’i Press. \url{http://hdl.handle.net/10125/4532}.}
+\bibitem{BeadleandLee:2020a}{Beadle, Jennie, and Matthew Lee. 2020a. {\em Paratext 9 Manual – in English}. SIL International. \url{https://lingtran.net}.}
+
+\bibitem{BeadleandLee:2020b}{Beadle, Jennie, and  Matthew Lee. 2020b. {\em Paratext 9 Manual – in French}. SIL International. \url{https://outilingua.net}.}
+
+\bibitem{blackandblack:2012}{Black, Cheryl A., and H. Andrew Black. 2012. {\em Grammars for the People, by the People, Made Easier Using PAWS and XlingPaper}. In Electronic Grammaticography, edited by Sebastian Nordoff, 103–28. LD\&C Special Publication 4. Honolulu, Hawaiʻi: University of Hawaiʻi Press. \url{http://hdl.handle.net/10125/4532}.}
 
 \bibitem{black:2009}{Black, H. Andrew. 2009. Writing Linguistic Papers in the Third Wave.  {\em SIL Forum for Language Fieldwork} 2009 (004): 11 pages. \url{https://www.sil.org/resources/publications/entry/7790}.}
 
 \bibitem{black:2017}{Black, H Andrew. 2017. {\em Why Learn to Use XLingPaper}. Dallas, Texas: SIL International. \url{http://software.sil.org/downloads/r/xlingpaper/resources/documentation/WhyUseXLingPaper.pdf}.}
+
+\bibitem{brownie:2013}{Brownie, John. 2013. Adverbs in the Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia} 31(1): 1–11. \url{https://www.langlxmelanesia.com/LLM%20Vol.%2031%20Adverbs%20Mussau.pdf}.}
+
+\bibitem{buck:2018}{Buck, Marjorie J. 2018. {\em Gramática del amuzgo Xochistlahuaca, Guerrero}. (Serie de gramáticas de lenguas indígenas de México No16.) Tlalpan, Ciudad de México, México: Instituto Lingüístico de Verano, A.C. [SIL International in Mexico]. \url{https://www.sil.org/resources/archives/75518}.}
+
+\bibitem{ebarb:2014}{Ebarb, Kristopher J. 2014. {\em Tone and variation in Idakho and other Luhya varieties}. University of Indiana Ph.D. dissertation. \url{https://pqdtopen.proquest.com/doc/1625743679.html?FMT=ABS}.}
 
 \bibitem{kew:mcconnel}{Kew, Jonathan and Stephen McConnel. 1990.
   {\em Formatting Interlinear Text.} Occasional Publications in
@@ -301,7 +306,17 @@ While the XLingPaper approach to writing linguistic documents has great value in
     program.} B. Computers \& typesetting. Addison-Wesley. Reading,
   Massachusetts.}
 
-\bibitem{lovell:1999}{Lovell, Douglas.  1999. TEXML: Typesetting \XML with \TeX. {\em TUGboat}. 20 (3): 176–183.}
+\bibitem{lamicela:2020}{Lamicela, Andrew Charles. 2020. {\em Distinguishing Passive from MP2-marked Middle in Koine Greek}. University of North Dakota M.A. thesis. \url{https://commons.und.edu/theses/3277}.}
+
+\bibitem{lovell:1999}{Lovell, Douglas.  1999. \TEXML: Typesetting \XML\ with \TeX. {\em TUGboat}. 20 (3): 176–183. \url{https://tug.org/TUGboat/tb20-3/tb64love.pdf}.}
+
+\bibitem{marlett:2019}{Marlett, Stephen A. 2019. {\em Phonology From the Ground Up: The Basics}. Dallas, TX: SIL International. \url{https://www.sil.org/resources/archives/79207}.}
+
+\bibitem{rasmussen:2018}{Rasmussen, Kent. 2018. {\em A Comparative Tone Analysis of Several Bantu D30 Languages (DR Congo)}. University of Texas Arlington Ph.D. dissertation. \url{http://hdl.handle.net/10106/27483}.}
+
+\bibitem{Wood:2012}{Wood, Joyce Kathleen. 2012. {\em Valence-Increasing Strategies in Urim Syntax}. Graduate Institute of Applied Linguistics M.A. thesis. \url{https://www.diu.edu/documents/theses/Wood_Joyce-thesis.pdf}.}
+
+\bibitem{paterson:2021}{Paterson III, Hugh J. 2021. {\em Language Archive Records: Interoperability of Referencing Practices and Metadata Models}. University of North Dakota M.A. thesis. \url{https://commons.und.edu/theses/3937}.}
 
 \end{thebibliography}
 
