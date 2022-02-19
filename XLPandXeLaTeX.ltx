@@ -145,8 +145,15 @@ The following sections of this paper discuss the \TeX{} technologies used by XLi
 
 \section{XLingPaper and \TeX{}}
 
-\TeX{} has long been embraced by linguists. Peter \cite{peter:2004} writes of a personal communication with Knuth where Knuth suggests that linguists were some of the earliest adopters outside of mathematicians.  Thiele \cite{thiele:2007} in an interview given in 2007 states that she was typesetting linguistic journals via \TeX{} in 1983—prior to the release of Knuth's book on using the \TeX{} typesetting system \cite{knuth:1984}. Thiele \cite{thiele:1995} gives and early overview of \TeX{} use in linguistics, with a more recent (2004) update by Peter \cite{peter:2004}. The \TeX{} community produced many packages which would shape the visual face of publishing in linguistics including \cite{rei:1996} trees, logical 
+\TeX{} has long been embraced by linguists. Peter \cite{peter:2004} writes of a personal communication with Don Knuth where Knuth suggests that linguists were some of the earliest adopters outside of mathematicians.  Thiele \cite{thiele:2007} in an interview given in 2007 states that she was typesetting linguistic journals via \TeX{} in 1983—a date prior to the release of Knuth's book on using the \TeX{} typesetting system \cite{knuth:1984}. Thiele \cite{thiele:1995} gives and early overview of \TeX{} use in linguistics with mention of signigicant repositories outside of CTAN. A slightly more recent (2004) update by Peter \cite{peter:2004} provides some additional tips and tools for typesetting common information structures in linguistic publishing. The \TeX{} community produced many packages which would shape the visual face of publishing in linguistics, including \texttt{TIPA} by Rei \cite{rei:1996} which is an excelent type face for phonetic transcriptions and \texttt{pst-asr} by Frampton \cite{frampton:2006} for auto segmental representations. As Peter and Thiele list out (and in some casses provide illustrations) there are special packages for all areas of linguistics from syntax trees \texttt{qtrees}% I need a link here
+ to autosegmental diagram generators such as \texttt{pst-asr}. Additionally, there are packages which are essentially collections of macros such as \texttt{covington}% I need a link here
+ and \texttt{gb4e}% I need a link here
+ which serve a variety of page layout functions. The CTAN repository currently lists 54 different \TeX{} pakages for linguisitcs typesetting\footnote{\url{https://ctan.org/topic/linguistic}}, although some of these packages also include capabilities tageted as multi-lingual or mulit-script publications or are specific styles for pubications at linguistic programs at instutions of higher education.
+
+\cite{unicode:1991}
 %I need to finish the introduction to tex and linguistics here.
+% I need to explain the evolution to unicode and how XLingPaper gose around that as a "feature".
+% I need to cite the modern persepctive on putting diagrams in images rather than on page generation.
 Due to the heavy reliance on Unicode in modern language documentation
 and linguistic work, XLingPaper specifically uses \XeLaTeX{} and
 compatible packages to produce \PDF{} outputs.  The following sections
@@ -200,8 +207,7 @@ distribution must be independent of larger mainstream \TeX{}
 distribution solutions such as \TeX{}Live which have a large
 footprint.  Therefore the developer determined which \LaTeX\ packages
 and binaries were needed and created a custom installation package for
-just those items (a list of these packages is included in section
-6.1).
+just those items (a list of these packages is included in section 6.1).
 
 The twenty \LaTeX\ packages that are part of the custom XLingPaper
 distribution are still rather large for someone for whom Internet
@@ -478,9 +484,11 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
     environment} version 1.9b.}
 
 \bibitem{ebarb:2014}{Ebarb, Kristopher J. 2014. {\em Tone and
-    variation in Idakho and other Luhya varieties}. University of
-  Indiana
-  Ph.D. dissertation. \url{https://pqdtopen.proquest.com/doc/1625743679.html?FMT=ABS}.}
+    variation in Idakho and other Luhya varieties}. University of Indiana  Ph.D. dissertation. \url{https://pqdtopen.proquest.com/doc/1625743679.html?FMT=ABS}.}
+
+\bibitem{frampton:2006}{Frampton, John. 2006. {\em Pst-Asr: Tex Macros for Typesetting Autosegmental Representations}. Version:1.1. CTAN. \url{http://www.bakoma-tex.com/doc/generic/pst-asr/pst-asr-doc.pdf}.}
+
+\bibitem{frampton:2012}{Frampton, John. 2012. {\em ExPex for Linguists: Example Formatting, Glosses, and Reference}. Version: 4.1. \url{http://mathserver.neu.edu/~ling/tex/expex/base/doc/expex-doc.pdf}.}
 
 \bibitem{kew:mcconnel}{Kew, Jonathan and Stephen McConnel. 1990.  {\em
     Formatting Interlinear Text.} Occasional Publications in Academic
@@ -524,14 +532,12 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 
 \bibitem{thiele:2007}{Thiele, Christina. 2007. {\em Christina Thiele Interview by Dave Walden for the \TeX{} Users Group}. Transcript. \url{https://tug.org/interviews/thiele.html}.}
 
+\bibitem{unicode:1991}{Unicode Consortium, ed. 1991. {\em The Unicode Standard: Worldwide Character Encoding}. Version 1.0. Reading, Massachusetts: Addison-Wesley. \url{https://www.unicode.org/versions/Unicode1.0.0}.}
+}
 \bibitem{wilson:2007}{Wilson, Peter. 2007. The Memoir Class. {\em
-    TUGboat} 28 (2):
-  243–46. \url{https://www.tug.org/TUGboat/tb28-2/tb89wilson.pdf}.}
+    TUGboat} 28 (2): 243–46. \url{https://www.tug.org/TUGboat/tb28-2/tb89wilson.pdf}.}
 
-\bibitem{wilson:2021}{Wilson, Peter. 2021. {\em The Memoir Class for
-    Configurable Typesetting: User Guide}. version 3.70. Normandy
-  Park, WA: The Herries
-  Press. \url{https://texdoc.org/serve/memoir/0}.}
+\bibitem{wilson:2021}{Wilson, Peter. 2021. {\em The Memoir Class for Configurable Typesetting: User Guide}. version 3.70. Normandy Park, WA: The Herries Press. \url{https://texdoc.org/serve/memoir/0}.}
 
 \bibitem{Wood:2012}{Wood, Joyce Kathleen. 2012. {\em
     Valence-Increasing Strategies in Urim Syntax}. Graduate Institute
@@ -539,7 +545,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
   M.A. thesis. \url{https://www.diu.edu/documents/theses/Wood_Joyce-thesis.pdf}.}
 
 \bibitem{rei:1996}{Rei, Fukui. 1996. TIPA: A System for Processing Phonetic Symbols in LATEX. {\em  TUGboat} 17 (2): 102–14. \url{https://www.tug.org/TUGboat/tb17-2/tb51rei.pdf}.}
-
+%These are not yet used in the text
 \bibitem{BeierandMichael:2022}{Beier, Christine, and Lev Michael. 2022. {\em Managing Lexicography Data: A Practical, Principled Approach Using FLEx (FieldWorks Language Explorer)}. In The Open Handbook of Linguistic Data Management, edited by Andrea L. Berez-Kroeker, Bradley McDonnell, Eve Koller, and Lauren B. Collister, 301–14. Open Handbooks In Linguistics. Cambridge, Massachusetts: The MIT Press. doi:\hyperref{https://doi.org/10.7551/mitpress/12200.003.0029}{\textit{10.7551/mitpress/12200.003.0029}}.}
 \bibitem{conzettanddesmedt:2022}{Conzett, Philipp, and Koenraad De Smedt. 2022. {\em Guidance for Citing Linguistic Data}. In The Open Handbook of Linguistic Data Management, edited by Andrea L. Berez-Kroeker, Bradley McDonnell, Eve Koller, and Lauren B. Collister, 143–55. Open Handbooks In Linguistics. Cambridge, Massachusetts: The MIT Press. doi:\hyperref{https://doi.org/10.7551/mitpress/12200.003.0015}{\textit{10.7551/mitpress/12200.003.0015}}.}
 \bibitem{donnelly:2013}{Donnelly, Kevin. 2013. Representing Linguistic Pitch in (XE)LA\TEX{}. {\em TUGboat} 34 (2): 223–27. \url{http://tug.org/TUGboat/tb34-2/tb107donnelly.pdf}.}
@@ -547,6 +553,15 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 \bibitem{lehmann:2004}{Lehmann, Christian. 2004. {\em Interlinear morphemic glossing}. In Morphologie: Ein internationales Handbuch zur Flexion und Wortbildung Morphology: an international handbook on inflection and word-formation, edited by Geert E Booij, Christian Lehmann, Joachim Mugdan, and Stavros Skopeteas, 2:1834–57. Handbücher zur Sprach- und Kommunikationswissenschaft Handbooks of Linguistics and communication science 17. Berlin ; New York: Walter de Gruyter. doi:\hyperref{https://doi.org/10.1515/9783110172782.2.20.1834}{\textit{10.1515/9783110172782.2.20.1834}}.}
 
 \bibitem{schennerandnordhoff:2016}{Schenner, Mathias, and Sebastian Nordhoff. 2016. {\em Extracting Interlinear Glossed Text from LATEX Documents}. In Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016), edited by Nicoletta Calzolari, Khalid Choukri, Thierry Declerck, Sara Goggi, Marko Grobelnik, Bente Maegaard, Joseph Mariani, et al., 4044–48. Portorož, Slovenia: European Language Resources Association (ELRA). \url{https://www.aclweb.org/anthology/L16-1638.pdf}.}
+
+%These are likely to be added for unicode discussion
+%B&S https://www.jstor.org/stable/4489465
+% https://doi.org/10.1017/S0958344002000629
+% http://www.lrec-conf.org/proceedings/lrec2002/pdf/ws15.pdf#36
+% https://pure.mpg.de/rest/items/item_58925/component/file_58926/content unicode
+%https://www.researchgate.net/profile/Hennie-Brugman/publication/238473992_Annotating_Multimedia_Multi-modal_resources_with_ELAN/links/53fd90320cf22f21c2f80afd/Annotating-Multimedia-Multi-modal-resources-with-ELAN.pdf
+%PSTricks https://www.tug.org/TUGboat/tb31-1/tb97complete.pdf#38
+%
 
 \end{thebibliography}
 
