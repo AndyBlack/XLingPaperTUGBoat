@@ -146,7 +146,7 @@ The following sections of this paper discuss the \TeX{} technologies used by XLi
 \section{XLingPaper and \TeX{}}
 
 \TeX{} has long been embraced by linguists. Peter \cite{peter:2004} writes of a personal communication with Knuth where Knuth suggests that linguists were some of the earliest adopters outside of mathematicians.  Thiele \cite{thiele:2007} in an interview given in 2007 states that she was typesetting linguistic journals via \TeX{} in 1983—prior to the release of Knuth's book on using the \TeX{} typesetting system \cite{knuth:1984}. Thiele \cite{thiele:1995} gives and early overview of \TeX{} use in linguistics, with a more recent (2004) update by Peter \cite{peter:2004}. The \TeX{} community produced many packages which would shape the visual face of publishing in linguistics including \cite{rei:1996} trees, logical 
-%I need to rework an introduction to tex and linguistics here.
+%I need to finish the introduction to tex and linguistics here.
 Due to the heavy reliance on Unicode in modern language documentation
 and linguistic work, XLingPaper specifically uses \XeLaTeX{} and
 compatible packages to produce \PDF{} outputs.  The following sections
@@ -183,7 +183,7 @@ etc.  Pure \LaTeX, then, would not allow direct control of formatting
 of all of these per an XLingPaper user-defined publisher style sheet.
 This meant overriding these standard features of \LaTeX\ with a custom
 implementation of the \TeX{} commands needed to control
-formatting. However, \texttt{memoir} \cite{wilson:2007}
+formatting. However, \texttt{memoir}\footnote{\url{https://ctan.org/pkg/memoir}} \cite{wilson:2007}
 \cite{wilson:2021}, a recent discovery for the programmer of
 XLingPaper, accomplishes many of the same tasks and could be
 considered to replace some of the custom code if it were shown to be
@@ -222,8 +222,8 @@ result is a “heavy” first install package, but
 light-weight upgrade packages. In the thirteen year history of
 development, there have been a few occasions where upgrades have required the download of new “heavy” packages. One such case was
 when framed units where added as an element. These elements depend on
-the \texttt{mdframed} package
-\cite{DanielandSchubert:2013}\footnote{\url{https://ctan.org/pkg/mdframed}}. However,
+the \texttt{mdframed}\footnote{\url{https://ctan.org/pkg/mdframed}} package
+\cite{DanielandSchubert:2013}. However,
 the architecture separating stable packages from custom code has generally worked out well and kept update sizes low.
 %I have worked through to this section
 
