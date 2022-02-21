@@ -42,7 +42,7 @@
 We discuss the use of \TeX{} technologies by XLingPaper, an authoring
 tool for producing academically oriented publications with features
 required for linguistic publishing. We present the \TeX{} modules used
-and the rationale for the history of its development.
+and the rationale for the history of XLingPaper development.
 \end{abstract}
 
 \section{Introduction}
@@ -50,21 +50,22 @@ and the rationale for the history of its development.
 Within the publishing industry there are several notable products for
 producing complex documents in beautiful formats. \TeX{}
 \cite{knuth:1984} \cite{knuth:1986} is one of the well known
-publishing technologies used to meet these needs. Since 2000,
-\XML{}-based technologies such as
-\XSLFO{}\footnote{\url{https://www.w3.org/TR/xsl11}} or the \TeXML{}
-project \cite{lovell:1999}\footnote{\url{http://getfo.org/texml}} have
-also seen use to integrate content and compose complex documents such
+publishing technologies used to meet these needs.
+ Since 2000, \XML{}-based technologies such as
+\XSLFO{}\footnote{\url{https://www.w3.org/TR/xsl11}} or the \TeXML{}\footnote{\url{http://getfo.org/texml}}
+project \cite{lovell:1999} have been used to integrate content and compose complex documents such
 as textbooks and maintenance manuals. Requirements for composing these
 large, inter-linked documents birthed the development of tools like
 \XMLmind{}\footnote{\url{https://www.xmlmind.com/xmleditor}} and
-Xpublisher.\footnote{\url{https://www.xpublisher.com/products}} These
+Xpublisher\footnote{\url{https://www.xpublisher.com/products}}. These
 can be used to compose the content within predefined \XML{}
 structures.  XLingPaper \cite{blackandblack:2012} \cite{black:2009}
 \cite{black:2017} seeks to provide a constrained environment in which
 authors of complex works dealing with language descriptions and
 linguistic analyses can focus on content structure independently from
-the styling requirements of publishers. The software has a growing
+the styling requirements of documents. In this way the underlying design principle of XLingPaper maximizes the \SGML\ design practice of separating content from presentation. With XLingPaper authors can keep content structure independent from style information and thereby provide maximal transfer-ability between publishing styles. The software does this while providing authors a clear structured interface for authoring content.
+
+The XLingPaper software has a growing
 number of users who have successfully typeset complex documents
 including:
 
@@ -83,27 +84,29 @@ Java-based implementation which allows it to be used on MacOS,
 Windows, and Linux. XLingPaper, via a \DTD{}, defines several document
 classes (articles, books, chapters, etc., as illustrated in Figure~1),
 in each case providing document layout sections (paragraphs, examples,
-endnotes, etc.). By working within the user-interface of the \XXE{},
+endnotes, etc.). By working within the user-interface of the \XXE{}, as shown in Figure~2,
 formatting errors are reduced because users are constrained on where
 in the document flow they can introduce block and line level document
 elements.  That is, first, authors cannot input \XeLaTeX{} code
 directly into the document and second, the introduction of layout
 sections within the document flow is constrained via the \DTD{}.
 
-
 \begin{figure}
 \includegraphics[scale=.425]{Several-different-document-types.png}
 \caption{XLingPaper predefined document types via \DTD{}}
 \end{figure}
 
+\begin{figure*}
+\includegraphics[scale=.243]{XLingPaper-interface.png}
+\caption{XLingPaper's user interface. Left side: document content editing. Right side: block and line level units available for use at the cursor location.}
+\end{figure*}
+
 \section{What is XLingPaper?}
 
-As mentioned above, XLingPaper is an \XML- and Java-based computer
-plug-in for the \XXE{}.  It is designed to make writing, reading, and
-publishing linguistic papers, grammars, and books better and more
-consistent. A full list of benefits to all parties in the publishing
-work flow is available \cite{black:2017}. XLingPaper can produce
-linguistic documents with at least five outputs, all from the same
+As previously mentioned, XLingPaper is an \XML- and Java-based computer
+plug-in for the \XXE{}.  It is designed to reduce friction in the process of writing, reading, and
+publishing linguistic papers, grammars, and books by removing common time-sucks related to inconsistent formatting. A full list of benefits to all parties in the publishing
+work flow is available \cite{black:2017}. For many the \PDF{} quintessential file format for final publication of publishing outputs. XLingPaper supports \PDF production but as illustrated in Figure~3, XLingPaper can produce documents with at least five outputs, all from the same
 source document:
 \begin{itemize}
 \item \PDF{} (version 1.5),
@@ -112,7 +115,13 @@ source document:
 \item Open Office Writer Document (.odt), and
 \item e\acro{PUB}.
 \end{itemize}
-It automatically numbers sections, figures, tables, and examples. It
+
+\begin{figure*}
+\includegraphics[scale=.8]{PDFCreation.png}
+\caption{XLingPaper's data processing pipeline to multiple formats}
+\end{figure*}
+
+XLingPaper automatically numbers sections, figures, tables, and examples. It
 keeps track of internal references to these entities along with
 citation references and gloss abbreviations.  This keeps numbering and
 reference links dependable and automated. It also automatically
@@ -132,16 +141,25 @@ replacing, switching, or reordering sections, chapters, and examples
 less error prone because it prevents users from inadvertently creating
 ill-formed documents.
 
-The following sections of this paper discuss the \TeX{} technologies used. 
+The following sections of this paper discuss the \TeX{} technologies used by XLingPaper. 
 
 \section{XLingPaper and \TeX{}}
 
+\TeX{} has long been embraced by linguists. Peter \cite{peter:2004} writes of a personal communication with Don Knuth where Knuth suggests that linguists were some of the earliest adopters outside of mathematicians.  Thiele \cite{thiele:2007} in an interview given in 2007 states that she was typesetting linguistic journals via \TeX{} in 1983—a date prior to the release of Knuth's book on using the \TeX{} typesetting system \cite{knuth:1984}. Thiele \cite{thiele:1995} gives and early overview of \TeX{} use in linguistics with mention of signigicant repositories outside of CTAN. A slightly more recent (2004) update by Peter \cite{peter:2004} provides some additional tips and tools for typesetting common information structures in linguistic publishing. The \TeX{} community produced many packages which would shape the visual face of publishing in linguistics, including \texttt{TIPA} by Rei \cite{rei:1996} which is an excelent type face for phonetic transcriptions and \texttt{pst-asr} by Frampton \cite{frampton:2006} for auto segmental representations. As Peter and Thiele list out (and in some casses provide illustrations) there are special packages for all areas of linguistics from syntax trees \texttt{qtrees}% I need a link here
+ to autosegmental diagram generators such as \texttt{pst-asr}. Additionally, there are packages which are essentially collections of macros such as \texttt{covington}% I need a link here
+ and \texttt{gb4e}% I need a link here
+ which serve a variety of page layout functions. The CTAN repository currently lists 54 different \TeX{} pakages for linguisitcs typesetting\footnote{\url{https://ctan.org/topic/linguistic}}, although some of these packages also include capabilities tageted as multi-lingual or mulit-script publications or are specific styles for pubications at linguistic programs at instutions of higher education.
+
+\cite{unicode:1991}
+%I need to finish the introduction to tex and linguistics here.
+% I need to explain the evolution to unicode and how XLingPaper gose around that as a "feature".
+% I need to cite the modern persepctive on putting diagrams in images rather than on page generation.
 Due to the heavy reliance on Unicode in modern language documentation
 and linguistic work, XLingPaper specifically uses \XeLaTeX{} and
 compatible packages to produce \PDF{} outputs.  The following sections
 provide more detail on the design requirements and packages used.
 
-\subsection{Design desiderata for \TeX{} with XLingPaper}
+\subsection{Design desiderata for XLingPaper outputs via \TeX{}}
 
 From the outset, XLingPaper was designed to be free.  The \XXE{} had a
 Personal Use License that met this requirement for the vast majority
@@ -172,7 +190,7 @@ etc.  Pure \LaTeX, then, would not allow direct control of formatting
 of all of these per an XLingPaper user-defined publisher style sheet.
 This meant overriding these standard features of \LaTeX\ with a custom
 implementation of the \TeX{} commands needed to control
-formatting. However, \texttt{memoir} \cite{wilson:2007}
+formatting. However, \texttt{memoir}\footnote{\url{https://ctan.org/pkg/memoir}} \cite{wilson:2007}
 \cite{wilson:2021}, a recent discovery for the programmer of
 XLingPaper, accomplishes many of the same tasks and could be
 considered to replace some of the custom code if it were shown to be
@@ -189,8 +207,7 @@ distribution must be independent of larger mainstream \TeX{}
 distribution solutions such as \TeX{}Live which have a large
 footprint.  Therefore the developer determined which \LaTeX\ packages
 and binaries were needed and created a custom installation package for
-just those items (a list of these packages is included in section
-6.1).
+just those items (a list of these packages is included in section 6.1).
 
 The twenty \LaTeX\ packages that are part of the custom XLingPaper
 distribution are still rather large for someone for whom Internet
@@ -207,16 +224,15 @@ with XLingPaper. This abstraction layer was then executed when the
 \XeLaTeX{} file was processed. This middle layer has granted
 XLingPaper flexibility in adding new code and capabilities while
 keeping the “heavy” \LaTeX\ packages stable. The net
-result is a “heavy” first install package, but a
-light-weight upgrade package. In the thirteen year history of
-development, there have been occasions where a new
-“heavy” package has been required. One such case was
+result is a “heavy” first install package, but 
+light-weight upgrade packages. In the thirteen year history of
+development, there have been a few occasions where upgrades have required the download of new “heavy” packages. One such case was
 when framed units where added as an element. These elements depend on
-the \texttt{mdframed} package
-\cite{DanielandSchubert:2013}\footnote{\url{https://ctan.org/pkg/mdframed}}. However,
-the split architecure has generally worked out well and kept update
-sizes low.
+the \texttt{mdframed}\footnote{\url{https://ctan.org/pkg/mdframed}} package
+\cite{DanielandSchubert:2013}. However,
+the architecture separating stable packages from custom code has generally worked out well and kept update sizes low.
 %I have worked through to this section
+
 \subsection{\PDF{} production}
 
 When an author has XLingPaper produce \PDF{} output via \XeLaTeX,
@@ -225,15 +241,9 @@ converted into \LaTeX\ format via a set of \acro{XSLT} transforms and
 given to \XeLaTeX{} which produces the \PDF{}.  Figure~2 contains a
 diagram of this process.
 
-\begin{figure*}
-\includegraphics[scale=1.4]{PDFCreation.png}
-\caption{XLingPaper output process}
-\end{figure*}
-
 \subsection{\TeXML{}}
 
-When Andy began implementing the \XeLaTeX{}-based output, he found
-\TeXML{}, but understood it to have two infelicities:
+In the process of planning for the transition of the defualt \PDF{} renderer from RenderX to \XeLaTeX{}, \TeXML{} was discovered. However, initial analyisis understood it to have two infelicities:
 
 \begin{enumerate}
 \item \TeXML{} required Python and he did not want to force XLingPaper
@@ -254,7 +264,22 @@ used Java code to improve the user experience in the \XXE{}.
 \subsection{Ling-TeX}
 
 At the time Andy began implementing the \XeLaTeX{}-based output, he
-discovered the Ling-TeX group.  From what he could tell, the packages
+discovered the Ling-\TeX{} group\footnote{\url{http://web.archive.org/web/20150702123633/http://heim.ifi.uio.no/~dag/ling-tex/}} which also ran a the Ling-TeX mailing list from 1995–2018\footnote{\url{https://ling-tex.ifi.uio.narkive.com}}. Today many of the mailinglist participants can be found interacting on the \TeX{} stackexchange\footnote{\url{https://tex.stackexchange.com}}. The Ling-\TeX{} website mostly advertised the .... %describe the two packages and link to them.
+In 2009 several other related \TeX{} webpages discussing linguistic typesetting also exist\footnote{\url{https://www.essex.ac.uk/linguistics/external/clmt/latex4ling}}. Linguistics as an academic discipline has embraced \TeX{} technology for a long time. Thiele {thiele:1995} quotes Knuth saying that the linguistic discipline was one of the first academic disciplines outside of mathematics to embrace the \Tex{} typesetting system. % cite 1995 paper% producing \TeX{} packages with formatting outputs specific to the needs of linguistic publishing. 
+\begin{tabular}{@{}ll@{}}
+%Change this table to include the packages used in linguistics at the time.
+\texttt{attachfile2} & \texttt{lineno}\\
+\texttt{booktabs} & \texttt{longtable}\\
+\texttt{calc} & \texttt{lscape}\\
+\texttt{color} & \texttt{mdframed}\\
+\texttt{colortbl} & \texttt{multirow}\\
+\texttt{etoolbox} & \texttt{normalem}\\
+\texttt{fancyhdr} & \texttt{polyglossia}\\
+\texttt{fontspec} & \texttt{setspace}\\
+\texttt{footmisc} & \texttt{tabularx}\\
+\texttt{hyperref} & \texttt{xltxtra}\\
+\end{tabular}
+From what he could tell, the packages
 that help with interlinear texts did not allow for the larger number
 of capabilities XLingPaper already dealt with.  So he rolled his own.
 Figure~3 contains an example output with some of the special
@@ -446,8 +471,7 @@ made XLingPaper a fantastic tool for linguists.
 
 \bibitem{brownie:2013}{Brownie, John. 2013. Adverbs in the
 Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
-31(1):
-1–11. \url{https://www.langlxmelanesia.com/LLM%20Vol.%2031%20Adverbs%20Mussau.pdf}.}
+31(1):1–11. \url{https://www.langlxmelanesia.com/issues}.}
 
 \bibitem{buck:2018}{Buck, Marjorie J. 2018. {\em Gramática del amuzgo
     Xochistlahuaca, Guerrero}. (Serie de gramáticas de lenguas
@@ -460,9 +484,11 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
     environment} version 1.9b.}
 
 \bibitem{ebarb:2014}{Ebarb, Kristopher J. 2014. {\em Tone and
-    variation in Idakho and other Luhya varieties}. University of
-  Indiana
-  Ph.D. dissertation. \url{https://pqdtopen.proquest.com/doc/1625743679.html?FMT=ABS}.}
+    variation in Idakho and other Luhya varieties}. University of Indiana  Ph.D. dissertation. \url{https://pqdtopen.proquest.com/doc/1625743679.html?FMT=ABS}.}
+
+\bibitem{frampton:2006}{Frampton, John. 2006. {\em Pst-Asr: Tex Macros for Typesetting Autosegmental Representations}. Version:1.1. CTAN. \url{http://www.bakoma-tex.com/doc/generic/pst-asr/pst-asr-doc.pdf}.}
+
+\bibitem{frampton:2012}{Frampton, John. 2012. {\em ExPex for Linguists: Example Formatting, Glosses, and Reference}. Version: 4.1. \url{http://mathserver.neu.edu/~ling/tex/expex/base/doc/expex-doc.pdf}.}
 
 \bibitem{kew:mcconnel}{Kew, Jonathan and Stephen McConnel. 1990.  {\em
     Formatting Interlinear Text.} Occasional Publications in Academic
@@ -495,24 +521,47 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
     Metadata Models}. University of North Dakota
   M.A. thesis. \url{https://commons.und.edu/theses/3937}.}
 
+\bibitem{peter:2004}{Peter, Steve. 2004. TEX and Linguistics. {\em TUGboat} 25 (1): 58–62. \url{https://tug.org/TUGboat/tb25-1/peter.pdf}.}
+
 \bibitem{rasmussen:2018}{Rasmussen, Kent. 2018. {\em A Comparative
     Tone Analysis of Several Bantu D30 Languages (DR
     Congo)}. University of Texas Arlington
   Ph.D. dissertation. \url{http://hdl.handle.net/10106/27483}.}
 
-\bibitem{wilson:2007}{Wilson, Peter. 2007. The Memoir Class. {\em
-    TUGboat} 28 (2):
-  243–46. \url{https://www.tug.org/TUGboat/tb28-2/tb89wilson.pdf}.}
+\bibitem{thiele:1995}{Thiele, Christina. 1995. TEX and Linguistics. {\em TUGboat} 16 (1): 42–44. \url{https://tug.org/TUGboat/tb16-1/tb46ling.pdf}.}
 
-\bibitem{wilson:2021}{Wilson, Peter. 2021. {\em The Memoir Class for
-    Configurable Typesetting: User Guide}. version 3.70. Normandy
-  Park, WA: The Herries
-  Press. \url{https://texdoc.org/serve/memoir/0}.}
+\bibitem{thiele:2007}{Thiele, Christina. 2007. {\em Christina Thiele Interview by Dave Walden for the \TeX{} Users Group}. Transcript. \url{https://tug.org/interviews/thiele.html}.}
+
+\bibitem{unicode:1991}{Unicode Consortium, ed. 1991. {\em The Unicode Standard: Worldwide Character Encoding}. Version 1.0. Reading, Massachusetts: Addison-Wesley. \url{https://www.unicode.org/versions/Unicode1.0.0}.}
+}
+\bibitem{wilson:2007}{Wilson, Peter. 2007. The Memoir Class. {\em
+    TUGboat} 28 (2): 243–46. \url{https://www.tug.org/TUGboat/tb28-2/tb89wilson.pdf}.}
+
+\bibitem{wilson:2021}{Wilson, Peter. 2021. {\em The Memoir Class for Configurable Typesetting: User Guide}. version 3.70. Normandy Park, WA: The Herries Press. \url{https://texdoc.org/serve/memoir/0}.}
 
 \bibitem{Wood:2012}{Wood, Joyce Kathleen. 2012. {\em
     Valence-Increasing Strategies in Urim Syntax}. Graduate Institute
   of Applied Linguistics
   M.A. thesis. \url{https://www.diu.edu/documents/theses/Wood_Joyce-thesis.pdf}.}
+
+\bibitem{rei:1996}{Rei, Fukui. 1996. TIPA: A System for Processing Phonetic Symbols in LATEX. {\em  TUGboat} 17 (2): 102–14. \url{https://www.tug.org/TUGboat/tb17-2/tb51rei.pdf}.}
+%These are not yet used in the text
+\bibitem{BeierandMichael:2022}{Beier, Christine, and Lev Michael. 2022. {\em Managing Lexicography Data: A Practical, Principled Approach Using FLEx (FieldWorks Language Explorer)}. In The Open Handbook of Linguistic Data Management, edited by Andrea L. Berez-Kroeker, Bradley McDonnell, Eve Koller, and Lauren B. Collister, 301–14. Open Handbooks In Linguistics. Cambridge, Massachusetts: The MIT Press. doi:\hyperref{https://doi.org/10.7551/mitpress/12200.003.0029}{\textit{10.7551/mitpress/12200.003.0029}}.}
+\bibitem{conzettanddesmedt:2022}{Conzett, Philipp, and Koenraad De Smedt. 2022. {\em Guidance for Citing Linguistic Data}. In The Open Handbook of Linguistic Data Management, edited by Andrea L. Berez-Kroeker, Bradley McDonnell, Eve Koller, and Lauren B. Collister, 143–55. Open Handbooks In Linguistics. Cambridge, Massachusetts: The MIT Press. doi:\hyperref{https://doi.org/10.7551/mitpress/12200.003.0015}{\textit{10.7551/mitpress/12200.003.0015}}.}
+\bibitem{donnelly:2013}{Donnelly, Kevin. 2013. Representing Linguistic Pitch in (XE)LA\TEX{}. {\em TUGboat} 34 (2): 223–27. \url{http://tug.org/TUGboat/tb34-2/tb107donnelly.pdf}.}
+\bibitem{holton:2021}{Holton, Gary. 2021. {\em Writing You Dissertation with LATEX}. Typescript. Hawai’i. Github.com. \url{https://gmholton.github.io/files/DissertationWriting.pdf}.}
+\bibitem{lehmann:2004}{Lehmann, Christian. 2004. {\em Interlinear morphemic glossing}. In Morphologie: Ein internationales Handbuch zur Flexion und Wortbildung Morphology: an international handbook on inflection and word-formation, edited by Geert E Booij, Christian Lehmann, Joachim Mugdan, and Stavros Skopeteas, 2:1834–57. Handbücher zur Sprach- und Kommunikationswissenschaft Handbooks of Linguistics and communication science 17. Berlin ; New York: Walter de Gruyter. doi:\hyperref{https://doi.org/10.1515/9783110172782.2.20.1834}{\textit{10.1515/9783110172782.2.20.1834}}.}
+
+\bibitem{schennerandnordhoff:2016}{Schenner, Mathias, and Sebastian Nordhoff. 2016. {\em Extracting Interlinear Glossed Text from LATEX Documents}. In Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016), edited by Nicoletta Calzolari, Khalid Choukri, Thierry Declerck, Sara Goggi, Marko Grobelnik, Bente Maegaard, Joseph Mariani, et al., 4044–48. Portorož, Slovenia: European Language Resources Association (ELRA). \url{https://www.aclweb.org/anthology/L16-1638.pdf}.}
+
+%These are likely to be added for unicode discussion
+%B&S https://www.jstor.org/stable/4489465
+% https://doi.org/10.1017/S0958344002000629
+% http://www.lrec-conf.org/proceedings/lrec2002/pdf/ws15.pdf#36
+% https://pure.mpg.de/rest/items/item_58925/component/file_58926/content unicode
+%https://www.researchgate.net/profile/Hennie-Brugman/publication/238473992_Annotating_Multimedia_Multi-modal_resources_with_ELAN/links/53fd90320cf22f21c2f80afd/Annotating-Multimedia-Multi-modal-resources-with-ELAN.pdf
+%PSTricks https://www.tug.org/TUGboat/tb31-1/tb97complete.pdf#38
+%
 
 \end{thebibliography}
 
