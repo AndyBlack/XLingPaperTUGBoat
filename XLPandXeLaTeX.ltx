@@ -166,14 +166,14 @@ significant repositories outside of \CTAN{}. A slightly more recent
 and tools for typesetting common information structures in linguistic
 publishing. The \TeX{} community produced many packages which would
 shape the visual face of publishing in linguistics, including
-\acro{TIPA}\footnote{\tbsurl{ctan.org/pkg/tipa}} by Rei
+\texttt{tipa}\footnote{\tbsurl{ctan.org/pkg/tipa}} by Rei
 \cite{rei:1996} which is an excellent typeface for phonetic
 transcriptions and
 \texttt{pst-asr}\footnote{\tbsurl{ctan.org/pkg/pst-asr}} by
 Frampton \cite{frampton:2006} for autosegmental representations. As
 the Peter and Thiele articles list out and review (through 2004),
-there are special packages for all areas of linguistics from syntax
-trees \texttt{qtrees}\footnote{\tbsurl{ctan.org/pkg/qtrees}} to
+there are special packages for all areas of linguistics from syntax trees such as
+\texttt{qtrees}\footnote{\tbsurl{ctan.org/pkg/qtrees}} and \texttt{forest}\footnote{\tbsurl{ctan.org/pkg/forest}}to
 specialized packages for presenting examples and interlinear glossed
 texts such as
 \texttt{expex}\footnote{\tbsurl{ctan.org/pkg/expex}}. In addition
@@ -206,7 +206,7 @@ complexities to new \TeX{} users.
 
 Mentioning these complexities is important to the XLingPaper
 discussion for two reasons. First, it exemplifies some of the
-complexities that the user interface seeks to simplify as it presents
+complexities that XLingPaper seeks to simplify as it presents
 authors not just a visual environment for document composition, but
 also a cohesive output solution. Second, while the diagrams in
 linguistic books and journals since the 1980's exemplify many
@@ -223,7 +223,7 @@ Science Press Guidelines \cite{nordhoffandmueller:2020}.} Rather, they
 suggest that authors use secondary illustration tools to generate
 illustrations and then include them as vector \PDF{}s or images. In
 fact this second method is the document production path that the
-XLingPaper philosophy follows.
+XLingPaper philosophy follows. That is, XLingPaper reduces the complexity of the typesetting task for authors by requiring complex visualizations to be produced via grpahical tools. We have found tools like Figma\footnote{\tbhurl{www.figma.com}} and Inkscape\footnote{\tbhurl{inkscape.org}} very helpful in the graphic production task.}
 
 Unicode was introduced in 1991 and by the early 2000's it was being
 heralded in academic linguistics as a best practice along with document
@@ -324,7 +324,7 @@ diagram of this process.
 
 In the process of planning for the transition of the default \PDF{}
 renderer from RenderX to \XeLaTeX{}, \TeXML{} was discovered. However,
-initial analysis understood it to have two infelicities:
+initial analysis conducted in 2009 understood it to have two infelicities:
 
 \begin{enumerate}
 \item \TeXML{} had Python as a dependency and the developer did not
@@ -396,7 +396,7 @@ Linguistic documents have several formatting needs that other kinds of
 documents do not. This section discusses some of them.
 
 \subsection{Numbered example layouts}
-
+%These figure refs need to be re-evaluated for accuracy
 Linguistic documents usually have many numbered examples.  The prose
 often refers to examples near the material or to previous examples.
 XLingPaper automatically keeps track of the numbers.  Besides
@@ -445,7 +445,7 @@ having \XeLaTeX{} put them together in a hanging indent paragraph.
 This is based on the work of Kew \& McConnel 1990 \cite{kew:mcconnel}.
 
 \subsection{Font rendering}
-
+%for discussing fonts several works need to be added to the bibliography: http://root.tug.org/tugboat/tb29-1/tb91kew.pdf, https://www.w3.org/Talks/2003/Extending%20SVG%20Fonts%20with%20Graphite.pdf, http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.530.8865, http://rabbits.continuation.org/w/images/7/73/Graphite_paper.pdf, https://onlinelibrary-wiley-com.libproxy.uoregon.edu/doi/abs/10.1002/spe.819
 \XeLaTeX{} renders fonts extremely well.  It can even handle special
 features requiring Graphite\footnote{\tbsurl{graphite.sil.org}}
 processing.  For other outputs, some fonts (such as Charis \SIL{}) may
@@ -701,6 +701,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 %PSTricks https://www.tug.org/TUGboat/tb31-1/tb97complete.pdf#38
 %
 
+% I need to add Donnely into the narrative
 \end{thebibliography}
 
 \makesignature
