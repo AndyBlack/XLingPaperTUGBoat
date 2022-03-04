@@ -343,23 +343,15 @@ initial analysis conducted in 2009 understood it to have two infelicities:
 One might ask, Why not add more linguistic related \TeX{} packages to the available stack, or use those instead of creating custom code? The answer has two simple parts: (1) in 2009 the linguistic capabilities of \TeX{} packages was different than it is today, (2) XLingPaper is more than an \TeX{} document producer, it seeks to implement its typeset design with XSL-FO compatibility across all the output formats. When the developer began to implement the \XeLaTeX{}-based output, he discovered the Ling-\TeX{} group\footnote{\tbhurl{web.archive.org/web/20150702123633/http://heim.ifi.uio.no/~dag/ling-tex/}} which also ran the Ling-TeX mailing list from 1995–2018.\footnote{\tbsurl{ling-tex.ifi.uio.narkive.com}} Ling-TeX seemed to be the locus of activity in linguistic typesetting even though other webpages discussing linguistics and \TeX{} also exsited, e.g., Essex,\footnote{\tbsurl{www.essex.ac.uk/linguistics/external/clmt/latex4ling}} UPenn.\footnote{\tbsurl{www.ling.upenn.edu/advice/latex.html}}
 Today, now that the mailing list is no-longer in operation many of the mailing list participants can be found interacting on the
 \TeX{} stackexchange.\footnote{\tbsurl{tex.stackexchange.com}}
-At the time, the Ling-\TeX{} website recomended the following pakages to cover the frequent typesetting tasks outlined in Section ~4.
+At the time, the Ling-\TeX{} website recomended \texttt{covingtn} and {\em ling-mac}; the list of macros discussed in \cite{thiele:1995} and to used to implement the more commonly implementd typesetting task as outlined in Section~4.
 
-\begin{tabular}{@{}ll@{}}
-%Change this table to include the packages used in linguistics at the time.
-\texttt{attachfile2} & \texttt{lineno}\\
-\texttt{hyperref} & \texttt{xltxtra}\\
-\end{tabular}
-%describe the two packages and link to them.
-From what he could tell, the packages that help with interlinear texts
-did not allow for the larger number of capabilities XLingPaper already
-dealt with.  These include no limits on the number of lines within an
+Initial analysis of \texttt{covingtn} and other packages revealed limitations in the number of rows an interlinear text example could display, a typesetting capability XLingPaper had already overcome via XSL-FO processing via RenderX. XLingPaper %This is where I am 
+These include no limits on the number of lines within an
 interlinear grouping, no limits on the number of free (and/or) literal
 lines, including a source reference within the interlinear, and
 especially tagging interlinear items with an \acro{ISO} 639-3 code for
 the language used in the interlinear.  So he rolled his own.  Figure~4
-contains an example output with some of the special capabilities
-XLingPaper offers.
+contains an example output with some of the special capabilities XLingPaper offers.
 
 \begin{figure*}
 \includegraphics[scale=.97]{ExamplePDFInterlinear.png}
