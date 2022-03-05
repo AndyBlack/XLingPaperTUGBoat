@@ -345,21 +345,19 @@ Today, now that the mailing list is no-longer in operation many of the mailing l
 \TeX{} stackexchange.\footnote{\tbsurl{tex.stackexchange.com}}
 At the time, the Ling-\TeX{} website recomended \texttt{covingtn} and {\em ling-mac}; the list of macros discussed in \cite{thiele:1995} and to used to implement the more commonly implementd typesetting task as outlined in Section~4.
 
-Initial analysis of \texttt{covingtn} and other packages revealed limitations in the number of rows an interlinear text example could display, a typesetting capability XLingPaper had already overcome via XSL-FO processing via RenderX. XLingPaper %This is where I am 
-These include no limits on the number of lines within an
+Initial analysis of \texttt{covingtn} and other packages revealed limitations in the number of rows an interlinear text example could display, a typesetting capability XLingPaper had already overcome via XSL-FO processing using RenderX. XLingPaper had no limits on the number of lines within an
 interlinear grouping, no limits on the number of free (and/or) literal
 lines, including a source reference within the interlinear, and
 especially tagging interlinear items with an \acro{ISO} 639-3 code for
-the language used in the interlinear.  So he rolled his own.  Figure~4
-contains an example output with some of the special capabilities XLingPaper offers.
+the language used in the interlinear.  At the time the best solution given the state of the \TeX{} packates available was custom \TeX{} scripts, although now similar features may be possible via other packages. See Pellard \cite{pellard:2019} for discussion of approaches in \TeX{} and his solution in developing\texttt{typgloss}.\footnote{\tbsurl{/github.com/tpellard/typgloss}}  Figure~4 contains an example output with some of the special capabilities XLingPaper offers.
 
 \begin{figure*}
 \includegraphics[scale=.97]{ExamplePDFInterlinear.png}
-\caption{Interlinear example}
+\caption{Interlinear example. Note the example numbers on the left followed by example groups (a) and (b). Each interlinear then also has a language indicator in square brackets. Customization allows for as many rows per group as is required. Finally, on the right the reference to the source text is indicated.}
 \end{figure*}
 
 \section{Typesetting tasks XLingPaper users often encounter}
-
+%I am here
 Linguistic documents have several formatting needs that other kinds of
 documents do not. This section discusses some of them.
 
@@ -616,6 +614,8 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
     Archive Records: Interoperability of Referencing Practices and
     Metadata Models}. University of North Dakota
   M.A. thesis. \tbsurl{commons.und.edu/theses/3937}.}
+
+\bibitem{pellard:2019}{Pellard, Thomas. 2019. Automatic formatting of interlinear glosses with LaTeX. {\em Cipanglossia} \tbsurl{cipanglo.hypotheses.org/1221}.}
 
 \bibitem{peter:2004}{Peter, Steve. 2004. TEX and Linguistics. {\em TUGboat} 25 (1): 58–62. \tbsurl{tug.org/TUGboat/tb25-1/peter.pdf}.}
 
