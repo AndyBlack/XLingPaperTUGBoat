@@ -76,6 +76,7 @@ including:
 \item doctoral dissertations \cite{ebarb:2014} \cite{rasmussen:2018},
 \item textbooks \cite{marlett:2019},
 \item linguistic grammars \cite{buck:2018},
+\item book chapters \cite{blackandblack:2012},
 \item journal articles \cite{brownie:2013}, and
 \item bilingual software documentation \cite{BeadleandLee:2020a} \cite{BeadleandLee:2020b}.
 \end{itemize}
@@ -141,13 +142,11 @@ a \DTD{} provides is that there is a “grammar” of what
 a well-formed linguistic document looks like.  This makes moving,
 replacing, switching, or reordering sections, chapters, and examples
 less error prone because it prevents users from inadvertently creating
-ill-formed documents.
-
-The following sections of this paper discuss the \TeX{} technologies used by XLingPaper. 
+ill-formed documents. The following sections of this paper discuss the \TeX{} technologies used by XLingPaper. 
 
 \section{XLingPaper and \TeX{}}
 
-The following sections provide more detail on the linguistic
+Linguistic publishing has unique requirments when compared to general publishing. The following sections provide more detail on the linguistic
 publishing context, design requirements and \LaTeX{} packages used by
 XLingPaper.
 
@@ -167,7 +166,7 @@ and tools for typesetting common information structures in linguistic
 publishing. The \TeX{} community has produced many packages which have
 shaped the visual face of publishing in linguistics, including
 \texttt{tipa}\footnote{\tbsurl{ctan.org/pkg/tipa}} by Rei
-\cite{rei:1996} which is an excellent typeface for phonetic
+\cite{rei:1996} which provided access to an excellent typeface for phonetic
 transcriptions and
 \texttt{pst-asr}\footnote{\tbsurl{ctan.org/pkg/pst-asr}} by Frampton
 \cite{frampton:2006} for autosegmental representations. As the Peter
@@ -196,11 +195,11 @@ pre-date Unicode \cite{unicode:1991} but still see significant
 use. Sometimes it is the case that secondary packages are developed in
 an attempt to “fix” publishing outputs in different ways to bring
 Unicode features along with the features of the original package. For
-example, \acro{TIPA} is not Unicode compatible, but the packages
+example, \texttt{tipa} is not Unicode compatible, but the packages
 \texttt{unitipa}\footnote{\tbsurl{ctan.org/pkg/unitipa}} and
 \texttt{tipauni}\footnote{\tbsurl{ctan.org/pkg/tipauni}} seek to
 address different implications of not publishing with Unicode while
-giving access to the beautiful typeface of \acro{TIPA}. Understanding
+giving access to the beautiful typeface of \texttt{tipa}. Understanding
 the long history of publishing and the interdependency that packages
 have presents additional complexities to new \TeX{} users.
 
@@ -230,7 +229,7 @@ like Figma\footnote{\tbhurl{www.figma.com}} and
 Inkscape\footnote{\tbhurl{inkscape.org}} very helpful in the graphic
 production task.
 
-As mentioned in the discussion of \acro{TIPA}, Linguistic documents
+As mentioned in the discussion of \texttt{tipa}, Linguistic documents
 have not always been typeset with Unicode. Unicode was introduced in
 1991 and by the early 2000's Unicode along with document and data
 storage in \XML{} formats were being heralded in academic linguistics
@@ -277,7 +276,7 @@ etc.  Pure \LaTeX, then, would not allow direct control of formatting
 of all of these per an XLingPaper user-defined publisher style sheet.
 This meant overriding these standard features of \LaTeX\ with a custom
 implementation of the \TeX{} commands needed to control
-formatting. However,
+formatting. XLingPaper takes a custom approach in implementing flexibility here. However,
 \texttt{memoir}\footnote{\tbsurl{ctan.org/pkg/memoir}}
 \cite{wilson:2007} \cite{wilson:2021}, a recent discovery for the
 programmer of XLingPaper, accomplishes many of the same tasks and
@@ -324,31 +323,31 @@ well and kept update sizes low.
 
 \subsection{\PDF{} production}
 
-When an author has XLingPaper produce \PDF{} output via \XeLaTeX,
-XLingPaper produces a \TeXML{}-like \XML{} file.  This is then
-converted into \LaTeX\ format via a set of \acro{XSLT} transforms and
+There are two known pathways for converting XML content into PDFs. The first is via \XSLFO{}, and the second is via \TeXML{} comverts \XML{} content to \TeX{} formatted documents. Given certain limitations in both \XSLFO{} and \TeXML{}, XLingPaper uses a custom (or third) method. When an author instructs XLingPaper produce \PDF{} output via \XeLaTeX,
+XLingPaper produces a \TeXML{}-like \XML{} file. This is then
+converted into \LaTeX\ formated document via a set of \acro{XSLT} transforms and
 processed via \XeLaTeX{} to produce the \PDF{}.  Figure~3 contains a
 diagram of the data handling process.
 
 \subsection{\TeXML{}}
 
-In the process of planning for the transition of the default \PDF{}
-renderer from RenderX to \XeLaTeX{}, \TeXML{} was discovered. However,
-initial analysis conducted in 2009 understood it to have two infelicities:
+\TeXML{} was discovered in the process of planning for the transition of the default \PDF{}
+renderer from RenderX (an \XSLFO{} processor) to \XeLaTeX{}. Initial analysis conducted in 2009 understood \TeXML{} to have two infelicities for use-cases required in linguistic publishing with XLingPaper:
 
 \begin{enumerate}
 \item \TeXML{} has Python as a dependency and the developer did not
-  want to force XLingPaper users to have to install a version of
-  Python specifically for \TeXML{} when that version might conflict
-  with other installed versions of Python.  Furthermore, this approach
+  want to require XLingPaper users to install a version of
+  Python specifically for \TeXML{}. Especially when that version of Python might conflict
+  with other installed versions of Python on their operating systems.  Furthermore, this approach
   would make the installation package for XLingPaper much larger due to the inclusion
   of Python.
 \item XLingPaper users require a high degree of control for white
-  space. The fine grain control of whitespace was not clearly possible
-  via \TeXML{}.
+  space. The fine grain control of whitespace was not clearly was possible via \TeXML{}.
 \end{enumerate}
 
-\TeX{} and \XML{} both have control characters. In \TeX{} these
+\subsection{Control characters}
+
+Even with the use of Unicode in the text of documents there are some features of typesetting with \TeX{} based implementations which require the use of control characters. Additionally, \XML{} also has control characters. In \TeX{} these
 include \texttt{{[}}, \texttt{{]}}, \texttt{\textless{}}, and
 \texttt{\textgreater{}}. When transforming data between \XML{} and
 \TeX{}, \TeX{} control characters and commands need to be escaped to
@@ -365,12 +364,17 @@ the available stack, or use those instead of creating custom code?”
 The answer has two simple parts: First, in 2009 the linguistic
 capabilities of \TeX{} packages were different than they are today.
 Second, XLingPaper is more than a \TeX{} document producer.
-%Hugh had:
-%It seeks to implement its typeset design with XSL-FO compatibility across all the output formats.
-%But this is not correct.  There are three basic output formats: XHTML/CSS, XSL-FO,, and XeLaTeX.
-%What follows is my stab at guessing what you were after:
+
+\begin{figure}
+\includegraphics[scale=.425]{Outputs.png}
+\caption{XLingPaper combines style and content information contained in its custom XML and then exports it into three different formats for further processing.}
+\end{figure}
+
 Besides \TeX{}, XLingPaper also produces \acro{XHTML}/\CSS{} and
-\XSLFO{} outputs.  When the developer began to implement the
+\XSLFO{} outputs. When new features are considered for typesetting design, all output formats need to be considered.
+
+
+When the developer began to implement the
 \XeLaTeX{}-based output, he discovered the Ling-\TeX{}
 group\footnote{\tbhurl{web.archive.org/web/20150702123633/http://heim.ifi.uio.no/~dag/ling-tex/}}
 which also ran the Ling-TeX mailing list from
@@ -383,18 +387,14 @@ UPenn.\footnote{\tbsurl{www.ling.upenn.edu/advice/latex.html}} Today,
 now that the mailing list is no-longer in operation, many of the
 mailing list participants can be found interacting on the \TeX{}
 stackexchange.\footnote{\tbsurl{tex.stackexchange.com}}
-%Hugh: I'm not able to guess what you mean by the following.  Please
-%make it clearer.
-At the time,
-the Ling-\TeX{} website recomended \texttt{covingtn} and {\em
-  ling-mac}; the list of macros discussed in \cite{thiele:1995} and to
-used to implement the more commonly implementd typesetting task as
-outlined in Section~4.
 
-Initial analysis of \texttt{covingtn} and other packages revealed
+State-of-the-Art for \TeX based linguistic publishing in 2009, as recomended by the Ling-\TeX{} website, suggested using \texttt{covington} and {\em
+  ling-mac}—the list of macros discussed in \cite{thiele:1995}. These macros were used to solve similar use cases, among others, to those already implemented by XLingPaper. The more commonly implementd typesetting task are outlined in Section~4.
+%These figure refs need to be re-evaluated for accuracy since I added another figure.
+Initial analysis of \texttt{covington} and other packages revealed
 limitations in the number of rows an interlinear text example could
 display, a typesetting capability XLingPaper had already overcome via
-XSL-FO processing using RenderX. XLingPaper had the following
+\XSLFO{} processing using RenderX. XLingPaper had the following
 capabilities for typesetting interlinears:
 
 \begin{itemize}
@@ -428,17 +428,17 @@ Linguistic documents have several formatting needs that other kinds of
 documents do not. This section discusses some of them.
 
 \subsection{Numbered example layouts}
-%These figure refs need to be re-evaluated for accuracy
+
 Linguistic documents usually have many numbered examples.  The prose
 often refers to examples near the material or to previous examples.
-XLingPaper automatically keeps track of the numbers.  Besides
-table-like layouts, linguists also need lists of words along with
-their glosses (as shown in Figure~5), interlinear clauses (as shown in
-Figure~4), and even having headings in portions of the example.
+XLingPaper automatically keeps track of the numbers.  Authors, and publishing style sheets often make use of 
+table-like design layouts including: lists of words along with
+their glosses (as shown in Figure~5) and interlinear clauses (as shown in
+Figure~4), with some cases even having headings in portions of the example.
 
 \begin{figure*}
 \includegraphics[scale=1.0]{GraphitePDF-Slide24.png}
-\caption{List of words}
+\caption{List of words as seen in \cite{rasmussen:2018}}
 \end{figure*}
 
 \subsection{Automatically wrapping interlinear texts}
