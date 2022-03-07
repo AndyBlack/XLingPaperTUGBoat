@@ -15,13 +15,14 @@
 %%% Some product name macros
 \newcommand{\SIL}{\acro{SIL}}
 \newcommand{\TeXML}{\TeX{}\acro{ML}}
+\newcommand{\XLP}{XLingPaper}
 \newcommand{\XMLmind}{\acro{XML}mind}
 \newcommand{\XXE}{\acro{XML}mind \XML{} Editor}
 \newfontfamily{\SpecialCharactersFont}{Arial}
 
 %%% Start of metadata %%%
 
-\title{XLingPaper’s use of \TeX{} Technologies}
+\title{\XLP{}’s use of \TeX{} Technologies}
 
 % repeat info for each author; comment out items that don't apply.
 \author{H.\ Andrew Black}
@@ -41,10 +42,10 @@
 \maketitle
 
 \begin{abstract}
-We discuss the use of \TeX{} technologies by XLingPaper, an authoring
+We discuss the use of \TeX{} technologies by \XLP{}, an authoring
 tool for producing academically oriented publications with features
 required for linguistic publishing. We present the \TeX{} modules used
-and the rationale for the history of XLingPaper development.
+and the rationale for the history of \XLP{} development.
 \end{abstract}
 
 \section{Introduction}
@@ -61,13 +62,13 @@ large, inter-linked documents birthed the development of tools like
 \XMLmind{}\footnote{\tbsurl{www.xmlmind.com/xmleditor}} and
 Xpublisher.\footnote{\tbsurl{www.xpublisher.com/products}} These
 can be used to compose the content within predefined \XML{}
-structures.  XLingPaper \cite{blackandblack:2012} \cite{black:2009}
+structures.  \XLP{} \cite{blackandblack:2012} \cite{black:2009}
 \cite{black:2017} seeks to provide a constrained environment in which
 authors of complex works dealing with language descriptions and
 linguistic analyses can focus on content structure independently from
-the styling requirements of documents. In this way the underlying design principle of XLingPaper maximizes the \SGML\ design practice of separating content from presentation. With XLingPaper, authors can keep content structure independent from style information and thereby provide maximal transfer-ability between publishing styles. The software does this while providing authors a clear structured interface for authoring content.
+the styling requirements of documents. In this way the underlying design principle of \XLP{} maximizes the \SGML\ design practice of separating content from presentation. With \XLP{}, authors can keep content structure independent from style information and thereby provide maximal transfer-ability between publishing styles. The software does this while providing authors a clear structured interface for authoring content.
 
-The XLingPaper software has a growing
+The \XLP{} software has a growing
 number of users who have successfully typeset complex documents
 including:
 
@@ -82,9 +83,9 @@ including:
 \end{itemize}
 
 XLingpaper\footnote{\tbsurl{software.sil.org/xlingpaper}} is a
-plug-in to the \XXE{}. XLingPaper benefits from the \XXE{}'s
+plug-in to the \XXE{}. \XLP{} benefits from the \XXE{}'s
 Java-based implementation which allows it to be used on \MacOSX{},
-Windows, and Linux. XLingPaper, via a \DTD{}, defines several document
+Windows, and Linux. \XLP{}, via a \DTD{}, defines several document
 classes (articles, books, chapters, etc., as illustrated in Figure~1),
 in each case providing document layout sections (paragraphs, examples,
 endnotes, etc.). By working within the user-interface of the \XXE{}, as shown in Figure~2,
@@ -96,20 +97,20 @@ sections within the document flow is constrained via the \DTD{}.
 
 \begin{figure}
 \includegraphics[scale=.425]{Several-different-document-types.png}
-\caption{XLingPaper predefined document types via \DTD{}}
+\caption{\XLP{} predefined document types via \DTD{}}
 \end{figure}
 
 \begin{figure*}
 \includegraphics[scale=.243]{XLingPaper-interface.png}
-\caption{XLingPaper's user interface. Left side: document content editing. Right side: block and line level units available for use at the cursor location.}
+\caption{\XLP{}'s user interface. Left side: document content editing. Right side: block and line level units available for use at the cursor location.}
 \end{figure*}
 
-\section{What is XLingPaper?}
+\section{What is \XLP{}?}
 
-As previously mentioned, XLingPaper is an \XML- and Java-based computer
+As previously mentioned, \XLP{} is an \XML- and Java-based computer
 plug-in for the \XXE{}.  It is designed to reduce friction in the process of writing, reading, and
 publishing linguistic papers, grammars, and books by removing common time-syncs related to inconsistent formatting. A full list of benefits to all parties in the publishing
-work flow is available \cite{black:2017}. For many \PDF{} is the quintessential file format for final publication of publishing outputs. XLingPaper supports \PDF{} production but as illustrated in Figure~3, XLingPaper can produce documents with at least five outputs, all from the same
+work flow is available \cite{black:2017}. For many \PDF{} is the quintessential file format for final publication of publishing outputs. \XLP{} supports \PDF{} production but as illustrated in Figure~3, \XLP{} can produce documents with at least five outputs, all from the same
 source document:
 \begin{itemize}
 \item \PDF{} (version 1.5),
@@ -121,34 +122,36 @@ source document:
 
 \begin{figure*}
 \includegraphics[scale=.8]{PDFCreation.png}
-\caption{XLingPaper's data processing pipeline to multiple formats}
+\caption{\XLP{}'s data processing pipeline to multiple formats}
 \end{figure*}
 
-XLingPaper automatically numbers tables, examples, figures, and
+\XLP{} automatically numbers tables, examples, figures, and
 sections. It keeps track of internal references to these entities
 along with citation references, abbreviations, and gloss
 abbreviations.  This keeps numbering and reference links dependable
-and automated. XLingPaper also automatically generates indexes, a
+and automated. \XLP{} also automatically generates indexes, a
 table or list of abbreviations used, and a section for references
 cited (using a custom references implementation).
 
 Unlike most editing programs which are based on either the \WYSIWYG{}
 paradigm or as text editors used to code or produce Markdown,
-XLingPaper (via the \XXE{}) is a structured editor. Rather than
+\XLP{} (via the \XXE{}) is a structured editor. Rather than
 visually structuring the document to look the way it is to be
-formatted, the author “marks up” the items in the
-document according to their kind.  One of the many benefits that using
-a \DTD{} provides is that there is a “grammar” of what
-a well-formed linguistic document looks like.  This makes moving,
-replacing, switching, or reordering sections, chapters, and examples
-less error prone because it prevents users from inadvertently creating
-ill-formed documents. The following sections of this paper discuss the \TeX{} technologies used by XLingPaper. 
+formatted, the author “marks up” the items in the document according
+to their kind.  One of the many benefits that using a \DTD{} provides
+is that there is a “grammar” of what a well-formed linguistic document
+looks like.  This makes moving, replacing, switching, or reordering
+sections, chapters, and examples less error prone because it prevents
+users from inadvertently creating ill-formed documents. The following
+sections of this paper discuss the \TeX{} technologies used by
+\XLP{}.
 
-\section{XLingPaper and \TeX{}}
+\section{\XLP{} and \TeX{}}
 
-Linguistic publishing has unique requirments when compared to general publishing. The following sections provide more detail on the linguistic
-publishing context, design requirements and \LaTeX{} packages used by
-XLingPaper.
+Linguistic publishing has unique requirements when compared to general
+publishing. The following sections provide more detail on the
+linguistic publishing context, design requirements and \LaTeX{}
+packages used by \XLP{}.
 
 \subsection{ \TeX{} and Linguistic document production}
 
@@ -166,8 +169,8 @@ and tools for typesetting common information structures in linguistic
 publishing. The \TeX{} community has produced many packages which have
 shaped the visual face of publishing in linguistics, including
 \texttt{tipa}\footnote{\tbsurl{ctan.org/pkg/tipa}} by Rei
-\cite{rei:1996} which provided access to an excellent typeface for phonetic
-transcriptions and
+\cite{rei:1996} which provided access to an excellent typeface for
+phonetic transcriptions and
 \texttt{pst-asr}\footnote{\tbsurl{ctan.org/pkg/pst-asr}} by Frampton
 \cite{frampton:2006} for autosegmental representations. As the Peter
 and Thiele articles list out and review (through 2004), there are
@@ -203,9 +206,9 @@ giving access to the beautiful typeface of \texttt{tipa}. Understanding
 the long history of publishing and the interdependency that packages
 have presents additional complexities to new \TeX{} users.
 
-Mentioning these complexities is important to the XLingPaper
+Mentioning these complexities is important to the \XLP{}
 discussion for two reasons. First, it exemplifies some of the
-complexities that XLingPaper seeks to simplify as it presents authors
+complexities that \XLP{} seeks to simplify as it presents authors
 not just a visual environment for document composition, but also a
 cohesive output solution. Second, while the diagrams in linguistic
 books and journals since the 1980's exemplify many beautiful, sharp,
@@ -222,7 +225,7 @@ Science Press Guidelines \cite{nordhoffandmueller:2020}.} Rather, they
 suggest that authors use secondary illustration tools to generate
 illustrations and then include them as vector \PDF{}s or images. In
 fact this second method is the document production path that the
-XLingPaper philosophy follows. That is, XLingPaper reduces the
+\XLP{} philosophy follows. That is, \XLP{} reduces the
 complexity of the typesetting task for authors by requiring complex
 visualizations to be produced via grpahical tools. We have found tools
 like Figma\footnote{\tbhurl{www.figma.com}} and
@@ -238,78 +241,78 @@ interoperability across use cases, and to separate data life-cylces
 from encoding or software life-cycles \cite{BirdSimons:2002}
 \cite{BirdSimons:2003} \cite{ward:2002}. Due to the heavy reliance on
 Unicode by today's practictioners of language documentation and
-linguistic work, XLingPaper specifically uses \XeLaTeX{} and
+linguistic work, \XLP{} specifically uses \XeLaTeX{} and
 compatible packages to produce \PDF{} outputs. This brings continuity
 to the text input process for users across their workflows. It also
 makes importing and using language or phonetically transcribed
 examples simpler by removing the need to use macros to create
 characters.
 
-\subsection{Design desiderata for XLingPaper outputs via \TeX{}}
+\subsection{Design desiderata for \XLP{} outputs via \TeX{}}
 
-From the outset, XLingPaper was designed to be free.  The \XXE{} had a
+From the outset, \XLP{} was designed to be free.  The \XXE{} had a
 Personal Use License that met this requirement for the vast majority
-of the target audience of XLingPaper.  The few who did not meet the
+of the target audience of \XLP{}.  The few who did not meet the
 terms of that license most likely would be able to afford to purchase
 (or have their organization purchase) a professional version of the
-\XXE{}.  The actual XLingPaper plug-in has always been free.
+\XXE{}.  The actual \XLP{} plug-in has always been free.
 
-XLingPaper development started in 2001. In 2006, it added \XSLFO{}
-for \PDF{} production. Prior to 2009, XLingPaper used
+\XLP{} development started in 2001. In 2006, it added \XSLFO{}
+for \PDF{} production. Prior to 2009, \XLP{} used
 RenderX\footnote{\tbhurl{www.renderx.com}} to produce \PDF{}
 documents. However, in 2009 plans were made to add \XeLaTeX-based
-output to XLingPaper because, while there was a free version of
+output to \XLP{} because, while there was a free version of
 RenderX, the output contained a watermark.  By implementing the
 ability to export to \PDF{} via \XeLaTeX, there would be no water
 marks in \PDF{} documents. The \XeLaTeX{} method of \PDF{} production
 is now the default method to produce \PDF{} documents.
 
 When the \XeLaTeX{} method of \PDF{} production was introduced,
-XLingPaper had a way to format output per a user-created publisher
+\XLP{} had a way to format output per a user-created publisher
 style sheet.  This meant the developer (Andrew Black) needed to be
-able to map from an XLingPaper publisher style sheet to \XeLaTeX.
+able to map from an \XLP{} publisher style sheet to \XeLaTeX.
 Mapping style sheet information contained in the \XML{} was the second
 criterion.  It was known that \LaTeX\ was the ideal \TeX{}
 implementation to target. However, pure \LaTeX\ came with predefined
 output formatting for front matter, chapters, sections, back matter,
 etc.  Pure \LaTeX, then, would not allow direct control of formatting
-of all of these per an XLingPaper user-defined publisher style sheet.
+of all of these per an \XLP{} user-defined publisher style sheet.
 This meant overriding these standard features of \LaTeX\ with a custom
 implementation of the \TeX{} commands needed to control
-formatting. XLingPaper takes a custom approach in implementing flexibility here. However,
+formatting. \XLP{} takes a custom approach in implementing flexibility here. However,
 \texttt{memoir}\footnote{\tbsurl{ctan.org/pkg/memoir}}
 \cite{wilson:2007} \cite{wilson:2021}, a recent discovery for the
-programmer of XLingPaper, accomplishes many of the same tasks and
+programmer of \XLP{}, accomplishes many of the same tasks and
 could be considered to replace some of the custom code if it were
 shown to be easy to implement and that the size of the total
-XLingPaper code base would be reduced.
+\XLP{} code base would be reduced.
 
 The third criterion concerned some of the target audience for
-XLingPaper.  Many of the expected users of XLingPaper live and work in
+\XLP{}.  Many of the expected users of \XLP{} live and work in
 places around the world where Internet connections are characterized
 by high costs, low bandwidth capacity, and general unavailability.
-Therefore, the download required to install XLingPaper needed to be as
-small as possible.  The size constraint impacts XLingPaper because its
+Therefore, the download required to install \XLP{} needed to be as
+small as possible.  The size constraint impacts \XLP{} because its
 distribution must be independent of larger mainstream \TeX{}
 distribution solutions such as \TeX{}Live which have a large
 footprint.  Therefore the developer determined which \LaTeX\ packages
 and binaries were needed and created a custom installation package for
 just those items (a list of these packages is included in section 6.1).
 
-The twenty \LaTeX\ packages that are part of the custom XLingPaper
+The twenty \LaTeX\ packages that are part of the custom \XLP{}
 distribution are still rather large for someone for whom Internet
 bandwidth is an expensive and inconsistent commodity. To reduce
 bandwidth requirements two assumptions were made which have more or
 less proven to obtain. The first assumption that the developer made
 was that the twenty packages and binaries would not need to change
-over time; in contrast, the second assumption was that XLingPaper
+over time; in contrast, the second assumption was that \XLP{}
 would acquire new features and need bug fixes. These assumptions
 resulted in an architecture where page layout information expressed in
 \XML{} is translated via custom \TeX{} commands to either \TeX{}
 directly or to commands understood by \LaTeX{} packages distributed
-with XLingPaper. This abstraction layer was then executed when the
+with \XLP{}. This abstraction layer was then executed when the
 \XeLaTeX{} file was processed. This middle layer has granted
-XLingPaper flexibility in adding new code and capabilities while
+\XLP{} flexibility in adding new code and capabilities while
 keeping the “heavy” \LaTeX\ packages stable. The net result is a
 “heavy” first install package, but light-weight upgrade packages. In
 the thirteen year history of development, there have been a few
@@ -323,36 +326,48 @@ well and kept update sizes low.
 
 \subsection{\PDF{} production}
 
-There are two known pathways for converting XML content into PDFs. The first is via \XSLFO{}, and the second is via \TeXML{} comverts \XML{} content to \TeX{} formatted documents. Given certain limitations in both \XSLFO{} and \TeXML{}, XLingPaper uses a custom (or third) method. When an author instructs XLingPaper produce \PDF{} output via \XeLaTeX,
-XLingPaper produces a \TeXML{}-like \XML{} file. This is then
-converted into \LaTeX\ formated document via a set of \acro{XSLT} transforms and
-processed via \XeLaTeX{} to produce the \PDF{}.  Figure~3 contains a
-diagram of the data handling process.
+There are two known pathways for converting XML content into PDFs. The
+first is via \XSLFO{}, and the second is via \TeXML{} which converts
+\XML{} content to \TeX{} formatted documents. Given certain
+limitations in both \XSLFO{} and \TeXML{}, \XLP{} uses a custom
+(or third) method. When an author instructs \XLP{} to produce
+\PDF{} output via \XeLaTeX, \XLP{} produces a \TeXML{}-like \XML{}
+file. This is then converted into \LaTeX\ formatted document via a set
+of \XSLT{} transforms and processed via \XeLaTeX{} to produce the
+\PDF{}.  Figure~3 contains a diagram of the data handling process.
 
 \subsection{\TeXML{}}
 
-\TeXML{} was discovered in the process of planning for the transition of the default \PDF{}
-renderer from RenderX (an \XSLFO{} processor) to \XeLaTeX{}. Initial analysis conducted in 2009 understood \TeXML{} to have two infelicities for use-cases required in linguistic publishing with XLingPaper:
+\TeXML{} was discovered in the process of planning for the transition
+of the default \PDF{} renderer from RenderX (an \XSLFO{} processor) to
+\XeLaTeX{}. Initial analysis conducted in 2009 understood \TeXML{} to
+have two infelicities for use-cases required in linguistic publishing
+with \XLP{}:
 
 \begin{enumerate}
 \item \TeXML{} has Python as a dependency and the developer did not
-  want to require XLingPaper users to install a version of
-  Python specifically for \TeXML{}. Especially when that version of Python might conflict
-  with other installed versions of Python on their operating systems.  Furthermore, this approach
-  would make the installation package for XLingPaper much larger due to the inclusion
-  of Python.
-\item XLingPaper users require a high degree of control for white
-  space. The fine grain control of whitespace was not clearly was possible via \TeXML{}.
+  want to require \XLP{} users to install a version of Python
+  specifically for \TeXML{}.  This is especially the case since that
+  version of Python might conflict with other installed versions of
+  Python on their operating systems.  Moreover, this approach would
+  make the installation package for \XLP{} much larger due to the
+  inclusion of Python.
+\item \XLP{} users require a high degree of control for white
+  space. The fine grain control of whitespace was not clearly possible
+  via \TeXML{}.
 \end{enumerate}
 
 \subsection{Control characters}
 
-Even with the use of Unicode in the text of documents there are some features of typesetting with \TeX{} based implementations which require the use of control characters. Additionally, \XML{} also has control characters. In \TeX{} these
-include \texttt{{[}}, \texttt{{]}}, \texttt{\textless{}}, and
+Even with the use of Unicode in the text of documents, there are some
+features of typesetting with \TeX{}-based implementations which
+require the use of control characters. Additionally, \XML{} also has
+control characters. In \TeX{} these include \texttt{{[}},
+  \texttt{{]}}, \texttt{\textless{}}, and
 \texttt{\textgreater{}}. When transforming data between \XML{} and
 \TeX{}, \TeX{} control characters and commands need to be escaped to
 ensure proper data processing. This has been implemented via Java
-because Java was already present in the dependancy stack due to \XXE{}
+since Java was already present in the dependency stack due to \XXE{}
 requiring it. Additionally, some small methods have been written in
 Java to provide additional access to features via the graphical user
 interface.
@@ -363,15 +378,17 @@ One might ask, “Why not add more linguistic related \TeX{} packages to
 the available stack, or use those instead of creating custom code?”
 The answer has two simple parts: First, in 2009 the linguistic
 capabilities of \TeX{} packages were different than they are today.
-Second, XLingPaper is more than a \TeX{} document producer.
+Second, \XLP{} is more than a \TeX{} document producer.
 
 \begin{figure}
-\includegraphics[scale=.425]{Outputs.png}
-\caption{XLingPaper combines style and content information contained in its custom XML and then exports it into three different formats for further processing.}
+\includegraphics[scale=.525]{Outputs.png}
+\caption{\XLP{} combines style and content information contained
+  in its custom XML and then exports it into three different formats
+  for further processing.}
 \end{figure}
 
-Besides \TeX{}, XLingPaper also produces \acro{XHTML}/\CSS{} and
-\XSLFO{} outputs. When new features are considered for typesetting design, all output formats need to be considered.
+Besides \TeX{}, \XLP{} also produces \XSLFO{} and
+\XHTML{}/\CSS{} outputs. When new features are considered for typesetting design, all output formats need to be considered.
 
 
 When the developer began to implement the
@@ -388,21 +405,26 @@ now that the mailing list is no-longer in operation, many of the
 mailing list participants can be found interacting on the \TeX{}
 stackexchange.\footnote{\tbsurl{tex.stackexchange.com}}
 
-State-of-the-Art for \TeX based linguistic publishing in 2009, as recomended by the Ling-\TeX{} website, suggested using \texttt{covington} and {\em
-  ling-mac}—the list of macros discussed in \cite{thiele:1995}. These macros were used to solve similar use cases, among others, to those already implemented by XLingPaper. The more commonly implementd typesetting task are outlined in Section~4.
+State-of-the-Art for \TeX{}-based linguistic publishing in 2009, as
+recomended by the Ling-\TeX{} website, suggested using
+\texttt{covington} and {\em ling-mac}—the list of macros discussed in
+\cite{thiele:1995}. These macros were used to solve similar use cases,
+among others, to those already implemented by \XLP{}. The more
+commonly implemented typesetting task are outlined in Section~4.
 %These figure refs need to be re-evaluated for accuracy since I added another figure.
 Initial analysis of \texttt{covington} and other packages revealed
 limitations in the number of rows an interlinear text example could
-display, a typesetting capability XLingPaper had already overcome via
-\XSLFO{} processing using RenderX. XLingPaper had the following
+display, a typesetting capability \XLP{} had already overcome via
+\XSLFO{} processing using RenderX. \XLP{} had the following
 capabilities for typesetting interlinears:
 
 \begin{itemize}
 \item no limits on the number of lines within an interlinear grouping;
 \item no limits on the number of free and/or literal lines;
-\item the ability to include a source reference within the interlinear; and especially
-\item the ability to tag interlinear items with
-  an \acro{ISO} 639-3 code for the language used in the interlinear.
+\item the ability to include a source reference within the
+  interlinear; and especially
+\item the ability to tag interlinear items with an \acro{ISO} 639-3
+  code for the language used in the interlinear.
 \end{itemize}
 
 At the time the best solution given the state of the \TeX{} packages
@@ -411,7 +433,7 @@ be possible via other packages. See Pellard \cite{pellard:2019} for
 discussion of approaches in \TeX{} and his solution
 \texttt{typgloss}.\footnote{\tbsurl{github.com/tpellard/typgloss}}
 Figure~4 contains an example output with some of the special
-capabilities XLingPaper offers.
+capabilities \XLP{} offers.
 
 \begin{figure*}
 \includegraphics[scale=.97]{ExamplePDFInterlinear.png}
@@ -422,7 +444,7 @@ capabilities XLingPaper offers.
   hyperlinked reference to the source text is indicated.}
 \end{figure*}
 
-\section{Typesetting tasks XLingPaper users often encounter}
+\section{Typesetting tasks \XLP{} users often encounter}
 %I am here Note: ExPex does not have the language code or the citation. langsci-gb4 supports Leipzig Glossing Rules which put the language on the right hand side and do not have a citation within the context of the example. linguex does not have either language or citation built in.
 Linguistic documents have several formatting needs that other kinds of
 documents do not. This section discusses some of them.
@@ -431,10 +453,11 @@ documents do not. This section discusses some of them.
 
 Linguistic documents usually have many numbered examples.  The prose
 often refers to examples near the material or to previous examples.
-XLingPaper automatically keeps track of the numbers.  Authors, and publishing style sheets often make use of 
-table-like design layouts including: lists of words along with
-their glosses (as shown in Figure~5) and interlinear clauses (as shown in
-Figure~4), with some cases even having headings in portions of the example.
+\XLP{} automatically keeps track of the numbers.  Authors, and
+publishing style sheets often make use of table-like design layouts
+including: lists of words along with their glosses (as shown in
+Figure~6) and interlinear clauses (as shown in Figure~5), with some
+cases even having headings in portions of the example.
 
 \begin{figure*}
 \includegraphics[scale=1.0]{GraphitePDF-Slide24.png}
@@ -444,7 +467,7 @@ Figure~4), with some cases even having headings in portions of the example.
 \subsection{Automatically wrapping interlinear texts}
 
 Many linguists want to include interlinear glossed text in their
-document.  XLingPaper allows these to be wrapped automatically which
+document.  \XLP{} allows these to be wrapped automatically which
 makes the author's job much easier.  Figure~5 shows one such text
 portion.
 
@@ -456,23 +479,23 @@ portion.
 \subsection{Gloss abbreviations}
 
 Linguists standardly use glosses for indicating the meaning of pieces
-of words (morphemes).  XLingPaper allows the author to define a set of
+of words (morphemes).  \XLP{} allows the author to define a set of
 abbreviations and their definitions.  When producing the output,
-XLingPaper creates hyperlinks between the abbreviation and its
+\XLP{} creates hyperlinks between the abbreviation and its
 definition.
 
 %\cite{lehmann:2004}
 
 \section{Outputs \LaTeX{} allow that others do not}
 
-While XLingPaper has a large array of linguistically-oriented
+While \XLP{} has a large array of linguistically-oriented
 formatting capabilities, there are some that only the \XeLaTeX{}
 output can produce.  This is, of course, due to the formatting power
 of \TeX{} and \XeLaTeX{}.
 
 \subsection{Automatically wrapping interlinears}
 
-One of the most popular features of XLingPaper is its ability to
+One of the most popular features of \XLP{} is its ability to
 automatically wrap long interlinear examples and lines in interlinear
 texts.  It does so by formatting each aligned word in an hbox and then
 having \XeLaTeX{} put them together in a hanging indent paragraph.
@@ -492,12 +515,12 @@ diacritics, but the \XeLaTeX{} way does it very well.
 \subsection{Hyphenation for non-English languages}
 
 Since we use the \texttt{polyglossia} package, one can write an
-XLingPaper document in a non-English language and \XeLaTeX{} will
+\XLP{} document in a non-English language and \XeLaTeX{} will
 hyphenate according to that language’s hyphenation rules.
 
 \subsection{Author contact information}
 
-XLingPaper allows one to define a set of contact information for
+\XLP{} allows one to define a set of contact information for
 authors.  Only the \XeLaTeX{} output is able to format them correctly.
 
 \subsection{Vertical fill}
@@ -515,19 +538,19 @@ chapter or appendix, only the \XeLaTeX{} approach is able to do this.
 \section{Features other outputs have that the \LaTeX{} output does not}
 
 \XeLaTeX{} does not allow for custom table cell padding and spacing.
-Having said that, Andy cannot remember any XLingPaper user ever asking
+Having said that, Andy cannot remember any \XLP{} user ever asking
 for a way to do this for the \XeLaTeX{} output.  It just looks great.
 
 Background color is not available for section titles.
 
 Section 11.17.1.1 “Known limitations of using
-\XeLaTeX{}” in the XLingPaper user documentation lists known
+\XeLaTeX{}” in the \XLP{} user documentation lists known
 problems.
 %  See \tbsurl{software.sil.org/downloads/r/xlingpaper/resources/documentation/xxe7/UserDocXMLmind.htm#sXeTeXLimitations}.
 
 \subsection{List of \LaTeX{} packages used}
 
-XLingPaper currently uses the following \XeLaTeX{} packages (in
+\XLP{} currently uses the following \XeLaTeX{} packages (in
 alphabetical order):
 
 \begin{tabular}{@{}ll@{}}
@@ -545,7 +568,7 @@ alphabetical order):
 
 \subsection{Custom \TeX{} commands}
 
-XLingPaper has a number of custom commands that enable it to handle
+\XLP{} has a number of custom commands that enable it to handle
 various tasks in a way that is consistent with our desired outcomes.
 The following lists some of them in a schematic way:
 
@@ -556,7 +579,7 @@ contents.\\ Lists & Numbered and bulleted lists with control over
 indents, etc.\\ Examples & Example number and example content, where
 the content can be a line, a list of lines, a set of words, a list of
 a set of words, interlinear, a list of interlinears, etc.\\
-Indexes & Handle keeping track of XLingPaper’s indexing
+Indexes & Handle keeping track of \XLP{}’s indexing
 capability, including page numbers.\\
 Interlinears & Handle lines in an interlinear text or example,
 including dealing with an \acro{ISO} 639-3 code in an interlinear
@@ -568,11 +591,11 @@ contents.\\
 
 \section{Conclusion}
 
-While the XLingPaper approach to writing linguistic documents has
+While the \XLP{} approach to writing linguistic documents has
 great value in and of itself, the fact that it can produce great
 looking output via \XeLaTeX{} makes it very worthwhile learning to
 use.  We feel that being able to produce \PDF{} via \XeLaTeX{} has
-made XLingPaper a fantastic tool for linguists.
+made \XLP{} a fantastic tool for linguists.
 
 \bibliographystyle{tugboat}
 %\nocite{book-minimal}      % make the bibliography non-empty
@@ -604,7 +627,7 @@ made XLingPaper a fantastic tool for linguists.
   pages. \tbsurl{www.sil.org/resources/publications/entry/7790}.}
 
 \bibitem{black:2017}{Black, H Andrew. 2017. {\em Why Learn to Use
-    XLingPaper}. Dallas, Texas: \SIL{}
+    \XLP{}}. Dallas, Texas: \SIL{}
   International. \tbsurl{software.sil.org/downloads/r/xlingpaper/resources/documentation/WhyUseXLingPaper.pdf}.}
 
 \bibitem{brownie:2013}{Brownie, John. 2013. Adverbs in the
