@@ -53,24 +53,30 @@ and the rationale for the history of \XLP{} development.
 Within the publishing industry there are several notable products for
 producing complex documents in beautiful formats. \TeX{}
 \cite{knuth:1984} \cite{knuth:1986} is one of the well known
-publishing technologies used to meet these needs.
- Since 2000, \XML{}-based technologies such as
-\XSLFO{}\footnote{\tbsurl{www.w3.org/TR/xsl11}} or the \TeXML{}\footnote{\tbhurl{getfo.org/texml}}
-project \cite{lovell:1999} have been used to integrate content and compose complex documents such
+publishing technologies used to meet these needs.  Since 2000,
+\XML{}-based technologies such as
+\XSLFO{}\footnote{\tbsurl{www.w3.org/TR/xsl11}} or the
+\TeXML{}\footnote{\tbhurl{getfo.org/texml}} project \cite{lovell:1999}
+have been used to integrate content and compose complex documents such
 as textbooks and maintenance manuals. Requirements for composing these
 large, inter-linked documents birthed the development of tools like
 \XMLmind{}\footnote{\tbsurl{www.xmlmind.com/xmleditor}} and
 Xpublisher.\footnote{\tbsurl{www.xpublisher.com/products}} These tools
-can be used to compose content within predefined \XML{}
-structures.  \XLP{} as discussed in \cite{blackandblack:2012} \cite{black:2009}
-\cite{black:2017} seeks to provide a constrained environment in which
+can be used to compose content within predefined \XML{} structures.
+\XLP{}, as discussed in \cite{blackandblack:2012} \cite{black:2009}
+\cite{black:2017}, seeks to provide a constrained environment in which
 authors of complex works dealing with language descriptions and
 linguistic analyses can focus on content structure independently from
-the styling requirements of documents. In this way the underlying design principle of \XLP{} maximizes the \SGML\ design practice of separating content from presentation. With \XLP{}, authors can keep content structure independent from page layout information and thereby provide maximal transfer-ability between publishing styles. The software does this while providing authors a clear structured interface for authoring content.
+the styling requirements of documents. In this way the underlying
+design principle of \XLP{} maximizes the \SGML\ design practice of
+separating content from presentation. With \XLP{}, authors can keep
+content structure independent from page layout information and thereby
+provide maximal transfer-ability between publishing styles. The
+software does this while providing authors a clear structured
+interface for authoring content.
 
-The \XLP{} software has a growing
-number of users who have successfully typeset complex documents
-including:
+The \XLP{} software has a growing number of users who have
+successfully typeset complex documents including:
 
 \begin{itemize}
 \item master theses \cite{Wood:2012} \cite{lamicela:2020} \cite{paterson:2021},
@@ -82,18 +88,20 @@ including:
 \item bilingual software documentation \cite{BeadleandLee:2020a} \cite{BeadleandLee:2020b}.
 \end{itemize}
 
-XLingpaper\footnote{\tbsurl{software.sil.org/xlingpaper}} is a
-plug-in to the \XXE{}. \XLP{} benefits from the \XXE{}'s
-Java-based implementation which allows it to be used on \MacOSX{},
-Windows, and Linux. \XLP{}, via a \DTD{}, defines several document
-classes (articles, books, chapters, etc., as illustrated in Figure~1),
-in each case providing document layout sections (paragraphs, examples,
-endnotes, etc.). By working within the user-interface of the \XXE{}, as shown in Figure~2,
-formatting errors are reduced because users are constrained on where
-in the document flow they can introduce block and line level document
-elements.  That is, first, authors cannot input \XeLaTeX{} code
-directly into the document and second, the introduction of layout
-sections within the document flow is constrained via the \DTD{}.
+\section{What is \XLP{}?}
+XLingpaper\footnote{\tbsurl{software.sil.org/xlingpaper}} is a plug-in
+to the \XXE{}. \XLP{} benefits from the \XXE{}'s Java-based
+implementation which allows it to be used on \MacOSX{}, Windows, and
+Linux. Via a \DTD{}, \XLP{} defines several document classes
+(articles, books, chapters, etc., as illustrated in Figure~1), in each
+case providing document layout sections (paragraphs, examples,
+endnotes, etc.). By working within the user-interface of the \XXE{},
+as shown in Figure~2, formatting errors are reduced because users are
+constrained on where in the document flow they can introduce block and
+line level document elements.  That is, first, authors cannot input
+\XeLaTeX{} code directly into the document and second, the
+introduction of layout sections within the document flow is
+constrained via the \DTD{}.
 
 \begin{figure}
 \includegraphics[scale=.425]{Several-different-document-types.png}
@@ -105,13 +113,16 @@ sections within the document flow is constrained via the \DTD{}.
 \caption{\XLP{}'s user interface. Left side: document content editing. Right side: block and line level units available for use at the cursor location.}
 \end{figure*}
 
-\section{What is \XLP{}?}
-%Andy: The first sentence below is redundant. Is redundancy productive in this literary environment? 
-As previously mentioned, \XLP{} is an \XML- and Java-based computer
-plug-in for the \XXE{}.  It is designed to reduce friction in the process of writing, composing, and
-publishing linguistic papers, grammars, and books by removing common time-sinks related to inconsistent formatting (especially citations, references, and numbered element like examples). A full list of benefits to all parties in the publishing
-work flow is available \cite{black:2017}. For many, the \PDF{} format is the quintessential file format for final distribution of publishing outputs. \XLP{} supports \PDF{} production but as illustrated in Figure~3, \XLP{} can produce documents with at least five outputs, all from the same
-source document:
+\XLP{} is designed to reduce friction in the process of writing,
+reading, composing, and publishing linguistic papers, grammars, and
+books by removing common time-sinks related to inconsistent formatting
+(especially citations, references, and numbered element like
+examples). A full list of benefits to all parties in the publishing
+work flow is available \cite{black:2017}. For many, the \PDF{} format
+is the quintessential file format for final distribution of publishing
+outputs. \XLP{} supports \PDF{} production but as illustrated in
+Figure~3, \XLP{} can produce documents with at least five outputs, all
+from the same source document:
 \begin{itemize}
 \item \PDF{} (version 1.5),
 \item Web pages (\HTML{} 4),
@@ -172,9 +183,14 @@ shaped the visual face of publishing in linguistics, including
 \cite{rei:1996} which provided access to an excellent typeface for
 phonetic transcriptions and
 \texttt{pst-asr}\footnote{\tbsurl{ctan.org/pkg/pst-asr}} by Frampton
-\cite{frampton:2006} for autosegmental representations. Some packages used in linguistic publishing are not exclsuive to linguistics. For example, Donnelly \cite{donnelly:2013} describes how to use various packages to draw phonetic pitch traces using \TeX{}. Peter \cite{peter:2004}
-and Thiele \cite{thiele:1995} list out and review (through 2004) various packages across several areas of lingustics, including several packages used to draw syntax trees such
-as \texttt{qtrees}\footnote{\tbsurl{ctan.org/pkg/qtrees}} and
+\cite{frampton:2006} for autosegmental representations. Some packages
+used in linguistic publishing are not exclusive to linguistics. For
+example, Donnelly \cite{donnelly:2013} describes how to use various
+packages to draw phonetic pitch traces using \TeX{}. Peter
+\cite{peter:2004} and Thiele \cite{thiele:1995} list out and review
+(through 2004) various packages across several areas of lingustics,
+including several packages used to draw syntax trees such as
+\texttt{qtrees}\footnote{\tbsurl{ctan.org/pkg/qtrees}} and
 \texttt{forest}\footnote{\tbsurl{ctan.org/pkg/forest}} to specialized
 packages for presenting examples and interlinear glossed texts such as
 \texttt{expex}.\footnote{\tbsurl{ctan.org/pkg/expex}} In addition to
@@ -242,7 +258,7 @@ from encoding or software life-cycles \cite{BirdSimons:2002}
 Unicode by today's practitioners of language documentation and
 linguistic work, \XLP{} specifically uses \XeLaTeX{} and
 compatible packages to produce \PDF{} outputs. This brings continuity
-to the text input process for users across their work flows. It also
+to the text input process for users across their workflows. It also
 makes importing and using language or phonetically transcribed
 examples simpler by removing the need to use macros to derive
 characters.
@@ -286,18 +302,18 @@ could be considered to replace some of the custom code if it were
 shown to be easy to implement and that the size of the total
 \XLP{} code base would be reduced.
 
-The third criterion concerned some of the target audience for
-\XLP{}.  Many of the expected users of \XLP{} live and work in
-places around the world where Internet connections are characterized
-by high costs, low bandwidth capacity, and general unavailability.
-Therefore, the download required to install \XLP{} needed to be as
-small as possible.  The size constraint impacts \XLP{} because its
-distribution must be independent of larger mainstream \TeX{}
-distribution solutions such as \TeX{}Live which have a large
-footprint.  Therefore the developer determined which \LaTeX\ packages
-and binaries were needed and created a custom installation package which met the required specifications.
+The third criterion concerned some of the target audience for \XLP{}.
+Many of the expected users of \XLP{} live and work in places around
+the world where Internet connections are characterized by high costs,
+low bandwidth capacity, and general unavailability.  Therefore, the
+download required to install \XLP{} needed to be as small as possible.
+The size constraint impacts \XLP{} because its distribution must be
+independent of larger mainstream \TeX{} distribution solutions such as
+\TeX{}Live which have a large footprint.  Therefore the developer
+determined which \LaTeX\ packages and binaries were needed and created
+a custom installation package which met the required specifications.
 
-\XLP{} currently uses the following \XeLaTeX{} packages (in
+\XLP{} currently uses the following \LaTeX{} packages (in
 alphabetical order):
 
 \begin{tabular}{@{}ll@{}}
@@ -451,11 +467,12 @@ capabilities \XLP{} offers.
 
 \begin{figure*}
 \includegraphics[scale=.97]{ExamplePDFInterlinear.png}
-\caption{Interlinear example from \cite{marlett:2012}. Note the example numbers on the left
-  followed by example groups (a) and (b). Each interlinear then also
-  has a language indicator in square brackets. Customization allows
-  for as many rows per group as is required. Finally, on the right the
-  hyperlinked reference to the source text is indicated.}
+\caption{Interlinear example from \cite{marlett:2012}. Note the
+  example numbers on the left followed by example groups (a) and
+  (b). Each interlinear then also has a language indicator in square
+  brackets. Customization allows for as many rows per group as is
+  required. Finally, on the right the hyperlinked reference to the
+  source text is indicated.}
 \end{figure*}
 
 \section{Typesetting tasks \XLP{} users often encounter}
@@ -587,10 +604,11 @@ contents.\\
 
 \section{Conclusion}
 
-While the \XLP{} approach to composing documents via DTD controlled user interface limitations has
-great value in and of itself, the fact that it can produce great
-looking output via \XeLaTeX{} makes the learning curve rewarding.  We feel that being able to produce \PDF{} via \XeLaTeX{} has
-made \XLP{} a fantastic tool for linguists.
+While the \XLP{} approach to composing documents via DTD controlled
+user interface limitations has great value in and of itself, the fact
+that it can produce great looking output via \XeLaTeX{} makes the
+learning curve rewarding.  We feel that being able to produce \PDF{}
+via \XeLaTeX{} has made \XLP{} a fantastic tool for linguists.
 
 \bibliographystyle{tugboat}
 %\nocite{book-minimal}      % make the bibliography non-empty
