@@ -60,13 +60,13 @@ project \cite{lovell:1999} have been used to integrate content and compose compl
 as textbooks and maintenance manuals. Requirements for composing these
 large, inter-linked documents birthed the development of tools like
 \XMLmind{}\footnote{\tbsurl{www.xmlmind.com/xmleditor}} and
-Xpublisher.\footnote{\tbsurl{www.xpublisher.com/products}} These
-can be used to compose the content within predefined \XML{}
-structures.  \XLP{} \cite{blackandblack:2012} \cite{black:2009}
+Xpublisher.\footnote{\tbsurl{www.xpublisher.com/products}} These tools
+can be used to compose content within predefined \XML{}
+structures.  \XLP{} as discussed in \cite{blackandblack:2012} \cite{black:2009}
 \cite{black:2017} seeks to provide a constrained environment in which
 authors of complex works dealing with language descriptions and
 linguistic analyses can focus on content structure independently from
-the styling requirements of documents. In this way the underlying design principle of \XLP{} maximizes the \SGML\ design practice of separating content from presentation. With \XLP{}, authors can keep content structure independent from style information and thereby provide maximal transfer-ability between publishing styles. The software does this while providing authors a clear structured interface for authoring content.
+the styling requirements of documents. In this way the underlying design principle of \XLP{} maximizes the \SGML\ design practice of separating content from presentation. With \XLP{}, authors can keep content structure independent from page layout information and thereby provide maximal transfer-ability between publishing styles. The software does this while providing authors a clear structured interface for authoring content.
 
 The \XLP{} software has a growing
 number of users who have successfully typeset complex documents
@@ -77,7 +77,7 @@ including:
 \item doctoral dissertations \cite{ebarb:2014} \cite{rasmussen:2018},
 \item textbooks \cite{marlett:2019},
 \item linguistic grammars \cite{buck:2018},
-\item book chapters \cite{blackandblack:2012},
+\item books \cite{bartholomew:2019} \cite{rastorgueva:2012},
 \item journal articles \cite{brownie:2013}, and
 \item bilingual software documentation \cite{BeadleandLee:2020a} \cite{BeadleandLee:2020b}.
 \end{itemize}
@@ -106,11 +106,11 @@ sections within the document flow is constrained via the \DTD{}.
 \end{figure*}
 
 \section{What is \XLP{}?}
-
+%Andy: The first sentence below is redundant. Is redundancy productive in this literary environment? 
 As previously mentioned, \XLP{} is an \XML- and Java-based computer
-plug-in for the \XXE{}.  It is designed to reduce friction in the process of writing, reading, and
-publishing linguistic papers, grammars, and books by removing common time-syncs related to inconsistent formatting. A full list of benefits to all parties in the publishing
-work flow is available \cite{black:2017}. For many \PDF{} is the quintessential file format for final publication of publishing outputs. \XLP{} supports \PDF{} production but as illustrated in Figure~3, \XLP{} can produce documents with at least five outputs, all from the same
+plug-in for the \XXE{}.  It is designed to reduce friction in the process of writing, composing, and
+publishing linguistic papers, grammars, and books by removing common time-sinks related to inconsistent formatting (especially citations, references, and numbered element like examples). A full list of benefits to all parties in the publishing
+work flow is available \cite{black:2017}. For many, the \PDF{} format is the quintessential file format for final distribution of publishing outputs. \XLP{} supports \PDF{} production but as illustrated in Figure~3, \XLP{} can produce documents with at least five outputs, all from the same
 source document:
 \begin{itemize}
 \item \PDF{} (version 1.5),
@@ -141,7 +141,7 @@ formatted, the author “marks up” the items in the document according
 to their kind.  One of the many benefits that using a \DTD{} provides
 is that there is a “grammar” of what a well-formed linguistic document
 looks like.  This makes moving, replacing, switching, or reordering
-sections, chapters, and examples less error prone because it prevents
+sections, chapters, tables, figures, and examples less error prone because it prevents
 users from inadvertently creating ill-formed documents. The following
 sections of this paper discuss the \TeX{} technologies used by
 \XLP{}.
@@ -172,9 +172,8 @@ shaped the visual face of publishing in linguistics, including
 \cite{rei:1996} which provided access to an excellent typeface for
 phonetic transcriptions and
 \texttt{pst-asr}\footnote{\tbsurl{ctan.org/pkg/pst-asr}} by Frampton
-\cite{frampton:2006} for autosegmental representations. As the Peter
-and Thiele articles list out and review (through 2004), there are
-special packages for all areas of linguistics from syntax trees such
+\cite{frampton:2006} for autosegmental representations. Some packages used in linguistic publishing are not exclsuive to linguistics. For example, Donnelly \cite{donnelly:2013} describes how to use various packages to draw phonetic pitch traces using \TeX{}. Peter \cite{peter:2004}
+and Thiele \cite{thiele:1995} list out and review (through 2004) various packages across several areas of lingustics, including several packages used to draw syntax trees such
 as \texttt{qtrees}\footnote{\tbsurl{ctan.org/pkg/qtrees}} and
 \texttt{forest}\footnote{\tbsurl{ctan.org/pkg/forest}} to specialized
 packages for presenting examples and interlinear glossed texts such as
@@ -192,7 +191,7 @@ typesetting,\footnote{\tbsurl{ctan.org/topic/linguistic}} though some
 of these packages also include capabilities targeted as multi-lingual
 or multi-script publications or are specific style sheet
 implementations for publications at linguistic programs at
-institutions of higher education (and there may be more which are not
+institutions of higher education (there may be more packages which are not
 tagged but should be). Several of the packages tagged “linguistic”
 pre-date Unicode \cite{unicode:1991} but still see significant
 use. Sometimes it is the case that secondary packages are developed in
@@ -213,21 +212,21 @@ not just a visual environment for document composition, but also a
 cohesive output solution. Second, while the diagrams in linguistic
 books and journals since the 1980's exemplify many beautiful, sharp,
 crisp, illustrations created directly in \TeX{}, many trainers of
-\TeX{} tools, but not all,\footnote{For counter examples see
-\cite{liter:2017} \cite{smithsniderwiegand:2016}
-\cite{freitagupriemer:2019} and \cite{priemerufreitag:2019}.} have
-steered authors towards a more generic set of packages which do not
-include specific diagram creating macros.\footnote{Among others, see
+\TeX{} tools,\footnote{Among others, see
 the Linguistics Dissertation guide for the University of
 Hawai{\SpecialCharactersFont{ʻ}}i at Mānoa \cite{holton:2021},
 University of Pennsylvania \cite{dimitriadis:2016}, and Language
-Science Press Guidelines \cite{nordhoffandmueller:2020}.} Rather, they
+Science Press Guidelines \cite{nordhoffandmueller:2020}.} but not all,\footnote{For counter examples see
+\cite{liter:2017} \cite{smithsniderwiegand:2016}
+\cite{freitagupriemer:2019} and \cite{priemerufreitag:2019}.} have
+steered authors towards a more generic set of packages which do not
+include specific diagram creating macros. Rather, they
 suggest that authors use secondary illustration tools to generate
 illustrations and then include them as vector \PDF{}s or images. In
 fact this second method is the document production path that the
 \XLP{} philosophy follows. That is, \XLP{} reduces the
 complexity of the typesetting task for authors by requiring complex
-visualizations to be produced via grpahical tools. We have found tools
+visualizations to be produced via graphical tools. We have found tools
 like Figma\footnote{\tbhurl{www.figma.com}} and
 Inkscape\footnote{\tbhurl{inkscape.org}} very helpful in the graphic
 production task.
@@ -237,19 +236,19 @@ have not always been typeset with Unicode. Unicode was introduced in
 1991 and by the early 2000's Unicode along with document and data
 storage in \XML{} formats were being heralded in academic linguistics
 as a best practice in order to avoid vendor lock-in, increase
-interoperability across use cases, and to separate data life-cylces
+interoperability across use cases, and to separate data life-cycles
 from encoding or software life-cycles \cite{BirdSimons:2002}
 \cite{BirdSimons:2003} \cite{ward:2002}. Due to the heavy reliance on
-Unicode by today's practictioners of language documentation and
+Unicode by today's practitioners of language documentation and
 linguistic work, \XLP{} specifically uses \XeLaTeX{} and
 compatible packages to produce \PDF{} outputs. This brings continuity
-to the text input process for users across their workflows. It also
+to the text input process for users across their work flows. It also
 makes importing and using language or phonetically transcribed
-examples simpler by removing the need to use macros to create
+examples simpler by removing the need to use macros to derive
 characters.
 
 \subsection{Design desiderata for \XLP{} outputs via \TeX{}}
-
+%Andy: Is there an open repository for XLingPaper development? What is the code base licensed under?
 From the outset, \XLP{} was designed to be free.  The \XXE{} had a
 Personal Use License that met this requirement for the vast majority
 of the target audience of \XLP{}.  The few who did not meet the
@@ -296,8 +295,23 @@ small as possible.  The size constraint impacts \XLP{} because its
 distribution must be independent of larger mainstream \TeX{}
 distribution solutions such as \TeX{}Live which have a large
 footprint.  Therefore the developer determined which \LaTeX\ packages
-and binaries were needed and created a custom installation package for
-just those items (a list of these packages is included in section 6.1).
+and binaries were needed and created a custom installation package which met the required specifications.
+
+\XLP{} currently uses the following \XeLaTeX{} packages (in
+alphabetical order):
+
+\begin{tabular}{@{}ll@{}}
+\texttt{attachfile2} & \texttt{lineno}\\
+\texttt{booktabs} & \texttt{longtable}\\
+\texttt{calc} & \texttt{lscape}\\
+\texttt{color} & \texttt{mdframed}\\
+\texttt{colortbl} & \texttt{multirow}\\
+\texttt{etoolbox} & \texttt{normalem}\\
+\texttt{fancyhdr} & \texttt{polyglossia}\\
+\texttt{fontspec} & \texttt{setspace}\\
+\texttt{footmisc} & \texttt{tabularx}\\
+\texttt{hyperref} & \texttt{xltxtra}\\
+\end{tabular}
 
 The twenty \LaTeX\ packages that are part of the custom \XLP{}
 distribution are still rather large for someone for whom Internet
@@ -332,7 +346,7 @@ first is via \XSLFO{}, and the second is via \TeXML{} which converts
 limitations in both \XSLFO{} and \TeXML{}, \XLP{} uses a custom
 (or third) method. When an author instructs \XLP{} to produce
 \PDF{} output via \XeLaTeX, \XLP{} produces a \TeXML{}-like \XML{}
-file. This is then converted into \LaTeX\ formatted document via a set
+file. This is then converted into a \LaTeX\ formatted document via a set
 of \XSLT{} transforms and processed via \XeLaTeX{} to produce the
 \PDF{}.  Figure~3 contains a diagram of the data handling process.
 
@@ -397,7 +411,7 @@ group\footnote{\tbhurl{web.archive.org/web/20150702123633/http://heim.ifi.uio.no
 which also ran the Ling-TeX mailing list from
 1995–2018.\footnote{\tbsurl{ling-tex.ifi.uio.narkive.com}} Ling-TeX
 seemed to be the locus of activity in linguistic typesetting even
-though other webpages discussing linguistics and \TeX{} also exsited,
+though other web pages discussing linguistics and \TeX{} also existed,
 e.g.,
 Essex,\footnote{\tbsurl{www.essex.ac.uk/linguistics/external/clmt/latex4ling}}
 UPenn.\footnote{\tbsurl{www.ling.upenn.edu/advice/latex.html}} Today,
@@ -406,11 +420,11 @@ mailing list participants can be found interacting on the \TeX{}
 stackexchange.\footnote{\tbsurl{tex.stackexchange.com}}
 
 State-of-the-Art for \TeX{}-based linguistic publishing in 2009, as
-recomended by the Ling-\TeX{} website, suggested using
+recommended by the Ling-\TeX{} website, suggested using
 \texttt{covington} and {\em ling-mac}—the list of macros discussed in
 \cite{thiele:1995}. These macros were used to solve similar use cases,
 among others, to those already implemented by \XLP{}. The more
-commonly implemented typesetting task are outlined in Section~4.
+commonly implemented typesetting tasks are outlined in Section~4.
 %These figure refs need to be re-evaluated for accuracy since I added another figure.
 Initial analysis of \texttt{covington} and other packages revealed
 limitations in the number of rows an interlinear text example could
@@ -432,12 +446,12 @@ available was custom \TeX{} scripts, although now similar features may
 be possible via other packages. See Pellard \cite{pellard:2019} for
 discussion of approaches in \TeX{} and his solution
 \texttt{typgloss}.\footnote{\tbsurl{github.com/tpellard/typgloss}}
-Figure~4 contains an example output with some of the special
+Figures~5–7 contain example output illustrating some of the special
 capabilities \XLP{} offers.
 
 \begin{figure*}
 \includegraphics[scale=.97]{ExamplePDFInterlinear.png}
-\caption{Interlinear example. Note the example numbers on the left
+\caption{Interlinear example from \cite{marlett:2012}. Note the example numbers on the left
   followed by example groups (a) and (b). Each interlinear then also
   has a language indicator in square brackets. Customization allows
   for as many rows per group as is required. Finally, on the right the
@@ -548,24 +562,6 @@ Section 11.17.1.1 “Known limitations of using
 problems.
 %  See \tbsurl{software.sil.org/downloads/r/xlingpaper/resources/documentation/xxe7/UserDocXMLmind.htm#sXeTeXLimitations}.
 
-\subsection{List of \LaTeX{} packages used}
-
-\XLP{} currently uses the following \XeLaTeX{} packages (in
-alphabetical order):
-
-\begin{tabular}{@{}ll@{}}
-\texttt{attachfile2} & \texttt{lineno}\\
-\texttt{booktabs} & \texttt{longtable}\\
-\texttt{calc} & \texttt{lscape}\\
-\texttt{color} & \texttt{mdframed}\\
-\texttt{colortbl} & \texttt{multirow}\\
-\texttt{etoolbox} & \texttt{normalem}\\
-\texttt{fancyhdr} & \texttt{polyglossia}\\
-\texttt{fontspec} & \texttt{setspace}\\
-\texttt{footmisc} & \texttt{tabularx}\\
-\texttt{hyperref} & \texttt{xltxtra}\\
-\end{tabular}
-
 \subsection{Custom \TeX{} commands}
 
 \XLP{} has a number of custom commands that enable it to handle
@@ -591,16 +587,17 @@ contents.\\
 
 \section{Conclusion}
 
-While the \XLP{} approach to writing linguistic documents has
+While the \XLP{} approach to composing documents via DTD controlled user interface limitations has
 great value in and of itself, the fact that it can produce great
-looking output via \XeLaTeX{} makes it very worthwhile learning to
-use.  We feel that being able to produce \PDF{} via \XeLaTeX{} has
+looking output via \XeLaTeX{} makes the learning curve rewarding.  We feel that being able to produce \PDF{} via \XeLaTeX{} has
 made \XLP{} a fantastic tool for linguists.
 
 \bibliographystyle{tugboat}
 %\nocite{book-minimal}      % make the bibliography non-empty
 %\bibliography{xampl}       % xampl.bib comes with BibTeX
 \begin{thebibliography}{99}
+
+\bibitem{bartholomew:2019}{Bartholomew, Doris A, and Louise C Schoenhals. 2019. {\em Bilingual Dictionaries for Indigenous Languages}. Edited by Thomas L Willett. 2nd ed. Tlalpan, Ciudad de México, México: Instituto Lingüístico de Verano, A. C. [SIL Intrenational in Mexico]. \tbsurl{www.sil.org/resources/archives/80401}.}
 
 \bibitem{BeadleandLee:2020a}{Beadle, Jennie, and Matthew
   Lee. 2020a. {\em Paratext 9 Manual – in English}. \SIL{}
@@ -693,11 +690,13 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
   \XML{} with \TeX. {\em TUGboat}. 20 (3):
   176–183. \tbsurl{tug.org/TUGboat/tb20-3/tb64love.pdf}.}
 
+\bibitem{marlett:2012}{Marlett, Stephen A, (compiler). 2012. La Frase Nominal.  In Stephen A. Marlett (ed.) {\em Los Archivos Lingüísticos Me'phaa}. Instituto Lingüístico de Verano, A.C. [SIL International in Mexico]. \tbsurl{mexico.sil.org/publications/i-wpindex/work_papers_-_mephaa_grammar_files}.}
+
 \bibitem{marlett:2019}{Marlett, Stephen A. 2019. {\em Phonology From
     the Ground Up: The Basics}. Dallas, Texas: \SIL{}
   International. \tbsurl{www.sil.org/resources/archives/79207}.}
 
-\bibitem{nmeAndMarlett:2011}{Neri Méndez, Emilia and Stephen A. Marlett. 2011 (Nov). Presentación Analítica del Texto “Flor de Calabaza”. In Stephen A. Marlett (ed.) {\em Los Archivos Lingüísticos Me'phaa} (versión preliminar). SIL International, Mexico. \tbsurl{mexico.sil.org/publications/i-wpindex/work_papers_-_mephaa_grammar_files}.}
+\bibitem{nmeAndMarlett:2011}{Neri Méndez, Emilia and Stephen A. Marlett. 2011 (Nov). Presentación Analítica del Texto “Flor de Calabaza”. In Stephen A. Marlett (ed.) {\em Los Archivos Lingüísticos Me'phaa} (versión preliminar). Instituto Lingüístico de Verano, A.C. [SIL International in Mexico]. \tbsurl{mexico.sil.org/publications/i-wpindex/work_papers_-_mephaa_grammar_files}.}
 
 \bibitem{nordhoffandmueller:2020}{Nordhoff, Sebastian, and Stefan Müller. 2020. {\em Language Science Press Guidelines}. Berlin, Germany: Language Science Press. \tbsurl{langsci.github.io/guidelines/latexguidelines/LangSci-guidelines.pdf}.}
 
@@ -716,6 +715,8 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
     Tone Analysis of Several Bantu D30 Languages (DR
     Congo)}. University of Texas Arlington
   Ph.D. dissertation. \tbhurl{hdl.handle.net/10106/27483}.}
+
+\bibitem{rastorgueva:2012}{Rastorgueva, V. S., A. A. Kerimova, A. K. Mamedzade, L. A. Pireiko, and D. I. Edel’man. 2012. {\em The Gilaki Language}. Edited by Ronald M. Lockwood. Acta Universitatis Upsaliensis; Studia Iranica Upsaliensia 19. Uppsala, Sweden: Acta Universitatis Upsaliensis. \tbsurl{urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-182789}.}
 
 \bibitem{rei:1996}{Rei, Fukui. 1996. \acro{TIPA}: A System for Processing Phonetic Symbols in LATEX. {\em  TUGboat} 17 (2): 102–14. \tbsurl{www.tug.org/TUGboat/tb17-2/tb51rei.pdf}.}
 
@@ -749,7 +750,6 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
   Press. \tbsurl{doi.org/10.7551/mitpress/12200.003.0029}.}
 
 \bibitem{conzettanddesmedt:2022}{Conzett, Philipp, and Koenraad De Smedt. 2022. {\em Guidance for Citing Linguistic Data}. In The Open Handbook of Linguistic Data Management, edited by Andrea L. Berez-Kroeker, Bradley McDonnell, Eve Koller, and Lauren B. Collister, 143–55. Open Handbooks In Linguistics. Cambridge, Massachusetts: The MIT Press. \tbsurl{doi.org/10.7551/mitpress/12200.003.0015}.}
-
 
 \bibitem{schennerandnordhoff:2016}{Schenner, Mathias, and Sebastian Nordhoff. 2016. {\em Extracting Interlinear Glossed Text from LATEX Documents}. In Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016), edited by Nicoletta Calzolari, Khalid Choukri, Thierry Declerck, Sara Goggi, Marko Grobelnik, Bente Maegaard, Joseph Mariani, et al., 4044–48. Portorož, Slovenia: European Language Resources Association (ELRA). \tbsurl{www.aclweb.org/anthology/L16-1638.pdf}.}
 
