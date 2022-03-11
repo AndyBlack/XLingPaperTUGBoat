@@ -278,10 +278,10 @@ There have been three goals which have influenced the development of XLingPaper:
 \end{itemize}
 
 Deciding how \TeX{} technologies fit within the project has been a
-journey. \XLP{} development started in 2001. In 2006, it added
+journey. \XLP{} development started in 2001 without any use of  \TeX{} technologies. In 2006, \XLP{} added
 \XSLFO{} for \PDF{} production. Prior to 2009, \XLP{} used
 RenderX\footnote{\tbhurl{www.renderx.com}} to produce \PDF{}
-documents. However, in 2009 plans were made to add \XeLaTeX-based
+documents. As far as we know, RenderX is the only cross-platform XSL-FO processer written in Java. However, in 2009 plans were made to add \XeLaTeX-based
 output to \XLP{} because, while there was a free version of RenderX,
 the output contained a watermark.  By implementing the ability to
 export to \PDF{} via \XeLaTeX, watermarks could be avoided all
@@ -303,10 +303,9 @@ allow direct control of formatting of all of these per an \XLP{}
 user-defined publisher style sheet.  This required overriding these
 standard features of \LaTeX\ with a custom implementation of the
 \TeX{} commands needed to control formatting. \XLP{} takes a custom
-approach in implementing flexibility here.  The programmer% of \XLP{}
-recently discovered the
-\texttt{memoir}\footnote{\tbsurl{ctan.org/pkg/memoir}}
-\cite{wilson:2007} \cite{wilson:2021} package, which accomplishes many
+approach in implementing flexibility here.  The programmer of \XLP{}
+recently discovered \texttt{memoir}\footnote{\tbsurl{ctan.org/pkg/memoir}}
+\cite{wilson:2007} \cite{wilson:2021}. As a package, \texttt{memoir} accomplishes many
 of the same tasks and could be considered to replace some of the
 custom code if it were shown to be easy to implement and that the size
 of the total \XLP{} code base would be reduced.
