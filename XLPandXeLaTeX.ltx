@@ -99,7 +99,7 @@ endnotes, etc.). By working within the user-interface of the \XXE{},
 as shown in Figure~2, formatting errors are reduced because users are
 constrained on where in the document flow they can introduce block and
 line level document elements.  That is, first, authors cannot input
-\XeLaTeX{} code directly into the document and second, the
+page layout instructions directly into the document and second, the
 introduction of layout sections within the document flow is
 constrained via the \DTD{}.
 
@@ -219,13 +219,13 @@ example, \texttt{tipa} is not Unicode compatible, but the packages
 address different implications of not publishing with Unicode while
 giving access to the beautiful typeface of \texttt{tipa}. Understanding
 the long history of publishing and the interdependency that packages
-have presents additional complexities to new \TeX{} users.
+have (including the order of loading packages) presents additional barriers of adoption to new \TeX{} users.
 
-Mentioning these complexities is important to the \XLP{}
+\TeX{} barriers of adoption are important to the \XLP{}
 discussion for two reasons. First, it exemplifies some of the
 complexities that \XLP{} seeks to simplify as it presents authors
 not just a visual environment for document composition, but also a
-cohesive output solution. Second, while the diagrams in linguistic
+cohesive output solution. Second, it speaks to the software design process in finding the minimal viable product. That is, how much of a software stack is needed to make a useable software product for lingustic publishing? The \TeX community is divided on this. While the diagrams in linguistic
 books and journals since the 1980's exemplify many beautiful, sharp,
 crisp, illustrations created directly in \TeX{}, many trainers of
 \TeX{} tools,\footnote{Among others, see
@@ -245,7 +245,7 @@ complexity of the typesetting task for authors by requiring complex
 visualizations to be produced via graphical tools. We have found tools
 like Figma\footnote{\tbhurl{www.figma.com}} and
 Inkscape\footnote{\tbhurl{inkscape.org}} very helpful in the graphic
-production task.
+production task. The XLingPaper product seeks to lower barriers of entry, only produce valid documents, and keep the code base to a minimum.
 
 As mentioned in the discussion of \texttt{tipa}, Linguistic documents
 have not always been typeset with Unicode. Unicode was introduced in
@@ -264,35 +264,33 @@ examples simpler by removing the need to use macros to derive
 characters.
 
 \subsection{Design desiderata for \XLP{} outputs via \TeX{}}
-%Andy: Is there an open repository for XLingPaper development? What is the code base licensed under?
-From the outset, \XLP{} was designed to be free.  The \XXE{} had a
-Personal Use License that met this requirement for the vast majority
-of the target audience of \XLP{}.  The few who did not meet the
-terms of that license most likely would be able to afford to purchase
-(or have their organization purchase) a professional version of the
-\XXE{}.  The actual \XLP{} plug-in has always been free.
 
-\XLP{} development started in 2001. In 2006, it added \XSLFO{}
+There have been three goals which have influenced the development of XLingPaper:
+
+\begin{itemize}
+\item seperation of content and style,
+\item the software needed to be accessible (license and size),
+\item beautiful multi-format outputs.
+\end{itemize}
+
+Deciding how \TeX{} technologies fit within the project has been a journey. \XLP{} development started in 2001. In 2006, it added \XSLFO{}
 for \PDF{} production. Prior to 2009, \XLP{} used
 RenderX\footnote{\tbhurl{www.renderx.com}} to produce \PDF{}
 documents. However, in 2009 plans were made to add \XeLaTeX-based
 output to \XLP{} because, while there was a free version of
 RenderX, the output contained a watermark.  By implementing the
-ability to export to \PDF{} via \XeLaTeX, there would be no water
-marks in \PDF{} documents. The \XeLaTeX{} method of \PDF{} production
-is now the default method to produce \PDF{} documents.
+ability to export to \PDF{} via \XeLaTeX, watermarks could be avoided all together. The \XeLaTeX{} method of \PDF{} production
+is now the default method to produce \PDF{} documents, although the RenderX method is still possible. 
 
-When the \XeLaTeX{} method of \PDF{} production was introduced,
-\XLP{} had a way to format output per a user-created publisher
-style sheet.  This meant the developer (Andrew Black) needed to be
-able to map from an \XLP{} publisher style sheet to \XeLaTeX.
-Mapping style sheet information contained in the \XML{} was the second
-criterion.  It was known that \LaTeX\ was the ideal \TeX{}
+Maintaining a seperation of content and style in the \XLP{} enviorment was a key design requirement. When the \XeLaTeX{} method of \PDF{} production was introduced,
+\XLP{} already had a way to format output per a user-created publisher
+style sheet—allowing great flexibility due to the seperation of style and content. Using \Tex{} technologies meant the developer (Andrew Black) needed to be
+able to map from an \XLP{} publisher style sheet to \XeLaTeX. It was known that \LaTeX\ was the ideal \TeX{}
 implementation to target. However, pure \LaTeX\ came with predefined
 output formatting for front matter, chapters, sections, back matter,
 etc.  Pure \LaTeX, then, would not allow direct control of formatting
 of all of these per an \XLP{} user-defined publisher style sheet.
-This meant overriding these standard features of \LaTeX\ with a custom
+This required overriding these standard features of \LaTeX\ with a custom
 implementation of the \TeX{} commands needed to control
 formatting. \XLP{} takes a custom approach in implementing flexibility here. However,
 \texttt{memoir}\footnote{\tbsurl{ctan.org/pkg/memoir}}
@@ -302,11 +300,19 @@ could be considered to replace some of the custom code if it were
 shown to be easy to implement and that the size of the total
 \XLP{} code base would be reduced.
 
-The third criterion concerned some of the target audience for \XLP{}.
+The distributability of the software was also seen as a design requirement. Distributability is understood to have two components: license and accessability, including size.
+
+From the outset, \XLP{} was designed to be costless to the end user. It is licensed under the MIT license, and its code is currently available on Github.\footnote{\tbhurl{github.com/sillsdev/XLingPap}}  The \XXE{} had a Personal Use License that met this requirement for the vast majority
+of the target audience of \XLP{}.  The few XLingPaper users who did not meet the
+terms of that license most likely would be able to afford to purchase
+(or have their organization purchase) a professional version of the
+\XXE{}.  The actual \XLP{} plug-in has always been free.
+
+The software size of \XLP{} is a major design influencer. 
 Many of the expected users of \XLP{} live and work in places around
 the world where Internet connections are characterized by high costs,
 low bandwidth capacity, and general unavailability.  Therefore, the
-download required to install \XLP{} needed to be as small as possible.
+download required to install \XLP{} needed to be as small as possible. Currently on Windows the full \XLP{} installer is 146MB, and the \XXE{} installer is 116MB. Both are reqired. This stands in contrast to the TeXLive 2010 installer which is about 1.2GB download and 2.38GB uncompressed.
 The size constraint impacts \XLP{} because its distribution must be
 independent of larger mainstream \TeX{} distribution solutions such as
 \TeX{}Live which have a large footprint.  Therefore the developer
@@ -330,7 +336,7 @@ alphabetical order):
 \end{tabular}
 
 The twenty \LaTeX\ packages that are part of the custom \XLP{}
-distribution are still rather large for someone for whom Internet
+distribution are still rather large (29MB) for someone for whom Internet
 bandwidth is an expensive and inconsistent commodity. To reduce
 bandwidth requirements two assumptions were made which have more or
 less proven to obtain. The first assumption that the developer made
@@ -344,7 +350,7 @@ with \XLP{}. This abstraction layer was then executed when the
 \XeLaTeX{} file was processed. This middle layer has granted
 \XLP{} flexibility in adding new code and capabilities while
 keeping the “heavy” \LaTeX\ packages stable. The net result is a
-“heavy” first install package, but light-weight upgrade packages. In
+“heavy” first install package, but light-weight upgrade packages (6.21MB). In
 the thirteen year history of development, there have been a few
 occasions where upgrades have required the download of new “heavy”
 packages. One such case was when the ability to use framed units was added. These
@@ -515,7 +521,32 @@ abbreviations and their definitions.  When producing the output,
 \XLP{} creates hyperlinks between the abbreviation and its
 definition.
 
+%1. LaTeX and text mining.
+%2. Language code in the XML
+%3. IGTs are old.
+%4. Leipzig is a publishing standard which is making its way into corpora.
+%5. There are non-leipzig abbrs, and extensions to leipzig.
+%6. XLingPaper has been used as a transfer from flex to LaTeX.
+
+%IGTs
 %\cite{lehmann:2004}
+
+%Hughes, Baden, Steven Bird, and Catherine Bow. 2003. “Encoding and Presenting Interlinear Text Using XML Technologies.” In Proceedings of the Australasian Language Technology Workshop 2003, 61–69. Melbourne, Australia. https://www.aclweb.org/anthology/U03-1008.
+%Lahaussois, Aimée. 2016. “The Translation Tier in Interlinear Glossed Text: Changing Practices in the Description of Endangered Languages.” In Translation as Innovation: Bridging the Sciences and the Humanities, edited by Patricia Phillips-Batoma and Florence Zhang, 261–78. Dalkey Archive Press. https://hal.archives-ouvertes.fr/hal-01895439.
+%Lehmann, Christian. 1982. “Directions for Interlinear Morphemic Translations.” Folia Linguistica 16 (1–4): 199–224. doi:10.1515/flin.1982.16.1-4.199.
+%Schmidt, Thomas. 2003. “Visualising Linguistic Annotation as Interlinear Text.” In Arbeiten Zur Mehrsprachigkeit. Folge B, Sonderforschungsbereich 538. Hamburg, Germany: Universität Hamburg. https://www.exmaralda.org/files/Visualising-final.pdf.
+%Xia, Fei, William D. Lewis, Michael Wayne Goodman, Glenn Slayden, Ryan Georgi, Joshua Crowgey, and Emily M. Bender. 2016. “Enriching a Massively Multilingual Database of Interlinear Glossed Text.” Language Resources and Evaluation 50 (2): 321–49. doi:10.1007/s10579-015-9325-4.
+%Zhou, Zhong, Lori Levin, David R. Mortensen, and Alex Waibel. 2020. “Using Interlinear Glosses as Pivot in Low-Resource Multilingual Machine Translation.” ArXiv:1911.02709 [Cs], March. http://arxiv.org/abs/1911.02709.
+
+%Arkadiev, Peter, and Nicole Nau. 2015. “Towards a Standard of Glossing Baltic Languages: The Salos Glossing Rules.” Baltic Linguistics 6 (December): 195–241. doi:10.32798/bl.398.
+%Di-Biase-Dyson, Camilla, Frank Kammerzell, and Daniel A Werning. 2009. “Glossing Ancient Egyptian. Suggestions for Adapting the Leipzig Glossing Rules.” LingAeg 17: 343–66.
+% Kircher, Athanasius. 1652. Œdipus Ægyptiacus, hoc est Vniuersalis Hieroglyphicæ Veterum Doctrinæ temporum iniuria abolitæ Instauratio. Opus ex omni Orientalium doctrina & sapientia conditum, nec non viginti diuersarum linguarum authoritate stabilitum, Romæ: Ex Typographia Vitalis Mascardi.
+%CHEN, Yujie, Hilario de Sousa, Jian WANG, Jian NI, Xingxing LI, Weirong CHEN, and Hilary Chappell. 2014. “The Leipzig Glossing Rules and Its Application in the Research of Chinese Grammar--《Dialect》2014年01期.” 方言 [Dialect, lect]. http://en.cnki.com.cn/Article_en/CJFDTOTAL-FYZA201401001.htm.
+%Sachse, Frauke, and Michael Dürr. 2016. “Morphological Glossing of Mayan Languages under XML: Preliminary Results: Working Paper 4.” PDF. Textdatenbank und Wörterbuch des Klassischen Maya. doi:10.20376/IDIOM-23665556.16.WP004.EN.
+%Schenner, Mathias, and Sebastian Nordhoff. 2016. “Extracting Interlinear Glossed Text from LATEX Documents.” In Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016), edited by Nicoletta Calzolari, Khalid Choukri, Thierry Declerck, Sara Goggi, Marko Grobelnik, Bente Maegaard, Joseph Mariani, et al., 4044–48. Portorož, Slovenia: European Language Resources Association (ELRA). https://www.aclweb.org/anthology/L16-1638.pdf.
+
+
+
 
 \section{Outputs \LaTeX{} allow that others do not}
 
@@ -533,7 +564,14 @@ having \XeLaTeX{} put them together in a hanging indent paragraph.
 This is based on the work of Kew \& McConnel 1990 \cite{kew:mcconnel}.
 
 \subsection{Font rendering}
-%for discussing fonts several works need to be added to the bibliography: http://root.tug.org/tugboat/tb29-1/tb91kew.pdf, https://www.w3.org/Talks/2003/Extending%20SVG%20Fonts%20with%20Graphite.pdf, http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.530.8865, http://rabbits.continuation.org/w/images/7/73/Graphite_paper.pdf, https://onlinelibrary-wiley-com.libproxy.uoregon.edu/doi/abs/10.1002/spe.819
+%for discussing fonts several works need to be added to the bibliography: 
+% Correll, Sharon. 2000. “Graphite: An Extensible Rendering Engine for Complex Writing Systems.” Presentation Paper presented at the 17th International Unicode Conference, San Jose, California. http://rabbits.continuation.org/w/images/7/73/Graphite_paper.pdf.
+%Kakugawa, H., M. Nishikimi, N. Takahashi, S. Tomura, and K. Handa. 2001. “A General Purpose Font Module for Multilingual Application Programs.” Software: Practice and Experience 31 (15): 1487–1508. doi:10.1002/spe.424.
+%Kew, Jonathan. 2007. “XeTeX Live.” TUGboat 29 (1): 146–50. http://root.tug.org/tugboat/tb29-1/tb91kew.pdf.
+%Lilley, Chris, and Sharon Correll. 2003. “Extending SVG Fonts with Graphite.” Presentation Paper presented at the 23rd Internationalization and Unicode Conference, Prague, Czech Republic. https://www.w3.org/Talks/2003/Extending%20SVG%20Fonts%20with%20Graphite.pdf.
+%Lyons, Melinda. 2001. “Graphite and WorldPad: Tools for Writing the World’s Other Languages.” TechKnowLogia, 51–54.
+%Nishikimi, M., K. Handa, N. Takahashi, and S. Tomura. 2008. “When Fonts Do Not Know Everything: An Extensible System for Multilingual Text Rendering.” Software: Practice and Experience 38 (1): 1–31. doi:10.1002/spe.819.
+%
 \XeLaTeX{} renders fonts extremely well.  It can even handle special
 features requiring Graphite\footnote{\tbsurl{graphite.sil.org}}
 processing.  For other outputs, some fonts (such as Charis \SIL{}) may
@@ -777,7 +815,6 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 %PSTricks https://www.tug.org/TUGboat/tb31-1/tb97complete.pdf#38
 %
 
-% I need to add Donnely into the narrative
 \end{thebibliography}
 
 \makesignature
