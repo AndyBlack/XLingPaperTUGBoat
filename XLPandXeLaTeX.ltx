@@ -502,15 +502,15 @@ capabilities \XLP{} offers.
 \end{figure*}
 
 \section{Typesetting tasks \XLP{} users often encounter}
-%I am here Note: ExPex does not have the language code or the citation. langsci-gb4 supports Leipzig Glossing Rules which put the language on the right hand side and do not have a citation within the context of the example. linguex does not have either language or citation built in.
+
 Linguistic documents have several formatting needs that other kinds of
 documents do not. This section discusses some of them.
 
 \subsection{Numbered example layouts}
 
 Linguistic documents usually have many numbered examples.  The prose
-often refers to examples near the material or to previous examples.
-\XLP{} automatically keeps track of the numbers.  Authors, and
+often refers to examples near the exemplar material (Figures, Tables, Examples, etc.) or to previous examples.
+\XLP{} automatically keeps track of the ordinal indicators while allowing for different systems of numeration (1,2, 3; a,b,c; i, ii, iii, etc.).  Authors, and
 publishing style sheets often make use of table-like design layouts
 including: lists of words along with their glosses (as shown in
 Figure~6) and interlinear clauses (as shown in Figure~5), with some
@@ -521,8 +521,18 @@ cases even having headings in portions of the example.
 \caption{List of words as seen in \cite{rasmussen:2018}}
 \end{figure*}
 
-\subsection{Automatically wrapping interlinear texts}
+\subsection{Interlinear glossed texts}
 
+There is a long tradition within linguistics and language study of presenting phrases containing different languages but the same content as interlinear texts. Di-Biase-Dyson et al. \cite{DiBiaseDysonEtAl:2009} trace the practice back as far as the 1652 publication of Kircher {Kircher:1652}. More recent publications display significant variation in page layout related to interlinear glossed texts and interlinear examples. Variation exists in three dimentions:
+
+\begin{itemize}
+\item content (headings, line limits in gloss, origional, translation, free translation),
+\item data-structure of the encoding,
+\item page layout (wrapping, word alignement/morpheme alignement)
+\end{itemize}
+
+%Automatically wrapping 
+%I am here Note: ExPex does not have the language code or the citation. langsci-gb4 supports Leipzig Glossing Rules which put the language on the right hand side and do not have a citation within the context of the example. linguex does not have either language or citation built in.
 Many linguists want to include interlinear glossed text in their
 document.  \XLP{} allows these to be wrapped automatically which
 makes the author's job much easier.  Figure~7 in FC:1 and FC:2 demonstrate the wrapping of interlinear glossed texts.
@@ -558,8 +568,7 @@ definition.
 %Zhou, Zhong, Lori Levin, David R. Mortensen, and Alex Waibel. 2020. “Using Interlinear Glosses as Pivot in Low-Resource Multilingual Machine Translation.” ArXiv:1911.02709 [Cs], March. http://arxiv.org/abs/1911.02709.
 
 %Arkadiev, Peter, and Nicole Nau. 2015. “Towards a Standard of Glossing Baltic Languages: The Salos Glossing Rules.” Baltic Linguistics 6 (December): 195–241. doi:10.32798/bl.398.
-%Di-Biase-Dyson, Camilla, Frank Kammerzell, and Daniel A Werning. 2009. “Glossing Ancient Egyptian. Suggestions for Adapting the Leipzig Glossing Rules.” LingAeg 17: 343–66.
-% Kircher, Athanasius. 1652. Œdipus Ægyptiacus, hoc est Vniuersalis Hieroglyphicæ Veterum Doctrinæ temporum iniuria abolitæ Instauratio. Opus ex omni Orientalium doctrina & sapientia conditum, nec non viginti diuersarum linguarum authoritate stabilitum, Romæ: Ex Typographia Vitalis Mascardi.
+
 %CHEN, Yujie, Hilario de Sousa, Jian WANG, Jian NI, Xingxing LI, Weirong CHEN, and Hilary Chappell. 2014. “The Leipzig Glossing Rules and Its Application in the Research of Chinese Grammar--《Dialect》2014年01期.” 方言 [Dialect, lect]. http://en.cnki.com.cn/Article_en/CJFDTOTAL-FYZA201401001.htm.
 %Sachse, Frauke, and Michael Dürr. 2016. “Morphological Glossing of Mayan Languages under XML: Preliminary Results: Working Paper 4.” PDF. Textdatenbank und Wörterbuch des Klassischen Maya. doi:10.20376/IDIOM-23665556.16.WP004.EN.
 %Schenner, Mathias, and Sebastian Nordhoff. 2016. “Extracting Interlinear Glossed Text from LATEX Documents.” In Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016), edited by Nicoletta Calzolari, Khalid Choukri, Thierry Declerck, Sara Goggi, Marko Grobelnik, Bente Maegaard, Joseph Mariani, et al., 4044–48. Portorož, Slovenia: European Language Resources Association (ELRA). https://www.aclweb.org/anthology/L16-1638.pdf.
@@ -695,8 +704,7 @@ via \XeLaTeX{} has made \XLP{} a fantastic tool for linguists.
 
 \bibitem{black:2009}{Black, H. Andrew. 2009. Writing Linguistic Papers
   in the Third Wave.  {\em \SIL{} Forum for Language Fieldwork} 2009
-  (004): 11
-  pages. \tbsurl{www.sil.org/resources/publications/entry/7790}.}
+  (004): 11  pages. \tbsurl{www.sil.org/resources/publications/entry/7790}.}
 
 \bibitem{black:2017}{Black, H Andrew. 2017. {\em Why Learn to Use
     \XLP{}}. Dallas, Texas: \SIL{}
@@ -715,6 +723,8 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 \bibitem{DanielandSchubert:2013}{Daniel, Marco, and Elke
   Schubert. 2013. {\em The \texttt{mdframed} Package: Auto-split Frame
     environment} version 1.9b.}
+
+\bibitem{DiBiaseDysonEtAl:2009}{Di-Biase-Dyson, Camilla, Frank Kammerzell, and Daniel A Werning. 2009. Glossing Ancient Egyptian. Suggestions for Adapting the Leipzig Glossing Rules. {\em Lingua Aegyptia. Journal of Egyptian Language Studies} 17: 343–66. \tbsurl{wwwuser.gwdg.de/~lingaeg/lingaeg17.htm}.}
 
 \bibitem{dimitriadis:2016}{Dimitriadis, Alexis. 2016. {\em TeX/LaTeX Information}. Web page. \tbsurl{www.ling.upenn.edu/advice/latex.html}.}
 
@@ -736,7 +746,9 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
   Computing, Number 17. Dallas, Texas: Summer Institute of
   Linguistics.}
 
-\bibitem{knuth:1984}{Knuth, Donald Ervin. 1984. {\em The \TeX book.}
+\bibitem{Kircher:1652}{Kircher, Athanasius. 1652. {\em Œdipus Ægyptiacus, hoc est Vniuersalis Hieroglyphicæ Veterum Doctrinæ temporum iniuria abolitæ Instauratio}. Opus ex omni Orientalium doctrina & sapientia conditum, nec non viginti diuersarum linguarum authoritate stabilitum, Romæ: Ex Typographia Vitalis Mascardi.}
+
+\bibitem{knuth:1984}{Knuth, Donald Ervin. 1984. {\em The \TeX book}.
   A. Computers \& typesetting. Reading, Massachusetts: American
   Mathematical Society; Addison-Wesley.}
 
