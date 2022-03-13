@@ -439,7 +439,7 @@ Second, \XLP{} is more than a \TeX{} document producer.
 \begin{figure}
 \includegraphics[scale=.525]{Outputs.png}
 \caption{\XLP{} combines style and content information contained
-  in its custom XML and then exports it into three different formats
+  in its custom \XML{} and then exports it into three different formats
   for further processing.}
 \end{figure}
 
@@ -497,7 +497,7 @@ capabilities \XLP{} offers.
   example numbers on the left followed by example groups (a) and
   (b). Each interlinear then also has a language indicator in square
   brackets. Customization allows for as many rows per group as is
-  required. Finally, on the right the hyperlinked reference to the
+  required. Finally, on the right the hyperlinked citation to the reference for the 
   source text is indicated.}
 \end{figure*}
 
@@ -528,19 +528,18 @@ There is a long tradition within linguistics and language study of presenting ph
 \begin{itemize}
 \item content,% (headings, line limits for gloss tier, original tier, translation tier, free translation tier),
 \item data-structure of the encoding,
-\item page layout (wrapping, word alignement/morpheme alignement, grouping of lines, sub-examples)
+\item page layout.% (wrapping, word alignement/morpheme alignement, grouping of lines, sub-examples)
 \end{itemize}
 
-A full deomonstration of the variation in content and its positioning across common style sheets in linguistics is beyond the scope of this paper. Significant variations include presences or absence of the following elements: index elements such as example numbers or sub-numbers (as shown in Figure~7), headings to the interlinear, speaker indicator, language indicator, citation indicator pointing to the lager text from which the exemplar element is taken, and limits on the number of rows in the original, gloss, translation, and free translation tiers.
+A full deomonstration of the variation in content and its positioning across common style sheets in linguistics is beyond the scope of this paper. Significant variations include presences or absence of the following elements: index elements such as example numbers or sub-numbers (as shown in Figure~5), headings to the interlinear, speaker indicator, language indicator, citation indicator pointing to the lager text from which the exemplar element is taken (see Figure~5 for example), and limits on the number of rows in the original, gloss, translation, and free translation tiers.
 
-Existing \TeX{} packages approach these content requirements in different ways. As far as we can tell the following commonly used packages for interlinear glossing all have limitations to some degree. For example, \texttt{expex} does not offer a content solution for the language code or the citation. The package \texttt{langsci-gb4e}, a fork of \texttt{gb4e}, supports the {\em Leipzig Glossing Rules}, a commonly adapted set of linguistic typesetting conventions. However, while the {\em Leipzig Glossing Rules} do call for the language name or identifier to appear on the right hand side of the interlinear glossed text, it does not have a place for the citation. The package \texttt{linguex} does not have either language or citation built in content places built in. With these considerations \XLP{} offeres more to authors than other pacakges in the \TeX{} ecosystem.
+Existing \TeX{} packages approach these content requirements in different ways. As far as we can tell the following commonly used packages for interlinear glossing all have limitations to some degree. For example, \texttt{expex} does not offer a content solution for the language code or the citation. The package \texttt{langsci-gb4e},\footnote{\tbsurl{ctan.org/pkg/langsci-gb4e}} a fork of \texttt{gb4e},\footnote{\tbsurl{ctan.org/pkg/gb4e}} supports the {\em Leipzig Glossing Rules},\footnote{\tbsurl{eva.mpg.de/lingua/pdf/Glossing-Rules.pdf}} a commonly adapted set of linguistic typesetting conventions. However, while the {\em Leipzig Glossing Rules} do call for the language name or identifier to appear on the right hand side of the interlinear glossed text, it does not have a place for the citation. The package \texttt{linguex} does not have either language or citation built in content places built in. With these considerations \XLP{} offeres more to authors than other pacakges in the \TeX{} ecosystem.
 
-There are still some reasons related to data-structure for considering \XLP{}. Interlinear glossed texts are often stored in one of a few formats: ELAN files, FLEx Text files, Toolbox Text files, LaTeX files, or custom project-specific XML files. Moving content from analysis and markup tools to typeseting tools is an everpresent need for linguists. Several tools such as ELAN and FLEx have well established workflows for data transfer. \XLP{} has the capability to reference (for inclusion in a typeset document) a FLEx text's XML ouput. This presents FLEx users the opertunity to typeset their texts. We have also had reports of linguists using the FLEx-\XLP{} bridge to typeset ELAN texts in \LaTeX documents. They capture the \XeLaTeX document prior to render and then copy the relevant \TeX sections to their primary document.
+There are still some reasons related to data-structure for considering \XLP{}. Interlinear glossed texts are often stored in one of a few formats: ELAN files, FLEx Text files, Toolbox Text files, \LaTeX{} files, or custom project-specific \XML{} files. Moving content from analysis and markup tools to typeseting tools is an everpresent need for linguists. Several tools such as ELAN and FLEx have well established workflows for data transfer. \XLP{} has the capability to reference (for inclusion in a typeset document) a FLEx text's XML ouput. This presents FLEx users the opertunity to typeset their texts. We have also had reports of linguists using the FLEx-\XLP{} bridge to typeset ELAN texts in \LaTeX{} documents. They capture the \XeLaTeX{} document prior to render and then copy the relevant \TeX{} sections to their primary document.
 
+Still finally, there is the matter of page layout. The main componets of vairation we have seen include the grouping of lines into sets or subsets (see Figure~5 for example), the labling of sets and subsets, wrapping of interlinear glosses across lines (recall that these may themselves include three or more lines), and the alignment of the various elements of content within the interlinear glosses. We have seen word and morpheme aligned interlinears.  
 %Automatically wrapping 
-Many linguists want to include interlinear glossed text in their
-document.  \XLP{} allows these to be wrapped automatically which
-makes the author's job much easier.  Figure~7 in FC:1 and FC:2 demonstrate the wrapping of interlinear glossed texts.
+\XLP{} automatically wraps interlinears which makes the author's job much easier.  Figure~7 in FC:1 and FC:2 demonstrate the wrapping of interlinear glossed texts.
 
 \begin{figure*}
 \includegraphics[scale=0.97]{TextPDF-Slide21.png}
