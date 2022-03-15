@@ -714,18 +714,22 @@ texts.
 
 \XeLaTeX{} renders fonts extremely well.  It can even handle special
 features requiring Graphite\footnote{\tbsurl{graphite.sil.org}}
-processing.  For other outputs, some fonts (such as Charis \SIL{}) may
+processing. %Andy do you have any visual examples here? That would be helpful to our readers who are not as familure with this level of technicality.
+ For other outputs, some fonts (such as Charis \SIL{}) may
 not line up vertically as expected due to them having different
 ascender and descender values. One has to add custom commands to deal
-with these.  In the case of Graphite, they may not be able to be done
+with these. %Andy in this case I think the pronouns are not very clear. We may need to do some thinking or co-writring around this to clarify which cases are being referenced.
+In the case of Graphite, they may not be able to be done
 at all.  The \RenderX{} way of producing \PDF{} cannot handle stacked
-diacritics, but the \XeLaTeX{} way does it very well.
+diacritics, but the \XeLaTeX{} way does it very well. %By the way, this is just plain unicode not anything special. 
 
 \subsection{Hyphenation for non-English languages}
 
 Since we use the \texttt{polyglossia} package, one can write an
 \XLP{} document in a non-English language and \XeLaTeX{} will
 hyphenate according to that language’s hyphenation rules.
+
+%We should list out these languages. The author was in the audiance and said he was interested in adding to polygossia if we had input.
 
 \subsection{Author contact information}
 
