@@ -292,12 +292,9 @@ journey. \XLP{} development started in 2001 without any use of \TeX{}
 technologies. In 2006, \XLP{} added \XSLFO{} for \PDF{}
 production. Prior to 2009, \XLP{} used
 \RenderX{}\footnote{\tbhurl{www.renderx.com}} to produce \PDF{} documents.
-%As far as we know, RenderX's XEP application is the only cross-platform \XSLFO{} processer written in Java.
-%Hugh: not so.  The Apache FOP project https://xmlgraphics.apache.org/fop/index.html) is also written in Java and is cross platform.
-%At the time (and maybe even now) it did not have certain table-oriented capabilities we need that RenderX has.  I'm not remembering off the top of my head, but I think it included table-and-caption and auto layout support for tables.  I see from https://xmlgraphics.apache.org/fop/compliance.html that these are still not implemented.
+As far as we know, there are two cross-platform \XSLFO{} processers written in Java: RenderX's XEP application and the Appache FOP project.\footnote{\tbhurl{xmlgraphics.apache.org/fop/index.html}} Using with a Java implementation reduces the size of the required stack because \XEE requires Java. %At the time (and maybe even now) it did not have certain table-oriented capabilities we need that RenderX has.  I'm not remembering off the top of my head, but I think it included table-and-caption and auto layout support for tables.  I see from https://xmlgraphics.apache.org/fop/compliance.html that these are still not implemented.
 \XSLFO{} processors can have various degrees of implementation of the
-\XSLFO{} standard. \RenderX{} has decent coverage, but also has some
-limitations which limits page layout. These limitations are discussed
+\XSLFO{} standard. \RenderX{} has some limitations which affecting page layout but has better coverage than the Appache FOP project which lacks table-oriented capabilities.\footnote{\tbhurl{xmlgraphics.apache.org/fop/compliance.html}} The limitations of \RenderX{} are discussed
 in Section 6. In 2009 plans were made to add \XeLaTeX-based output to
 \XLP{} because, while there was a free version of \RenderX{}, the output
 contained a watermark.  By implementing the ability to export to
@@ -349,8 +346,8 @@ bandwidth capacity, and general unavailability.  Therefore, the
 download required to install \XLP{} needed to be as small as
 possible. On Windows the current full \XLP{} installer is 146MB, and
 the \XXE{} installer is 116MB. Both are required. This stands in
-contrast to the TeXLive 2010 installer which is about 1.2GB download
-and 2.38GB uncompressed.  The size constraint impacts \XLP{} because
+contrast to the TeXLive 2010 installer which has a size of about 1.2GB when downloaded
+and 2.38GB when uncompressed.  The size constraint impacts \XLP{} because
 its distribution must be independent of larger mainstream \TeX{}
 distribution solutions such as \TeX{}Live which have a large
 footprint.  Therefore the developer identified which \LaTeX\ packages
@@ -401,9 +398,9 @@ kept update sizes low.  Appendix~A lists the custom commands used.
 
 \subsection{\PDF{} production}
 
-We know of two pathways for converting XML content into PDFs. The
+We know of two pathways for converting \XML{} content into PDFs. The
 first is via \XSLFO{}, and the second is via \TeXML{} which converts
-\XML{} content to \TeX{} formatted documents. Given certain
+\XML{} content to \TeX{} formatted documents for further processing to \PDF{}. Given certain
 limitations in both \XSLFO{} and \TeXML{}, \XLP{} uses a custom (or
 third) method. When an author instructs \XLP{} to produce \PDF{}
 output via \XeLaTeX, \XLP{} produces a \TeXML{}-like \XML{} file. This
@@ -445,7 +442,7 @@ ensure proper data processing. This has been implemented via Java
 since Java was already present in the dependency stack due to \XXE{}
 requiring it. Additionally, some small methods have been written in
 Java to provide additional access to features via the graphical user
-interface.
+interface, e.g., adding rows to tables, or importing references from various \XML{} formats.
 
 \subsection{Ling-\TeX{}}
 
@@ -453,7 +450,7 @@ One might ask, “Why not add more linguistic related \TeX{} packages to
 the available stack, or use those instead of creating custom code?”
 The answer has two simple parts: First, in 2009 the linguistic
 capabilities of \TeX{} packages were different than they are today.
-Second, \XLP{} is more than a \TeX{} document producer.
+Second, \XLP{} is more than a \TeX{} document producer. Some authors \cite{BeadleandLee:2020a} \cite{BeadleandLee:2020b} use \XLP{} to manage multilingual content on websites.
 
 \begin{figure}
 \includegraphics[scale=.525]{Outputs.png}
@@ -468,7 +465,7 @@ Besides \TeX{}, \XLP{} also produces \XSLFO{} and
 
 When the developer began to implement the
 \XeLaTeX{}-based output, he discovered the Ling-\TeX{}
-group\footnote{\tbhurl{web.archive.org/web/20150702123633/http://heim.ifi.uio.no/~dag/ling-tex/}}
+group\footnote{\tbhurl{web.archive.org/web/20150702123633/http://heim.ifi.uio.no/~dag/ling-tex}}
 which also ran the Ling-TeX mailing list from
 1995–2018.\footnote{\tbsurl{ling-tex.ifi.uio.narkive.com}} Ling-TeX
 seemed to be the locus of activity in linguistic typesetting even
@@ -482,7 +479,7 @@ stackexchange.\footnote{\tbsurl{tex.stackexchange.com}}
 
 State-of-the-Art for \TeX{}-based linguistic publishing in 2009, as
 recommended by the Ling-\TeX{} website, suggested using
-\texttt{covington} and {\em ling-mac}—the list of macros discussed in
+\texttt{covington} and {\em ling-mac}—the list of macros discussed by Thiel in
 \cite{thiele:1995}. These macros were used to solve similar use cases,
 among others, to those already implemented by \XLP{}. The more
 commonly implemented typesetting tasks are outlined in Section~4.
@@ -582,7 +579,7 @@ packages for interlinear glossing all have limitations to some
 degree. The \texttt{expex} package does not offer a content solution
 for the language code or the citation. The package
 \texttt{langsci-gb4e},\footnote{\tbsurl{ctan.org/pkg/langsci-gb4e}} a
-fork of \texttt{gb4e},\footnote{\tbsurl{ctan.org/pkg/gb4e}} supports
+fork of \texttt{gb4e}, supports
 the {\em Leipzig Glossing
   Rules},\footnote{\tbsurl{eva.mpg.de/lingua/pdf/Glossing-Rules.pdf}}
 a commonly adopted set of linguistic typesetting conventions. However,
@@ -590,9 +587,8 @@ while the {\em Leipzig Glossing Rules} do call for the language name
 or identifier to appear on the right hand side of the interlinear
 glossed text, it does not have a place for the citation. The package
 \texttt{linguex} does not have either language or citation content
-places built in. With these considerations \XLP{} offers more to
-authors than other pacakges in the \TeX{} ecosystem, even though this
-meant creating custom \TeX{} scripts to implement interlinear
+places built in. With these considerations, it was clear in 2009 that \XLP{} offered more to
+authors than any single pacakge in the \TeX{} ecosystem. In oder to implement exsiting \XLP features, it meant creating custom \TeX{} scripts to implement interlinear
 texts. %This is an example of the kind of pain people go through:
 %%https://tex.stackexchange.com/questions/284454/multiline-language-linguistic-glosses
 
@@ -609,17 +605,17 @@ have well established workflows for data transfer
 \cite{SalffnerGavid:2014}. \FLEx{} is often considered the tool of
 choice for many field linguists, language documentors, and
 lexicographers. For many linguists entering the field it is the tool
-of choice over older tools like Toolbox due to built in collaborative
+of choice over older tools like Toolbox (which uses standard format files) due to built in collaborative
 features and grammar parsers \cite{BeierandMichael:2022}. Interlinear
-text in \FLEx{} can be exported directly into \XLP{} documents.. This
+text in \FLEx{} can be exported directly into \XLP{} documents. This
 presents \FLEx{} users the opportunity to typeset their texts rather
 easily. Using the \XML{} document referencing strategy allows authors
-to reflow typesetting outputs easily if they make changes in their
+to reflow typesetting outputs easily if they make content changes in their
 \FLEx{} enviroment.  We have also had reports of linguists using the
-\FLEx{}-\XLP{} bridge to typeset \ELAN{} texts in \LaTeX{}
-documents. They capture the \XeLaTeX{} document prior to rendering and
-then copy the relevant \TeX{} sections to their primary document.
-%Hugh: this doe not ring a bell with me.  Who/what do you have in mind here?
+\FLEx{}-\XLP{} publication pathway to typeset \ELAN{} texts in \LaTeX{}
+documents. Users capture the \XeLaTeX{} document prior to rendering and
+then copy the relevant \TeX{} sections to their primary document and add any required packages to the header of their \TeX{} document.
+%Hugh: this doe not ring a bell with me.  Who/what do you have in mind here? %Andy: Abby is her name she was a post-doc at SOAS at the time.
 
 Still finally, there is the matter of page layout. The main types of
 variation in page layout we have seen include the grouping of lines
@@ -651,6 +647,8 @@ several reasons including:
 \item some authors have established their own tradition within their
   works which they started prior to the release of the Leipzig
   Glosses,
+\items the typeset examples are quoted from a database which does not use Leipzig
+  Glosses,
 \item they are not comprehensive, and
 \item they are not theoretically sufficient for some linguists.
 \end{itemize}
@@ -658,8 +656,7 @@ several reasons including:
 \XLP{} approaches this by providing built-in access to Leipzig
 Glosses, but also allowing the author to define a set of abbreviations
 and their definitions.  When producing the output, \XLP{} creates
-hyperlinks between the abbreviation and its definition. This allows
-for the automatic generation of a table or list of abbreviations used.
+hyperlinks between the abbreviation and its definition. This allows users to quickly find the meaning of glosses and for the automatic generation of a table or list of abbreviations used.
 
 %1. LaTeX and text mining.
 %2. Language code in the XML
@@ -686,21 +683,21 @@ for the automatic generation of a table or list of abbreviations used.
 \subsection{Bibliographies}
 
 For better or worse \XLP{} has rolled its own bibliography
-solution. Import solutions are provided for \acro{MODS} and EndNote
-\XML{} formats. This enables users to import from tools like Endnote,
-Zotero, and JabRef. \XLP{} uses custom \TeX{} scripts to output
+solution. Import options are provided for \acro{MODS} and EndNote
+\XML{} formats. This enables users to import from tools like EndNote,\footnote{\tbsurl{endnote.com}}
+Zotero,\footnote{\tbsurl{zotero.org}} and JabRef.\footnote{\tbsurl{jabref.org}} \XLP{} uses custom \TeX{} scripts to output
 \TeX{} code for final rendering. It does not rely on \BibTeX{} or
 \BibLaTeX{}.
 
 \begin{figure*}
 \includegraphics[scale=0.6]{Chinese.png}
-\caption{An \XLP{} bibliography demonstrating Latin and Chinese scripts.}
+\caption{An \XLP{} bibliography demonstrating mixed Latin and Chinese scripts.}
 \end{figure*}
 
 \section{Outputs \LaTeX{} allow that others do not}
 
 While \XLP{} has a large array of linguistically-oriented
-formatting capabilities, there are some that only the \XeLaTeX{}
+formatting capabilities across all output formats, there are some that only the \XeLaTeX{}
 output can produce.  This is, of course, due to the formatting power
 of \TeX{} and \XeLaTeX{}.
 
