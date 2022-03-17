@@ -63,7 +63,7 @@ publishing technologies used to meet these needs.  Since 2000,
 have been used to integrate content and compose complex documents such
 as textbooks and maintenance manuals. Requirements for composing these
 large, inter-linked documents birthed the development of tools like
-\XMLmind{}\footnote{\tbsurl{www.xmlmind.com/xmleditor}} and
+\XMLmind{},\footnote{\tbsurl{www.xmlmind.com/xmleditor}} The <oXygen/> \XML{} Editor,\footnote{\tbsurl{oxygenxml.com/xml_author.html}}  and
 Xpublisher.\footnote{\tbsurl{www.xpublisher.com/products}} These tools
 can be used to compose content within predefined \XML{} structures.
 \XLP{}, as discussed in \cite{blackandblack:2012} \cite{black:2009}
@@ -150,8 +150,8 @@ cited (using a custom references implementation).
 Unlike most editing programs which are based on either the \WYSIWYG{}
 paradigm or are unconstrained text editors such as those used to code
 or produce Markdown, \XLP{} (via the \XXE{}) is a structured editor
-much more like the block editors we see in tools like MailChimp or
-WordPress's Gutenburg editor, albeit without the drag-and-drop
+much more like the block editors we see in tools like MailChimp\footnote{\tbsurl{mailchimp.com}} or
+WordPress's Gutenburg editor,\footnote{\tbsurl{developer.wordpress.org/block-editor}} albeit without the drag-and-drop
 features. Rather than visually structuring the document to look the
 way it is to be formatted, the author “marks up” the
 items in the document according to their kind.  One of the many
@@ -741,6 +741,12 @@ texts.
 %Kew, Jonathan. 2007. “XeTeX Live.” TUGboat 29 (1): 146–50. http://root.tug.org/tugboat/tb29-1/tb91kew.pdf.
 
 \XeLaTeX{} renders fonts extremely well.  We show three cases where \RenderX{} and/or \XHTML{} outputs have font rendering issues while \XeLaTeX{} does not.
+
+%The issue here as far as I can tell is that XSL-FO does not have a way to access TT font features which are not pre-described in the XSL-FO standard. Additionally XSL-FO adopted OT rather than TT. CSS, which is relied on by browsers does marginally better, in that it acknowledges more perscribed features but does not allow access to all features of a font. The tone staves issue does not seem to be graphite based. Will Robertson. Advanced font features with XETEX—the fontspec package. TUGboat, ():–, .
+
+One of Andy's CSS problems can be solved with https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#propdef-font-size-adjust
+
+https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-feature-resolution
 
 \begin{figure*}
 \includegraphics[scale=0.86]{FontAlignmentRenderX.png}
