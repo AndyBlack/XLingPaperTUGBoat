@@ -254,8 +254,8 @@ tools to generate illustrations and then include them as vector
 production path that the \XLP{} philosophy follows. That is, \XLP{}
 reduces the complexity of the typesetting task for authors by
 requiring complex visualizations to be produced via graphical
-tools. We have found tools like Figma\footnote{\tbhurl{www.figma.com}}
-and Inkscape\footnote{\tbhurl{inkscape.org}} very helpful in the
+tools. We have found tools like Figma\footnote{\tbsurl{figma.com}}
+and Inkscape\footnote{\tbsurl{inkscape.org}} very helpful in the
 graphic production task. The \XLP{} product seeks to lower
 barriers of entry, only produce valid documents, and keep the code
 base to a minimum.
@@ -294,7 +294,7 @@ production. Prior to 2009, \XLP{} used
 documents.  As far as we know, there are two cross-platform \XSLFO{}
 processers written in Java: \RenderX{}'s \acro{XEP} application and
 the Apache \acro{FOP}
-project.\footnote{\tbhurl{xmlgraphics.apache.org/fop/index.html}}
+project.\footnote{\tbsurl{xmlgraphics.apache.org/fop/index.html}}
 Using a Java implementation reduces the size of the required stack
 because the \XXE{} requires Java.
 %At the time (and maybe even now) it did not have certain table-oriented capabilities we need that RenderX has.  I'm not remembering off the top of my head, but I think it included table-and-caption and auto layout support for tables.  I see from https://xmlgraphics.apache.org/fop/compliance.html that these are still not implemented.
@@ -302,7 +302,7 @@ because the \XXE{} requires Java.
 \XSLFO{} standard. \RenderX{} has some limitations which affect page
 layout but has better coverage than the Appache FOP project which
 lacks certain required table-oriented
-capabilities.\footnote{\tbhurl{xmlgraphics.apache.org/fop/compliance.html}}
+capabilities.\footnote{\tbsurl{xmlgraphics.apache.org/fop/compliance.html}}
 The limitations of \RenderX{} are discussed in Section 6. In 2009
 plans were made to add \XeLaTeX-based output to \XLP{} because, while
 there was a free version of \RenderX{}, the output contained a
@@ -318,12 +318,12 @@ format output per a user-created publisher style
 sheet—allowing great flexibility due to the separation of
 style and content. Using \TeX{} technologies meant the developer
 (Andrew Black) needed to be able to map from an \XLP{} publisher style
-sheet to \XeLaTeX. It was known that \LaTeX\ was the ideal \TeX{}
-implementation to target. However, pure \LaTeX\ came with predefined
+sheet to \XeLaTeX{}. It was known that \LaTeX{} was the ideal \TeX{}
+implementation to target. However, pure \LaTeX{} came with predefined
 output formatting for front matter, chapters, sections, back matter,
-etc.  Pure \LaTeX, then, would not allow direct control of formatting
+etc.  Pure \LaTeX{}, then, would not allow direct control of formatting
 of all of these per an \XLP{} user-defined publisher style sheet.
-This required overriding these standard features of \LaTeX\ with a
+This required overriding these standard features of \LaTeX{} with a
 custom implementation of the \TeX{} commands needed to control
 formatting. \XLP{} takes a custom approach in implementing flexibility
 here.  The programmer of \XLP{} recently discovered
@@ -339,7 +339,7 @@ license and accessability, including size.
 
 From the outset, \XLP{} was designed to be costless to the end
 user. It is licensed under the MIT license, and its code is currently
-available on Github.\footnote{\tbhurl{github.com/sillsdev/XLingPap}}
+available on Github.\footnote{\tbsurl{github.com/sillsdev/XLingPap}}
 The \XXE{} had a costless Personal Use License that met this
 requirement for the vast majority of the target audience of \XLP{}.
 The few \XLP{} users who did not meet the terms of that license most
@@ -379,7 +379,7 @@ alphabetical order):
 \texttt{hyperref} & \texttt{xltxtra}\\
 \end{tabular}
 
-The twenty \LaTeX\ packages that are part of the custom \XLP{}
+The twenty \LaTeX{} packages that are part of the custom \XLP{}
 distribution are still rather large (29MB) for someone for whom
 Internet bandwidth is an expensive and inconsistent commodity. To
 reduce bandwidth requirements two assumptions were made which have
@@ -412,9 +412,9 @@ first is via \XSLFO{}, and the second is via \TeXML{} which converts
 \XML{} content to \TeX{} formatted documents for further processing to
 \PDF{}. Given certain limitations in both \XSLFO{} and \TeXML{},
 \XLP{} uses a custom (or third) method. When an author instructs
-\XLP{} to produce \PDF{} output via \XeLaTeX, \XLP{} produces a
+\XLP{} to produce \PDF{} output via \XeLaTeX{}, \XLP{} produces a
 \TeXML{}-like \XML{} file. This is then converted into a
-\LaTeX\ formatted document via a set of \XSLT{} transforms and
+\LaTeX{} formatted document via a set of \XSLT{} transforms and
 processed via \XeLaTeX{} to produce the \PDF{}.  Figure~3 contains a
 diagram of the data handling process.
 
@@ -479,7 +479,7 @@ Besides \TeX{}, \XLP{} also produces \XSLFO{} and
 
 When the developer began to implement the
 \XeLaTeX{}-based output, he discovered the Ling-\TeX{}
-group\footnote{\tbhurl{web.archive.org/web/20150702123633/http://heim.ifi.uio.no/~dag/ling-tex}}
+group\footnote{\tbsurl{web.archive.org/web/20150702123633/http://heim.ifi.uio.no/~dag/ling-tex}}
 which also ran the Ling-TeX mailing list from
 1995–2018.\footnote{\tbsurl{ling-tex.ifi.uio.narkive.com}} Ling-TeX
 seemed to be the locus of activity in linguistic typesetting even
@@ -908,7 +908,7 @@ contents.\\
 
 \bibitem{brownie:2013}{Brownie, John. 2013. Adverbs in the
 Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
-31(1):1–11. \tbsurl{www.langlxmelanesia.com/issues}.}
+31(1):1–11. \tbsurl{langlxmelanesia.com/issues}.}
 
 \bibitem{buck:2018}{Buck, Marjorie J. 2018. {\em Gramática del amuzgo
     Xochistlahuaca, Guerrero}. (Serie de gramáticas de lenguas
@@ -929,7 +929,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 \bibitem{ebarb:2014}{Ebarb, Kristopher J. 2014. {\em Tone and
     variation in Idakho and other Luhya varieties}. University of Indiana  Ph.D. dissertation. \tbsurl{pqdtopen.proquest.com/doc/1625743679.html?FMT=ABS}.}
 
-\bibitem{frampton:2006}{Frampton, John. 2006. {\em Pst-Asr: Tex Macros for Typesetting Autosegmental Representations}. Version:1.1. \CTAN{}. \tbhurl{www.bakoma-tex.com/doc/generic/pst-asr/pst-asr-doc.pdf}.}
+\bibitem{frampton:2006}{Frampton, John. 2006. {\em Pst-Asr: Tex Macros for Typesetting Autosegmental Representations}. Version:1.1. \CTAN{}. \tbhurl{bakoma-tex.com/doc/generic/pst-asr/pst-asr-doc.pdf}.}
 
 \bibitem{frampton:2012}{Frampton, John. 2012. {\em ExPex for Linguists: Example Formatting, Glosses, and Reference}. Version: 4.1. \tbhurl{mathserver.neu.edu/~ling/tex/expex/base/doc/expex-doc.pdf}.}
 
@@ -992,7 +992,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 
 \bibitem{peter:2004}{Peter, Steve. 2004. TEX and Linguistics. {\em TUGboat} 25 (1): 58–62. \tbsurl{tug.org/TUGboat/tb25-1/peter.pdf}.}
 
-\bibitem{priemerufreitag:2019}{Machicao y Priemer, Antonio, and Constantin Freitag. 2019. {\em LaTeX-Einführung Für Linguisten}. Presentation at the MGK Workshop – SFB 1412, Berlin. doi:\tbsurl{www.linguistik.hu-berlin.de/de/staff/amyp/latex20sfb/07-l4l-math2-trees-handout.pdf}.}
+\bibitem{priemerufreitag:2019}{Machicao y Priemer, Antonio, and Constantin Freitag. 2019. {\em LaTeX-Einführung Für Linguisten}. Presentation at the MGK Workshop – SFB 1412, Berlin. doi:\tbsurl{linguistik.hu-berlin.de/de/staff/amyp/latex20sfb/07-l4l-math2-trees-handout.pdf}.}
 
 \bibitem{rasmussen:2018}{Rasmussen, Kent. 2018. {\em A Comparative
     Tone Analysis of Several Bantu D30 Languages (DR
@@ -1005,7 +1005,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 
 \bibitem{SalffnerGavid:2014}{Salffner, Sophie, and Tim Gaved. 2014. Working with \ELAN{} and \FLEx{} Together: An \ELAN{}-\FLEx{}-\ELAN{} Teaching Set. Electronic Manuscript. SOAS, London, England. \tbsurl{soas.ac.uk/elar/helpsheets/file122785.pdf}.}
 
-\bibitem{schenneretal:2016}{Schenner, Mathias, and Sebastian Nordhoff. 2016. Extracting Interlinear Glossed Text from LATEX Documents. In {\em Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016)}, edited by Nicoletta Calzolari, Khalid Choukri, Thierry Declerck, Sara Goggi, Marko Grobelnik, Bente Maegaard, Joseph Mariani, et al., 4044–48. Portorož, Slovenia: European Language Resources Association (ELRA). \tbsurl{www.aclweb.org/anthology/L16-1638.pdf}.}
+\bibitem{schenneretal:2016}{Schenner, Mathias, and Sebastian Nordhoff. 2016. Extracting Interlinear Glossed Text from LATEX Documents. In {\em Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016)}, edited by Nicoletta Calzolari, Khalid Choukri, Thierry Declerck, Sara Goggi, Marko Grobelnik, Bente Maegaard, Joseph Mariani, et al., 4044–48. Portorož, Slovenia: European Language Resources Association (ELRA). \tbsurl{aclweb.org/anthology/L16-1638.pdf}.}
 
 \bibitem{smithsniderwiegand:2016}{Smith, Zac, Todd Snider, and Mia Wiegand. 2016. {\em LaTeX and Linguistics - How to Make Your Research Pretty}. Presentation at the Cornell Linguistics Circle, Cornell, New York. \tbsurl{conf.ling.cornell.edu/miawiegand/Latex_Slides.pdf}.}
 
@@ -1015,7 +1015,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 
 \bibitem{thiele:2007}{Thiele, Christina. 2007. {\em Christina Thiele Interview by Dave Walden for the \TeX{} Users Group}. Transcript. \tbsurl{tug.org/interviews/thiele.html}.}
 
-\bibitem{unicode:1991}{Unicode Consortium, ed. 1991. {\em The Unicode Standard: Worldwide Character Encoding}. Version 1.0. Reading, Massachusetts: Addison-Wesley. \tbsurl{www.unicode.org/versions/Unicode1.0.0}.}
+\bibitem{unicode:1991}{Unicode Consortium, ed. 1991. {\em The Unicode Standard: Worldwide Character Encoding}. Version 1.0. Reading, Massachusetts: Addison-Wesley. \tbhurl{unicode.org/versions/Unicode1.0.0}.}
 
 \bibitem{ward:2002}{Ward, Monica. 2002. Reusable XML Technologies and the Development of Language Learning Materials. {\em ReCALL} 14 (2): 285–94. \tbsurl{doi.org/10.1017/S0958344002000629}.}
 
@@ -1025,7 +1025,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 \bibitem{wilson:2021}{Wilson, Peter. 2021. {\em The Memoir Class for Configurable Typesetting: User Guide}. version 3.70. Normandy Park, WA: The Herries Press. \tbsurl{texdoc.org/serve/memoir/0}.}
 
 \bibitem{Wood:2012}{Wood, Joyce Kathleen. 2012. {\em Valence-Increasing Strategies in Urim Syntax}. Graduate Institute
-  of Applied Linguistics M.A. thesis. \tbsurl{www.diu.edu/documents/theses/Wood_Joyce-thesis.pdf}.}
+  of Applied Linguistics M.A. thesis. \tbsurl{diu.edu/documents/theses/Wood_Joyce-thesis.pdf}.}
 
 %These are not yet used in the text
 
