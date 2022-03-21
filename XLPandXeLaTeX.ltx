@@ -327,7 +327,7 @@ of all of these per an \XLP{} user-defined publisher style sheet.
 This required overriding these standard features of \LaTeX{} with a
 custom implementation of the \TeX{} commands needed to control
 formatting. \XLP{} takes a custom approach in implementing flexibility
-here. Appendix~A lists the custom commands used.
+here. Appendix~A lists the custom commands used. %Andy I think it would be ok to move the contents of Appendix A here and then remove that section header.
 
 The programmer of \XLP{} recently discovered
 \texttt{memoir}\footnote{\tbsurl{ctan.org/pkg/memoir}}
@@ -477,14 +477,14 @@ manage multilingual content on websites.
 \end{figure}
 
 Besides \TeX{}, \XLP{} also produces \XSLFO{} and
-\XHTML{}/\CSS{} outputs. When new features are considered for typesetting design, all output formats need to be considered.
+\XHTML{}/\CSS{} outputs. When new features which are considered for inclusion must be considered for all output formats.
 
 After excluding \TeXML{} as a viable option, and still seeking to create 
 \XeLaTeX{}-based output, a solution was needed to determine which set of minimal \TeX packages would be needed. The Ling-\TeX{}
 group\footnote{\tbsurl{web.archive.org/web/20150702123633/http://heim.ifi.uio.no/~dag/ling-tex}}
-which also ran the Ling-TeX mailing list from
-1995–2018 was discovered.\footnote{\tbsurl{ling-tex.ifi.uio.narkive.com}} Ling-TeX
-seemed to be the locus of activity in linguistic typesetting even
+which also ran the Ling-\TeX{} mailing list from
+1995–2018 was discovered.\footnote{\tbsurl{ling-tex.ifi.uio.narkive.com}} Ling-\TeX{}
+seemed to be the locus of activity in linguistic typesetting via \TeX{} even
 though other web pages discussing linguistics and \TeX{} also existed,
 e.g.,
 Essex,\footnote{\tbsurl{essex.ac.uk/linguistics/external/clmt/latex4ling}}
@@ -497,8 +497,8 @@ State-of-the-Art for \TeX{}-based linguistic publishing in 2009, as
 recommended by the Ling-\TeX{} website, suggested using
 \texttt{covington} and {\em ling-mac}—the list of macros discussed by
 Thiel in \cite{thiele:1995}. These macros were used to solve similar
-use cases, among others, to those already implemented by \XLP{}. The
-more commonly implemented typesetting tasks are outlined in Section~4.
+use cases, among others, to those already implemented by \XLP{}. However, their approches and outputs had more limitations than \XLP{} produced via \XSLFO. Some of the 
+more commonly implemented typesetting use cases are outlined in Section~4.
 %These figure refs need to be re-evaluated for accuracy since I added
 %another figure.
 Initial analysis of \texttt{covington} and other packages revealed
@@ -517,12 +517,11 @@ capabilities for typesetting interlinears:
   code for the language used in the interlinear.
 \end{itemize}
 
-At the time the best solution given the state of the \TeX{} packages
+\noindent At the time the best solution given the state of the \TeX{} packages
 available was custom \TeX{} scripts, although now similar features may
-be possible via other packages. See Pellard \cite{pellard:2019} for
-discussion of approaches in \TeX{} and his solution
-\texttt{typgloss}.\footnote{\tbsurl{github.com/tpellard/typgloss}}
-Figures~5–7 contain example output illustrating some of the special
+be possible via other packages. For example in 2019 Pellard \cite{pellard:2019} 
+discussed the limiting approaches in various \TeX{} packages related to interlinear glosses and his solution
+\texttt{typgloss}.\footnote{\tbsurl{github.com/tpellard/typgloss}} \XLP{}'s examples can be seen in Figures~5–7 which contain output illustrating some of the special
 capabilities \XLP{} offers.
 
 \begin{figure*}
@@ -551,7 +550,7 @@ which can contain lists of words along with their glosses (as shown in
 Figure~6) and interlinear clauses (as shown in Figure~5). Some cases even have headings in portions of the example.
 
 \begin{figure*}
-\includegraphics[scale=1.0]{GraphitePDF-Slide24.png}
+\includegraphics[scale=1.0]{GraphitePDF-Slide24.png}%Andy this image needs to be changed to Rasmusen.png and resized this will give a cleaner presentation.
 \caption{List of words as seen in \cite{rasmussen:2018}}
 \end{figure*}
 
@@ -567,9 +566,9 @@ interlinear glossed texts and interlinear examples. Variation exists
 in three dimensions:
 
 \begin{itemize}
-\item content,% (headings, line limits for gloss tier, original tier, translation tier, free translation tier),
-\item data-structure of the encoding, and
-\item page layout.% (wrapping, word alignment/morpheme alignment, grouping of lines, sub-examples)
+\item content elements,% (headings, line limits for gloss tier, original tier, translation tier, free translation tier),
+\item data-structure of the encoded elements, and
+\item page layout (visual display of the elements).% (wrapping, word alignment/morpheme alignment, grouping of lines, sub-examples)
 \end{itemize}
 
 A full demonstration of the variation in content and its positioning
