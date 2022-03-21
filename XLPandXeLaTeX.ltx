@@ -628,11 +628,13 @@ exported and \XML{} and the data used within \XLP{} documents. This presents \FL
 the opportunity to typeset their texts rather easily. Enabled by \XML{}'s modular document referencing features, \XLP{} documents can reference components. Using the \XML{}
 document referencing strategy with \XML encoded \FLEx{} texts allows authors to reflow typesetting
 outputs easily if they make content changes in their \FLEx{}
-environment.  We have also had reports of linguists using the
+environment.
+
+\XLP{} does not have a direct \ELAN{} import process. However, we have had reports of linguists using the
 \FLEx{}-\XLP{} publication pathway to typeset \ELAN{} texts in
-\LaTeX{} documents. Users capture the \XeLaTeX{} document prior to
-rendering and then copy the relevant \TeX{} sections to their primary
-document and add any required packages to the header of their \TeX{}
+\LaTeX{} documents. Users report capturing the \XeLaTeX{} document prior to
+rendering and then copying the relevant \TeX{} sections to their primary
+document and add any required packages required by \XLP{} to the header of their primary \TeX{}
 document.
 %Hugh: this dose not ring a bell with me.  Who/what do you have in mind here? %Andy: Abby is her name she was a post-doc at SOAS at the time.
 
@@ -716,7 +718,7 @@ scripts to output \TeX{} code for final rendering. It does not rely on
 \BibTeX{} or \BibLaTeX{}.
 
 \begin{figure*}
-\includegraphics[scale=0.6]{Chinese.png}
+\includegraphics[scale=0.6]{Chinese.png}%Andy I changed this image and it needs rezided to fit and be clear.
 \caption{An \XLP{} bibliography demonstrating mixed Latin and Chinese
   scripts.}
 \end{figure*}
@@ -739,14 +741,14 @@ texts. As seen in Figure~7 wrapping occurs for the glossed text tiers. Not shown
 % Correll, Sharon. 2000. “Graphite: An Extensible Rendering Engine for Complex Writing Systems.” Presentation Paper presented at the 17th International Unicode Conference, San Jose, California. http://rabbits.continuation.org/w/images/7/73/Graphite_paper.pdf.
 %Kew, Jonathan. 2007. “XeTeX Live.” TUGboat 29 (1): 146–50. http://root.tug.org/tugboat/tb29-1/tb91kew.pdf.
 
-\XeLaTeX{} renders fonts extremely well.  We show three cases where \RenderX{} and/or \XHTML{} outputs have font rendering issues while \XeLaTeX{} does not.
+\XeLaTeX{} renders fonts extremely well.  We show three cases where \RenderX{} and/or \XHTML{} outputs have text rendering issues while \XeLaTeX{} does not.
 
 %The issue here as far as I can tell is that XSL-FO does not have a way to access OT font features which are not pre-described in the XSL-FO standard. Additionally XSL-FO adopted OT rather than TT. CSS, which is relied on by browsers does marginally better, in that it acknowledges more prescribed features but does not allow access to all features of a font. The tone staves issue does not seem to be graphite based. Will Robertson. Advanced font features with XETEX—the fontspec package. TUGboat, ():–, .
 
-One of Andy's CSS problems can be solved with https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#propdef-font-size-adjust
+%One of Andy's CSS problems can be solved with https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#propdef-font-size-adjust
+%https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-feature-resolution
 
-https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-feature-resolution
-
+%Andy what are the fonts and the font sizes in the images?
 \begin{figure*}
 \includegraphics[scale=0.86]{FontAlignmentRenderX.png}
 \includegraphics[scale=0.6]{FontAlignmentXHTML.png}
@@ -799,6 +801,8 @@ hyphenate according to that language’s hyphenation rules.
 %only instances I know of where polyglossia did not already have the
 %needed hyphenation language were for some literacy documents in Seri
 %that Steve Marlett used XLingPaper for.
+
+%Andy: can you run that user documentation list of languages to a XeLaTeX file and produce a table and copy that table into this document?
 
 \subsection{Author contact information}
 
