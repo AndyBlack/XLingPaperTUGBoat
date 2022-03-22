@@ -9,6 +9,7 @@
 
 \usepackage{microtype}
 \usepackage{graphicx}
+\usepackage{supertabular}
 \usepackage[hidelinks,pdfa]{hyperref}
 \usepackage{fontspec}
 
@@ -63,9 +64,10 @@ publishing technologies used to meet these needs.  Since 2000,
 have been used to integrate content and compose complex documents such
 as textbooks and maintenance manuals. Requirements for composing these
 large, inter-linked documents birthed the development of tools like
-\XMLmind{},\footnote{\tbsurl{xmlmind.com/xmleditor}} The <oXygen/> \XML{} Editor,\footnote{\tbsurl{oxygenxml.com/xml_author.html}}  and
-Xpublisher.\footnote{\tbsurl{xpublisher.com/products}} These tools
-can be used to compose content within predefined \XML{} structures.
+\XMLmind{},\footnote{\tbsurl{xmlmind.com/xmleditor}} the <oXygen/>
+\XML{} Editor,\footnote{\tbsurl{oxygenxml.com/xml_author.html}} and
+Xpublisher.\footnote{\tbsurl{xpublisher.com/products}} These tools can
+be used to compose content within predefined \XML{} structures.
 \XLP{}, as discussed in \cite{blackandblack:2012} \cite{black:2009}
 \cite{black:2017}, seeks to provide a constrained environment in which
 authors of complex works dealing with language descriptions and
@@ -74,9 +76,16 @@ the styling requirements of documents. In this way the underlying
 design principle of \XLP{} maximizes the \SGML\ design practice of
 separating content from presentation. With \XLP{}, authors can keep
 content structure independent from page layout information and thereby
-provide maximal transfer-ability between publishing styles. The
+provide maximal transferability between publishing styles. The
 software does this while providing authors a clear structured
 interface for authoring content.
+
+\XLP{} is designed to reduce friction in the process of writing,
+composing, and publishing linguistic papers, grammars, and books by
+removing common time-sinks related to inconsistent formatting
+(especially citations, references, and numbered element like
+examples). A full list of benefits to all parties in the publishing
+work flow is available \cite{black:2017}.
 
 The \XLP{} software has a growing number of users who have
 successfully typeset complex documents including:
@@ -92,37 +101,29 @@ successfully typeset complex documents including:
 \end{itemize}
 
 \section{What is \XLP{}?}
-\XLP{}\footnote{\tbsurl{software.sil.org/xlingpaper}} is a plug-in
-to the \XXE{}. \XLP{} benefits from the \XXE{}'s Java-based
+\XLP{}\footnote{\tbsurl{software.sil.org/xlingpaper}} is a plug-in to
+the \XXE{}. \XLP{} benefits from the \XXE{}'s Java-based
 implementation which allows it to be used on \MacOSX{}, Windows, and
 Linux. Via a \DTD{}, \XLP{} defines several document classes
 (articles, books, chapters, etc., as illustrated in Figure~1), in each
 case providing document layout sections (paragraphs, examples,
-endnotes, etc.). Figure~2 illustrates the main screen of the user-interface of \XXE{}.
-By using this interface, formatting errors are reduced because users are
-constrained on where in the document flow they can introduce block and
-line level document elements.  That is, first, authors cannot input
-page layout instructions directly into the document and second, the
-introduction of layout sections within the document flow is
-constrained via the \DTD{}.
+endnotes, etc.). Figure~2 illustrates the main screen of the
+user-interface of \XXE{}.  By using this interface, formatting errors
+are reduced because users are constrained on where in the document
+flow they can introduce block and line level document elements.  That
+is, first, authors cannot input page layout instructions directly into
+the document and second, the introduction of layout sections within
+the document flow is constrained via the \DTD{}.
 
 \begin{figure}
-\includegraphics[scale=.425]{Several-different-document-types.png}
+\includegraphics[scale=.425]{images/Several-different-document-types.png}
 \caption{\XLP{} predefined document types via \DTD{}}
 \end{figure}
 
 \begin{figure*}
-\includegraphics[scale=.243]{XLingPaper-interface.png}
+\includegraphics[scale=.243]{images/XLingPaper-interface.png}
 \caption{\XLP{}'s user interface. Left side: document content editing. Right side: block and line level units available for use at the cursor location.}
 \end{figure*}
-
-%Andy does this paragraph fit better in the introduction?
-\XLP{} is designed to reduce friction in the process of writing,
-composing, and publishing linguistic papers, grammars, and books by
-removing common time-sinks related to inconsistent formatting
-(especially citations, references, and numbered element like
-examples). A full list of benefits to all parties in the publishing
-work flow is available \cite{black:2017}.
 
 For many, the \PDF{} format
 is the quintessential file format for final distribution of publishing
@@ -138,7 +139,7 @@ outputs, all from the same source document:
 \end{itemize}
 
 \begin{figure*}
-\includegraphics[scale=.8]{PDFCreation.png}
+\includegraphics[scale=.8]{images/PDFCreation.png}
 \caption{\XLP{}'s data processing pipeline to multiple formats}
 \end{figure*}
 
@@ -153,18 +154,19 @@ cited (using a custom references implementation).
 Unlike most editing programs which are based on either the \WYSIWYG{}
 paradigm or are unconstrained text editors such as those used to code
 or produce Markdown, \XLP{} (via the \XXE{}) is a structured editor
-much more like the block editors we see in tools like MailChimp\footnote{\tbsurl{mailchimp.com}} or
-WordPress's Gutenburg editor,\footnote{\tbsurl{developer.wordpress.org/block-editor}} albeit without the drag-and-drop
-features. Rather than visually structuring the document to look the
-way it is to be formatted, the author “marks up” the
-items in the document according to their kind.  One of the many
-benefits that using a \DTD{} provides is that there is a
-“grammar” of what a well-formed linguistic document
-looks like.  This makes moving, replacing, switching, or reordering
-sections, chapters, tables, figures, and examples less error prone
-because it prevents users from inadvertently creating ill-formed
-documents. The following sections of this paper discuss the \TeX{}
-technologies used by \XLP{}.
+much more like the block editors we see in tools like
+MailChimp\footnote{\tbsurl{mailchimp.com}} or WordPress's Gutenburg
+editor,\footnote{\tbsurl{developer.wordpress.org/block-editor}} albeit
+without the drag-and-drop features. Rather than visually structuring
+the document to look the way it is to be formatted, the author
+“marks up” the items in the document according to
+their kind.  One of the many benefits that using a \DTD{} provides is
+that there is a “grammar” of what a well-formed
+linguistic document looks like.  This makes moving, replacing,
+switching, or reordering sections, chapters, tables, figures, and
+examples less error prone because it prevents users from inadvertently
+creating ill-formed documents. The following sections of this paper
+discuss the \TeX{} technologies used by \XLP{}.
 
 \section{\XLP{} and \TeX{}}
 
@@ -193,21 +195,22 @@ shaped the visual face of publishing in linguistics, including
 phonetic transcriptions and
 \texttt{pst-asr}\footnote{\tbsurl{ctan.org/pkg/pst-asr}} by Frampton
 \cite{frampton:2006} for autosegmental representations. Some packages
-used in linguistic publishing are special purpose but are not exclusive to linguistics. For
-example, Donnelly \cite{donnelly:2013} describes how to use various
-packages to draw phonetic pitch traces using \TeX{}. Peter
-\cite{peter:2004} and Thiele \cite{thiele:1995} list out and review
-(through 2004) various packages across several areas of
-linguistics. Among others, they discuss several packages used to draw
-syntax trees such as
+used in linguistic publishing are special purpose but are not
+exclusive to linguistics. For example, Donnelly \cite{donnelly:2013}
+describes how to use various packages to draw phonetic pitch traces
+using \TeX{}. Peter \cite{peter:2004} and Thiele \cite{thiele:1995}
+list out and review (through 2004) various packages across several
+areas of linguistics. Among others, they discuss several packages used
+to draw syntax trees such as
 \texttt{qtrees}\footnote{\tbsurl{ctan.org/pkg/qtrees}} and
 \texttt{forest}\footnote{\tbsurl{ctan.org/pkg/forest}} and specialized
 packages for presenting examples and interlinear glossed texts such as
 \texttt{expex}.\footnote{\tbsurl{ctan.org/pkg/expex}} Their reviews
-also discuss packages such as \texttt{covington}\footnote{\tbsurl{ctan.org/pkg/covington}} and
-\texttt{gb4e}\footnote{\tbsurl{ctan.org/pkg/gb4e}} whose collections of macros serve a
-variety of page layout functions targeted at publishing in linguistic
-topics.
+also discuss packages such as
+\texttt{covington}\footnote{\tbsurl{ctan.org/pkg/covington}} and
+\texttt{gb4e}\footnote{\tbsurl{ctan.org/pkg/gb4e}} whose collections
+of macros serve a variety of page layout functions targeted at
+publishing in linguistic topics.
 
 The \CTAN{} repository currently lists fifty-four different \TeX{}
 packages for linguistic
@@ -231,12 +234,13 @@ interdependency that packages have (including the order of loading
 packages) constitutes barriers of adoption to new \TeX{}
 users.
 
-We discuss \TeX{} barriers of adoption for two reasons. First, it exemplifies some of the complexities that
-\XLP{} seeks to simplify as it presents authors not just a visual
-environment for document composition, but also a cohesive output
-solution. Second, it speaks to the software design process in finding
-the minimal viable product. That is, {\em how much (or little) of a software stack is
-needed to make a usable software product for linguistic publishing?}
+We discuss \TeX{} barriers of adoption for two reasons. First, it
+exemplifies some of the complexities that \XLP{} seeks to simplify as
+it presents authors not just a visual environment for document
+composition, but also a cohesive output solution. Second, it speaks to
+the software design process in finding the minimal viable
+product. That is, {\em how much (or little) of a software stack is
+  needed to make a usable software product for linguistic publishing?}
 The \TeX{} community is divided on this. While the diagrams in
 linguistic books and journals since the 1980's exemplify many
 beautiful, sharp, crisp, illustrations created directly in \TeX{},
@@ -255,11 +259,10 @@ tools to generate illustrations and then include them as vector
 production path that the \XLP{} philosophy follows. That is, \XLP{}
 reduces the complexity of the typesetting task for authors by
 requiring complex visualizations to be produced via graphical
-tools. We have found tools like Figma\footnote{\tbsurl{figma.com}}
-and Inkscape\footnote{\tbsurl{inkscape.org}} very helpful in the
-graphic production task. The \XLP{} product seeks to lower
-barriers of entry, only produce valid documents, and keep the code
-base to a minimum.
+tools. We have found tools like Figma\footnote{\tbsurl{figma.com}} and
+Inkscape\footnote{\tbsurl{inkscape.org}} very helpful in the graphic
+production task. The \XLP{} product seeks to lower barriers of entry,
+only produce valid documents, and keep the code base to a minimum.
 
 As mentioned in the discussion of \texttt{tipa}, linguistic documents
 have not always been typeset with Unicode. Unicode was introduced in
@@ -301,8 +304,8 @@ because the \XXE{} requires Java.
 %At the time (and maybe even now) it did not have certain table-oriented capabilities we need that RenderX has.  I'm not remembering off the top of my head, but I think it included table-and-caption and auto layout support for tables.  I see from https://xmlgraphics.apache.org/fop/compliance.html that these are still not implemented.
 \XSLFO{} processors can have various degrees of implementation of the
 \XSLFO{} standard. \RenderX{} has some limitations which affect page
-layout but has more complete coverage than the Apache FOP project which
-lacks certain required table-oriented
+layout but has more complete coverage than the Apache FOP project
+which lacks certain required table-oriented
 capabilities.\footnote{\tbsurl{xmlgraphics.apache.org/fop/compliance.html}}
 The limitations of \RenderX{} are discussed in Section 6. In 2009
 plans were made to add \XeLaTeX-based output to \XLP{} because, while
@@ -381,6 +384,7 @@ alphabetical order):
 \texttt{footmisc} & \texttt{tabularx}\\
 \texttt{hyperref} & \texttt{xltxtra}\\
 \end{tabular}
+
 \noindent The twenty \LaTeX{} packages that are part of the custom \XLP{}
 distribution are still rather large (29MB) for someone for whom
 Internet bandwidth is an expensive and inconsistent commodity.
@@ -397,9 +401,9 @@ with \XLP{}. This abstraction layer was then executed when the
 \XeLaTeX{} file was processed. This middle layer has granted \XLP{}
 flexibility in adding new code and capabilities while keeping the
 “heavy” \LaTeX\ packages stable. The net result is a
-“heavy” first install package (116MB), but light-weight
-upgrade packages (6.21MB). In the thirteen year history of
-development, there have been a few occasions where upgrades have
+“heavy” first install package (116MB), but
+light-weight upgrade packages (6.21MB). In the thirteen year history
+of development, there have been a few occasions where upgrades have
 required the download of new “heavy” packages. One
 such case was when the ability to use framed units was added. These
 elements depend on the
@@ -416,10 +420,10 @@ first is via \XSLFO{}, and the second is via \TeXML{} which converts
 \PDF{}. Given certain limitations in both \XSLFO{} and \TeXML{},
 \XLP{} uses a custom (or third) method. When an author instructs
 \XLP{} to produce \PDF{} output via \XeLaTeX{}, \XLP{} produces a
-\TeXML{}-like \XML{} file. This is then converted into a
-\LaTeX{} formatted document via a set of \XSLT{} transforms and
-processed via \XeLaTeX{} to produce the \PDF{}.  Figure~3 contains a
-diagram of the data handling process.
+\TeXML{}-like \XML{} file. This is then converted into a \LaTeX{}
+formatted document via a set of \XSLT{} transforms and processed via
+\XeLaTeX{} to produce the \PDF{}.  Figure~3 contains a diagram of the
+data handling process.
 
 \subsection{\TeXML{}}
 
@@ -455,57 +459,64 @@ ensure proper data processing. This has been implemented via Java
 since Java was already present in the dependency stack due to the
 \XXE{} requiring it. Additionally, some small methods have been
 written in Java to provide additional access to features via the
-graphical user interface.  These include among other things adding rows and/or columns to
-tables, automatically converting glosses to abbreviation references,
-and importing references from various \XML{} formats.
+graphical user interface.  Among other things, these include adding
+rows and/or columns to tables, automatically converting glosses to
+abbreviation references, and importing references from various \XML{}
+formats.
 
 \subsection{Ling-\TeX{}}
 
-One might ask, “Why not add more linguistic related \TeX{} packages to
-the available stack, or use those instead of creating custom code?”
-The answer has two simple parts: First, in 2009 the linguistic
-capabilities of \TeX{} packages were different than they are today.
-Second, \XLP{} is more than a \TeX{} document producer. For example, some authors
-\cite{BeadleandLee:2020a} \cite{BeadleandLee:2020b} use \XLP{} to
-manage multilingual content on websites.
+One might ask, “Why not add more linguistic related \TeX{}
+packages to the available stack, or use those instead of creating
+custom code?” The answer has two simple parts: First, in 2009
+the linguistic capabilities of \TeX{} packages were different than
+they are today.  Second, \XLP{} is more than a \TeX{} document
+producer. For example, some authors \cite{BeadleandLee:2020a}
+\cite{BeadleandLee:2020b} use \XLP{} to manage multilingual content on
+websites.
 
 \begin{figure}
-\includegraphics[scale=.525]{Outputs.png}
+\includegraphics[scale=.525]{images/Outputs.png}
 \caption{\XLP{} combines style and content information contained
   in its custom \XML{} and then exports it into three different formats
   for further processing.}
 \end{figure}
 
-Besides \TeX{}, \XLP{} also produces \XSLFO{} and
-\XHTML{}/\CSS{} outputs. When new features which are considered for inclusion must be considered for all output formats.
+Besides \TeX{}, \XLP{} also produces \XSLFO{} and \XHTML{}/\CSS{}
+outputs. When new features are considered for inclusion, they must be
+considered for all output formats.
 
-After excluding \TeXML{} as a viable option, and still seeking to create 
-\XeLaTeX{}-based output, a solution was needed to determine which set of minimal \TeX packages would be needed. The Ling-\TeX{}
-group\footnote{\tbsurl{web.archive.org/web/20150702123633/http://heim.ifi.uio.no/~dag/ling-tex}}
-which also ran the Ling-\TeX{} mailing list from
-1995–2018 was discovered.\footnote{\tbsurl{ling-tex.ifi.uio.narkive.com}} Ling-\TeX{}
-seemed to be the locus of activity in linguistic typesetting via \TeX{} even
-though other web pages discussing linguistics and \TeX{} also existed,
-e.g.,
-Essex,\footnote{\tbsurl{essex.ac.uk/linguistics/external/clmt/latex4ling}}
-UPenn.\footnote{\tbsurl{ling.upenn.edu/advice/latex.html}} Today,
-now that the mailing list is no-longer in operation, many of the
-mailing list participants can be found interacting on the \TeX{}
+After excluding \TeXML{} as a viable option, and still seeking to
+create \XeLaTeX{}-based output, a solution was needed to determine
+which set of minimal \TeX{} packages would be needed. The Ling-\TeX{}
+group,\footnote{\tbsurl{web.archive.org/web/20150702123633/http://heim.ifi.uio.no/~dag/ling-tex}}
+which also ran the Ling-\TeX{} mailing list from 1995–2018,
+was discovered.\footnote{\tbsurl{ling-tex.ifi.uio.narkive.com}}
+Ling-\TeX{} seemed to be the locus of activity in linguistic
+typesetting via \TeX{} even though other web pages discussing
+linguistics and \TeX{} also existed, e.g.,
+Essex\footnote{\tbsurl{essex.ac.uk/linguistics/external/clmt/latex4ling}}
+and UPenn.\footnote{\tbsurl{ling.upenn.edu/advice/latex.html}} Today, now
+that the mailing list is no-longer in operation, many of the mailing
+list participants can be found interacting on the \TeX{}
 stackexchange.\footnote{\tbsurl{tex.stackexchange.com}}
 
 State-of-the-Art for \TeX{}-based linguistic publishing in 2009, as
 recommended by the Ling-\TeX{} website, suggested using
-\texttt{covington} and {\em ling-mac}—the list of macros discussed by
-Thiel in \cite{thiele:1995}. These macros were used to solve similar
-use cases, among others, to those already implemented by \XLP{}. However, their approches and outputs had more limitations than \XLP{} produced via \XSLFO. Some of the 
-more commonly implemented typesetting use cases are outlined in Section~4.
-%These figure refs need to be re-evaluated for accuracy since I added
-%another figure.
-Initial analysis of \texttt{covington} and other packages revealed
-limitations in the number of rows an interlinear text example could
-display, a typesetting capability \XLP{} had already overcome via
-\XSLFO{} processing using \RenderX{}. \XLP{} had the following
-capabilities for typesetting interlinears:
+\texttt{covington} and {\em ling-mac}—the list of macros
+discussed by Thiel in \cite{thiele:1995}. These macros were used to
+solve similar use cases, among others, to those already implemented by
+\XLP{}. Their approaches and outputs, however, had more limitations
+than what \XLP{} already offered.
+% Seems we don't need the following commented material.
+%Some of the
+%more commonly implemented typesetting use cases are outlined in
+%Section~4.  Initial analysis of \texttt{covington} and other packages
+%revealed limitations in the number of rows an interlinear text
+%example could display, a typesetting capability \XLP{} had already
+%overcome via \XSLFO{} processing using \RenderX{}.
+\XLP{} had the following capabilities for typesetting
+interlinears:
 
 \begin{itemize}
 \item no limits on the number of lines within an interlinear grouping;
@@ -517,15 +528,18 @@ capabilities for typesetting interlinears:
   code for the language used in the interlinear.
 \end{itemize}
 
-\noindent At the time the best solution given the state of the \TeX{} packages
-available was custom \TeX{} scripts, although now similar features may
-be possible via other packages. For example in 2019 Pellard \cite{pellard:2019} 
-discussed the limiting approaches in various \TeX{} packages related to interlinear glosses and his solution
-\texttt{typgloss}.\footnote{\tbsurl{github.com/tpellard/typgloss}} \XLP{}'s examples can be seen in Figures~5–7 which contain output illustrating some of the special
-capabilities \XLP{} offers.
+\noindent At the time the best solution given the state of the \TeX{}
+packages available was custom \TeX{} scripts, although now similar
+features may be possible via other packages. For example in 2019
+Pellard \cite{pellard:2019} discussed the limiting approaches in
+various \TeX{} packages related to interlinear glosses and his
+solution
+\texttt{typgloss}.\footnote{\tbsurl{github.com/tpellard/typgloss}}
+\XLP{}'s examples can be seen in Figures~5–7 which contain
+output illustrating some of the special capabilities \XLP{} offers.
 
 \begin{figure*}
-\includegraphics[scale=.97]{ExamplePDFInterlinear.png}
+\includegraphics[scale=.97]{images/ExamplePDFInterlinear.png}
 \caption{Interlinear example from \cite{marlett:2012}. Note the
   example numbers on the left followed by example groups (a) and
   (b). Each interlinear then also has a language indicator in square
@@ -542,33 +556,43 @@ documents do not. This section discusses some of them.
 \subsection{Numbered example layouts}
 
 Linguistic documents usually have many numbered examples.  The prose
-often refers to examples (Figures, Tables, Examples, etc.) which are typographically near by or to previous examples.  \XLP{} automatically keeps
-track of the example identifiers and allows for different systems
-of numeration (1,2, 3; a,b,c; i, ii, iii, etc.).  This is especially important in linguistic publishing because authors, and
-publishing style sheets often make use of different kinds of examples, inclusing sub-examples, and table-like design layouts
-which can contain lists of words along with their glosses (as shown in
-Figure~6) and interlinear clauses (as shown in Figure~5). Some cases even have headings in portions of the example.
+often refers to examples which are typographically nearby or to
+previous examples.  \XLP{} automatically keeps track of the example
+identifiers.
+%No, XLinPaper does not allow example numbers to be in any other format.
+%and allows for different systems of numeration (1,2, 3;
+%a,b,c; i, ii, iii, etc.).
+This is especially important in linguistic publishing because authors,
+and publishing style sheets often make use of different kinds of
+examples, including sub-examples, and table-like design layouts which
+can contain lists of words along with their glosses (as shown in
+Figure~6) and interlinear clauses (as shown in Figure~5). Some cases
+even have headings in portions of the example.
 
-\begin{figure*}
-\includegraphics[scale=1.0]{GraphitePDF-Slide24.png}%Andy this image needs to be changed to Rasmusen.png and resized this will give a cleaner presentation.
+\begin{figure}
+\includegraphics[scale=.16]{images/Rasmussen.png}
 \caption{List of words as seen in \cite{rasmussen:2018}}
-\end{figure*}
+\end{figure}
 
 \subsection{Interlinear glossed texts}
 
 There is a long tradition within linguistics and language study of
 presenting phrases containing different languages (but the same
 content) as interlinear texts. Di-Biase-Dyson et
-al. \cite{DiBiaseDysonEtAl:2009} trace the practice back as far as the
+al.\ \cite{DiBiaseDysonEtAl:2009} trace the practice back as far as the
 1652 publication of Kircher \cite{Kircher:1652}. More recent
 publications display significant variation in page layout related to
 interlinear glossed texts and interlinear examples. Variation exists
 in three dimensions:
 
 \begin{itemize}
-\item content elements,% (headings, line limits for gloss tier, original tier, translation tier, free translation tier),
+\item content elements,
+  % (headings, line limits for gloss tier, original tier, translation
+  % tier, free translation tier),
 \item data-structure of the encoded elements, and
-\item page layout (visual display of the elements).% (wrapping, word alignment/morpheme alignment, grouping of lines, sub-examples)
+\item page layout (visual display of the elements).
+  % (wrapping, word alignment/morpheme alignment, grouping of lines,
+  % sub-examples)
 \end{itemize}
 
 A full demonstration of the variation in content and its positioning
@@ -608,35 +632,39 @@ creating custom \TeX{} scripts to implement interlinear texts.
 %This is an example of the kind of pain people go through:
 %%https://tex.stackexchange.com/questions/284454/multiline-language-linguistic-glosses
 
-There are still some reasons related to data structure for considering
-\XLP{} over alternatives. Interlinear glossed texts are often stored in one of a few
-formats: \ELAN{} files,\footnote{\tbsurl{archive.mpi.nl/tla/elan}}
-\FLEx{} Text files,\footnote{\tbsurl{software.sil.org/fieldworks}}
-Standard Format files,\footnote{\tbsurl{software.sil.org/toolbox}}
-\LaTeX{} files,\footnote{For examples see \cite{schenneretal:2016} and
-\cite{so:2021}.}, custom project-specific \XML{} files, or relational databases such as MySQL, PostgreSQL, or FileMakerPro. Moving
-content from analysis and markup tools to typesetting tools is an ever
-present need for linguists. Several tools such as \ELAN{} and \FLEx{}
-have well established workflows for data transfer
+There are also some reasons related to data structure for considering
+\XLP{} over alternatives. Interlinear glossed texts are often stored
+in one of a few formats: \ELAN{}
+files,\footnote{\tbsurl{archive.mpi.nl/tla/elan}} \FLEx{} Text
+files,\footnote{\tbsurl{software.sil.org/fieldworks}} Standard Format
+files,\footnote{\tbsurl{software.sil.org/toolbox}} \LaTeX{}
+files,\footnote{For examples see \cite{schenneretal:2016} and
+\cite{so:2021}.} custom project-specific \XML{} files, or relational
+databases such as MySQL, PostgreSQL, or FileMakerPro. Moving content
+from analysis and markup tools to typesetting tools is an ever present
+need for linguists. Several tools such as \ELAN{} and \FLEx{} have
+well established workflows for data transfer
 \cite{SalffnerGavid:2014}. \FLEx{} is often considered the tool of
 choice for many field linguists, language documenters, and
 lexicographers. For many linguists entering the field, it is the tool
 of choice over older tools like Toolbox (which uses standard format
-files) due to built in collaborative features and grammar parsers
+files) due to built-in collaborative features and grammar parsers
 \cite{BeierandMichael:2022}. Interlinear text in \FLEx{} can be
-exported and \XML{} and the data used within \XLP{} documents. This presents \FLEx{} users
-the opportunity to typeset their texts rather easily. Enabled by \XML{}'s modular document referencing features, \XLP{} documents can reference components. Using the \XML{}
-document referencing strategy with \XML encoded \FLEx{} texts allows authors to reflow typesetting
-outputs easily if they make content changes in their \FLEx{}
-environment.
+exported into \XML{} and the data used within \XLP{} documents. This
+presents \FLEx{} users the opportunity to typeset their texts rather
+easily. Enabled by \XML{}'s modular document referencing features,
+\XLP{} documents can reference components. Using the \XML{} document
+referencing strategy with \XML{}-encoded \FLEx{} texts allows authors to
+reflow typesetting outputs easily if they make content changes in
+their \FLEx{} environment.
 
-\XLP{} does not have a direct \ELAN{} import process. However, we have had reports of linguists using the
-\FLEx{}-\XLP{} publication pathway to typeset \ELAN{} texts in
-\LaTeX{} documents. Users report capturing the \XeLaTeX{} document prior to
-rendering and then copying the relevant \TeX{} sections to their primary
-document and add any required packages required by \XLP{} to the header of their primary \TeX{}
-document.
-%Hugh: this dose not ring a bell with me.  Who/what do you have in mind here? %Andy: Abby is her name she was a post-doc at SOAS at the time.
+\XLP{} does not have a direct \ELAN{} import process. However, we have
+had reports of linguists using the \FLEx{}-\XLP{} publication pathway
+to typeset \ELAN{} texts in \LaTeX{} documents. One user reports
+capturing the \XeLaTeX{} document prior to rendering and then copying
+the relevant \TeX{} sections to their primary document and adding any
+required packages required by \XLP{} to the header of their primary
+\TeX{} document.
 
 Still finally, there is the matter of page layout. The main types of
 variation in page layout we have seen include the grouping of lines
@@ -653,7 +681,7 @@ hanging indent paragraph. This is based on the work of Kew \& McConnel
 1990 \cite{kew:mcconnel}.
 
 \begin{figure*}
-\includegraphics[scale=0.97]{TextPDF-Slide21.png}
+\includegraphics[scale=0.97]{images/TextPDF-Slide21.png}
 \caption{Wrapped interlinear text as seen in \cite{nmeAndMarlett:2011}.}
 \end{figure*}
 
@@ -718,7 +746,7 @@ scripts to output \TeX{} code for final rendering. It does not rely on
 \BibTeX{} or \BibLaTeX{}.
 
 \begin{figure*}
-\includegraphics[scale=0.6]{Chinese.png}%Andy I changed this image and it needs rezided to fit and be clear.
+\includegraphics[scale=0.5]{images/Chinese.png}
 \caption{An \XLP{} bibliography demonstrating mixed Latin and Chinese
   scripts.}
 \end{figure*}
@@ -734,7 +762,10 @@ formatting power of \TeX{} and \XeLaTeX{}.
 
 One of the most popular features of \XLP{} is its ability to
 automatically wrap long interlinear examples and lines in interlinear
-texts. As seen in Figure~7 wrapping occurs for the glossed text tiers. Not shown, but equally important is that free translation tiers which are often longer than glossed lines also wrap neatly and coherently.
+texts. As seen in Figure~7 wrapping occurs for the glossed text
+tiers. Not shown, but equally important, is that free translation
+tiers which are often longer than glossed lines also wrap neatly and
+coherently.
 
 \subsection{Font rendering}
 %for discussing fonts several works need to be added to the bibliography: 
@@ -749,10 +780,13 @@ texts. As seen in Figure~7 wrapping occurs for the glossed text tiers. Not shown
 %https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-feature-resolution
 
 %Andy what are the fonts and the font sizes in the images?
+%Font alignment: Times New Roman and Charis SIL
+%Stacked: same
+%tone staves: Charis SIL
 \begin{figure*}
-\includegraphics[scale=0.86]{FontAlignmentRenderX.png}
-\includegraphics[scale=0.6]{FontAlignmentXHTML.png}
-\includegraphics[scale=0.86]{FontAlignmentXeLaTeX.png}
+\includegraphics[scale=0.86]{images/FontAlignmentRenderX.png}
+\includegraphics[scale=0.6]{images/FontAlignmentXHTML.png}
+\includegraphics[scale=0.86]{images/FontAlignmentXeLaTeX.png}
 \caption{Ascender/descender font differences: The \RenderX{} output is
   on the left; \XHTML{} output is in the middle; the \XeLaTeX{} output
   is on the right.}
@@ -766,10 +800,12 @@ descender values. In order to overcome this, one has to add custom
 commands to deal with the font that differs.
 
 \begin{figure*}
-\includegraphics[scale=0.96]{StackedDiacriticsRenderX.png}
+\includegraphics[scale=0.96]{images/StackedDiacriticsRenderX.png}
 \hspace*{.25in}  
-\includegraphics[scale=0.96]{StackedDiacriticsXeLaTeX.png}
-\caption{Stacked diacritics on the third word from the left: The \RenderX{} output is on the left; the \XeLaTeX{} output is on the right.}
+\includegraphics[scale=0.96]{images/StackedDiacriticsXeLaTeX.png}
+\caption{Stacked diacritics on the third word from the left: The
+  \RenderX{} output is on the left; the \XeLaTeX{} output is on the
+  right.}
 \end{figure*}
 %By the way, this is just plain unicode not anything special.
 
@@ -777,9 +813,9 @@ Second, the \RenderX{} way of producing \PDF{} cannot
 handle stacked diacritics, but the \XeLaTeX{} way does it very well.  See Figure~10.
 
 \begin{figure*}
-\includegraphics[scale=1.25]{ToneContoursRenderX.png}
-\includegraphics[scale=0.85]{ToneContoursXHTML.png}
-\includegraphics[scale=1.25]{ToneContoursXeLaTeX.png}
+\includegraphics[scale=1.25]{images/ToneContoursRenderX.png}
+\includegraphics[scale=0.85]{images/ToneContoursXHTML.png}
+\includegraphics[scale=1.25]{images/ToneContoursXeLaTeX.png}
 \caption{Tone contour rendering: The \RenderX{} output is
   on the left; \XHTML{} output is in the middle; the \XeLaTeX{} output
   is on the right.  Only the \XeLaTeX{} output is correct.}
@@ -803,6 +839,74 @@ hyphenate according to that language’s hyphenation rules.
 %that Steve Marlett used XLingPaper for.
 
 %Andy: can you run that user documentation list of languages to a XeLaTeX file and produce a table and copy that table into this document?
+%OK, but I think it doesn't fit - it's just from the polyglossia documentation
+
+\begin{supertabular}{lll}
+\textbf{Language}&\textbf{Two letter}&\textbf{Three letter}\\%
+\textbf{Name}&\textbf{code}&\textbf{code}\\%
+Albanian&sq&sqi\\%
+Amharic&am&amh\\%
+Arabic&ar&ara\\%
+Asturian&�&ast\\%
+Basque&eu&eus\\%
+Bengali&bn&ben\\%
+Bulgarian&bg&bul\\%
+Catalan&ca&cat\\%
+Coptic&�&cop\\%
+Croatian&hr&hrv\\%
+Czech&cs&ces\\%
+Danish&da&dan\\%
+Dutch&nl&nld\\%
+English&en&eng\\%
+Esperanto&eo&epo\\%
+Estonian&et&est\\%
+Farsi&fa&fas\\%
+Finnish&fi&fin\\%
+French&fr&fra\\%
+Galician&gl&glg\\%
+German&de&deu\\%
+Greek&el&ell\\%
+Hebrew&he&heb\\%
+Hindi&hi&hin\\%
+Hungarian&hu&hun\\%
+Icelandic&is&isl\\%
+Indonesian&id&ind\\%
+Interlingua&ia&ina\\%
+Irish&ga&gle\\%
+Italian&it&ita\\%
+Lao&lo&lao\\%
+Latin&la&lat\\%
+Latvian&lv&lav\\%
+Lithuanian&lt&lit\\%
+Lower Sorbian&�&dsb\\%
+Malay&ms&msa\\%
+Malayalam&ml&mal\\%
+Marathi&mr&mar\\%
+Nynorsk&nn&nno\\%
+Occitan&oc&oci\\%
+Polish&pl&pol\\%
+Portuges&pt&por\\%
+Romanian&ro&ron\\%
+Russian&ru&rus\\%
+Sanskrit&sa&san\\%
+Scottish&gd&gla\\%
+Serbian&sr&srp\\%
+Slovak&sk&slk\\%
+Slovenian&sl&slv\\%
+Spanish&es&spa\\%
+Swedish&sv&swe\\%
+Syriac&�&syr\\%
+Tamil&ta&tam\\%
+Telugu&te&tel\\%
+Thai&th&tha\\%
+Turkish&tr&tur\\%
+Turkmen&tk&tuk\\%
+Ukrainian&uk&ukr\\%
+Urdu&ur&urd\\%
+Upper Sorbian&�&hsb\\%
+Vietnamese&vi&vie\\%
+Welsh&cy&cym\\
+\end{supertabular}
 
 \subsection{Author contact information}
 
