@@ -559,10 +559,11 @@ Linguistic documents usually have many numbered examples.  The prose
 often refers to examples which are typographically nearby or to
 previous examples.  \XLP{} automatically keeps track of the example
 identifiers.
-%No, XLinPaper does not allow example numbers to be in any other format.
+%Hugh: No, XLinPaper does not allow example numbers to be in any other format.
 %and allows for different systems of numeration (1,2, 3;
 %a,b,c; i, ii, iii, etc.).
 %Andy: Are you sure about this. Sub-Examples can have (a) and (b)... Even in the publisher stylesheet? other things like <ol> can have a variety of number styles.
+%Hugh: Yes, list examples have a, b, c and <ol> items can have various of these, but this section is on numbered examples.  The numbers fin examples are always arabic numerals.
 This is especially important in linguistic publishing because authors,
 and publishing style sheets often make use of different kinds of
 examples, including sub-examples, and table-like design layouts which
@@ -581,6 +582,7 @@ There is a long tradition within linguistics and language study of
 presenting phrases containing different languages (but the same
 content) as interlinear texts. Di-Biase-Dyson et
 al.\ \cite{DiBiaseDysonEtAl:2009} trace the practice back as far as the %Andy: Why is there a double forward slash?
+%Hugh: Thus is a TeX/LaTeX formatting thing.  The default spacing after a period is "sentence" spacing - extra long.  If, as here, you want more normal "word" spacing, then one uses "\ " to tell TeX/LaTeX to use shorter spacing after the period.  Since this period is not sentence final, we use the "\ " after it.
 1652 publication of Kircher \cite{Kircher:1652}. More recent
 publications display significant variation in page layout related to
 interlinear glossed texts and interlinear examples. Variation exists
@@ -682,7 +684,7 @@ hanging indent paragraph. This is based on the work of Kew \& McConnel
 1990 \cite{kew:mcconnel}.
 
 \begin{figure*}
-\includegraphics[scale=0.97]{images/TextPDF-Slide21.png}%Andy: this one needs changed to Rikha.png
+\includegraphics[scale=0.25]{images/Rikha.png}
 \caption{Wrapped interlinear text as seen in \cite{nmeAndMarlett:2011}.}
 \end{figure*}
 
@@ -747,7 +749,7 @@ scripts to output \TeX{} code for final rendering. It does not rely on
 \BibTeX{} or \BibLaTeX{}. Figure~8 shows an example of a bibliography created with \XLP{}.
 
 \begin{figure*}
-\includegraphics[scale=0.5]{images/Chinese.png}%Andy: This one needs changed to Chou.png
+\includegraphics[scale=0.2]{images/Chou.png}
 \caption{An \XLP{} bibliography demonstrating mixed Latin and Chinese
   scripts.}
 \end{figure*}
@@ -830,20 +832,8 @@ Graphite\footnote{\tbsurl{graphite.sil.org}} processing.  Figure~11 illustrate s
 \subsection{Hyphenation for non-English languages}
 
 Since we use the \texttt{polyglossia} package, one can write an
-\XLP{} document in any of the 61 non-English languages listed in the \texttt{polyglossia} documentation  and \XeLaTeX{} will
+\XLP{} document in any of the sixty-one non-English languages listed in the \texttt{polyglossia} documentation  and \XeLaTeX{} will
 hyphenate according to that languageâ€™s hyphenation rules.
-
-%We should list out these languages. The author was in the audience
-%and said he was interested in adding to polygossia if we had input.
-%@Hugh: See Appendix C in the XLingPaper user documentation for the
-%list.  There are 62 languages listed.  Off the top of my head, the
-%only instances I know of where polyglossia did not already have the
-%needed hyphenation language were for some literacy documents in Seri
-%that Steve Marlett used XLingPaper for.
-
-%Andy: can you run that user documentation list of languages to a XeLaTeX file and produce a table and copy that table into this document?
-%OK, but I think it doesn't fit - it's just from the polyglossia documentation
-%Andy: Yeah it is a bit gaudy.... verbose... maybe as an appendix?
 
 \subsection{Author contact information}
 
@@ -907,7 +897,6 @@ Table headers & Attempt to calculate a columnâ€™s width via its
 contents.\\
 \end{tabular}
 
-\appendix
 \section{Hyphenation supported languages}
 \begin{supertabular}{lll}
 \textbf{Language}&\textbf{Two letter}&\textbf{Three letter}\\%
@@ -915,12 +904,12 @@ contents.\\
 Albanian&sq&sqi\\%
 Amharic&am&amh\\%
 Arabic&ar&ara\\%
-Asturian&\A0&ast\\%
+Asturian& &ast\\%
 Basque&eu&eus\\%
 Bengali&bn&ben\\%
 Bulgarian&bg&bul\\%
 Catalan&ca&cat\\%
-Coptic&\A0&cop\\%
+Coptic& &cop\\%
 Croatian&hr&hrv\\%
 Czech&cs&ces\\%
 Danish&da&dan\\%
@@ -946,7 +935,7 @@ Lao&lo&lao\\%
 Latin&la&lat\\%
 Latvian&lv&lav\\%
 Lithuanian&lt&lit\\%
-Lower Sorbian&\A0&dsb\\%
+Lower Sorbian& &dsb\\%
 Malay&ms&msa\\%
 Malayalam&ml&mal\\%
 Marathi&mr&mar\\%
@@ -963,7 +952,7 @@ Slovak&sk&slk\\%
 Slovenian&sl&slv\\%
 Spanish&es&spa\\%
 Swedish&sv&swe\\%
-Syriac&\A0&syr\\%
+Syriac& &syr\\%
 Tamil&ta&tam\\%
 Telugu&te&tel\\%
 Thai&th&tha\\%
@@ -971,7 +960,7 @@ Turkish&tr&tur\\%
 Turkmen&tk&tuk\\%
 Ukrainian&uk&ukr\\%
 Urdu&ur&urd\\%
-Upper Sorbian&\A0&hsb\\%
+Upper Sorbian& &hsb\\%
 Vietnamese&vi&vie\\%
 Welsh&cy&cym\\
 \end{supertabular}
@@ -1124,7 +1113,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 
 \bibitem{so:2021}{So Miyagawa, and Vincent W.J. van Gerven Oei. 2021. Building Web Corpus of Old Nubian with Interlinear Glossing as Digital Cultural Heritage for Modern-Day Nubians. In {\em The  Proceedings of the 11th Conference of Japanese Association for Digital Humanities}, vol. 2021. 144â€“147. Tokyo: Historiographical Institute, The University of Tokyo. \tbsurl{hi.u-tokyo.ac.jp/JADH/2021/Proceedings_JADH2021_rev0905.pdf}.}
 
-\bibitem{thiele:1995}{Thiele, Christina. 1995. \TEX{} and Linguistics. {\em TUGboat} 16 (1): 42â€“44. \tbsurl{tug.org/TUGboat/tb16-1/tb46ling.pdf}.}
+\bibitem{thiele:1995}{Thiele, Christina. 1995. \TeX{} and Linguistics. {\em TUGboat} 16 (1): 42â€“44. \tbsurl{tug.org/TUGboat/tb16-1/tb46ling.pdf}.}
 
 \bibitem{thiele:2007}{Thiele, Christina. 2007. {\em Christina Thiele Interview by Dave Walden for the \TeX{} Users Group}. Transcript. \tbsurl{tug.org/interviews/thiele.html}.}
 
