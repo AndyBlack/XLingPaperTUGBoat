@@ -562,6 +562,7 @@ identifiers.
 %No, XLinPaper does not allow example numbers to be in any other format.
 %and allows for different systems of numeration (1,2, 3;
 %a,b,c; i, ii, iii, etc.).
+%Andy: Are you sure about this. Sub-Examples can have (a) and (b)... Even in the publisher stylesheet? other things like <ol> can have a variety of number styles.
 This is especially important in linguistic publishing because authors,
 and publishing style sheets often make use of different kinds of
 examples, including sub-examples, and table-like design layouts which
@@ -579,7 +580,7 @@ even have headings in portions of the example.
 There is a long tradition within linguistics and language study of
 presenting phrases containing different languages (but the same
 content) as interlinear texts. Di-Biase-Dyson et
-al.\ \cite{DiBiaseDysonEtAl:2009} trace the practice back as far as the
+al.\ \cite{DiBiaseDysonEtAl:2009} trace the practice back as far as the %Andy: Why is there a double forward slash?
 1652 publication of Kircher \cite{Kircher:1652}. More recent
 publications display significant variation in page layout related to
 interlinear glossed texts and interlinear examples. Variation exists
@@ -681,7 +682,7 @@ hanging indent paragraph. This is based on the work of Kew \& McConnel
 1990 \cite{kew:mcconnel}.
 
 \begin{figure*}
-\includegraphics[scale=0.97]{images/TextPDF-Slide21.png}
+\includegraphics[scale=0.97]{images/TextPDF-Slide21.png}%Andy: this one needs changed to Rikha.png
 \caption{Wrapped interlinear text as seen in \cite{nmeAndMarlett:2011}.}
 \end{figure*}
 
@@ -746,7 +747,7 @@ scripts to output \TeX{} code for final rendering. It does not rely on
 \BibTeX{} or \BibLaTeX{}.
 
 \begin{figure*}
-\includegraphics[scale=0.5]{images/Chinese.png}
+\includegraphics[scale=0.5]{images/Chinese.png}%Andy: This one needs changed to Chou.png
 \caption{An \XLP{} bibliography demonstrating mixed Latin and Chinese
   scripts.}
 \end{figure*}
@@ -779,12 +780,14 @@ coherently.
 %One of Andy's CSS problems can be solved with https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#propdef-font-size-adjust
 %https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-feature-resolution
 
-%Andy what are the fonts and the font sizes in the images?
+%See discussion here: https://mail.google.com/mail/u/0/#all/FMfcgzGmvTvDrkvnwQrwNmVCZkCTsfMN
+%Andy: what are the fonts and the font sizes in the images?
+%Andy: Font SIZES? I can't look this up because I don't have the original XLingPaper document in the zip files you sent.
 %Font alignment: Times New Roman and Charis SIL
 %Stacked: same
 %tone staves: Charis SIL
 \begin{figure*}
-\includegraphics[scale=0.86]{images/FontAlignmentRenderX.png}
+\includegraphics[scale=0.86]{images/FontAlignmentRenderX.png}%Andy: These three items seem to line up differently. Can we get them the same without magnification of the iamges? What I mean here is that we should magnifiy the document to 200% and then make our screenshot to line up exactly in the same place so that the (16) lines up congrently across the items. otherwize it looks like part of the problem is the line height rendering. In this case it seems the center image is the clearest. I'm not sure why but that is the way it looks for me.
 \includegraphics[scale=0.6]{images/FontAlignmentXHTML.png}
 \includegraphics[scale=0.86]{images/FontAlignmentXeLaTeX.png}
 \caption{Ascender/descender font differences: The \RenderX{} output is
@@ -813,7 +816,7 @@ Second, the \RenderX{} way of producing \PDF{} cannot
 handle stacked diacritics, but the \XeLaTeX{} way does it very well.  See Figure~10.
 
 \begin{figure*}
-\includegraphics[scale=1.25]{images/ToneContoursRenderX.png}
+\includegraphics[scale=1.25]{images/ToneContoursRenderX.png}%Andy: These three items seem to line up differently. Can we get them the same without magnification of the iamges? What I mean here is that we should magnifiy the document to 200% and then make our screenshot to line up exactly in the same place so that the (16) lines up congrently across the items. Otherwize it looks like part of the problem is the line height rendering. We need a common reference point for the readers.
 \includegraphics[scale=0.85]{images/ToneContoursXHTML.png}
 \includegraphics[scale=1.25]{images/ToneContoursXeLaTeX.png}
 \caption{Tone contour rendering: The \RenderX{} output is
@@ -827,7 +830,7 @@ Graphite\footnote{\tbsurl{graphite.sil.org}} processing.  Figure~11 illustrate s
 \subsection{Hyphenation for non-English languages}
 
 Since we use the \texttt{polyglossia} package, one can write an
-\XLP{} document in a non-English language and \XeLaTeX{} will
+\XLP{} document in any of the 61 non-English languages listed in the \texttt{polyglossia} documentation  and \XeLaTeX{} will
 hyphenate according to that language’s hyphenation rules.
 
 %We should list out these languages. The author was in the audience
@@ -840,73 +843,7 @@ hyphenate according to that language’s hyphenation rules.
 
 %Andy: can you run that user documentation list of languages to a XeLaTeX file and produce a table and copy that table into this document?
 %OK, but I think it doesn't fit - it's just from the polyglossia documentation
-
-\begin{supertabular}{lll}
-\textbf{Language}&\textbf{Two letter}&\textbf{Three letter}\\%
-\textbf{Name}&\textbf{code}&\textbf{code}\\%
-Albanian&sq&sqi\\%
-Amharic&am&amh\\%
-Arabic&ar&ara\\%
-Asturian&�&ast\\%
-Basque&eu&eus\\%
-Bengali&bn&ben\\%
-Bulgarian&bg&bul\\%
-Catalan&ca&cat\\%
-Coptic&�&cop\\%
-Croatian&hr&hrv\\%
-Czech&cs&ces\\%
-Danish&da&dan\\%
-Dutch&nl&nld\\%
-English&en&eng\\%
-Esperanto&eo&epo\\%
-Estonian&et&est\\%
-Farsi&fa&fas\\%
-Finnish&fi&fin\\%
-French&fr&fra\\%
-Galician&gl&glg\\%
-German&de&deu\\%
-Greek&el&ell\\%
-Hebrew&he&heb\\%
-Hindi&hi&hin\\%
-Hungarian&hu&hun\\%
-Icelandic&is&isl\\%
-Indonesian&id&ind\\%
-Interlingua&ia&ina\\%
-Irish&ga&gle\\%
-Italian&it&ita\\%
-Lao&lo&lao\\%
-Latin&la&lat\\%
-Latvian&lv&lav\\%
-Lithuanian&lt&lit\\%
-Lower Sorbian&�&dsb\\%
-Malay&ms&msa\\%
-Malayalam&ml&mal\\%
-Marathi&mr&mar\\%
-Nynorsk&nn&nno\\%
-Occitan&oc&oci\\%
-Polish&pl&pol\\%
-Portuges&pt&por\\%
-Romanian&ro&ron\\%
-Russian&ru&rus\\%
-Sanskrit&sa&san\\%
-Scottish&gd&gla\\%
-Serbian&sr&srp\\%
-Slovak&sk&slk\\%
-Slovenian&sl&slv\\%
-Spanish&es&spa\\%
-Swedish&sv&swe\\%
-Syriac&�&syr\\%
-Tamil&ta&tam\\%
-Telugu&te&tel\\%
-Thai&th&tha\\%
-Turkish&tr&tur\\%
-Turkmen&tk&tuk\\%
-Ukrainian&uk&ukr\\%
-Urdu&ur&urd\\%
-Upper Sorbian&�&hsb\\%
-Vietnamese&vi&vie\\%
-Welsh&cy&cym\\
-\end{supertabular}
+%Andy: Yeah it is a bit gaudy.... verbose... maybe as an appendix?
 
 \subsection{Author contact information}
 
@@ -970,6 +907,75 @@ Table headers & Attempt to calculate a column’s width via its
 contents.\\
 \end{tabular}
 
+\appendix
+\section{Hyphenation supported languages}
+\begin{supertabular}{lll}
+\textbf{Language}&\textbf{Two letter}&\textbf{Three letter}\\%
+\textbf{Name}&\textbf{code}&\textbf{code}\\%
+Albanian&sq&sqi\\%
+Amharic&am&amh\\%
+Arabic&ar&ara\\%
+Asturian&\A0&ast\\%
+Basque&eu&eus\\%
+Bengali&bn&ben\\%
+Bulgarian&bg&bul\\%
+Catalan&ca&cat\\%
+Coptic&\A0&cop\\%
+Croatian&hr&hrv\\%
+Czech&cs&ces\\%
+Danish&da&dan\\%
+Dutch&nl&nld\\%
+English&en&eng\\%
+Esperanto&eo&epo\\%
+Estonian&et&est\\%
+Farsi&fa&fas\\%
+Finnish&fi&fin\\%
+French&fr&fra\\%
+Galician&gl&glg\\%
+German&de&deu\\%
+Greek&el&ell\\%
+Hebrew&he&heb\\%
+Hindi&hi&hin\\%
+Hungarian&hu&hun\\%
+Icelandic&is&isl\\%
+Indonesian&id&ind\\%
+Interlingua&ia&ina\\%
+Irish&ga&gle\\%
+Italian&it&ita\\%
+Lao&lo&lao\\%
+Latin&la&lat\\%
+Latvian&lv&lav\\%
+Lithuanian&lt&lit\\%
+Lower Sorbian&\A0&dsb\\%
+Malay&ms&msa\\%
+Malayalam&ml&mal\\%
+Marathi&mr&mar\\%
+Nynorsk&nn&nno\\%
+Occitan&oc&oci\\%
+Polish&pl&pol\\%
+Portuges&pt&por\\%
+Romanian&ro&ron\\%
+Russian&ru&rus\\%
+Sanskrit&sa&san\\%
+Scottish&gd&gla\\%
+Serbian&sr&srp\\%
+Slovak&sk&slk\\%
+Slovenian&sl&slv\\%
+Spanish&es&spa\\%
+Swedish&sv&swe\\%
+Syriac&\A0&syr\\%
+Tamil&ta&tam\\%
+Telugu&te&tel\\%
+Thai&th&tha\\%
+Turkish&tr&tur\\%
+Turkmen&tk&tuk\\%
+Ukrainian&uk&ukr\\%
+Urdu&ur&urd\\%
+Upper Sorbian&\A0&hsb\\%
+Vietnamese&vi&vie\\%
+Welsh&cy&cym\\
+\end{supertabular}
+
 \bibliographystyle{tugboat}
 %\nocite{book-minimal}      % make the bibliography non-empty
 %\bibliography{xampl}       % xampl.bib comes with BibTeX
@@ -1019,7 +1025,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 
 \bibitem{buck:2018}{Buck, Marjorie J. 2018. {\em Gramática del amuzgo
     Xochistlahuaca, Guerrero}. (Serie de gramáticas de lenguas
-  indígenas de México No16.) Tlalpan, Ciudad de México, México:
+  indígenas de México №16.) Tlalpan, Ciudad de México, México:
   Instituto Lingüístico de Verano, A.C. [\SIL{} International in
     Mexico]. \tbsurl{sil.org/resources/archives/75518}.}
 
@@ -1099,7 +1105,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 
 \bibitem{peter:2004}{Peter, Steve. 2004. TEX and Linguistics. {\em TUGboat} 25 (1): 58–62. \tbsurl{tug.org/TUGboat/tb25-1/peter.pdf}.}
 
-\bibitem{priemerufreitag:2019}{Machicao y Priemer, Antonio, and Constantin Freitag. 2019. {\em LaTeX-Einführung Für Linguisten}. Presentation at the MGK Workshop – SFB 1412, Berlin. doi:\tbsurl{linguistik.hu-berlin.de/de/staff/amyp/latex20sfb/07-l4l-math2-trees-handout.pdf}.}
+\bibitem{priemerufreitag:2019}{Machicao y Priemer, Antonio, and Constantin Freitag. 2019. {\em LaTeX-Einführung Für Linguisten}. Presentation at the MGK Workshop – SFB 1412, Berlin. \tbsurl{linguistik.hu-berlin.de/de/staff/amyp/latex20sfb/07-l4l-math2-trees-handout.pdf}.}
 
 \bibitem{rasmussen:2018}{Rasmussen, Kent. 2018. {\em A Comparative
     Tone Analysis of Several Bantu D30 Languages (DR
