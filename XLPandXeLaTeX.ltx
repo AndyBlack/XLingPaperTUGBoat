@@ -558,13 +558,7 @@ documents do not. This section discusses some of them.
 Linguistic documents usually have many numbered examples.  The prose
 often refers to examples which are typographically nearby or to
 previous examples.  \XLP{} automatically keeps track of the example
-identifiers.
-%Hugh: No, XLinPaper does not allow example numbers to be in any other format.
-%and allows for different systems of numeration (1,2, 3;
-%a,b,c; i, ii, iii, etc.).
-%Andy: Are you sure about this. Sub-Examples can have (a) and (b)... Even in the publisher stylesheet? other things like <ol> can have a variety of number styles.
-%Hugh: Yes, list examples have a, b, c and <ol> items can have various of these, but this section is on numbered examples.  The numbers fin examples are always arabic numerals.
-This is especially important in linguistic publishing because authors,
+identifiers. This is especially important in linguistic publishing because authors,
 and publishing style sheets often make use of different kinds of
 examples, including sub-examples, and table-like design layouts which
 can contain lists of words along with their glosses (as shown in
@@ -581,8 +575,7 @@ even have headings in portions of the example.
 There is a long tradition within linguistics and language study of
 presenting phrases containing different languages (but the same
 content) as interlinear texts. Di-Biase-Dyson et
-al.\ \cite{DiBiaseDysonEtAl:2009} trace the practice back as far as the %Andy: Why is there a double forward slash?
-%Hugh: Thus is a TeX/LaTeX formatting thing.  The default spacing after a period is "sentence" spacing - extra long.  If, as here, you want more normal "word" spacing, then one uses "\ " to tell TeX/LaTeX to use shorter spacing after the period.  Since this period is not sentence final, we use the "\ " after it.
+al.\ \cite{DiBiaseDysonEtAl:2009} trace the practice back as far as the
 1652 publication of Kircher \cite{Kircher:1652}. More recent
 publications display significant variation in page layout related to
 interlinear glossed texts and interlinear examples. Variation exists
@@ -690,9 +683,9 @@ hanging indent paragraph. This is based on the work of Kew \& McConnel
 
 \subsection{Gloss abbreviations}
 
-Linguists standardly use glosses for indicating the meaning of pieces
-of words (morphemes). One common set of glosses is the Leipzig
-Glosses. However, Leipzig Glosses are not universally used for
+Linguists user two types of abbrivations. First they might use abbreivations for names, titles, or commonly used words. This is much like standard publishing. The second way that linguists use abbrivations is for indicating the grammatical meaning of pieces
+of words (morphemes). This second useage is often refered to as ‘glossing’ with the abbrivations refered to as ‘glosses’. One common set of glosses is the {\em Leipzig
+Glosses}. However, Leipzig Glosses are not universally used for
 several reasons including:
 
 \begin{itemize}
@@ -707,7 +700,7 @@ several reasons including:
 \item they are not theoretically sufficient for some linguists.
 \end{itemize}
 
-\XLP{} approaches this by providing built-in access to Leipzig
+\XLP{} supports both types. \XLP{} approaches this by providing built-in access to Leipzig
 Glosses, but also allowing the author to fine-tune a set of
 abbreviations and their definitions.  When producing the output,
 \XLP{} creates hyperlinks between the abbreviation and its
@@ -775,7 +768,7 @@ coherently.
 % Correll, Sharon. 2000. “Graphite: An Extensible Rendering Engine for Complex Writing Systems.” Presentation Paper presented at the 17th International Unicode Conference, San Jose, California. http://rabbits.continuation.org/w/images/7/73/Graphite_paper.pdf.
 %Kew, Jonathan. 2007. “XeTeX Live.” TUGboat 29 (1): 146–50. http://root.tug.org/tugboat/tb29-1/tb91kew.pdf.
 
-\XeLaTeX{} renders fonts extremely well.  We show three cases where \RenderX{} and/or \XHTML{} outputs have text rendering issues while \XeLaTeX{} does not.
+\XeLaTeX{} renders fonts extremely well.  We show three cases where \XSLFO{} and/or \XHTML{} outputs have text rendering issues while \XeLaTeX{} does not.
 
 %The issue here as far as I can tell is that XSL-FO does not have a way to access OT font features which are not pre-described in the XSL-FO standard. Additionally XSL-FO adopted OT rather than TT. CSS, which is relied on by browsers does marginally better, in that it acknowledges more prescribed features but does not allow access to all features of a font. The tone staves issue does not seem to be graphite based. Will Robertson. Advanced font features with XETEX—the fontspec package. TUGboat, ():–, .
 
@@ -788,8 +781,11 @@ coherently.
 %Font alignment: Times New Roman and Charis SIL
 %Stacked: same
 %tone staves: Charis SIL
+%Figure 9 - alignment: vernacular is Doulos SIL at 14pt; language and gloss are Times New Roman at 12pt
+%Figure 10 - stacked diacritics:all 12pt
+%Figure 11 - tone staves: 12pt for vernacular; 10pt for gloss
 \begin{figure*}
-\includegraphics[scale=0.86]{images/FontAlignmentRenderX.png}%Andy: These three items seem to line up differently. Can we get them the same without magnification of the iamges? What I mean here is that we should magnifiy the document to 200% and then make our screenshot to line up exactly in the same place so that the (16) lines up congrently across the items. otherwize it looks like part of the problem is the line height rendering. In this case it seems the center image is the clearest. I'm not sure why but that is the way it looks for me.
+\includegraphics[scale=0.86]{images/FontAlignmentRenderX.png}%Andy: These three items seem to line up differently. Can we get them the same without magnification of the images? What I mean here is that we should magnifiy the document to 200% and then make our screenshot to line up exactly in the same place so that the (16) lines up congrently across the items. otherwize it looks like part of the problem is the line height rendering. In this case it seems the center image is the clearest. I'm not sure why but that is the way it looks for me.
 \includegraphics[scale=0.6]{images/FontAlignmentXHTML.png}
 \includegraphics[scale=0.86]{images/FontAlignmentXeLaTeX.png}
 \caption{Ascender/descender font differences: The \RenderX{} output is
@@ -904,12 +900,12 @@ contents.\\
 Albanian&sq&sqi\\%
 Amharic&am&amh\\%
 Arabic&ar&ara\\%
-Asturian&�&ast\\%
+Asturian&\A0&ast\\%
 Basque&eu&eus\\%
 Bengali&bn&ben\\%
 Bulgarian&bg&bul\\%
 Catalan&ca&cat\\%
-Coptic&�&cop\\%
+Coptic&\A0&cop\\%
 Croatian&hr&hrv\\%
 Czech&cs&ces\\%
 Danish&da&dan\\%
@@ -935,7 +931,7 @@ Lao&lo&lao\\%
 Latin&la&lat\\%
 Latvian&lv&lav\\%
 Lithuanian&lt&lit\\%
-Lower Sorbian&�&dsb\\%
+Lower Sorbian&\A0&dsb\\%
 Malay&ms&msa\\%
 Malayalam&ml&mal\\%
 Marathi&mr&mar\\%
@@ -952,7 +948,7 @@ Slovak&sk&slk\\%
 Slovenian&sl&slv\\%
 Spanish&es&spa\\%
 Swedish&sv&swe\\%
-Syriac&�&syr\\%
+Syriac&\A0&syr\\%
 Tamil&ta&tam\\%
 Telugu&te&tel\\%
 Thai&th&tha\\%
@@ -960,7 +956,7 @@ Turkish&tr&tur\\%
 Turkmen&tk&tuk\\%
 Ukrainian&uk&ukr\\%
 Urdu&ur&urd\\%
-Upper Sorbian&�&hsb\\%
+Upper Sorbian&\A0&hsb\\%
 Vietnamese&vi&vie\\%
 Welsh&cy&cym\\
 \end{supertabular}
