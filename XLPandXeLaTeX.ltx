@@ -105,31 +105,34 @@ successfully typeset complex documents including:
 the \XXE{}. \XLP{} benefits from the \XXE{}'s Java-based
 implementation which allows it to be used on \MacOSX{}, Windows, and
 Linux. Via a \DTD{}, \XLP{} defines several document classes
-(articles, books, chapters, etc., as illustrated in Figure~1), in each
-case providing document layout sections (paragraphs, examples,
-endnotes, etc.). Figure~2 illustrates the main screen of the
-user-interface of \XXE{}.  By using this interface, formatting errors
-are reduced because users are constrained on where in the document
-flow they can introduce block and line level document elements.  That
-is, first, authors cannot input page layout instructions directly into
-the document and second, the introduction of layout sections within
-the document flow is constrained via the \DTD{}.
+(articles, books, chapters, etc., as illustrated in
+Figure~\ref{fig:doctypes}), in each case providing document layout
+sections (paragraphs, examples, endnotes, etc.). Figure~\ref{fig:UI}
+illustrates the main screen of the user-interface of \XXE{}.  By using
+this interface, formatting errors are reduced because users are
+constrained on where in the document flow they can introduce block and
+line level document elements.  That is, first, authors cannot input
+page layout instructions directly into the document and second, the
+introduction of layout sections within the document flow is
+constrained via the \DTD{}.
 
 \begin{figure}
 \includegraphics[scale=.425]{images/Several-different-document-types.png}
 \caption{\XLP{} predefined document types via \DTD{}}
+\label{fig:doctypes}
 \end{figure}
 
 \begin{figure*}
 \includegraphics[scale=.243]{images/XLingPaper-interface.png}
 \caption{\XLP{}'s user interface. Left side: document content editing. Right side: block and line level units available for use at the cursor location.}
+\label{fig:UI}
 \end{figure*}
 
-For many, the \PDF{} format
-is the quintessential file format for final distribution of publishing
-outputs. \XLP{} supports \PDF{} production; however, as illustrated in
-Figure~3, \XLP{} can also produce documents with at least five
-outputs, all from the same source document:
+For many, the \PDF{} format is the quintessential file format for
+final distribution of publishing outputs. \XLP{} supports \PDF{}
+production; however, as illustrated in Figure~\ref{fig:pipeline},
+\XLP{} can also produce documents with at least five outputs, all from
+the same source document:
 \begin{itemize}
 \item \PDF{} (version 1.5),
 \item Web pages (\HTML{} 4),
@@ -141,6 +144,7 @@ outputs, all from the same source document:
 \begin{figure*}
 \includegraphics[scale=.8]{images/PDFCreation.png}
 \caption{\XLP{}'s data processing pipeline to multiple formats}
+\label{fig:pipeline}
 \end{figure*}
 
 \XLP{} automatically numbers tables, examples, figures, and
@@ -422,8 +426,8 @@ first is via \XSLFO{}, and the second is via \TeXML{} which converts
 \XLP{} to produce \PDF{} output via \XeLaTeX{}, \XLP{} produces a
 \TeXML{}-like \XML{} file. This is then converted into a \LaTeX{}
 formatted document via a set of \XSLT{} transforms and processed via
-\XeLaTeX{} to produce the \PDF{}.  Figure~3 contains a diagram of the
-data handling process.
+\XeLaTeX{} to produce the \PDF{}.  Figure~\ref{fig:pipeline} contains
+a diagram of the data handling process.
 
 \subsection{\TeXML{}}
 
@@ -480,6 +484,7 @@ websites.
 \caption{\XLP{} combines style and content information contained
   in its custom \XML{} and then exports it into three different formats
   for further processing.}
+\label{fig:exportedformats}
 \end{figure}
 
 Besides \TeX{}, \XLP{} also produces \XSLFO{} and \XHTML{}/\CSS{}
@@ -535,8 +540,10 @@ Pellard \cite{pellard:2019} discussed the limiting approaches in
 various \TeX{} packages related to interlinear glosses and his
 solution
 \texttt{typgloss}.\footnote{\tbsurl{github.com/tpellard/typgloss}}
-\XLP{}'s examples can be seen in Figures~5–7 which contain
-output illustrating some of the special capabilities \XLP{} offers.
+\XLP{}'s examples can be seen in
+Figures~\ref{fig:interlinearexample}–\ref{fig:interlineartext}
+which contain output illustrating some of the special capabilities
+\XLP{} offers.
 
 \begin{figure*}
 \includegraphics[scale=.97]{images/ExamplePDFInterlinear.png}
@@ -546,6 +553,7 @@ output illustrating some of the special capabilities \XLP{} offers.
   brackets. Customization allows for as many rows per group as is
   required. Finally, on the right the hyperlinked citation to the
   reference for the source text is indicated.}
+\label{fig:interlinearexample}
 \end{figure*}
 
 \section{Typesetting tasks \XLP{} users often encounter}
@@ -558,16 +566,18 @@ documents do not. This section discusses some of them.
 Linguistic documents usually have many numbered examples.  The prose
 often refers to examples which are typographically nearby or to
 previous examples.  \XLP{} automatically keeps track of the example
-identifiers. This is especially important in linguistic publishing because authors,
-and publishing style sheets often make use of different kinds of
-examples, including sub-examples, and table-like design layouts which
-can contain lists of words along with their glosses (as shown in
-Figure~6) and interlinear clauses (as shown in Figure~5). Some cases
+identifiers. This is especially important in linguistic publishing
+because authors, and publishing style sheets often make use of
+different kinds of examples, including sub-examples, and table-like
+design layouts which can contain lists of words along with their
+glosses (as shown in Figure~\ref{fig:listword}) and interlinear
+clauses (as shown in Figure~\ref{fig:interlinearexample}). Some cases
 even have headings in portions of the example.
 
 \begin{figure}
 \includegraphics[scale=.16]{images/Rasmussen.png}
 \caption{List of words as seen in \cite{rasmussen:2018}}
+\label{fig:listword}
 \end{figure}
 
 \subsection{Interlinear glossed texts}
@@ -575,8 +585,8 @@ even have headings in portions of the example.
 There is a long tradition within linguistics and language study of
 presenting phrases containing different languages (but the same
 content) as interlinear texts. Di-Biase-Dyson et
-al.\ \cite{DiBiaseDysonEtAl:2009} trace the practice back as far as the
-1652 publication of Kircher \cite{Kircher:1652}. More recent
+al.\ \cite{DiBiaseDysonEtAl:2009} trace the practice back as far as
+the 1652 publication of Kircher \cite{Kircher:1652}. More recent
 publications display significant variation in page layout related to
 interlinear glossed texts and interlinear examples. Variation exists
 in three dimensions:
@@ -598,12 +608,13 @@ following elements:
 
 \begin{itemize}
 \item index elements such as example numbers or sub-numbers (as shown
-  in Figure~5),
+  in Figure~\ref{fig:interlinearexample}),
 \item headings to the interlinear,
 \item speaker indicator,
 \item language indicator,
 \item citation indicator pointing to the lager text from which the
-  example element is taken (see Figure~5 for an example), and
+  example element is taken (see Figure~\ref{fig:interlinearexample}
+  for an example), and
 \item limits on the number of rows in the original, gloss,
   translation, and free translation tiers.
 \end{itemize}
@@ -664,29 +675,36 @@ required packages required by \XLP{} to the header of their primary
 
 Still finally, there is the matter of page layout. The main types of
 variation in page layout we have seen include the grouping of lines
-into sets or subsets (see Figure~5 for example), the labeling of sets
-and subsets, wrapping of interlinear glosses across lines (recall that
-these may themselves include three or more lines), and the alignment
-of the various elements of content within the interlinear glosses. We
-have seen word and morpheme aligned interlinears.  \XLP{}
-automatically wraps interlinears which makes the author's job much
-easier.  Figure~7 in FC:1 and FC:2 demonstrate the wrapping of
-interlinear glossed texts. It does so by formatting each aligned word
-in an \texttt{hbox} and then having \XeLaTeX{} put them together in a
-hanging indent paragraph. This is based on the work of Kew \& McConnel
-1990 \cite{kew:mcconnel}.
+into sets or subsets (see Figure~\ref{fig:interlinearexample} for
+example), the labeling of sets and subsets, wrapping of interlinear
+glosses across lines (recall that these may themselves include three
+or more lines), and the alignment of the various elements of content
+within the interlinear glosses. We have seen word and morpheme aligned
+interlinears.  \XLP{} automatically wraps interlinears which makes the
+author's job much easier.  Figure~\ref{fig:interlineartext} in FC:1
+and FC:2 demonstrate the wrapping of interlinear glossed texts. It
+does so by formatting each aligned word in an \texttt{hbox} and then
+having \XeLaTeX{} put them together in a hanging indent
+paragraph. This is based on the work of Kew \& McConnel 1990
+\cite{kew:mcconnel}.
 
 \begin{figure*}
 \includegraphics[scale=0.25]{images/Rikha.png}
 \caption{Wrapped interlinear text as seen in \cite{nmeAndMarlett:2011}.}
+\label{fig:interlineartext}
 \end{figure*}
 
 \subsection{Gloss abbreviations}
 
-Linguists user two types of abbrivations. First they might use abbreivations for names, titles, or commonly used words. This is much like standard publishing. The second way that linguists use abbrivations is for indicating the grammatical meaning of pieces
-of words (morphemes). This second useage is often refered to as ‘glossing’ with the abbrivations refered to as ‘glosses’. One common set of glosses is the {\em Leipzig
-Glosses}. However, Leipzig Glosses are not universally used for
-several reasons including:
+Linguists user two types of abbreviations. First, they might use
+abbreviations for names, titles, or commonly used words. This is much
+like standard publishing. The second way that linguists use
+abbreviations is for indicating the grammatical meaning of pieces of
+words (morphemes). This second usage is often referred to as
+‘glossing’ with the abbreviations referred to as
+‘glosses’. One common set of glosses is the {\em
+  Leipzig Glosses}. Leipzig Glosses, however, are not universally used
+for several reasons including:
 
 \begin{itemize}
 \item some authors have established their own tradition within their
@@ -700,13 +718,13 @@ several reasons including:
 \item they are not theoretically sufficient for some linguists.
 \end{itemize}
 
-\XLP{} supports both types. \XLP{} approaches this by providing built-in access to Leipzig
-Glosses, but also allowing the author to fine-tune a set of
-abbreviations and their definitions.  When producing the output,
-\XLP{} creates hyperlinks between the abbreviation and its
-definition. This allows users to quickly find the meaning of glosses
-and for the automatic generation of a table or list of abbreviations
-used.
+\XLP{} supports both types. \XLP{} approaches this by providing
+built-in access to Leipzig Glosses, but also allowing the author to
+fine-tune a set of abbreviations and their definitions.  When
+producing the output, \XLP{} creates hyperlinks between the
+abbreviation and its definition. This allows users to quickly find the
+meaning of glosses and for the automatic generation of a table or list
+of abbreviations used.
 
 %1. LaTeX and text mining.
 %2. Language code in the XML
@@ -739,13 +757,15 @@ EndNote,\footnote{\tbsurl{endnote.com}}
 Zotero,\footnote{\tbsurl{zotero.org}} and
 JabRef.\footnote{\tbsurl{jabref.org}} \XLP{} uses custom \TeX{}
 scripts to output \TeX{} code for final rendering. It does not rely on
-\BibTeX{} or \BibLaTeX{}. Figure~8 shows an example of a bibliography created with \XLP{}.
+\BibTeX{} or \BibLaTeX{}. Figure~\ref{fig:mixedLatinChinese} shows an
+example of a bibliography created with \XLP{}.
 
-\begin{figure*}
-\includegraphics[scale=0.2]{images/Chou.png}
+\begin{figure}
+\includegraphics[scale=0.1368]{images/Chou.png}
 \caption{An \XLP{} bibliography demonstrating mixed Latin and Chinese
   scripts.}
-\end{figure*}
+\label{fig:mixedLatinChinese}
+\end{figure}
 
 \section{Outputs \LaTeX{} allow that others do not}
 
@@ -758,17 +778,19 @@ formatting power of \TeX{} and \XeLaTeX{}.
 
 One of the most popular features of \XLP{} is its ability to
 automatically wrap long interlinear examples and lines in interlinear
-texts. As seen in Figure~7 wrapping occurs for the glossed text
-tiers. Not shown, but equally important, is that free translation
-tiers which are often longer than glossed lines also wrap neatly and
-coherently.
+texts. As seen in Figure~\ref{fig:interlineartext} wrapping occurs for
+the glossed text tiers. Not shown, but equally important, is that free
+translation tiers which are often longer than glossed lines also wrap
+neatly and coherently.
 
 \subsection{Font rendering}
 %for discussing fonts several works need to be added to the bibliography: 
 % Correll, Sharon. 2000. “Graphite: An Extensible Rendering Engine for Complex Writing Systems.” Presentation Paper presented at the 17th International Unicode Conference, San Jose, California. http://rabbits.continuation.org/w/images/7/73/Graphite_paper.pdf.
 %Kew, Jonathan. 2007. “XeTeX Live.” TUGboat 29 (1): 146–50. http://root.tug.org/tugboat/tb29-1/tb91kew.pdf.
 
-\XeLaTeX{} renders fonts extremely well.  We show three cases where \XSLFO{} and/or \XHTML{} outputs have text rendering issues while \XeLaTeX{} does not.
+\XeLaTeX{} renders fonts extremely well.  We show three cases where
+\XSLFO{} (via \RenderX{}) and/or \XHTML{} outputs have text rendering
+issues while \XeLaTeX{} does not.
 
 %The issue here as far as I can tell is that XSL-FO does not have a way to access OT font features which are not pre-described in the XSL-FO standard. Additionally XSL-FO adopted OT rather than TT. CSS, which is relied on by browsers does marginally better, in that it acknowledges more prescribed features but does not allow access to all features of a font. The tone staves issue does not seem to be graphite based. Will Robertson. Advanced font features with XETEX—the fontspec package. TUGboat, ():–, .
 
@@ -786,44 +808,52 @@ coherently.
 %Figure 11 - tone staves: 12pt for vernacular; 10pt for gloss
 \begin{figure*}
 \includegraphics[scale=0.86]{images/FontAlignmentRenderX.png}%Andy: These three items seem to line up differently. Can we get them the same without magnification of the images? What I mean here is that we should magnifiy the document to 200% and then make our screenshot to line up exactly in the same place so that the (16) lines up congrently across the items. otherwize it looks like part of the problem is the line height rendering. In this case it seems the center image is the clearest. I'm not sure why but that is the way it looks for me.
-\includegraphics[scale=0.6]{images/FontAlignmentXHTML.png}
-\includegraphics[scale=0.86]{images/FontAlignmentXeLaTeX.png}
+\raisebox{-1ex}{\includegraphics[scale=0.6]{images/FontAlignmentXHTML.png}}
+\raisebox{1.5ex}{\includegraphics[scale=0.86]{images/FontAlignmentXeLaTeX.png}}
 \caption{Ascender/descender font differences: The \RenderX{} output is
   on the left; \XHTML{} output is in the middle; the \XeLaTeX{} output
   is on the right.}
+\label{fig:ascenderdescender}
 \end{figure*}
 
 First, when a line of text contains material rendered in different
-fonts on the same line, the two fonts may not
-line up evenly in the vertical direction.  See Figure~9.  This
+fonts on the same line, the two fonts may not line up evenly in the
+vertical direction.  See Figure~\ref{fig:ascenderdescender}.  This
 mismatch is due to the two fonts having different ascender and
-descender values. In order to overcome this when using \XSLFO{}, one has to add custom
-commands to deal with the font that differs from the primary font.
+descender values. In order to overcome this when using \XSLFO{}, one
+has to add custom commands to deal with the font that differs from the
+primary font.
 
 \begin{figure*}
 \includegraphics[scale=0.96]{images/StackedDiacriticsRenderX.png}
 \hspace*{.25in}  
-\includegraphics[scale=0.96]{images/StackedDiacriticsXeLaTeX.png}
+\raisebox{-.2ex}{\includegraphics[scale=0.96]{images/StackedDiacriticsXeLaTeX.png}}
 \caption{Stacked diacritics on the third word from the left: The
   \RenderX{} output is on the left; the \XeLaTeX{} output is on the
   right.}
+\label{fig:stacked}
 \end{figure*}
 %By the way, this is just plain unicode not anything special.
 
-Second, the \RenderX{} way of producing \PDF{} cannot
-handle stacked diacritics, but the \XeLaTeX{} way does it very well.  See Figure~10.
+Second, the \RenderX{} way of producing \PDF{} cannot handle stacked
+diacritics, but the \XeLaTeX{} way does it very well.  See
+Figure~\ref{fig:stacked}.
 
 \begin{figure*}
 \includegraphics[scale=1.25]{images/ToneContoursRenderX.png}%Andy: These three items seem to line up differently. Can we get them the same without magnification of the iamges? What I mean here is that we should magnifiy the document to 200% and then make our screenshot to line up exactly in the same place so that the (16) lines up congrently across the items. Otherwize it looks like part of the problem is the line height rendering. We need a common reference point for the readers.
-\includegraphics[scale=0.85]{images/ToneContoursXHTML.png}
-\includegraphics[scale=1.25]{images/ToneContoursXeLaTeX.png}
+\raisebox{1.4ex}{\includegraphics[scale=0.85]{images/ToneContoursXHTML.png}}
+\raisebox{4.8ex}{\includegraphics[scale=1.25]{images/ToneContoursXeLaTeX.png}}
 \caption{Tone contour rendering: The \RenderX{} output is
   on the left; \XHTML{} output is in the middle; the \XeLaTeX{} output
   is on the right.  Only the \XeLaTeX{} output is correct.}
+\label{fig:tonecontour}
 \end{figure*}
 
 Third, \XeLaTeX{} can even handle special features requiring
-Graphite\footnote{\tbsurl{graphite.sil.org}} processing.  Figure~11 illustrate special contour tone handling.  Of the three output renderings, only \XeLaTeX{} renders these correctly.
+Graphite\footnote{\tbsurl{graphite.sil.org}} processing.
+Figure~\ref{fig:tonecontour} illustrate special contour tone handling.
+Of the three output renderings, only \XeLaTeX{} renders these
+correctly.
 
 \subsection{Hyphenation for non-English languages}
 
@@ -876,7 +906,7 @@ via \XeLaTeX{} has made \XLP{} a fantastic tool for linguists.
 various tasks in a way that is consistent with our desired outcomes.
 The following lists some of them in a schematic way:
 
-\begin{tabular}{@{}lp{1.5in}@{}}
+\begin{supertabular}{@{}lp{1.5in}@{}}
 {\bf Command for} & {\bf Purpose}\\
 Table of contents & Store and retrieve page numbers; format the
 contents.\\ Lists & Numbered and bulleted lists with control over
@@ -891,7 +921,7 @@ example.\\
 Block quotes & Handle special cases needed for block quotes.\\
 Table headers & Attempt to calculate a column’s width via its
 contents.\\
-\end{tabular}
+\end{supertabular}
 
 \section{Hyphenation supported languages}
 \begin{supertabular}{lll}
@@ -900,12 +930,12 @@ contents.\\
 Albanian&sq&sqi\\%
 Amharic&am&amh\\%
 Arabic&ar&ara\\%
-Asturian&\A0&ast\\%
+Asturian&�&ast\\%
 Basque&eu&eus\\%
 Bengali&bn&ben\\%
 Bulgarian&bg&bul\\%
 Catalan&ca&cat\\%
-Coptic&\A0&cop\\%
+Coptic&�&cop\\%
 Croatian&hr&hrv\\%
 Czech&cs&ces\\%
 Danish&da&dan\\%
@@ -931,7 +961,7 @@ Lao&lo&lao\\%
 Latin&la&lat\\%
 Latvian&lv&lav\\%
 Lithuanian&lt&lit\\%
-Lower Sorbian&\A0&dsb\\%
+Lower Sorbian&�&dsb\\%
 Malay&ms&msa\\%
 Malayalam&ml&mal\\%
 Marathi&mr&mar\\%
@@ -948,7 +978,7 @@ Slovak&sk&slk\\%
 Slovenian&sl&slv\\%
 Spanish&es&spa\\%
 Swedish&sv&swe\\%
-Syriac&\A0&syr\\%
+Syriac&�&syr\\%
 Tamil&ta&tam\\%
 Telugu&te&tel\\%
 Thai&th&tha\\%
@@ -956,7 +986,7 @@ Turkish&tr&tur\\%
 Turkmen&tk&tuk\\%
 Ukrainian&uk&ukr\\%
 Urdu&ur&urd\\%
-Upper Sorbian&\A0&hsb\\%
+Upper Sorbian&�&hsb\\%
 Vietnamese&vi&vie\\%
 Welsh&cy&cym\\
 \end{supertabular}
