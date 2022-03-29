@@ -858,8 +858,7 @@ correctly.
 \subsection{Hyphenation for non-English languages}
 
 Since we use the \texttt{polyglossia} package, one can write an
-\XLP{} document in any of the sixty-one non-English languages listed in the \texttt{polyglossia} documentation  and \XeLaTeX{} will
-hyphenate according to that language’s hyphenation rules.
+\XLP{} document in any of the sixty-one non-English languages listed in the \texttt{polyglossia} documentation, indicate the language used in the \XML{} attributes and \XLP{} will pass this information to \XeLaTeX{} which will hyphenate according to that language’s hyphenation rules.
 
 \subsection{Author contact information}
 
@@ -871,12 +870,6 @@ authors.  Only the \XeLaTeX{} output is able to format them correctly.
 For title page material, only the \XeLaTeX{} output allows using
 vertical fill between items.  The other outputs require using overt,
 fixed spacing values.
-
-\subsection{Blank page}
-
-When one wants a totally blank even-numbered page between a final
-odd-numbered page and the next odd-numbered page which begins, say, a
-chapter or appendix, only the \XeLaTeX{} approach is able to do this.
 
 \section{Features other outputs have that the \LaTeX{} output does not}
 
