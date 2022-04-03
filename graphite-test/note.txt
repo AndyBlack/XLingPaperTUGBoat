@@ -1,0 +1,4 @@
+The .odt and .pdf files show a paragraph of Saraiki (spoken in Pakistan) from the Universal Declaration of Human Rights. The first version uses Awami. I included two other fonts for contrast and highlighted some of the issues in them.
+* Red shows places where special characters are missing; they fallback to another font and don't render the sequence properly.
+* Green shows collisions or almost-collisions where Awami's smart positioning is helpful. (Collisions CAN be a big problem in this style of Arabic, but none of the ones in this example are very bad.)
+* Blue shows places where Awami's smart kerning  gives a better result.
