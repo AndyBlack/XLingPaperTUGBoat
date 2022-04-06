@@ -25,7 +25,8 @@
 \usepackage{fancyhdr}
 \usepackage{fontspec}
 \usepackage{hyperref}
-\hypersetup{colorlinks=true, citecolor=black, filecolor=black, linkcolor=black, urlcolor=blue, bookmarksopen=true, pdfauthor={Sharron Correl, Hugh Paterson III}, pdfcreator={XLingPaper version 3.7.4 (https://software.sil.org/xlingpaper/)}, pdftitle={XLingPaper Graphite Example}}
+\TeXXeTstate=1
+\hypersetup{colorlinks=true, citecolor=black, filecolor=black, linkcolor=black, urlcolor=blue, bookmarksopen=true, pdfauthor={Sharron Correl, Hugh Paterson III}, pdfcreator={XLingPaper version 3.10.0 (https://software.sil.org/xlingpaper/)}, pdftitle={XLingPaper Graphite Example}}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[RO,LE]{\HeaderFooterFontFamily{\small{\textit{\thepage}}}}
@@ -57,9 +58,9 @@
 \newfontfamily{\LanglVernacularFontFamily}{Times New Roman}
 \newfontfamily{\LanglGlossFontFamily}{Times New Roman}
 \newfontfamily{\LangenFontFamily}{Times New Roman}
-\newfontfamily{\LangtNotoFontFamily}{Noto Nastaliq Urdu}
-\newfontfamily{\LangtAwamiFontFamily}{Awami Nastaliq}
-\newfontfamily{\LangtUrduFontFamily}{Urdu Typesetting}
+\newfontfamily{\LanglAwamiFontFamily}[Renderer=Graphite]{Awami Nastaliq}
+\newfontfamily{\LanglAwamiNoGraphiteFontFamily}{Awami Nastaliq}
+\newfontfamily{\LanglUrduFontFamily}{Urdu Typesetting}
 \newfontfamily{\LangtSmallCapsFontFamily}{Charis SIL Small Caps}
 \setlength{\parindent}{1em}
 \catcode`^^^^200b=\active
@@ -88,7 +89,8 @@
 \newcommand{\XLingPaperendtableofcontents}{\immediate\write8{</toc>}\closeout8\relax
 }
 \newcommand{\XLingPaperdotfill}{\leaders\hbox{$\mathsurround 0pt\mkern 4.5 mu\hbox{.}\mkern 4.5 mu$}\hfill}
-\newcommand{\XLingPaperdottedtocline}[4]{
+\newcommand{\XLingPaperdottedtocline}[4]{\vspace*{-
+\baselineskip}
 \newdimen\XLingPapertempdim
 \vskip0pt plus .2pt{
 \leftskip#1\relax% left glue for indent
@@ -201,26 +203,26 @@
 \penalty-3000{{\centering\raisebox{\baselineskip}[0pt]{\protect\hypertarget{s1}{}}\SectionLevelOneFontFamily{\large{\raisebox{\baselineskip}[0pt]{\pdfbookmark[1]{1 Intro}{s1}}\textbf{1 Intro}}}\\{}}\markright{Intro}
 }\par{}\penalty10000
 \vspace{12pt}
-\indent The .odt and .pdf files show a paragraph of Saraiki (spoken in Pakistan) from the Universal Declaration of Human Rights. The first version uses Awami. I included two other fonts for contrast and highlighted some of the issues in them. \par{}\indent * Red shows places where special characters are missing; they fallback to another font and don't render the sequence properly. \par{}\indent * Green shows collisions or almost-collisions where Awami's smart positioning is helpful. (Collisions CAN be a big problem in this style of Arabic, but none of the ones in this example are very bad.) \par{}\indent * Blue shows places where Awami's smart kerning gives a better result.\par{}\indent Urdu Typesetting by MS Version 6.0 2013\par{}
+\indent The .odt and .pdf files show a paragraph of Saraiki (spoken in Pakistan) from the Universal Declaration of Human Rights. The first version uses Awami. I included two other fonts for contrast and highlighted some of the issues in them.\par{}\indent * Red shows places where special characters are missing; they fallback to another font and don't render the sequence properly.\par{}\indent * Green shows collisions or almost-collisions where Awami's smart positioning is helpful. (Collisions CAN be a big problem in this style of Arabic, but none of the ones in this example are very bad.)\par{}\indent * Blue shows places where Awami's smart kerning gives a better result.\par{}\indent Urdu Typesetting by MS Version 6.0 2013\par{}
 \vspace{12pt}
 \XLingPaperneedspace{5\baselineskip}
 
-\penalty-3000{{\centering\raisebox{\baselineskip}[0pt]{\protect\hypertarget{s2}{}}\SectionLevelOneFontFamily{\large{\raisebox{\baselineskip}[0pt]{\pdfbookmark[1]{2 Awami}{s2}}\textbf{2 Awami}}}\\{}}\markright{Awami}
+\penalty-3000{{\centering\raisebox{\baselineskip}[0pt]{\protect\hypertarget{sAwami}{}}\SectionLevelOneFontFamily{\large{\raisebox{\baselineskip}[0pt]{\pdfbookmark[1]{2 Awami}{sAwami}}\textbf{2 Awami}}}\\{}}\markright{Awami}
 }\par{}\penalty10000
 \vspace{12pt}
-\indent {{\LangtAwamiFontFamily{\textup{\textmd{ہر شخص کوں آپڻی تے آپڻے ٻال بچیاں دی صحت تے بھلائی کیتے چنگی زندگی دا حق حاصل ہے ۔ اوکوں خوراک، لباس، رہائش علاج معالجے اتے و سیب دیاں ڋوجہبیاں سہو لتاں ملڻیاں چاہی دیاں ہن اتے بے رزگاری، بیماری، معزوری، رنڈیپا، ٻڈھیپایا وس کنوں باہر ایہو ڄئے حالات دے خلاف جنہاں وچ رزگار چھٹ و نڄے، بچئو دا حق حاصل ہے ۔}}}}}\par{}
+\indent Renders well (using graphite)\par{}\indent {\LanglAwamiFontFamily{{\fontsize{15}{18}\selectfont  دی بچیاں ٻال آپڻے تے آپڻی کوں شخص ہر}}}\par{}\indent  \par{}\indent Renders poorly (no graphite)\par{}\indent  \par{}\indent {\LanglAwamiNoGraphiteFontFamily{{\fontsize{15}{18}\selectfont  دی بچیاں ٻال آپڻے تے آپڻی کوں شخص ہر}}}\par{}
 \vspace{12pt}
 \XLingPaperneedspace{5\baselineskip}
 
-\penalty-3000{{\centering\raisebox{\baselineskip}[0pt]{\protect\hypertarget{s3}{}}\SectionLevelOneFontFamily{\large{\raisebox{\baselineskip}[0pt]{\pdfbookmark[1]{3 Noto Nastaliq Urdu}{s3}}\textbf{3 Noto Nastaliq Urdu}}}\\{}}\markright{Noto Nastaliq Urdu}
+\penalty-3000{{\centering\raisebox{\baselineskip}[0pt]{\protect\hypertarget{s2}{}}\SectionLevelOneFontFamily{\large{\raisebox{\baselineskip}[0pt]{\pdfbookmark[1]{3 Awami}{s2}}\textbf{3 Awami}}}\\{}}\markright{Awami}
 }\par{}\penalty10000
 \vspace{12pt}
-\indent {\LangtNotoFontFamily{\textup{\textmd{ہر شخص کوں آپڻی تے آپڻے ٻال بچیاں دی صحت تے بھلائی کیتے چنگی زندگی دا حق حاصل ہے ۔ اوکوں خوراک، لباس، رہائش علاج معالجے اتے و سیب دیاں ڋوجہبیاں سہو لتاں ملڻیاں چاہی دیاں ہن اتے بے رزگاری، بیماری، معزوری، رنڈیپا، ٻڈھیپایا وس کنوں باہر ایہو ڄئے حالات دے خلاف جنہاں وچ رزگار چھٹ و نڄے، بچئو دا حق حاصل ہے ۔}}}}\par{}
+\indent {\LanglAwamiFontFamily{{\fontsize{15}{18}\selectfont ۔ ہے حاصل حق دا بچئو نڄے، و چھٹ رزگار وچ جنہاں خلاف دے حالات ڄئے ایہو باہر کنوں وس ٻڈھیپایا رنڈیپا، معزوری، بیماری، رزگاری، بے اتے ہن دیاں چاہی ملڻیاں لتاں سہو ڋوجہبیاں دیاں سیب و اتے معالجے علاج رہائش لباس، خوراک، اوکوں ۔ ہے حاصل حق دا زندگی چنگی کیتے بھلائی تے صحت دی بچیاں ٻال آپڻے تے آپڻی کوں شخص ہر}}}\par{}
 \vspace{12pt}
 \XLingPaperneedspace{5\baselineskip}
 
 \penalty-3000{{\centering\raisebox{\baselineskip}[0pt]{\protect\hypertarget{s4}{}}\SectionLevelOneFontFamily{\large{\raisebox{\baselineskip}[0pt]{\pdfbookmark[1]{4 Urdu Typesetting}{s4}}\textbf{4 Urdu Typesetting}}}\\{}}\markright{Urdu Typesetting}
 }\par{}\penalty10000
 \vspace{12pt}
-\indent {\LangtUrduFontFamily{\textup{\textmd{ہر شخص کوں آپڻی تے آپڻے ٻال بچیاں دی صحت تے بھلائی کیتے چنگی زندگی دا حق حاصل ہے ۔ اوکوں خوراک، لباس، رہائش علاج معالجے اتے و سیب دیاں ڋوجہبیاں سہو لتاں ملڻیاں چاہی دیاں ہن اتے بے رزگاری، بیماری، معزوری، رنڈیپا، ٻڈھیپایا وس کنوں باہر ایہو ڄئے حالات دے خلاف جنہاں وچ رزگار چھٹ و نڄے، بچئو دا حق حاصل ہے ۔}}}}\par{}\end{MainFont}
+\indent ہ{\LanglUrduFontFamily{{\fontsize{15}{18}\selectfont ۔ ہے حاصل حق دا بچئو نڄے، و چھٹ رزگار وچ جنہاں خلاف دے حالات ڄئے ایہو باہر کنوں وس ٻڈھیپایا رنڈیپا، معزوری، بیماری، رزگاری، بے اتے ہن دیاں چاہی ملڻیاں لتاں سہو ڋوجہبیاں دیاں سیب و اتے معالجے علاج رہائش لباس، خوراک، اوکوں ۔ ہے حاصل حق دا زندگی چنگی کیتے بھلائی تے صحت دی بچیاں ٻال آپڻے تے آپڻی کوں شخص ر}}}\par{}\end{MainFont}
 \end{document}
