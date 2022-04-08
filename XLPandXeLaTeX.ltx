@@ -861,7 +861,11 @@ Third, \XeLaTeX{} can even handle special features requiring
 Graphite\footnote{\tbsurl{graphite.sil.org}} processing.
 Figure~\ref{fig:awami} illustrates the special font handling needed
 for the Awami Nastaliq font.  Of the three output renderings, only
-\XeLaTeX{} renders these correctly.
+\XeLaTeX{} renders these correctly.  Note that for this particular
+font, one must use \XLP{}'s \XeLaTeX{} package from \TeX{}Live
+2020.\footnote{\tbsurl{software.sil.org/xlingpaper/xelatex-package-from-tex-live-2020/}}
+The Graphite included in the 2010 version of \XeLaTeX{} was not
+capable of rendering swami well.
 
 \subsection{Hyphenation for non-English languages}
 
