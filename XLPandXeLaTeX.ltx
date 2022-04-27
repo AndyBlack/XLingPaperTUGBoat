@@ -785,9 +785,6 @@ neatly and coherently.
 %Andy what happens in HTML and RenderX in this case?
 
 \subsection{Font rendering}
-%for discussing fonts several works need to be added to the bibliography: 
-% Correll, Sharon. 2000. “Graphite: An Extensible Rendering Engine for Complex Writing Systems.” Presentation Paper presented at the 17th International Unicode Conference, San Jose, California. http://rabbits.continuation.org/w/images/7/73/Graphite_paper.pdf.
-%Kew, Jonathan. 2007. “XeTeX Live.” TUGboat 29 (1): 146–50. http://root.tug.org/tugboat/tb29-1/tb91kew.pdf.
 
 \XeLaTeX{} renders fonts extremely well.  We show three cases where
 \XSLFO{} (via \RenderX{}) and/or \XHTML{} outputs have text rendering
@@ -797,7 +794,6 @@ issues while \XeLaTeX{} does not.
 
 %One of Andy's CSS problems can be solved with https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#propdef-font-size-adjust
 %https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-feature-resolution
-
 %See discussion here: https://mail.google.com/mail/u/0/#all/FMfcgzGmvTvDrkvnwQrwNmVCZkCTsfMN
 %Andy: what are the fonts and the font sizes in the images?
 %Andy: Font SIZES? I can't look this up because I don't have the original XLingPaper document in the zip files you sent.
@@ -851,15 +847,15 @@ Figure~\ref{fig:stacked}.
 \end{figure*}
 
 Third, \XeLaTeX{} can even handle special features requiring
-Graphite\footnote{\tbsurl{graphite.sil.org}} processing.
-Figure~\ref{fig:tonecontour} illustrate special contour tone handling.
+Graphite\footnote{\tbsurl{graphite.sil.org}} processing. Graphite is a multi-part technology which includes a rendering engine and a rule based grammar which compiles againts a TrueType font and effectively extends the font allowing for additional glyph selection and context shapeing. \cite{kew:2007} \cite{Correll:2000} \cite{sil:2021}
+Figure~\ref{fig:tonecontour} illustrate special contour tone handling.% <-- this is not done with graphite... it is done with font features. We need to change this either to say that xelatex supports font features, and/or change the illustration.
 Of the three output renderings, only \XeLaTeX{} renders these
 correctly.
 
 \subsection{Hyphenation for non-English languages}
 
 Since we use the \texttt{polyglossia} package, one can write an
-\XLP{} document in any of the sixty-one non-English languages listed in the \texttt{polyglossia} documentation, indicate the language used in the \XML{} attributes and \XLP{} will pass this information to \XeLaTeX{} which will hyphenate according to that language’s hyphenation rules. Language values are used to trigger the most appropoiate hyphenation model. These language values are enabled on all text containing elements in \{XLP}.
+\XLP{} document in any of the sixty-one non-English languages listed in the \texttt{polyglossia} documentation, indicate the language used in the \XML{} attributes and \XLP{} will pass this information to \XeLaTeX{} which will hyphenate according to that language’s hyphenation rules. Language values are used to trigger the most appropoiate hyphenation model. These language values are enabled on all text containing elements in \XLP{}.
 
 \subsection{Author contact information}
 
@@ -1042,6 +1038,8 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
   Instituto Lingüístico de Verano, A.C. [\SIL{} International in
     Mexico]. \tbsurl{sil.org/resources/archives/75518}.}
 
+\bibitem{Correll:2000}{Correll, Sharon. 2000. {\em Graphite: An Extensible Rendering Engine for Complex Writing Systems.}. Paper presented at the 17th International Unicode Conference, San Jose, California. \tburl{rabbits.continuation.org/w/images/7/73/Graphite_paper.pdf.}.}
+
 \bibitem{DanielandSchubert:2013}{Daniel, Marco, and Elke
   Schubert. 2013. {\em The \texttt{mdframed} Package: Auto-split Frame
     environment} version 1.9b.}
@@ -1062,6 +1060,8 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 \bibitem{freitagupriemer:2019}{Freitag, Constantin and Antonio Machicao y Priemer. 2019. {\em LaTeX-Einführung Für Linguisten}. Berlin, Germany: Humboldt-Universität zu Berlin. \tbsurl{doi.org/10.13140/RG.2.2.29299.27682}.}
 
 \bibitem{holton:2021}{Holton, Gary. 2021. {\em Writing You Dissertation with \LaTeX}. Typescript. Hawai{\SpecialCharactersFont{ʻ}}i. Github.com. \tbsurl{gmholton.github.io/files/DissertationWriting.pdf}.}
+
+\bibitem{kew:2007}{Kew, Jonathan. 2007. XeTeX Live. {\em TUGboat} 29 (1): 146–50. \tbsurl{root.tug.org/tugboat/tb29-1/tb91kew.pdf}.}
 
 \bibitem{kew:mcconnel}{Kew, Jonathan and Stephen McConnel. 1990.  {\em
     Formatting Interlinear Text.} Occasional Publications in Academic
@@ -1120,7 +1120,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 
 \bibitem{peter:2004}{Peter, Steve. 2004. TEX and Linguistics. {\em TUGboat} 25 (1): 58–62. \tbsurl{tug.org/TUGboat/tb25-1/peter.pdf}.}
 
-\bibitem{priemerufreitag:2019}{Machicao y Priemer, Antonio, and Constantin Freitag. 2019. {\em LaTeX-Einführung Für Linguisten}. Presentation at the MGK Workshop – SFB 1412, Berlin. \tbsurl{linguistik.hu-berlin.de/de/staff/amyp/latex20sfb/07-l4l-math2-trees-handout.pdf}.}
+\bibitem{priemerufreitag:2019}{Machicao y Priemer, Antonio, and Constantin Freitag. 2019. {\em LaTeX-Einführung Für Linguisten}. Paper presented at the MGK Workshop – SFB 1412, Berlin. \tbsurl{linguistik.hu-berlin.de/de/staff/amyp/latex20sfb/07-l4l-math2-trees-handout.pdf}.}
 
 \bibitem{rasmussen:2018}{Rasmussen, Kent. 2018. {\em A Comparative
     Tone Analysis of Several Bantu D30 Languages (DR
@@ -1134,6 +1134,8 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 \bibitem{SalffnerGavid:2014}{Salffner, Sophie, and Tim Gaved. 2014. Working with \ELAN{} and \FLEx{} Together: An \ELAN{}-\FLEx{}-\ELAN{} Teaching Set. Electronic Manuscript. SOAS, London, England. \tbsurl{soas.ac.uk/elar/helpsheets/file122785.pdf}.}
 
 \bibitem{schenneretal:2016}{Schenner, Mathias, and Sebastian Nordhoff. 2016. Extracting Interlinear Glossed Text from LATEX Documents. In {\em Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016)}, edited by Nicoletta Calzolari, Khalid Choukri, Thierry Declerck, Sara Goggi, Marko Grobelnik, Bente Maegaard, Joseph Mariani, et al., 4044–48. Portorož, Slovenia: European Language Resources Association (ELRA). \tbsurl{aclweb.org/anthology/L16-1638.pdf}.}
+
+\bibitem{sil:2021}{ SIL International. 2012. Comparison of OpenType and Graphite shaping speeds in a Nastaliq context. (accessed: 27 April 2022) \tbsurl{scripts.sil.org/cms/scripts/page.php?site_id=projects&item_id=graphite_otcompare}.}
 
 \bibitem{smithsniderwiegand:2016}{Smith, Zac, Todd Snider, and Mia Wiegand. 2016. {\em LaTeX and Linguistics - How to Make Your Research Pretty}. Presentation at the Cornell Linguistics Circle, Cornell, New York. \tbsurl{conf.ling.cornell.edu/miawiegand/Latex_Slides.pdf}.}
 
@@ -1156,14 +1158,12 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
   of Applied Linguistics M.A. thesis. \tbsurl{diu.edu/documents/theses/Wood_Joyce-thesis.pdf}.}
 
 %These are not yet used in the text
-
 %\bibitem{conzettanddesmedt:2022}{Conzett, Philipp, and Koenraad De Smedt. 2022. {\em Guidance for Citing Linguistic Data}. In The Open Handbook of Linguistic Data Management, edited by Andrea L. Berez-Kroeker, Bradley McDonnell, Eve Koller, and Lauren B. Collister, 143–55. Open Handbooks In Linguistics. Cambridge, Massachusetts: The MIT Press. \tbsurl{doi.org/10.7551/mitpress/12200.003.0015}.}
 
 %These are likely to be added for unicode discussion
 % https://pure.mpg.de/rest/items/item_58925/component/file_58926/content unicode
 %https://www.researchgate.net/profile/Hennie-Brugman/publication/238473992_Annotating_Multimedia_Multi-modal_resources_with_ELAN/links/53fd90320cf22f21c2f80afd/Annotating-Multimedia-Multi-modal-resources-with-ELAN.pdf
 %PSTricks https://www.tug.org/TUGboat/tb31-1/tb97complete.pdf#38
-%
 
 \end{thebibliography}
 
