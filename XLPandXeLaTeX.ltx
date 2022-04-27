@@ -782,6 +782,8 @@ the glossed text tiers. Not shown, but equally important, is that free
 translation tiers which are often longer than glossed lines also wrap
 neatly and coherently.
 
+%Andy what happens in HTML and RenderX in this case?
+
 \subsection{Font rendering}
 %for discussing fonts several works need to be added to the bibliography: 
 % Correll, Sharon. 2000. “Graphite: An Extensible Rendering Engine for Complex Writing Systems.” Presentation Paper presented at the 17th International Unicode Conference, San Jose, California. http://rabbits.continuation.org/w/images/7/73/Graphite_paper.pdf.
@@ -857,18 +859,20 @@ correctly.
 \subsection{Hyphenation for non-English languages}
 
 Since we use the \texttt{polyglossia} package, one can write an
-\XLP{} document in any of the sixty-one non-English languages listed in the \texttt{polyglossia} documentation, indicate the language used in the \XML{} attributes and \XLP{} will pass this information to \XeLaTeX{} which will hyphenate according to that language’s hyphenation rules.
+\XLP{} document in any of the sixty-one non-English languages listed in the \texttt{polyglossia} documentation, indicate the language used in the \XML{} attributes and \XLP{} will pass this information to \XeLaTeX{} which will hyphenate according to that language’s hyphenation rules. Language values are used to trigger the most appropoiate hyphenation model. These language values are enabled on all text containing elements in \{XLP}.
 
 \subsection{Author contact information}
 
 \XLP{} allows one to define a set of contact information for
 authors.  Only the \XeLaTeX{} output is able to format them correctly.
+%Andy I am not sure what you mean here. I am particularly not understanding what you mean in the context of HTML+CSS outputs. Can you help me understand the page layout challeng in the HTML+CSS output in this regard? It seems to me that CSS positioning should be able to be used. But if I better understand the problem I can better apply what I know.
 
 \subsection{Vertical fill}
 
 For title page material, only the \XeLaTeX{} output allows using
 vertical fill between items.  The other outputs require using overt,
 fixed spacing values.
+%Andy I am not sure what you mean here. I am particularly not understanding what you mean in the context of HTML+CSS outputs. Can you help me understand the page layout challeng in the HTML+CSS output in this regard? It seems to me that CSS positioning should be able to be used. But if I better understand the problem I can better apply what I know.
 
 \section{Features other outputs have that the \LaTeX{} output does not}
 
@@ -891,6 +895,8 @@ user interface limitations has great value in and of itself, the fact
 that it can produce great looking output via \XeLaTeX{} makes the
 learning curve rewarding.  We feel that being able to produce \PDF{}
 via \XeLaTeX{} has made \XLP{} a fantastic tool for linguists.
+
+Additionally, \XLP{} serves as a model for other developers who are seeking a modular approach to creating custom publishing solutions. That is, one doesn't need to deploy the whole \TeX Live system to create great looking outputs. Specific packages can be combined and redistributed to fit market needs.
 
 \appendix
 \section{Custom \TeX{} commands}
