@@ -334,7 +334,7 @@ of all of these per an \XLP{} user-defined publisher style sheet.
 This required overriding these standard features of \LaTeX{} with a
 custom implementation of the \TeX{} commands needed to control
 formatting. \XLP{} takes a custom approach in implementing flexibility
-here. Appendix~A lists the custom commands used. %Andy I think it would be ok to move the contents of Appendix A here and then remove that section header.
+here. Appendix~A lists the custom commands implemented. %Andy I think it would be ok to move the contents of Appendix A here and then remove that section header.
 
 The programmer of \XLP{} recently discovered
 \texttt{memoir}\footnote{\tbsurl{ctan.org/pkg/memoir}}
@@ -438,11 +438,10 @@ have two infelicities for use-cases required in linguistic publishing
 with \XLP{}:
 
 \begin{enumerate}
-\item \TeXML{} has Python as a dependency and the developer did not
-  want to require \XLP{} users to install a version of Python
-  specifically for \TeXML{}.  This is especially the case since that
-  version of Python might conflict with other installed versions of
-  Python on their operating systems.  Moreover, this approach would
+\item \TeXML{} has Python as a dependency and the \XLP{} developer did not
+  want to require their users to install a version of Python
+  specifically for \TeXML{}.  Of particular concern were potential conflicts with other installed versions of
+  Python on user's operating systems.  Moreover,  the \TeXML{} approach would
   make the installation package for \XLP{} much larger due to the
   inclusion of Python.
 \item \XLP{} users require a high degree of control for white
