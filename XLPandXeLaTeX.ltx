@@ -88,7 +88,7 @@ examples). A full list of benefits to all parties in the publishing
 work flow is available \cite{black:2017}.
 
 The \XLP{} software has a growing number of users who have
-successfully typeset complex documents including:
+successfully typeset complex documents, that among others include:
 
 \begin{itemize}
 \item master theses \cite{Wood:2012} \cite{lamicela:2020} \cite{paterson:2021},
@@ -96,7 +96,7 @@ successfully typeset complex documents including:
 \item textbooks \cite{marlett:2019},
 \item linguistic grammars \cite{buck:2018},
 \item books \cite{bartholomew:2019} \cite{rastorgueva:2012},
-\item journal articles \cite{brownie:2013}, and
+\item journal articles \cite{brownie:2013} \cite{paterson:2021b}, and
 \item bilingual software documentation \cite{BeadleandLee:2020a} \cite{BeadleandLee:2020b}.
 \end{itemize}
 
@@ -334,7 +334,7 @@ of all of these per an \XLP{} user-defined publisher style sheet.
 This required overriding these standard features of \LaTeX{} with a
 custom implementation of the \TeX{} commands needed to control
 formatting. \XLP{} takes a custom approach in implementing flexibility
-here. Appendix~A lists the custom commands used. %Andy I think it would be ok to move the contents of Appendix A here and then remove that section header.
+here. Appendix~A lists the custom commands implemented. %Andy I think it would be prefered to move the contents of Appendix A here and then remove that section header. The contents could be placed in a full width table and span both columns. I think that will lead to a nice page layout.
 
 The programmer of \XLP{} recently discovered
 \texttt{memoir}\footnote{\tbsurl{ctan.org/pkg/memoir}}
@@ -438,11 +438,10 @@ have two infelicities for use-cases required in linguistic publishing
 with \XLP{}:
 
 \begin{enumerate}
-\item \TeXML{} has Python as a dependency and the developer did not
-  want to require \XLP{} users to install a version of Python
-  specifically for \TeXML{}.  This is especially the case since that
-  version of Python might conflict with other installed versions of
-  Python on their operating systems.  Moreover, this approach would
+\item \TeXML{} has Python as a dependency and the \XLP{} developer did not
+  want to require their users to install a version of Python
+  specifically for \TeXML{}.  Of particular concern were potential conflicts with other installed versions of
+  Python on user's operating systems.  Moreover,  the \TeXML{} approach would
   make the installation package for \XLP{} much larger due to the
   inclusion of Python.
 \item \XLP{} users require a high degree of control for white
@@ -601,7 +600,7 @@ in three dimensions:
   % sub-examples)
 \end{itemize}
 
-A full demonstration of the variation in content and its positioning
+\noindent A full demonstration of the variation in content and its positioning
 across common style sheets in linguistics is beyond the scope of this
 paper. Significant variations include the presence or absence of the
 following elements:
@@ -619,7 +618,7 @@ following elements:
   translation, and free translation tiers.
 \end{itemize}
 
-Existing \TeX{} packages approach these content requirements in
+\noindent Existing \TeX{} packages approach these content requirements in
 different ways. As far as we can tell, the following commonly used
 packages for interlinear glossing all have limitations to some
 degree. The \texttt{expex} package does not offer a content solution
@@ -718,7 +717,7 @@ for several reasons including:
 \item they are not theoretically sufficient for some linguists.
 \end{itemize}
 
-\XLP{} supports both types. \XLP{} approaches this by providing
+\noindent \XLP{} supports both types. \XLP{} approaches this by providing
 built-in access to Leipzig Glosses, but also allowing the author to
 fine-tune a set of abbreviations and their definitions.  When
 producing the output, \XLP{} creates hyperlinks between the
@@ -783,6 +782,8 @@ for the glossed text tiers. Not shown, but equally important, is that
 free translation tiers which are often longer than glossed lines also
 wrap neatly and coherently.
 
+%Andy what happens in HTML and RenderX in this case?
+
 \subsection{Font rendering}
 %for discussing fonts several works need to be added to the bibliography: 
 % Correll, Sharon. 2000. ``Graphite: An Extensible Rendering Engine for Complex Writing Systems.'' Presentation Paper presented at the 17th International Unicode Conference, San Jose, California. http://rabbits.continuation.org/w/images/7/73/Graphite_paper.pdf.
@@ -796,7 +797,6 @@ issues while \XeLaTeX{} does not.
 
 %One of Andy's CSS problems can be solved with https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#propdef-font-size-adjust
 %https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-feature-resolution
-
 %See discussion here: https://mail.google.com/mail/u/0/#all/FMfcgzGmvTvDrkvnwQrwNmVCZkCTsfMN
 %Andy: what are the fonts and the font sizes in the images?
 %Andy: Font SIZES? I can't look this up because I don't have the original XLingPaper document in the zip files you sent.
@@ -858,6 +858,12 @@ Figure~\ref{fig:stacked}.
 \end{figure*}
 
 Third, \XeLaTeX{} can even handle special features requiring
+%%<<<<<<< master
+Graphite\footnote{\tbsurl{graphite.sil.org}} processing. Graphite is a multi-part technology which includes a rendering engine and a rule based grammar which compiles againts a TrueType font and effectively extends the font allowing for additional glyph selection and context shapeing. \cite{kew:2007} \cite{Correll:2000} \cite{sil:2021}
+Figure~\ref{fig:tonecontour} illustrate special contour tone handling.% <-- this is not done with graphite... it is done with font features. We need to change this either to say that xelatex supports font features, and/or change the illustration.
+Of the three output renderings, only \XeLaTeX{} renders these
+correctly.
+%%=======
 Graphite\footnote{\tbsurl{graphite.sil.org}} processing.
 Figure~\ref{fig:awami} illustrates the special font handling needed
 for the Awami Nastaliq font.  Of the three output renderings, only
@@ -866,22 +872,25 @@ font, one must use \XLP{}'s \XeLaTeX{} package from \TeX{}Live
 2020.\footnote{\tbsurl{software.sil.org/xlingpaper/xelatex-package-from-tex-live-2020/}}
 The Graphite included in the 2010 version of \XeLaTeX{} was not
 capable of rendering swami well.
+%%>>>>>>> master
 
 \subsection{Hyphenation for non-English languages}
 
 Since we use the \texttt{polyglossia} package, one can write an
-\XLP{} document in any of the sixty-one non-English languages listed in the \texttt{polyglossia} documentation, indicate the language used in the \XML{} attributes and \XLP{} will pass this information to \XeLaTeX{} which will hyphenate according to that language’s hyphenation rules.
+\XLP{} document in any of the sixty-one non-English languages listed in the \texttt{polyglossia} documentation, indicate the language used in the \XML{} attributes and \XLP{} will pass this information to \XeLaTeX{} which will hyphenate according to that language’s hyphenation rules. Language values are used to trigger the most appropoiate hyphenation model. These language values are enabled on all text containing elements in \XLP{}.
 
 \subsection{Author contact information}
 
 \XLP{} allows one to define a set of contact information for
 authors.  Only the \XeLaTeX{} output is able to format them correctly.
+%Andy I am not sure what you mean here. I am particularly not understanding what you mean in the context of HTML+CSS outputs. Can you help me understand the page layout challeng in the HTML+CSS output in this regard? It seems to me that CSS positioning should be able to be used. But if I better understand the problem I can better apply what I know.
 
 \subsection{Vertical fill}
 
 For title page material, only the \XeLaTeX{} output allows using
 vertical fill between items.  The other outputs require using overt,
 fixed spacing values.
+%Andy I am not sure what you mean here. I am particularly not understanding what you mean in the context of HTML+CSS outputs. Can you help me understand the page layout challeng in the HTML+CSS output in this regard? It seems to me that CSS positioning should be able to be used. But if I better understand the problem I can better apply what I know.
 
 \section{Features other outputs have that the \LaTeX{} output does not}
 
@@ -904,6 +913,8 @@ user interface limitations has great value in and of itself, the fact
 that it can produce great looking output via \XeLaTeX{} makes the
 learning curve rewarding.  We feel that being able to produce \PDF{}
 via \XeLaTeX{} has made \XLP{} a fantastic tool for linguists.
+
+Additionally, \XLP{} serves as a model for other developers who are seeking a modular approach to creating custom publishing solutions. That is, one doesn't need to deploy the whole \TeX Live system to create great looking outputs. Specific packages can be combined and redistributed to fit market needs.
 
 \appendix
 \section{Custom \TeX{} commands}
@@ -1049,6 +1060,8 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
   Instituto Lingüístico de Verano, A.C. [\SIL{} International in
     Mexico]. \tbsurl{sil.org/resources/archives/75518}.}
 
+\bibitem{Correll:2000}{Correll, Sharon. 2000. {\em Graphite: An Extensible Rendering Engine for Complex Writing Systems.}. Paper presented at the 17th International Unicode Conference, San Jose, California. \tburl{rabbits.continuation.org/w/images/7/73/Graphite_paper.pdf.}.}
+
 \bibitem{DanielandSchubert:2013}{Daniel, Marco, and Elke
   Schubert. 2013. {\em The \texttt{mdframed} Package: Auto-split Frame
     environment} version 1.9b.}
@@ -1069,6 +1082,8 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 \bibitem{freitagupriemer:2019}{Freitag, Constantin and Antonio Machicao y Priemer. 2019. {\em LaTeX-Einführung Für Linguisten}. Berlin, Germany: Humboldt-Universität zu Berlin. \tbsurl{doi.org/10.13140/RG.2.2.29299.27682}.}
 
 \bibitem{holton:2021}{Holton, Gary. 2021. {\em Writing You Dissertation with \LaTeX}. Typescript. Hawai{\SpecialCharactersFont{ʻ}}i. Github.com. \tbsurl{gmholton.github.io/files/DissertationWriting.pdf}.}
+
+\bibitem{kew:2007}{Kew, Jonathan. 2007. XeTeX Live. {\em TUGboat} 29 (1): 146–50. \tbsurl{root.tug.org/tugboat/tb29-1/tb91kew.pdf}.}
 
 \bibitem{kew:mcconnel}{Kew, Jonathan and Stephen McConnel. 1990.  {\em
     Formatting Interlinear Text.} Occasional Publications in Academic
@@ -1121,6 +1136,8 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
     Metadata Models}. University of North Dakota
   M.A. thesis. \tbsurl{commons.und.edu/theses/3937}.}
 
+\bibitem{paterson:2021b}{Paterson III, Hugh J. 2021. {\em On Rights Management in Anthropological and Linguistic Sound Collections}. {\em ARSC Journal} 52(3): 547–563. \tbsurl{http://www.arsc-audio.org/journal.html}.}
+
 \bibitem{pellard:2019}{Pellard, Thomas. 2019. Automatic formatting of interlinear glosses with LaTeX. {\em Cipanglossia} \tbsurl{cipanglo.hypotheses.org/1221}.}
 
 \bibitem{peter:2004}{Peter, Steve. 2004. TEX and Linguistics. {\em TUGboat} 25 (1): 58--62. \tbsurl{tug.org/TUGboat/tb25-1/peter.pdf}.}
@@ -1139,6 +1156,8 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 \bibitem{SalffnerGavid:2014}{Salffner, Sophie, and Tim Gaved. 2014. Working with \ELAN{} and \FLEx{} Together: An \ELAN{}-\FLEx{}-\ELAN{} Teaching Set. Electronic Manuscript. SOAS, London, England. \tbsurl{soas.ac.uk/elar/helpsheets/file122785.pdf}.}
 
 \bibitem{schenneretal:2016}{Schenner, Mathias, and Sebastian Nordhoff. 2016. Extracting Interlinear Glossed Text from LATEX Documents. In {\em Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016)}, edited by Nicoletta Calzolari, Khalid Choukri, Thierry Declerck, Sara Goggi, Marko Grobelnik, Bente Maegaard, Joseph Mariani, et al., 4044--48. Portorož, Slovenia: European Language Resources Association (ELRA). \tbsurl{aclweb.org/anthology/L16-1638.pdf}.}
+
+\bibitem{sil:2021}{ SIL International. 2012. Comparison of OpenType and Graphite shaping speeds in a Nastaliq context. (accessed: 27 April 2022) \tbsurl{scripts.sil.org/cms/scripts/page.php?site_id=projects&item_id=graphite_otcompare}.}
 
 \bibitem{smithsniderwiegand:2016}{Smith, Zac, Todd Snider, and Mia Wiegand. 2016. {\em LaTeX and Linguistics - How to Make Your Research Pretty}. Presentation at the Cornell Linguistics Circle, Cornell, New York. \tbsurl{conf.ling.cornell.edu/miawiegand/Latex_Slides.pdf}.}
 
@@ -1161,14 +1180,12 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
   of Applied Linguistics M.A. thesis. \tbsurl{diu.edu/documents/theses/Wood_Joyce-thesis.pdf}.}
 
 %These are not yet used in the text
-
 %\bibitem{conzettanddesmedt:2022}{Conzett, Philipp, and Koenraad De Smedt. 2022. {\em Guidance for Citing Linguistic Data}. In The Open Handbook of Linguistic Data Management, edited by Andrea L. Berez-Kroeker, Bradley McDonnell, Eve Koller, and Lauren B. Collister, 143--55. Open Handbooks In Linguistics. Cambridge, Massachusetts: The MIT Press. \tbsurl{doi.org/10.7551/mitpress/12200.003.0015}.}
 
 %These are likely to be added for unicode discussion
 % https://pure.mpg.de/rest/items/item_58925/component/file_58926/content unicode
 %https://www.researchgate.net/profile/Hennie-Brugman/publication/238473992_Annotating_Multimedia_Multi-modal_resources_with_ELAN/links/53fd90320cf22f21c2f80afd/Annotating-Multimedia-Multi-modal-resources-with-ELAN.pdf
 %PSTricks https://www.tug.org/TUGboat/tb31-1/tb97complete.pdf#38
-%
 
 \end{thebibliography}
 
