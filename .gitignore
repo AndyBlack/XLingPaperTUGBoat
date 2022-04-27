@@ -7,3 +7,5 @@ sampleart.*
 .settings
 doit.bat
 ImagesNotUsing/
+graphite-test/
+XLingPaperGraphiteExample/

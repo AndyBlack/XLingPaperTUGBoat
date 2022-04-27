@@ -83,7 +83,7 @@ interface for authoring content.
 \XLP{} is designed to reduce friction in the process of writing,
 composing, and publishing linguistic papers, grammars, and books by
 removing common time-sinks related to inconsistent formatting
-(especially citations, references, and numbered element like
+(especially citations, references, and numbered elements like
 examples). A full list of benefits to all parties in the publishing
 work flow is available \cite{black:2017}.
 
@@ -163,9 +163,9 @@ MailChimp\footnote{\tbsurl{mailchimp.com}} or WordPress's Gutenburg
 editor,\footnote{\tbsurl{developer.wordpress.org/block-editor}} albeit
 without the drag-and-drop features. Rather than visually structuring
 the document to look the way it is to be formatted, the author
-“marks up” the items in the document according to
+``marks up'' the items in the document according to
 their kind.  One of the many benefits that using a \DTD{} provides is
-that there is a “grammar” of what a well-formed
+that there is a ``grammar'' of what a well-formed
 linguistic document looks like.  This makes moving, replacing,
 switching, or reordering sections, chapters, tables, figures, and
 examples less error prone because it prevents users from inadvertently
@@ -195,8 +195,8 @@ and tools for typesetting common information structures in linguistic
 publishing. The \TeX{} community has produced many packages which have
 shaped the visual face of publishing in linguistics, including
 \texttt{tipa}\footnote{\tbsurl{ctan.org/pkg/tipa}} by Rei
-\cite{rei:1996} which provided access to an excellent typeface for
-phonetic transcriptions and
+\cite{rei:1996}, which provided access to an excellent typeface for
+phonetic transcriptions, and
 \texttt{pst-asr}\footnote{\tbsurl{ctan.org/pkg/pst-asr}} by Frampton
 \cite{frampton:2006} for autosegmental representations. Some packages
 used in linguistic publishing are special purpose but are not
@@ -223,10 +223,10 @@ of these packages also include capabilities targeted as multi-lingual
 or multi-script publications or are specific style sheet
 implementations for publications at linguistic programs at
 institutions of higher education (there may be more packages which are
-not tagged but should be). Several of the packages tagged “linguistic”
+not tagged but should be). Several of the packages tagged ``linguistic''
 pre-date Unicode \cite{unicode:1991} but still see significant
 use. Sometimes it is the case that secondary packages are developed in
-an attempt to “fix” publishing outputs in different ways to bring
+an attempt to ``fix'' publishing outputs in different ways to bring
 Unicode features along with the features of the original package. For
 example, \texttt{tipa} is not Unicode compatible, but the packages
 \texttt{unitipa}\footnote{\tbsurl{ctan.org/pkg/unitipa}} and
@@ -311,7 +311,7 @@ because the \XXE{} requires Java.
 layout but has more complete coverage than the Apache FOP project
 which lacks certain required table-oriented
 capabilities.\footnote{\tbsurl{xmlgraphics.apache.org/fop/compliance.html}}
-The limitations of \RenderX{} are discussed in Section 6. In 2009
+The limitations of \RenderX{} are discussed in Section~6. In 2009
 plans were made to add \XeLaTeX-based output to \XLP{} because, while
 there was a free version of \RenderX{}, the output contained a
 watermark.  By implementing the ability to export to \PDF{} via
@@ -323,7 +323,7 @@ Maintaining a separation of content and style in the \XLP{}
 environment was a key design requirement. When the \XeLaTeX{} method
 of \PDF{} production was introduced, \XLP{} already had a way to
 format output per a user-created publisher style
-sheet—allowing great flexibility due to the separation of
+sheet\Dash{}allowing great flexibility due to the separation of
 style and content. Using \TeX{} technologies meant the developer
 (Andrew Black) needed to be able to map from an \XLP{} publisher style
 sheet to \XeLaTeX{}. It was known that \LaTeX{} was the ideal \TeX{}
@@ -404,11 +404,11 @@ directly or to commands understood by \LaTeX{} packages distributed
 with \XLP{}. This abstraction layer was then executed when the
 \XeLaTeX{} file was processed. This middle layer has granted \XLP{}
 flexibility in adding new code and capabilities while keeping the
-“heavy” \LaTeX\ packages stable. The net result is a
-“heavy” first install package (116MB), but
+``heavy'' \LaTeX\ packages stable. The net result is a
+``heavy'' first install package (116MB), but
 light-weight upgrade packages (6.21MB). In the thirteen year history
 of development, there have been a few occasions where upgrades have
-required the download of new “heavy” packages. One
+required the download of new ``heavy'' packages. One
 such case was when the ability to use framed units was added. These
 elements depend on the
 \texttt{mdframed}\footnote{\tbsurl{ctan.org/pkg/mdframed}} package
@@ -445,8 +445,8 @@ with \XLP{}:
   make the installation package for \XLP{} much larger due to the
   inclusion of Python.
 \item \XLP{} users require a high degree of control for white
-  space. The fine grain control of whitespace was not clearly possible
-  via \TeXML{}.
+  space. The fine grain control of whitespace was not immediately
+  clear how to accomplish with \TeXML{}.
 \end{enumerate}
 
 \subsection{Control characters}
@@ -469,9 +469,9 @@ formats.
 
 \subsection{Ling-\TeX{}}
 
-One might ask, “Why not add more linguistic related \TeX{}
+One might ask, ``Why not add more linguistic related \TeX{}
 packages to the available stack, or use those instead of creating
-custom code?” The answer has two simple parts: First, in 2009
+custom code?'' The answer has two simple parts: First, in 2009
 the linguistic capabilities of \TeX{} packages were different than
 they are today.  Second, \XLP{} is more than a \TeX{} document
 producer. For example, some authors \cite{BeadleandLee:2020a}
@@ -494,20 +494,20 @@ After excluding \TeXML{} as a viable option, and still seeking to
 create \XeLaTeX{}-based output, a solution was needed to determine
 which set of minimal \TeX{} packages would be needed. The Ling-\TeX{}
 group,\footnote{\tbsurl{web.archive.org/web/20150702123633/http://heim.ifi.uio.no/~dag/ling-tex}}
-which also ran the Ling-\TeX{} mailing list from 1995–2018,
+which also ran the Ling-\TeX{} mailing list from 1995--2018,
 was discovered.\footnote{\tbsurl{ling-tex.ifi.uio.narkive.com}}
 Ling-\TeX{} seemed to be the locus of activity in linguistic
 typesetting via \TeX{} even though other web pages discussing
 linguistics and \TeX{} also existed, e.g.,
 Essex\footnote{\tbsurl{essex.ac.uk/linguistics/external/clmt/latex4ling}}
 and UPenn.\footnote{\tbsurl{ling.upenn.edu/advice/latex.html}} Today, now
-that the mailing list is no-longer in operation, many of the mailing
+that the mailing list is no longer in operation, many of the mailing
 list participants can be found interacting on the \TeX{}
 stackexchange.\footnote{\tbsurl{tex.stackexchange.com}}
 
 State-of-the-Art for \TeX{}-based linguistic publishing in 2009, as
 recommended by the Ling-\TeX{} website, suggested using
-\texttt{covington} and {\em ling-mac}—the list of macros
+\texttt{covington} and {\em ling-mac}\Dash{}the list of macros
 discussed by Thiel in \cite{thiele:1995}. These macros were used to
 solve similar use cases, among others, to those already implemented by
 \XLP{}. Their approaches and outputs, however, had more limitations
@@ -540,8 +540,8 @@ various \TeX{} packages related to interlinear glosses and his
 solution
 \texttt{typgloss}.\footnote{\tbsurl{github.com/tpellard/typgloss}}
 \XLP{}'s examples can be seen in
-Figures~\ref{fig:interlinearexample}–\ref{fig:interlineartext}
-which contain output illustrating some of the capabilities
+Figures~\ref{fig:interlinearexample}--\ref{fig:interlineartext}
+which contain output illustrating some of the special capabilities
 \XLP{} offers.
 
 \begin{figure*}
@@ -566,7 +566,7 @@ Linguistic documents usually have many numbered examples.  The prose
 often refers to examples which are typographically nearby or to
 previous examples.  \XLP{} automatically keeps track of the example
 identifiers. This is especially important in linguistic publishing
-because authors, and publishing style sheets often make use of
+because authors, and publishing style sheets, often make use of
 different kinds of examples, including sub-examples, and table-like
 design layouts which can contain lists of words along with their
 glosses (as shown in Figure~\ref{fig:listword}) and interlinear
@@ -611,7 +611,7 @@ following elements:
 \item headings to the interlinear,
 \item speaker indicator,
 \item language indicator,
-\item citation indicator pointing to the lager text from which the
+\item citation indicator pointing to the larger text from which the
   example element is taken (see Figure~\ref{fig:interlinearexample}
   for an example), and
 \item limits on the number of rows in the original, gloss,
@@ -649,7 +649,7 @@ files,\footnote{For examples see \cite{schenneretal:2016} and
 databases such as MySQL, PostgreSQL, or FileMakerPro. Moving content
 from analysis and markup tools to typesetting tools is an ever present
 need for linguists. Several tools such as \ELAN{} and \FLEx{} have
-well established workflows for data transfer
+well-established workflows for data transfer
 \cite{SalffnerGavid:2014}. \FLEx{} is often considered the tool of
 choice for many field linguists, language documenters, and
 lexicographers. For many linguists entering the field, it is the tool
@@ -721,7 +721,7 @@ for several reasons including:
 built-in access to Leipzig Glosses, but also allowing the author to
 fine-tune a set of abbreviations and their definitions.  When
 producing the output, \XLP{} creates hyperlinks between the
-abbreviation and its definition. This allows users to quickly find the
+abbreviation and its definition. This allows readers to quickly find the
 meaning of glosses and for the automatic generation of a table or list
 of abbreviations used.
 
@@ -735,16 +735,16 @@ of abbreviations used.
 %IGTs
 %\cite{lehmann:2004}
 
-%Hughes, Baden, Steven Bird, and Catherine Bow. 2003. “Encoding and Presenting Interlinear Text Using XML Technologies.” In Proceedings of the Australasian Language Technology Workshop 2003, 61–69. Melbourne, Australia. https://www.aclweb.org/anthology/U03-1008.
-%Sachse, Frauke, and Michael Dürr. 2016. “Morphological Glossing of Mayan Languages under XML: Preliminary Results: Working Paper 4.” PDF. Textdatenbank und Wörterbuch des Klassischen Maya. doi:10.20376/IDIOM-23665556.16.WP004.EN.
-%Lahaussois, Aimée. 2016. “The Translation Tier in Interlinear Glossed Text: Changing Practices in the Description of Endangered Languages.” In Translation as Innovation: Bridging the Sciences and the Humanities, edited by Patricia Phillips-Batoma and Florence Zhang, 261–78. Dalkey Archive Press. https://hal.archives-ouvertes.fr/hal-01895439.
-%Lehmann, Christian. 1982. “Directions for Interlinear Morphemic Translations.” Folia Linguistica 16 (1–4): 199–224. doi:10.1515/flin.1982.16.1-4.199.
-%Schmidt, Thomas. 2003. “Visualising Linguistic Annotation as Interlinear Text.” In Arbeiten Zur Mehrsprachigkeit. Folge B, Sonderforschungsbereich 538. Hamburg, Germany: Universität Hamburg. https://www.exmaralda.org/files/Visualising-final.pdf.
-%Xia, Fei, William D. Lewis, Michael Wayne Goodman, Glenn Slayden, Ryan Georgi, Joshua Crowgey, and Emily M. Bender. 2016. “Enriching a Massively Multilingual Database of Interlinear Glossed Text.” Language Resources and Evaluation 50 (2): 321–49. doi:10.1007/s10579-015-9325-4.
-%Zhou, Zhong, Lori Levin, David R. Mortensen, and Alex Waibel. 2020. “Using Interlinear Glosses as Pivot in Low-Resource Multilingual Machine Translation.” ArXiv:1911.02709 [Cs], March. http://arxiv.org/abs/1911.02709.
-%Arkadiev, Peter, and Nicole Nau. 2015. “Towards a Standard of Glossing Baltic Languages: The Salos Glossing Rules.” Baltic Linguistics 6 (December): 195–241. doi:10.32798/bl.398.
+%Hughes, Baden, Steven Bird, and Catherine Bow. 2003. ``Encoding and Presenting Interlinear Text Using XML Technologies.'' In Proceedings of the Australasian Language Technology Workshop 2003, 61--69. Melbourne, Australia. https://www.aclweb.org/anthology/U03-1008.
+%Sachse, Frauke, and Michael Dürr. 2016. ``Morphological Glossing of Mayan Languages under XML: Preliminary Results: Working Paper 4.'' PDF. Textdatenbank und Wörterbuch des Klassischen Maya. doi:10.20376/IDIOM-23665556.16.WP004.EN.
+%Lahaussois, Aimée. 2016. ``The Translation Tier in Interlinear Glossed Text: Changing Practices in the Description of Endangered Languages.'' In Translation as Innovation: Bridging the Sciences and the Humanities, edited by Patricia Phillips-Batoma and Florence Zhang, 261--78. Dalkey Archive Press. https://hal.archives-ouvertes.fr/hal-01895439.
+%Lehmann, Christian. 1982. ``Directions for Interlinear Morphemic Translations.'' Folia Linguistica 16 (1--4): 199--224. doi:10.1515/flin.1982.16.1-4.199.
+%Schmidt, Thomas. 2003. ``Visualising Linguistic Annotation as Interlinear Text.'' In Arbeiten Zur Mehrsprachigkeit. Folge B, Sonderforschungsbereich 538. Hamburg, Germany: Universität Hamburg. https://www.exmaralda.org/files/Visualising-final.pdf.
+%Xia, Fei, William D. Lewis, Michael Wayne Goodman, Glenn Slayden, Ryan Georgi, Joshua Crowgey, and Emily M. Bender. 2016. ``Enriching a Massively Multilingual Database of Interlinear Glossed Text.'' Language Resources and Evaluation 50 (2): 321--49. doi:10.1007/s10579-015-9325-4.
+%Zhou, Zhong, Lori Levin, David R. Mortensen, and Alex Waibel. 2020. ``Using Interlinear Glosses as Pivot in Low-Resource Multilingual Machine Translation.'' ArXiv:1911.02709 [Cs], March. http://arxiv.org/abs/1911.02709.
+%Arkadiev, Peter, and Nicole Nau. 2015. ``Towards a Standard of Glossing Baltic Languages: The Salos Glossing Rules.'' Baltic Linguistics 6 (December): 195--241. doi:10.32798/bl.398.
 %There is also the Madakan rigor, and the african database.
-%CHEN, Yujie, Hilario de Sousa, Jian WANG, Jian NI, Xingxing LI, Weirong CHEN, and Hilary Chappell. 2014. “The Leipzig Glossing Rules and Its Application in the Research of Chinese Grammar--《Dialect》2014年01期.” 方言 [Dialect, lect]. http://en.cnki.com.cn/Article_en/CJFDTOTAL-FYZA201401001.htm.
+%CHEN, Yujie, Hilario de Sousa, Jian WANG, Jian NI, Xingxing LI, Weirong CHEN, and Hilary Chappell. 2014. ``The Leipzig Glossing Rules and Its Application in the Research of Chinese Grammar--《Dialect》2014年01期.'' 方言 [Dialect, lect]. http://en.cnki.com.cn/Article_en/CJFDTOTAL-FYZA201401001.htm.
 
 
 \subsection{Bibliographies}
@@ -777,20 +777,23 @@ formatting power of \TeX{} and \XeLaTeX{}.
 
 One of the most popular features of \XLP{} is its ability to
 automatically wrap long interlinear examples and lines in interlinear
-texts. As seen in Figure~\ref{fig:interlineartext} wrapping occurs for
-the glossed text tiers. Not shown, but equally important, is that free
-translation tiers which are often longer than glossed lines also wrap
-neatly and coherently.
+texts. As seen in Figure~\ref{fig:interlineartext}, wrapping occurs
+for the glossed text tiers. Not shown, but equally important, is that
+free translation tiers which are often longer than glossed lines also
+wrap neatly and coherently.
 
 %Andy what happens in HTML and RenderX in this case?
 
 \subsection{Font rendering}
+%for discussing fonts several works need to be added to the bibliography: 
+% Correll, Sharon. 2000. ``Graphite: An Extensible Rendering Engine for Complex Writing Systems.'' Presentation Paper presented at the 17th International Unicode Conference, San Jose, California. http://rabbits.continuation.org/w/images/7/73/Graphite_paper.pdf.
+%Kew, Jonathan. 2007. ``XeTeX Live.'' TUGboat 29 (1): 146--50. http://root.tug.org/tugboat/tb29-1/tb91kew.pdf.
 
 \XeLaTeX{} renders fonts extremely well.  We show three cases where
 \XSLFO{} (via \RenderX{}) and/or \XHTML{} outputs have text rendering
 issues while \XeLaTeX{} does not.
 
-%The issue here as far as I can tell is that XSL-FO does not have a way to access OT font features which are not pre-described in the XSL-FO standard. Additionally XSL-FO adopted OT rather than TT. CSS, which is relied on by browsers does marginally better, in that it acknowledges more prescribed features but does not allow access to all features of a font. The tone staves issue does not seem to be graphite based. Will Robertson. Advanced font features with XETEX—the fontspec package. TUGboat, ():–, .
+%The issue here as far as I can tell is that XSL-FO does not have a way to access OT font features which are not pre-described in the XSL-FO standard. Additionally XSL-FO adopted OT rather than TT. CSS, which is relied on by browsers does marginally better, in that it acknowledges more prescribed features but does not allow access to all features of a font. The tone staves issue does not seem to be graphite based. Will Robertson. Advanced font features with XETEX\Dash{}the fontspec package. TUGboat, ():--, .
 
 %One of Andy's CSS problems can be solved with https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#propdef-font-size-adjust
 %https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-feature-resolution
@@ -809,7 +812,7 @@ issues while \XeLaTeX{} does not.
 \raisebox{1.5ex}{\includegraphics[scale=0.86]{images/FontAlignmentXeLaTeX.png}}
 \caption{Ascender/descender font differences: The \RenderX{} output is
   on the left; \XHTML{} output is in the middle; the \XeLaTeX{} output
-  is on the right.}
+  is on the right}
 \label{fig:ascenderdescender}
 \end{figure*}
 
@@ -836,21 +839,40 @@ Second, the \RenderX{} way of producing \PDF{} cannot handle stacked
 diacritics, but the \XeLaTeX{} way does it very well.  See
 Figure~\ref{fig:stacked}.
 
+%\begin{figure*}
+%\includegraphics[scale=.625]{images/ToneContoursRenderX.png}
+%\raisebox{.85ex}{\includegraphics[scale=0.85]{images/ToneContoursXHTML.png}}
+%\raisebox{4.55ex}{\includegraphics[scale=.625]{images/ToneContoursXeLaTeX.png}}
+%\caption{Tone contour rendering: The \RenderX{} output is
+%  on the left; \XHTML{} output is in the middle; the \XeLaTeX{} output
+%  is on the right.  Only the \XeLaTeX{} output is correct.}
+%\label{fig:tonecontour}
+%\end{figure*}
+
 \begin{figure*}
-\includegraphics[scale=.625]{images/ToneContoursRenderX.png}%Andy: These three items seem to line up differently. Can we get them the same without magnification of the iamges? What I mean here is that we should magnifiy the document to 200% and then make our screenshot to line up exactly in the same place so that the (16) lines up congrently across the items. Otherwize it looks like part of the problem is the line height rendering. We need a common reference point for the readers.
-\raisebox{.85ex}{\includegraphics[scale=0.85]{images/ToneContoursXHTML.png}}
-\raisebox{4.55ex}{\includegraphics[scale=.625]{images/ToneContoursXeLaTeX.png}}
-\caption{Tone contour rendering: The \RenderX{} output is
-  on the left; \XHTML{} output is in the middle; the \XeLaTeX{} output
-  is on the right.  Only the \XeLaTeX{} output is correct.}
-\label{fig:tonecontour}
+\RenderX{}:\hspace*{3.25pt} \raisebox{-2.5ex}{\includegraphics[scale=.85]{images/AwamiRenderX.png}}\\
+\XHTML{}:\hspace*{8pt} \raisebox{-2ex}{\includegraphics[scale=0.85]{images/AwamiXHTML.png}}\\
+\XeLaTeX{}: \raisebox{-2ex}{\includegraphics[scale=.85]{images/AwamiXeLaTeXGraphite.png}}\\
+\caption{Awami Nastaliq rendering.  Only the \XeLaTeX{} output is correct.}
+\label{fig:awami}
 \end{figure*}
 
 Third, \XeLaTeX{} can even handle special features requiring
+%%<<<<<<< master
 Graphite\footnote{\tbsurl{graphite.sil.org}} processing. Graphite is a multi-part technology which includes a rendering engine and a rule based grammar which compiles againts a TrueType font and effectively extends the font allowing for additional glyph selection and context shapeing. \cite{kew:2007} \cite{Correll:2000} \cite{sil:2021}
 Figure~\ref{fig:tonecontour} illustrate special contour tone handling.% <-- this is not done with graphite... it is done with font features. We need to change this either to say that xelatex supports font features, and/or change the illustration.
 Of the three output renderings, only \XeLaTeX{} renders these
 correctly.
+%%=======
+Graphite\footnote{\tbsurl{graphite.sil.org}} processing.
+Figure~\ref{fig:awami} illustrates the special font handling needed
+for the Awami Nastaliq font.  Of the three output renderings, only
+\XeLaTeX{} renders these correctly.  Note that for this particular
+font, one must use \XLP{}'s \XeLaTeX{} package from \TeX{}Live
+2020.\footnote{\tbsurl{software.sil.org/xlingpaper/xelatex-package-from-tex-live-2020/}}
+The Graphite included in the 2010 version of \XeLaTeX{} was not
+capable of rendering swami well.
+%%>>>>>>> master
 
 \subsection{Hyphenation for non-English languages}
 
@@ -879,8 +901,8 @@ great.
 
 Background color is not available for section titles.
 
-Section 11.17.1.1 “Known limitations of using
-\XeLaTeX{}” in the \XLP{} user documentation lists known
+Section 11.17.1.1 ``Known limitations of using
+\XeLaTeX{}'' in the \XLP{} user documentation lists known
 problems.
 %  See \tbsurl{software.sil.org/downloads/r/xlingpaper/resources/documentation/xxe7/UserDocXMLmind.htm#sXeTeXLimitations}.
 
@@ -924,12 +946,12 @@ contents.\\
 Albanian&sq&sqi\\%
 Amharic&am&amh\\%
 Arabic&ar&ara\\%
-Asturian&\A0&ast\\%
+Asturian&&ast\\%
 Basque&eu&eus\\%
 Bengali&bn&ben\\%
 Bulgarian&bg&bul\\%
 Catalan&ca&cat\\%
-Coptic&\A0&cop\\%
+Coptic&&cop\\%
 Croatian&hr&hrv\\%
 Czech&cs&ces\\%
 Danish&da&dan\\%
@@ -955,7 +977,7 @@ Lao&lo&lao\\%
 Latin&la&lat\\%
 Latvian&lv&lav\\%
 Lithuanian&lt&lit\\%
-Lower Sorbian&\A0&dsb\\%
+Lower Sorbian&&dsb\\%
 Malay&ms&msa\\%
 Malayalam&ml&mal\\%
 Marathi&mr&mar\\%
@@ -972,7 +994,7 @@ Slovak&sk&slk\\%
 Slovenian&sl&slv\\%
 Spanish&es&spa\\%
 Swedish&sv&swe\\%
-Syriac&\A0&syr\\%
+Syriac&&syr\\%
 Tamil&ta&tam\\%
 Telugu&te&tel\\%
 Thai&th&tha\\%
@@ -980,7 +1002,7 @@ Turkish&tr&tur\\%
 Turkmen&tk&tuk\\%
 Ukrainian&uk&ukr\\%
 Urdu&ur&urd\\%
-Upper Sorbian&\A0&hsb\\%
+Upper Sorbian&&hsb\\%
 Vietnamese&vi&vie\\%
 Welsh&cy&cym\\
 \end{supertabular}
@@ -993,11 +1015,11 @@ Welsh&cy&cym\\
 \bibitem{bartholomew:2019}{Bartholomew, Doris A, and Louise C Schoenhals. 2019. {\em Bilingual Dictionaries for Indigenous Languages}. Edited by Thomas L Willett. 2nd edn. Tlalpan, Ciudad de México, México: Instituto Lingüístico de Verano, A. C. [SIL Intrenational in Mexico]. \tbsurl{sil.org/resources/archives/80401}.}
 
 \bibitem{BeadleandLee:2020a}{Beadle, Jennie, and Matthew
-  Lee. 2020a. {\em Paratext 9 Manual – in English}. \SIL{}
+  Lee. 2020a. {\em Paratext 9 Manual -- in English}. \SIL{}
   International. \tbsurl{lingtran.net}.}
 
 \bibitem{BeadleandLee:2020b}{Beadle, Jennie, and Matthew
-  Lee. 2020b. {\em Paratext 9 Manual – in French}. \SIL{}
+  Lee. 2020b. {\em Paratext 9 Manual -- in French}. \SIL{}
   International. \tbsurl{outilingua.net}.}
 
 \bibitem{BeierandMichael:2022}{Beier, Christine, and Lev
@@ -1005,18 +1027,18 @@ Welsh&cy&cym\\
     Principled Approach Using \FLEx{} (FieldWorks Language Explorer)}. In
   The Open Handbook of Linguistic Data Management, edited by Andrea
   L. Berez-Kroeker, Bradley McDonnell, Eve Koller, and Lauren
-  B. Collister, 301–14. Open Handbooks In Linguistics. Cambridge,
+  B. Collister, 301--14. Open Handbooks In Linguistics. Cambridge,
   Massachusetts: The MIT
   Press. \tbsurl{doi.org/10.7551/mitpress/12200.003.0029}.}
 
-\bibitem{BirdSimons:2002}{Bird, Steven, and Gary Simons. 2002. Seven Dimensions of Portability for Language Documentation and Description. In \acro{ISCA SALTMIL SIG}: “Speech and Language Technology for Minority Languages,” 23–30. Las Palmas, Canary Islands, Spain: \acro{ELRA}. \tbhurl{lrec-conf.org/proceedings/lrec2002/pdf/ws15.pdf#page=29}.}
+\bibitem{BirdSimons:2002}{Bird, Steven, and Gary Simons. 2002. Seven Dimensions of Portability for Language Documentation and Description. In \acro{ISCA SALTMIL SIG}: ``Speech and Language Technology for Minority Languages,'' 23--30. Las Palmas, Canary Islands, Spain: \acro{ELRA}. \tbhurl{lrec-conf.org/proceedings/lrec2002/pdf/ws15.pdf#page=29}.}
 
-\bibitem{BirdSimons:2003}{Bird, Steven, and Gary Simons. 2003. Seven Dimensions of Portability for Language Documentation and Description. {\em Language} 79 (3):557–82. \tbsurl{jstor.org/stable/4489465}.}
+\bibitem{BirdSimons:2003}{Bird, Steven, and Gary Simons. 2003. Seven Dimensions of Portability for Language Documentation and Description. {\em Language} 79 (3):557--82. \tbsurl{jstor.org/stable/4489465}.}
 
 \bibitem{blackandblack:2012}{Black, Cheryl A., and H. Andrew
   Black. 2012. {\em Grammars for the People, by the People, Made
     Easier Using \acro{PAWS} and XlingPaper}. In Electronic Grammaticography,
-  edited by Sebastian Nordoff, 103–28. LD\&C Special
+  edited by Sebastian Nordoff, 103--28. LD\&C Special
   Publication 4. Honolulu, Hawai{\SpecialCharactersFont{ʻ}}i: University of Hawai{\SpecialCharactersFont{ʻ}}i
   Press. \tbhurl{hdl.handle.net/10125/4532}.}
 
@@ -1030,7 +1052,7 @@ Welsh&cy&cym\\
 
 \bibitem{brownie:2013}{Brownie, John. 2013. Adverbs in the
 Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
-31(1):1–11. \tbsurl{langlxmelanesia.com/issues}.}
+31(1):1--11. \tbsurl{langlxmelanesia.com/issues}.}
 
 \bibitem{buck:2018}{Buck, Marjorie J. 2018. {\em Gramática del amuzgo
     Xochistlahuaca, Guerrero}. (Serie de gramáticas de lenguas
@@ -1044,11 +1066,11 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
   Schubert. 2013. {\em The \texttt{mdframed} Package: Auto-split Frame
     environment} version 1.9b.}
 
-\bibitem{DiBiaseDysonEtAl:2009}{Di-Biase-Dyson, Camilla, Frank Kammerzell, and Daniel A Werning. 2009. Glossing Ancient Egyptian. Suggestions for Adapting the Leipzig Glossing Rules. {\em Lingua Aegyptia. Journal of Egyptian Language Studies} 17: 343–66. \tbsurl{wwwuser.gwdg.de/~lingaeg/lingaeg17.htm}.}
+\bibitem{DiBiaseDysonEtAl:2009}{Di-Biase-Dyson, Camilla, Frank Kammerzell, and Daniel A Werning. 2009. Glossing Ancient Egyptian. Suggestions for Adapting the Leipzig Glossing Rules. {\em Lingua Aegyptia. Journal of Egyptian Language Studies} 17: 343--66. \tbsurl{wwwuser.gwdg.de/~lingaeg/lingaeg17.htm}.}
 
 \bibitem{dimitriadis:2016}{Dimitriadis, Alexis. 2016. {\em TeX/LaTeX Information}. Web page. \tbsurl{ling.upenn.edu/advice/latex.html}.}
 
-\bibitem{donnelly:2013}{Donnelly, Kevin. 2013. Representing Linguistic Pitch in \XeLaTeX{}. {\em TUGboat} 34 (2): 223–27. \tbhurl{tug.org/TUGboat/tb34-2/tb107donnelly.pdf}.}
+\bibitem{donnelly:2013}{Donnelly, Kevin. 2013. Representing Linguistic Pitch in \XeLaTeX{}. {\em TUGboat} 34 (2): 223--27. \tbhurl{tug.org/TUGboat/tb34-2/tb107donnelly.pdf}.}
 
 \bibitem{ebarb:2014}{Ebarb, Kristopher J. 2014. {\em Tone and
     variation in Idakho and other Luhya varieties}. University of Indiana  Ph.D. dissertation. \tbsurl{pqdtopen.proquest.com/doc/1625743679.html?FMT=ABS}.}
@@ -1088,7 +1110,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
   zur Flexion und Wortbildung Morphology: an international handbook on
   inflection and word-formation, edited by Geert E Booij, Christian
   Lehmann, Joachim Mugdan, and Stavros Skopeteas,
-  2:1834–57. Handbücher zur Sprach- und Kommunikationswissenschaft
+  2:1834--57. Handbücher zur Sprach- und Kommunikationswissenschaft
   Handbooks of Linguistics and communication science 17. Berlin ; New
   York: Walter de
   Gruyter. \tbsurl{doi.org/10.1515/9783110172782.2.20.1834}.}
@@ -1097,7 +1119,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 
 \bibitem{lovell:1999}{Lovell, Douglas.  1999. \TeXML{}: Typesetting
   \XML{} with \TeX. {\em TUGboat}. 20 (3):
-  176–183. \tbsurl{tug.org/TUGboat/tb20-3/tb64love.pdf}.}
+  176--183. \tbsurl{tug.org/TUGboat/tb20-3/tb64love.pdf}.}
 
 \bibitem{marlett:2012}{Marlett, Stephen A, (compiler). 2012. La Frase Nominal.  In Stephen A. Marlett (ed.) {\em Los Archivos Lingüísticos Me'phaa}. Instituto Lingüístico de Verano, A.C. [SIL International in Mexico]. \tbsurl{mexico.sil.org/publications/i-wpindex/work_papers_-_mephaa_grammar_files}.}
 
@@ -1105,7 +1127,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
     the Ground Up: The Basics}. Dallas, Texas: \SIL{}
   International. \tbsurl{sil.org/resources/archives/79207}.}
 
-\bibitem{nmeAndMarlett:2011}{Neri Méndez, Emilia and Stephen A. Marlett. 2011 (Nov). Presentación Analítica del Texto “Flor de Calabaza”. In Stephen A. Marlett (ed.) {\em Los Archivos Lingüísticos Me'phaa} (versión preliminar). Instituto Lingüístico de Verano, A.C. [SIL International in Mexico]. \tbsurl{mexico.sil.org/publications/i-wpindex/work_papers_-_mephaa_grammar_files}.}
+\bibitem{nmeAndMarlett:2011}{Neri Méndez, Emilia and Stephen A. Marlett. 2011 (Nov). Presentación Analítica del Texto ``Flor de Calabaza''. In Stephen A. Marlett (ed.) {\em Los Archivos Lingüísticos Me'phaa} (versión preliminar). Instituto Lingüístico de Verano, A.C. [SIL International in Mexico]. \tbsurl{mexico.sil.org/publications/i-wpindex/work_papers_-_mephaa_grammar_files}.}
 
 \bibitem{nordhoffandmueller:2020}{Nordhoff, Sebastian, and Stefan Müller. 2020. {\em Language Science Press Guidelines}. Berlin, Germany: Language Science Press. \tbsurl{langsci.github.io/guidelines/latexguidelines/LangSci-guidelines.pdf}.}
 
@@ -1118,9 +1140,9 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 
 \bibitem{pellard:2019}{Pellard, Thomas. 2019. Automatic formatting of interlinear glosses with LaTeX. {\em Cipanglossia} \tbsurl{cipanglo.hypotheses.org/1221}.}
 
-\bibitem{peter:2004}{Peter, Steve. 2004. TEX and Linguistics. {\em TUGboat} 25 (1): 58–62. \tbsurl{tug.org/TUGboat/tb25-1/peter.pdf}.}
+\bibitem{peter:2004}{Peter, Steve. 2004. TEX and Linguistics. {\em TUGboat} 25 (1): 58--62. \tbsurl{tug.org/TUGboat/tb25-1/peter.pdf}.}
 
-\bibitem{priemerufreitag:2019}{Machicao y Priemer, Antonio, and Constantin Freitag. 2019. {\em LaTeX-Einführung Für Linguisten}. Paper presented at the MGK Workshop – SFB 1412, Berlin. \tbsurl{linguistik.hu-berlin.de/de/staff/amyp/latex20sfb/07-l4l-math2-trees-handout.pdf}.}
+\bibitem{priemerufreitag:2019}{Machicao y Priemer, Antonio, and Constantin Freitag. 2019. {\em LaTeX-Einführung Für Linguisten}. Presentation at the MGK Workshop -- SFB 1412, Berlin. \tbsurl{linguistik.hu-berlin.de/de/staff/amyp/latex20sfb/07-l4l-math2-trees-handout.pdf}.}
 
 \bibitem{rasmussen:2018}{Rasmussen, Kent. 2018. {\em A Comparative
     Tone Analysis of Several Bantu D30 Languages (DR
@@ -1129,28 +1151,28 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
 
 \bibitem{rastorgueva:2012}{Rastorgueva, V. S., A. A. Kerimova, A. K. Mamedzade, L. A. Pireiko, and D. I. Edel’man. 2012. {\em The Gilaki Language}. Edited by Ronald M. Lockwood. Acta Universitatis Upsaliensis; Studia Iranica Upsaliensia 19. Uppsala, Sweden: Acta Universitatis Upsaliensis. \tbsurl{urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-182789}.}
 
-\bibitem{rei:1996}{Rei, Fukui. 1996. \acro{TIPA}: A System for Processing Phonetic Symbols in LATEX. {\em  TUGboat} 17 (2): 102–14. \tbsurl{tug.org/TUGboat/tb17-2/tb51rei.pdf}.}
+\bibitem{rei:1996}{Rei, Fukui. 1996. \acro{TIPA}: A System for Processing Phonetic Symbols in LATEX. {\em  TUGboat} 17 (2): 102--14. \tbsurl{tug.org/TUGboat/tb17-2/tb51rei.pdf}.}
 
 \bibitem{SalffnerGavid:2014}{Salffner, Sophie, and Tim Gaved. 2014. Working with \ELAN{} and \FLEx{} Together: An \ELAN{}-\FLEx{}-\ELAN{} Teaching Set. Electronic Manuscript. SOAS, London, England. \tbsurl{soas.ac.uk/elar/helpsheets/file122785.pdf}.}
 
-\bibitem{schenneretal:2016}{Schenner, Mathias, and Sebastian Nordhoff. 2016. Extracting Interlinear Glossed Text from LATEX Documents. In {\em Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016)}, edited by Nicoletta Calzolari, Khalid Choukri, Thierry Declerck, Sara Goggi, Marko Grobelnik, Bente Maegaard, Joseph Mariani, et al., 4044–48. Portorož, Slovenia: European Language Resources Association (ELRA). \tbsurl{aclweb.org/anthology/L16-1638.pdf}.}
+\bibitem{schenneretal:2016}{Schenner, Mathias, and Sebastian Nordhoff. 2016. Extracting Interlinear Glossed Text from LATEX Documents. In {\em Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016)}, edited by Nicoletta Calzolari, Khalid Choukri, Thierry Declerck, Sara Goggi, Marko Grobelnik, Bente Maegaard, Joseph Mariani, et al., 4044--48. Portorož, Slovenia: European Language Resources Association (ELRA). \tbsurl{aclweb.org/anthology/L16-1638.pdf}.}
 
 \bibitem{sil:2021}{ SIL International. 2012. Comparison of OpenType and Graphite shaping speeds in a Nastaliq context. (accessed: 27 April 2022) \tbsurl{scripts.sil.org/cms/scripts/page.php?site_id=projects&item_id=graphite_otcompare}.}
 
 \bibitem{smithsniderwiegand:2016}{Smith, Zac, Todd Snider, and Mia Wiegand. 2016. {\em LaTeX and Linguistics - How to Make Your Research Pretty}. Presentation at the Cornell Linguistics Circle, Cornell, New York. \tbsurl{conf.ling.cornell.edu/miawiegand/Latex_Slides.pdf}.}
 
-\bibitem{so:2021}{So Miyagawa, and Vincent W.J. van Gerven Oei. 2021. Building Web Corpus of Old Nubian with Interlinear Glossing as Digital Cultural Heritage for Modern-Day Nubians. In {\em The  Proceedings of the 11th Conference of Japanese Association for Digital Humanities}, vol. 2021. 144–147. Tokyo: Historiographical Institute, The University of Tokyo. \tbsurl{hi.u-tokyo.ac.jp/JADH/2021/Proceedings_JADH2021_rev0905.pdf}.}
+\bibitem{so:2021}{So Miyagawa, and Vincent W.J. van Gerven Oei. 2021. Building Web Corpus of Old Nubian with Interlinear Glossing as Digital Cultural Heritage for Modern-Day Nubians. In {\em The  Proceedings of the 11th Conference of Japanese Association for Digital Humanities}, vol. 2021. 144--147. Tokyo: Historiographical Institute, The University of Tokyo. \tbsurl{hi.u-tokyo.ac.jp/JADH/2021/Proceedings_JADH2021_rev0905.pdf}.}
 
-\bibitem{thiele:1995}{Thiele, Christina. 1995. \TeX{} and Linguistics. {\em TUGboat} 16 (1): 42–44. \tbsurl{tug.org/TUGboat/tb16-1/tb46ling.pdf}.}
+\bibitem{thiele:1995}{Thiele, Christina. 1995. \TeX{} and Linguistics. {\em TUGboat} 16 (1): 42--44. \tbsurl{tug.org/TUGboat/tb16-1/tb46ling.pdf}.}
 
 \bibitem{thiele:2007}{Thiele, Christina. 2007. {\em Christina Thiele Interview by Dave Walden for the \TeX{} Users Group}. Transcript. \tbsurl{tug.org/interviews/thiele.html}.}
 
 \bibitem{unicode:1991}{Unicode Consortium, ed. 1991. {\em The Unicode Standard: Worldwide Character Encoding}. Version 1.0. Reading, Massachusetts: Addison-Wesley. \tbhurl{unicode.org/versions/Unicode1.0.0}.}
 
-\bibitem{ward:2002}{Ward, Monica. 2002. Reusable XML Technologies and the Development of Language Learning Materials. {\em ReCALL} 14 (2): 285–94. \tbsurl{doi.org/10.1017/S0958344002000629}.}
+\bibitem{ward:2002}{Ward, Monica. 2002. Reusable XML Technologies and the Development of Language Learning Materials. {\em ReCALL} 14 (2): 285--94. \tbsurl{doi.org/10.1017/S0958344002000629}.}
 
 \bibitem{wilson:2007}{Wilson, Peter. 2007. The Memoir Class. {\em
-    TUGboat} 28 (2): 243–46. \tbsurl{tug.org/TUGboat/tb28-2/tb89wilson.pdf}.}
+    TUGboat} 28 (2): 243--46. \tbsurl{tug.org/TUGboat/tb28-2/tb89wilson.pdf}.}
 
 \bibitem{wilson:2021}{Wilson, Peter. 2021. {\em The Memoir Class for Configurable Typesetting: User Guide}. version 3.70. Normandy Park, WA: The Herries Press. \tbsurl{texdoc.org/serve/memoir/0}.}
 
@@ -1158,7 +1180,7 @@ Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
   of Applied Linguistics M.A. thesis. \tbsurl{diu.edu/documents/theses/Wood_Joyce-thesis.pdf}.}
 
 %These are not yet used in the text
-%\bibitem{conzettanddesmedt:2022}{Conzett, Philipp, and Koenraad De Smedt. 2022. {\em Guidance for Citing Linguistic Data}. In The Open Handbook of Linguistic Data Management, edited by Andrea L. Berez-Kroeker, Bradley McDonnell, Eve Koller, and Lauren B. Collister, 143–55. Open Handbooks In Linguistics. Cambridge, Massachusetts: The MIT Press. \tbsurl{doi.org/10.7551/mitpress/12200.003.0015}.}
+%\bibitem{conzettanddesmedt:2022}{Conzett, Philipp, and Koenraad De Smedt. 2022. {\em Guidance for Citing Linguistic Data}. In The Open Handbook of Linguistic Data Management, edited by Andrea L. Berez-Kroeker, Bradley McDonnell, Eve Koller, and Lauren B. Collister, 143--55. Open Handbooks In Linguistics. Cambridge, Massachusetts: The MIT Press. \tbsurl{doi.org/10.7551/mitpress/12200.003.0015}.}
 
 %These are likely to be added for unicode discussion
 % https://pure.mpg.de/rest/items/item_58925/component/file_58926/content unicode
