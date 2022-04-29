@@ -341,28 +341,37 @@ these per an \XLP{} user-defined publisher style sheet.  This required
 overriding these standard features of \LaTeX{} with a custom
 implementation of the \TeX{} commands needed to control
 formatting. \XLP{} takes a custom approach in implementing flexibility
-here. Appendix~A lists the custom commands implemented.
-%Andy I think it would be prefered to move the contents of Appendix A here and then remove that section header. The contents could be placed in a full width table and span both columns. I think that will lead to a nice page layout.
-%
-%%Hugh:I tried the following, but is still one column even though one site said it would do the trick
-%\begin{table*}[t]
-%\begin{tabular}{@{}lp{1.5in}@{}}
-%{\bf Command for} & {\bf Purpose}\\
-%Table of contents & Store and retrieve page numbers; format the
-%contents.\\ Lists & Numbered and bulleted lists with control over
-%indents, etc.\\ Examples & Example number and example content, where
-%the content can be a line, a list of lines, a set of words, a list of
-%a set of words, interlinear, a list of interlinears, etc.\\
-%Indexes & Handle keeping track of \XLP{}’s indexing
-%capability, including page numbers.\\
-%Interlinears & Handle lines in an interlinear text or example,
-%including dealing with an \acro{ISO} 639-3 code in an interlinear
-%example.\\
-%Block quotes & Handle special cases needed for block quotes.\\
-%Table headers & Attempt to calculate a column’s width via its
-%contents.\\
-%\end{tabular}
-%\end{table*}
+here.  Table~\ref{tbl:commands} lists the custom commands implemented.
+\begin{table*}
+\caption{Custom commands used by \XLP{}}
+%\begin{tabular}{@{}ll@{}}
+\begin{tabular}{@{}lp{5.25in}@{}}
+\\[-9pt]
+\hline
+\\[-10pt]
+{\bf Command for} & {\bf Purpose}\\
+\\[-10pt]
+\hline
+\\[-10pt]
+Table of contents & Store and retrieve page numbers; format the
+contents.\\
+Lists & Numbered and bulleted lists with control over
+indents, etc.\\
+Examples & Example number and example content, where
+the content can be a line, a list of lines, a set of words, a list of
+a set of words, interlinear, a list of interlinears, etc.\\
+Indexes & Handle keeping track of \XLP{}’s indexing
+capability, including page numbers.\\
+Interlinears & Handle lines in an interlinear text or example,
+including dealing with an \acro{ISO} 639-3 code in an interlinear
+example.\\
+Block quotes & Handle special cases needed for block quotes.\\
+Table headers & Attempt to calculate a column’s width via its
+contents.\\
+\hline
+\end{tabular}
+\label{tbl:commands}
+\end{table*}
 
 The programmer of \XLP{} recently discovered
 \texttt{memoir}\footnote{\tbsurl{ctan.org/pkg/memoir}}
@@ -979,29 +988,6 @@ system to create great looking outputs. Specific packages can be
 combined and redistributed to fit market needs.
 
 \appendix
-\section{Custom \TeX{} commands}
-\label{sec:customtexcommands}
-\XLP{} has a number of custom commands that enable it to handle
-various tasks in a way that is consistent with our desired outcomes.
-The following lists some of them in a schematic way:
-
-\begin{supertabular}{@{}lp{1.5in}@{}}
-{\bf Command for} & {\bf Purpose}\\
-Table of contents & Store and retrieve page numbers; format the
-contents.\\ Lists & Numbered and bulleted lists with control over
-indents, etc.\\ Examples & Example number and example content, where
-the content can be a line, a list of lines, a set of words, a list of
-a set of words, interlinear, a list of interlinears, etc.\\
-Indexes & Handle keeping track of \XLP{}’s indexing
-capability, including page numbers.\\
-Interlinears & Handle lines in an interlinear text or example,
-including dealing with an \acro{ISO} 639-3 code in an interlinear
-example.\\
-Block quotes & Handle special cases needed for block quotes.\\
-Table headers & Attempt to calculate a column’s width via its
-contents.\\
-\end{supertabular}
-
 \section{Hyphenation supported languages}
 \label{sec:hyphenationlanguages}
 \begin{supertabular}{lll}
