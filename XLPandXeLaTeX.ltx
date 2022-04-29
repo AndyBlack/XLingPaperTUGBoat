@@ -342,28 +342,37 @@ these per an \XLP{} user-defined publisher style sheet.  This required
 overriding these standard features of \LaTeX{} with a custom
 implementation of the \TeX{} commands needed to control
 formatting. \XLP{} takes a custom approach in implementing flexibility
-here. Appendix~A lists the custom commands implemented.
-%Andy I think it would be prefered to move the contents of Appendix A here and then remove that section header. The contents could be placed in a full width table and span both columns. I think that will lead to a nice page layout.
-%
-%%Hugh:I tried the following, but is still one column even though one site said it would do the trick
-%\begin{table*}[t]
-%\begin{tabular}{@{}lp{1.5in}@{}}
-%{\bf Command for} & {\bf Purpose}\\
-%Table of contents & Store and retrieve page numbers; format the
-%contents.\\ Lists & Numbered and bulleted lists with control over
-%indents, etc.\\ Examples & Example number and example content, where
-%the content can be a line, a list of lines, a set of words, a list of
-%a set of words, interlinear, a list of interlinears, etc.\\
-%Indexes & Handle keeping track of \XLP{}’s indexing
-%capability, including page numbers.\\
-%Interlinears & Handle lines in an interlinear text or example,
-%including dealing with an \acro{ISO} 639-3 code in an interlinear
-%example.\\
-%Block quotes & Handle special cases needed for block quotes.\\
-%Table headers & Attempt to calculate a column’s width via its
-%contents.\\
-%\end{tabular}
-%\end{table*}
+here.  Table~\ref{tbl:commands} lists the custom commands implemented.
+\begin{table*}
+\caption{Custom commands used by \XLP{}}
+%\begin{tabular}{@{}ll@{}}
+\begin{tabular}{@{}lp{5.25in}@{}}
+\\[-9pt]
+\hline
+\\[-10pt]
+{\bf Command for} & {\bf Purpose}\\
+\\[-10pt]
+\hline
+\\[-10pt]
+Table of contents & Store and retrieve page numbers; format the
+contents.\\
+Lists & Numbered and bulleted lists with control over
+indents, etc.\\
+Examples & Example number and example content, where
+the content can be a line, a list of lines, a set of words, a list of
+a set of words, interlinear, a list of interlinears, etc.\\
+Indexes & Handle keeping track of \XLP{}’s indexing
+capability, including page numbers.\\
+Interlinears & Handle lines in an interlinear text or example,
+including dealing with an \acro{ISO} 639-3 code in an interlinear
+example.\\
+Block quotes & Handle special cases needed for block quotes.\\
+Table headers & Attempt to calculate a column’s width via its
+contents.\\
+\hline
+\end{tabular}
+\label{tbl:commands}
+\end{table*}
 
 The programmer of \XLP{} recently discovered
 \texttt{memoir}\footnote{\tbsurl{ctan.org/pkg/memoir}}
@@ -717,16 +726,18 @@ glosses across lines (recall that these may themselves include three
 or more lines), and the alignment of the various elements of content
 within the interlinear glosses. We have seen word and morpheme aligned
 interlinears.  \XLP{} automatically wraps interlinears which makes the
-author's job much easier.  Figure~\ref{fig:interlineartext} in FC:1
-and FC:2 demonstrate the wrapping of interlinear glossed texts. It
-does so by formatting each aligned word in an \texttt{hbox} and then
-having \XeLaTeX{} put them together in a hanging indent
-paragraph. This is based on the work of Kew \& McConnel 1990
-\cite{kew:mcconnel}.
+author's job much easier.  Figure~\ref{fig:interlineartext}
+demonstrates the wrapping of interlinear glossed texts. It does so by
+formatting each aligned word in an \texttt{hbox} and then having
+\XeLaTeX{} put them together in a hanging indent paragraph. This is
+based on the work of Kew \& McConnel 1990 \cite{kew:mcconnel}.
+Similar examples can be seen in \cite{marlett:2019threetexts} and
+\cite{nmeAndMarlett:2011}, among others.
 
 \begin{figure*}
-\includegraphics[scale=0.25]{images/Rikha.png}
-\caption{Wrapped interlinear text as seen in \cite{nmeAndMarlett:2011}.}
+\center
+\includegraphics[scale=0.5]{images/HalbiDN-1-10.png}
+\caption{Wrapped interlinear text as seen in \cite{Woods:inprep}.}
 \label{fig:interlineartext}
 \end{figure*}
 
@@ -818,9 +829,7 @@ formatting power of \TeX{} and \XeLaTeX{}.
 One of the most popular features of \XLP{} is its ability to
 automatically wrap long interlinear examples and lines in interlinear
 texts. As seen in Figure~\ref{fig:interlineartext}, wrapping occurs
-for the glossed text tiers. Not shown, but equally important, is that
-free translation tiers which are often longer than glossed lines also
-wrap neatly and coherently.
+for the glossed text tiers and free translation tiers.
 
 For the \XHTML{} and \RenderX{} outputs, the interlinear examples do not wrap; they run off to the right, which means completely off the page for \RenderX{}.  To fix this, the \XLP{} user must break the interlinear into smaller units by hand.
 
@@ -878,16 +887,18 @@ diacritics, but the \XeLaTeX{} way does it very well.  See
 Figure~\ref{fig:stacked}.
 
 \begin{figure*}
-\RenderX{}:\hspace*{50.25pt} \raisebox{-2.5ex}{\includegraphics[scale=.85]{images/AwamiRenderX.png}}\\
-\XHTML{}:\hspace*{8pt} \raisebox{-2ex}{\includegraphics[scale=0.85]{images/AwamiXHTML.png}}\\
-\XeLaTeX{}:\hspace*{6pt} \raisebox{-2ex}{\includegraphics[scale=.85]{images/AwamiXeLaTeXNoGraphite.png}}\\
-(not using \Graphite{})\\
-\XeLaTeX{}:\hspace*{132.5pt} \raisebox{-2ex}{\includegraphics[scale=.85]{images/AwamiXeLaTeXGraphite.png}}\\
-(using \Graphite{})\\
+\center
+\begin{tabular}{lr}
+\RenderX{}:&\raisebox{-2.5ex}{\includegraphics[scale=.85]{images/AwamiRenderX.png}}\\
+\XHTML{}:&\raisebox{-2ex}{\includegraphics[scale=0.85]{images/AwamiXHTML.png}}\\
+\XeLaTeX{}:&\raisebox{-2ex}{\includegraphics[scale=.85]{images/AwamiXeLaTeXNoGraphite.png}}\\
+(not using \Graphite{})&\\
+\XeLaTeX{}:&\raisebox{-2ex}{\includegraphics[scale=.85]{images/AwamiXeLaTeXGraphite.png}}\\
+(using \Graphite{})&\\
+\end{tabular}
 \caption{Awami Nastaliq rendering.  Only the \XeLaTeX{} output using Graphite is correct.}
 \label{fig:awami}
 \end{figure*}
-
 Third, \XeLaTeX{} can even handle special features requiring
 \Graphite{}\footnote{\tbsurl{graphite.sil.org}}
 processing. \Graphite{} is a multi-part technology which includes a
@@ -977,29 +988,6 @@ system to create great looking outputs. Specific packages can be
 combined and redistributed to fit market needs.
 
 \appendix
-\section{Custom \TeX{} commands}
-\label{sec:customtexcommands}
-\XLP{} has a number of custom commands that enable it to handle
-various tasks in a way that is consistent with our desired outcomes.
-The following lists some of them in a schematic way:
-
-\begin{supertabular}{@{}lp{1.5in}@{}}
-{\bf Command for} & {\bf Purpose}\\
-Table of contents & Store and retrieve page numbers; format the
-contents.\\ Lists & Numbered and bulleted lists with control over
-indents, etc.\\ Examples & Example number and example content, where
-the content can be a line, a list of lines, a set of words, a list of
-a set of words, interlinear, a list of interlinears, etc.\\
-Indexes & Handle keeping track of \XLP{}’s indexing
-capability, including page numbers.\\
-Interlinears & Handle lines in an interlinear text or example,
-including dealing with an \acro{ISO} 639-3 code in an interlinear
-example.\\
-Block quotes & Handle special cases needed for block quotes.\\
-Table headers & Attempt to calculate a column’s width via its
-contents.\\
-\end{supertabular}
-
 \section{Hyphenation supported languages}
 \label{sec:hyphenationlanguages}
 \begin{supertabular}{lll}
@@ -1239,6 +1227,12 @@ Welsh&cy&cym\\
     the Ground Up: The Basics}. Dallas, Texas: \SIL{}
   International. \tbsurl{sil.org/resources/archives/79207}.}
 
+\bibitem{marlett:2019threetexts}{Marlett, Stephen
+  A. 2019. Presentation of three short texts in Isthmus
+  Zapotec. SIL-Mexico Electtronic Working Papers \#25.  Ciudad de
+  México: Instituto Lingüístico de Verano,
+  A.C.. \tbsurl{https://www.sil.org/resources/archives/80964}.}
+
 \bibitem{nmeAndMarlett:2011}{Neri Méndez, Emilia and Stephen
   A. Marlett. 2011 (Nov). Presentación Analítica del Texto ``Flor de
   Calabaza''. In Stephen A. Marlett (ed.) {\em Los Archivos
@@ -1354,7 +1348,10 @@ Welsh&cy&cym\\
   of Applied Linguistics
   M.A. thesis. \tbsurl{diu.edu/documents/theses/Wood_Joyce-thesis.pdf}.}
 
-%These are not yet used in the text
+\bibitem{Woods:inprep}{Woods, Frances. In preparation. {\em
+    Halbi Interlinear Texts: Everyday Village Life}. ms.}
+
+  %These are not yet used in the text
 %\bibitem{conzettanddesmedt:2022}{Conzett, Philipp, and Koenraad De Smedt. 2022. {\em Guidance for Citing Linguistic Data}. In The Open Handbook of Linguistic Data Management, edited by Andrea L. Berez-Kroeker, Bradley McDonnell, Eve Koller, and Lauren B. Collister, 143--55. Open Handbooks In Linguistics. Cambridge, Massachusetts: The MIT Press. \tbsurl{doi.org/10.7551/mitpress/12200.003.0015}.}
 
 %These are likely to be added for unicode discussion
