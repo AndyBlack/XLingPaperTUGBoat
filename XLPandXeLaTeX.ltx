@@ -226,7 +226,7 @@ packages for linguistic
 typesetting,\footnote{\tbsurl{ctan.org/topic/linguistic}} though some
 of these packages also include capabilities targeted as multi-lingual
 or multi-script publications or are specific style sheet
-implementations for publications at linguistic programs at
+implementations for publications at linguistic programs within
 institutions of higher education (there may be more packages which are
 not tagged but should be). Several of the packages tagged ``linguistic''
 pre-date Unicode \cite{unicode:1991} but still see significant
@@ -270,7 +270,7 @@ reduces the complexity of the typesetting task for authors by
 requiring complex visualizations to be produced via graphical
 tools. We have found tools like Figma\footnote{\tbsurl{figma.com}} and
 Inkscape\footnote{\tbsurl{inkscape.org}} very helpful in the graphic
-production task. The \XLP{} product seeks to lower barriers of entry,
+production task. The \XLP{} product seeks to: lower barriers of entry,
 only produce valid documents, and keep the code base to a minimum.
 
 As mentioned in the discussion of \texttt{tipa}, linguistic documents
@@ -342,7 +342,7 @@ these per an \XLP{} user-defined publisher style sheet.  This required
 overriding these standard features of \LaTeX{} with a custom
 implementation of the \TeX{} commands needed to control
 formatting. \XLP{} takes a custom approach in implementing flexibility
-here.  Table~\ref{tbl:commands} lists the custom commands implemented.
+here.  Table~\ref{tbl:commands} lists the custom commands implemented.%Andy can you make this table fit on the same page? I think the linked discussion might help: https://tex.stackexchange.com/questions/3527/put-a-table-at-the-bottom-of-a-page
 \begin{table*}
 \caption{Custom commands used by \XLP{}}
 %\begin{tabular}{@{}ll@{}}
@@ -388,8 +388,8 @@ license and accessibility, including size.
 From the outset, \XLP{} was designed to be costless to the end
 user. It is licensed under the MIT license, and its code is currently
 available on Github.\footnote{\tbsurl{github.com/sillsdev/XLingPap}}
-The \XXE{} had a costless Personal Use License that met this
-requirement for the vast majority of the target audience of \XLP{}.
+The \XXE{} had a costless Personal Use License that met the
+distributability goal for the majority of the initial target audience of \XLP{}.
 The few \XLP{} users who did not meet the terms of that license most
 likely would be able to afford to purchase (or have their organization
 purchase) a professional license of the \XXE{}.  The actual \XLP{}
@@ -432,8 +432,7 @@ distribution are still rather large (29MB) for someone for whom
 Internet bandwidth is an expensive and inconsistent commodity.
 
 To reduce bandwidth requirements two assumptions were made which have
-more or less proven to obtain. The first assumption that the developer
-made was that the twenty packages and binaries would not need to
+more or less proven to obtain. The first assumption was that the twenty packages and binaries would not need to
 change over time; in contrast, the second assumption was that \XLP{}
 would acquire new features and need bug fixes. These assumptions
 resulted in an architecture where page layout information expressed in
@@ -479,11 +478,9 @@ with \XLP{}:
 
 \begin{enumerate}
 \item \TeXML{} has Python as a dependency and the \XLP{} developer did
-  not want to require their users to install a version of Python
-  specifically for \TeXML{}.  Of particular concern were potential
-  conflicts with other installed versions of Python on user's
-  operating systems.  Moreover, the \TeXML{} approach would make the
-  installation package for \XLP{} much larger due to the inclusion of
+  not want to require \XLP{} users to install a version of Python
+  specifically for \TeXML{}.  The use of Python raised two concerning issues. First, potential
+  conflicts with other installed versions of Python; and second, an increase in the required download size due to the inclusion of
   Python.
 \item \XLP{} users require a high degree of control for white
   space. The fine grain control of whitespace was not immediately
@@ -606,7 +603,7 @@ design layouts which can contain lists of words along with their
 glosses (as shown in Figure~\ref{fig:listword}) and interlinear
 clauses (as shown in Figure~\ref{fig:interlinearexample}). Some cases
 even have headings in portions of the example.
-
+%Andy is there a way to force this image to come after the text? this might help. https://tex.stackexchange.com/questions/548860/display-figures-at-center-in-a-two-column-format-document
 \begin{figure}
 \includegraphics[scale=.16]{images/Rasmussen.png}
 \caption{List of words as seen in \cite{rasmussen:2018}}
@@ -702,7 +699,7 @@ lexicographers. For many linguists entering the field, it is the tool
 of choice over older tools like Toolbox (which uses standard format
 files) due to built-in collaborative features and grammar parsers
 \cite{BeierandMichael:2022}. Interlinear text in \FLEx{} can be
-exported into \XML{} and the data used within \XLP{} documents. This
+exported via \XML{} and the data used within \XLP{} documents. This
 presents \FLEx{} users the opportunity to typeset their texts rather
 easily. Enabled by \XML{}'s modular document referencing features,
 \XLP{} documents can reference components. Using the \XML{} document
@@ -773,28 +770,6 @@ abbreviation and its definition. This allows readers to quickly find the
 meaning of glosses and for the automatic generation of a table or list
 of abbreviations used.
 
-%1. LaTeX and text mining.
-%2. Language code in the XML
-%3. IGTs are old.
-%4. Leipzig is a publishing standard which is making its way into corpora.
-%5. There are non-leipzig abbrs, and extensions to leipzig.
-%6. XLingPaper has been used as a transfer from flex to LaTeX.
-
-%IGTs
-%\cite{lehmann:2004}
-
-%Hughes, Baden, Steven Bird, and Catherine Bow. 2003. ``Encoding and Presenting Interlinear Text Using XML Technologies.'' In Proceedings of the Australasian Language Technology Workshop 2003, 61--69. Melbourne, Australia. https://www.aclweb.org/anthology/U03-1008.
-%Sachse, Frauke, and Michael Dürr. 2016. ``Morphological Glossing of Mayan Languages under XML: Preliminary Results: Working Paper 4.'' PDF. Textdatenbank und Wörterbuch des Klassischen Maya. doi:10.20376/IDIOM-23665556.16.WP004.EN.
-%Lahaussois, Aimée. 2016. ``The Translation Tier in Interlinear Glossed Text: Changing Practices in the Description of Endangered Languages.'' In Translation as Innovation: Bridging the Sciences and the Humanities, edited by Patricia Phillips-Batoma and Florence Zhang, 261--78. Dalkey Archive Press. https://hal.archives-ouvertes.fr/hal-01895439.
-%Lehmann, Christian. 1982. ``Directions for Interlinear Morphemic Translations.'' Folia Linguistica 16 (1--4): 199--224. doi:10.1515/flin.1982.16.1-4.199.
-%Schmidt, Thomas. 2003. ``Visualising Linguistic Annotation as Interlinear Text.'' In Arbeiten Zur Mehrsprachigkeit. Folge B, Sonderforschungsbereich 538. Hamburg, Germany: Universität Hamburg. https://www.exmaralda.org/files/Visualising-final.pdf.
-%Xia, Fei, William D. Lewis, Michael Wayne Goodman, Glenn Slayden, Ryan Georgi, Joshua Crowgey, and Emily M. Bender. 2016. ``Enriching a Massively Multilingual Database of Interlinear Glossed Text.'' Language Resources and Evaluation 50 (2): 321--49. doi:10.1007/s10579-015-9325-4.
-%Zhou, Zhong, Lori Levin, David R. Mortensen, and Alex Waibel. 2020. ``Using Interlinear Glosses as Pivot in Low-Resource Multilingual Machine Translation.'' ArXiv:1911.02709 [Cs], March. http://arxiv.org/abs/1911.02709.
-%Arkadiev, Peter, and Nicole Nau. 2015. ``Towards a Standard of Glossing Baltic Languages: The Salos Glossing Rules.'' Baltic Linguistics 6 (December): 195--241. doi:10.32798/bl.398.
-%There is also the Madakan rigor, and the african database.
-%CHEN, Yujie, Hilario de Sousa, Jian WANG, Jian NI, Xingxing LI, Weirong CHEN, and Hilary Chappell. 2014. ``The Leipzig Glossing Rules and Its Application in the Research of Chinese Grammar--《Dialect》2014年01期.'' 方言 [Dialect, lect]. http://en.cnki.com.cn/Article_en/CJFDTOTAL-FYZA201401001.htm.
-
-
 \subsection{Bibliographies}
 \label{sec:bibliographies}
 
@@ -832,7 +807,7 @@ texts. As seen in Figure~\ref{fig:interlineartext}, wrapping occurs
 for the glossed text tiers and free translation tiers.
 
 For the \XHTML{} and \RenderX{} outputs, the interlinear examples do not wrap; they run off to the right, which means completely off the page for \RenderX{}.  To fix this, the \XLP{} user must break the interlinear into smaller units by hand.
-
+%Andy this is not true with XHTML see this one. it will wrap at screen size or box size: https://codepen.io/nqthqn/pen/ZErzNwY I mean maybe the XHTML export template needs to be updated, but xhtml can do this.
 \subsection{Font rendering}
 \label{sec:fontrendering}
 
@@ -859,7 +834,8 @@ issues while \XeLaTeX{} does not.
 \raisebox{1.5ex}{\includegraphics[scale=0.86]{images/FontAlignmentXeLaTeX.png}}
 \caption{Ascender/descender font differences: The \RenderX{} output is
   on the left; \XHTML{} output is in the middle; the \XeLaTeX{} output
-  is on the right}
+  is on the right. Fonts used are Times New Roman 12pt, and Doulos SIL 14pt.}
+%Andy this doesn't seem correct... the font information. Purlple is CharisSIL. But above you indicate that it is DoulosSIL
 \label{fig:ascenderdescender}
 \end{figure*}
 
@@ -896,7 +872,7 @@ Figure~\ref{fig:stacked}.
 \XeLaTeX{}:&\raisebox{-2ex}{\includegraphics[scale=.85]{images/AwamiXeLaTeXGraphite.png}}\\
 (using \Graphite{})&\\
 \end{tabular}
-\caption{Awami Nastaliq rendering.  Only the \XeLaTeX{} output using Graphite is correct.}
+\caption{Awami Nastaliq rendering.  Only the \XeLaTeX{} output using Graphite is correct. Since Graphite requires a rendering engine and only FireFox has included it, support for Graphite rendering in XHTML is limited to the FireFox browser.\footnote{Example text is in the Saraiki language (spoken in Pakistan) and is a section from the Universal Declaration of Human Rights. We are grateful to Sharon Correll for this example.}}
 \label{fig:awami}
 \end{figure*}
 Third, \XeLaTeX{} can even handle special features requiring
@@ -934,7 +910,7 @@ phone number, etc.  With the \XeLaTeX{} output, these author contact
 information boxes will wrap if there are more of them than will fit on
 one line on the page.  The lines containing these boxes will also be
 justified.  Neither the \XHTML{} nor the \RenderX{} outputs
-automatically wrap these boxes.  They also do not justify them.
+automatically wrap these boxes.  They also do not justify them. %Andy: We can fix this in XHTML. Both issues.
 
 \subsection{Vertical fill}
 \label{sec:verticalfill}
@@ -1350,14 +1326,6 @@ Welsh&cy&cym\\
 
 \bibitem{Woods:inprep}{Woods, Frances. In preparation. {\em
     Halbi Interlinear Texts: Everyday Village Life}. ms.}
-
-  %These are not yet used in the text
-%\bibitem{conzettanddesmedt:2022}{Conzett, Philipp, and Koenraad De Smedt. 2022. {\em Guidance for Citing Linguistic Data}. In The Open Handbook of Linguistic Data Management, edited by Andrea L. Berez-Kroeker, Bradley McDonnell, Eve Koller, and Lauren B. Collister, 143--55. Open Handbooks In Linguistics. Cambridge, Massachusetts: The MIT Press. \tbsurl{doi.org/10.7551/mitpress/12200.003.0015}.}
-
-%These are likely to be added for unicode discussion
-% https://pure.mpg.de/rest/items/item_58925/component/file_58926/content unicode
-%https://www.researchgate.net/profile/Hennie-Brugman/publication/238473992_Annotating_Multimedia_Multi-modal_resources_with_ELAN/links/53fd90320cf22f21c2f80afd/Annotating-Multimedia-Multi-modal-resources-with-ELAN.pdf
-%PSTricks https://www.tug.org/TUGboat/tb31-1/tb97complete.pdf#38
 
 \end{thebibliography}
 
