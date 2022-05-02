@@ -228,20 +228,20 @@ of these packages also include capabilities targeted as multi-lingual
 or multi-script publications or are specific style sheet
 implementations for publications at linguistic programs within
 institutions of higher education (there may be more packages which are
-not tagged but should be). Several of the packages tagged ``linguistic''
-pre-date Unicode \cite{unicode:1991} but still see significant
-use. Sometimes it is the case that secondary packages are developed in
-an attempt to ``fix'' publishing outputs in different ways to bring
-Unicode features along with the features of the original package. For
-example, \texttt{tipa} is not Unicode compatible, but the packages
-\texttt{unitipa}\footnote{\tbsurl{ctan.org/pkg/unitipa}} and
+not tagged but should be). Several of the packages tagged
+``linguistic'' pre-date Unicode \cite{unicode:1991} but still see
+significant use. Sometimes it is the case that secondary packages are
+developed in an attempt to ``fix'' publishing outputs in different
+ways to bring Unicode features along with the features of the original
+package. For example, \texttt{tipa} is not Unicode compatible, but the
+packages \texttt{unitipa}\footnote{\tbsurl{ctan.org/pkg/unitipa}} and
 \texttt{tipauni}\footnote{\tbsurl{ctan.org/pkg/tipauni}} seek to
 address different implications of not publishing with Unicode while
 giving access to the beautiful typeface of
-\texttt{tipa}. Understanding the long history of publishing and the %Is this the start of a new section?
-interdependency that packages have (including the order of loading
-packages) constitutes barriers of adoption to new \TeX{}
-users.
+\texttt{tipa}. Understanding the long history of publishing and the
+%Is this the start of a new section?  interdependency that packages
+have (including the order of loading packages) constitutes barriers of
+adoption to new \TeX{} users.
 
 We discuss \TeX{} barriers of adoption for two reasons. First, it
 exemplifies some of the complexities that \XLP{} seeks to simplify as
@@ -311,7 +311,6 @@ the Apache \acro{FOP}
 project.\footnote{\tbsurl{xmlgraphics.apache.org/fop/index.html}}
 Using a Java implementation reduces the size of the required stack
 because the \XXE{} requires Java.
-%At the time (and maybe even now) it did not have certain table-oriented capabilities we need that RenderX has.  I'm not remembering off the top of my head, but I think it included table-and-caption and auto layout support for tables.  I see from https://xmlgraphics.apache.org/fop/compliance.html that these are still not implemented.
 \XSLFO{} processors can have various degrees of implementation of the
 \XSLFO{} standard. \RenderX{} has some limitations which affect page
 layout but has more complete coverage than the Apache FOP project
@@ -342,10 +341,9 @@ these per an \XLP{} user-defined publisher style sheet.  This required
 overriding these standard features of \LaTeX{} with a custom
 implementation of the \TeX{} commands needed to control
 formatting. \XLP{} takes a custom approach in implementing flexibility
-here.  Table~\ref{tbl:commands} lists the custom commands implemented.%Andy can you make this table fit on the same page? I think the linked discussion might help: https://tex.stackexchange.com/questions/3527/put-a-table-at-the-bottom-of-a-page
+here.  Table~\ref{tbl:commands} lists the custom commands implemented.
 \begin{table*}
 \caption{Custom commands used by \XLP{}}
-%\begin{tabular}{@{}ll@{}}
 \begin{tabular}{@{}lp{5.25in}@{}}
 \\[-9pt]
 \hline
@@ -389,11 +387,11 @@ From the outset, \XLP{} was designed to be costless to the end
 user. It is licensed under the MIT license, and its code is currently
 available on Github.\footnote{\tbsurl{github.com/sillsdev/XLingPap}}
 The \XXE{} had a costless Personal Use License that met the
-distributability goal for the majority of the initial target audience of \XLP{}.
-The few \XLP{} users who did not meet the terms of that license most
-likely would be able to afford to purchase (or have their organization
-purchase) a professional license of the \XXE{}.  The actual \XLP{}
-plug-in has always been free.
+distributability goal for the majority of the initial target audience
+of \XLP{}.  The few \XLP{} users who did not meet the terms of that
+license most likely would be able to afford to purchase (or have their
+organization purchase) a professional license of the \XXE{}.  The
+actual \XLP{} plug-in has always been free.
 
 The software size of \XLP{} is a major design influencer.  Many of the
 expected users of \XLP{} live and work in places around the world
@@ -432,22 +430,22 @@ distribution are still rather large (29MB) for someone for whom
 Internet bandwidth is an expensive and inconsistent commodity.
 
 To reduce bandwidth requirements two assumptions were made which have
-more or less proven to obtain. The first assumption was that the twenty packages and binaries would not need to
-change over time; in contrast, the second assumption was that \XLP{}
-would acquire new features and need bug fixes. These assumptions
-resulted in an architecture where page layout information expressed in
-\XML{} is translated via custom \TeX{} commands to either \TeX{}
-directly or to commands understood by \LaTeX{} packages distributed
-with \XLP{}. This abstraction layer was then executed when the
-\XeLaTeX{} file was processed. This middle layer has granted \XLP{}
-flexibility in adding new code and capabilities while keeping the
-``heavy'' \LaTeX\ packages stable. The net result is a
-``heavy'' first install package (116MB), but
-light-weight upgrade packages (6.21MB). In the thirteen year history
-of development, there have been a few occasions where upgrades have
-required the download of new ``heavy'' packages. One
-such case was when the ability to use framed units was added. These
-elements depend on the
+more or less proven to obtain. The first assumption was that the
+twenty packages and binaries would not need to change over time; in
+contrast, the second assumption was that \XLP{} would acquire new
+features and need bug fixes. These assumptions resulted in an
+architecture where page layout information expressed in \XML{} is
+translated via custom \TeX{} commands to either \TeX{} directly or to
+commands understood by \LaTeX{} packages distributed with \XLP{}. This
+abstraction layer was then executed when the \XeLaTeX{} file was
+processed. This middle layer has granted \XLP{} flexibility in adding
+new code and capabilities while keeping the ``heavy'' \LaTeX\ packages
+stable. The net result is a ``heavy'' first install package (116MB),
+but light-weight upgrade packages (6.21MB). In the thirteen year
+history of development, there have been a few occasions where upgrades
+have required the download of new ``heavy'' packages. One such case
+was when the ability to use framed units was added. These elements
+depend on the
 \texttt{mdframed}\footnote{\tbsurl{ctan.org/pkg/mdframed}} package
 \cite{DanielandSchubert:2013}. The architecture separating stable
 packages from custom code, however, has generally worked out well and
@@ -479,9 +477,10 @@ with \XLP{}:
 \begin{enumerate}
 \item \TeXML{} has Python as a dependency and the \XLP{} developer did
   not want to require \XLP{} users to install a version of Python
-  specifically for \TeXML{}.  The use of Python raised two concerning issues. First, potential
-  conflicts with other installed versions of Python; and second, an increase in the required download size due to the inclusion of
-  Python.
+  specifically for \TeXML{}.  The use of Python raised two concerning
+  issues. First, potential conflicts with other installed versions of
+  Python; and second, an increase in the required download size due to
+  the inclusion of Python.
 \item \XLP{} users require a high degree of control for white
   space. The fine grain control of whitespace was not immediately
   clear how to accomplish with \TeXML{}.
@@ -603,8 +602,7 @@ design layouts which can contain lists of words along with their
 glosses (as shown in Figure~\ref{fig:listword}) and interlinear
 clauses (as shown in Figure~\ref{fig:interlinearexample}). Some cases
 even have headings in portions of the example.
-%Andy is there a way to force this image to come after the text? this might help. https://tex.stackexchange.com/questions/548860/display-figures-at-center-in-a-two-column-format-document
-\begin{figure}
+\begin{figure}[h]
 \includegraphics[scale=.16]{images/Rasmussen.png}
 \caption{List of words as seen in \cite{rasmussen:2018}}
 \label{fig:listword}
@@ -774,7 +772,8 @@ of abbreviations used.
 \label{sec:bibliographies}
 
 For better or worse \XLP{} has rolled its own bibliography
-solution. Import options are provided for \acro{MODS}\footnote{\tbsurl{loc.gov/standards/mods/}} and EndNote
+solution. Import options are provided for
+\acro{MODS}\footnote{\tbsurl{loc.gov/standards/mods/}} and EndNote
 \XML{} formats. This enables users to import from tools like
 EndNote,\footnote{\tbsurl{endnote.com}}
 Zotero,\footnote{\tbsurl{zotero.org}} and
@@ -806,8 +805,13 @@ automatically wrap long interlinear examples and lines in interlinear
 texts. As seen in Figure~\ref{fig:interlineartext}, wrapping occurs
 for the glossed text tiers and free translation tiers.
 
-For the \XHTML{} and \RenderX{} outputs, the interlinear examples do not wrap; they run off to the right, which means completely off the page for \RenderX{}.  To fix this, the \XLP{} user must break the interlinear into smaller units by hand.
-%Andy this is not true with XHTML see this one. it will wrap at screen size or box size: https://codepen.io/nqthqn/pen/ZErzNwY I mean maybe the XHTML export template needs to be updated, but xhtml can do this.
+For the \RenderX{} output, the interlinear examples do not wrap; they
+run off to the right, which can mean completely off the page.  To fix
+this, the \XLP{} user must break the interlinear into smaller units by
+hand.\footnote{We note that current \CSS{} technologies enable
+wrapping for \XHTML{} output, but \XLP{} does not employ it at the
+moment.}
+
 \subsection{Font rendering}
 \label{sec:fontrendering}
 
@@ -815,27 +819,13 @@ For the \XHTML{} and \RenderX{} outputs, the interlinear examples do not wrap; t
 \XSLFO{} (via \RenderX{}) and/or \XHTML{} outputs have text rendering
 issues while \XeLaTeX{} does not.
 
-%The issue here as far as I can tell is that XSL-FO does not have a way to access OT font features which are not pre-described in the XSL-FO standard. Additionally XSL-FO adopted OT rather than TT. CSS, which is relied on by browsers does marginally better, in that it acknowledges more prescribed features but does not allow access to all features of a font. The tone staves issue does not seem to be graphite based. Will Robertson. Advanced font features with XETEX\Dash{}the fontspec package. TUGboat, ():--, .
-
-%One of Andy's CSS problems can be solved with https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#propdef-font-size-adjust
-%https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-feature-resolution
-%See discussion here: https://mail.google.com/mail/u/0/#all/FMfcgzGmvTvDrkvnwQrwNmVCZkCTsfMN
-%Andy: what are the fonts and the font sizes in the images?
-%Andy: Font SIZES? I can't look this up because I don't have the original XLingPaper document in the zip files you sent.
-%Font alignment: Times New Roman and Charis SIL
-%Stacked: same
-%tone staves: Charis SIL
-%Figure 9 - alignment: vernacular is Doulos SIL at 14pt; language and gloss are Times New Roman at 12pt
-%Figure 10 - stacked diacritics:all 12pt
-%Figure 11 - tone staves: 12pt for vernacular; 10pt for gloss
 \begin{figure*}
-\includegraphics[scale=0.86]{images/FontAlignmentRenderX.png}%Andy: These three items seem to line up differently. Can we get them the same without magnification of the images? What I mean here is that we should magnifiy the document to 200% and then make our screenshot to line up exactly in the same place so that the (16) lines up congrently across the items. otherwize it looks like part of the problem is the line height rendering. In this case it seems the center image is the clearest. I'm not sure why but that is the way it looks for me.
+\includegraphics[scale=0.86]{images/FontAlignmentRenderX.png}
 \raisebox{-1ex}{\includegraphics[scale=0.6]{images/FontAlignmentXHTML.png}}
 \raisebox{1.5ex}{\includegraphics[scale=0.86]{images/FontAlignmentXeLaTeX.png}}
 \caption{Ascender/descender font differences: The \RenderX{} output is
   on the left; \XHTML{} output is in the middle; the \XeLaTeX{} output
-  is on the right. Fonts used are Times New Roman 12pt, and Doulos SIL 14pt.}
-%Andy this doesn't seem correct... the font information. Purlple is CharisSIL. But above you indicate that it is DoulosSIL
+  is on the right. Fonts used are Times New Roman 12pt, and Charis SIL 14pt.}
 \label{fig:ascenderdescender}
 \end{figure*}
 
@@ -872,7 +862,13 @@ Figure~\ref{fig:stacked}.
 \XeLaTeX{}:&\raisebox{-2ex}{\includegraphics[scale=.85]{images/AwamiXeLaTeXGraphite.png}}\\
 (using \Graphite{})&\\
 \end{tabular}
-\caption{Awami Nastaliq rendering.  Only the \XeLaTeX{} output using Graphite is correct. Since Graphite requires a rendering engine and only FireFox has included it, support for Graphite rendering in XHTML is limited to the FireFox browser.\footnote{Example text is in the Saraiki language (spoken in Pakistan) and is a section from the Universal Declaration of Human Rights. We are grateful to Sharon Correll for this example.}}
+\caption{Awami Nastaliq rendering.  Only the \XeLaTeX{} output using
+  Graphite is correct. Since Graphite requires a rendering engine and
+  only FireFox has included it, support for Graphite rendering in
+  XHTML is limited to the FireFox browser. The example text is in
+  the Saraiki language (spoken in Pakistan) and is a section from the
+  Universal Declaration of Human Rights. We are grateful to Sharon
+  Correll for this example.}
 \label{fig:awami}
 \end{figure*}
 Third, \XeLaTeX{} can even handle special features requiring
@@ -909,8 +905,8 @@ containing things like name, address, affiliation, email address,
 phone number, etc.  With the \XeLaTeX{} output, these author contact
 information boxes will wrap if there are more of them than will fit on
 one line on the page.  The lines containing these boxes will also be
-justified.  Neither the \XHTML{} nor the \RenderX{} outputs
-automatically wrap these boxes.  They also do not justify them. %Andy: We can fix this in XHTML. Both issues.
+justified.  The \RenderX{} output neither automatically wraps these
+boxes nor justifies them.
 
 \subsection{Vertical fill}
 \label{sec:verticalfill}
