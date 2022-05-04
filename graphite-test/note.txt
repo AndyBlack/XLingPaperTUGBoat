@@ -2,3 +2,33 @@ The .odt and .pdf files show a paragraph of Saraiki (spoken in Pakistan) from th
 * Red shows places where special characters are missing; they fallback to another font and don't render the sequence properly.
 * Green shows collisions or almost-collisions where Awami's smart positioning is helpful. (Collisions CAN be a big problem in this style of Arabic, but none of the ones in this example are very bad.)
 * Blue shows places where Awami's smart kerning  gives a better result.
+
+
+  %These are not yet used in the text
+%\bibitem{conzettanddesmedt:2022}{Conzett, Philipp, and Koenraad De Smedt. 2022. {\em Guidance for Citing Linguistic Data}. In The Open Handbook of Linguistic Data Management, edited by Andrea L. Berez-Kroeker, Bradley McDonnell, Eve Koller, and Lauren B. Collister, 143--55. Open Handbooks In Linguistics. Cambridge, Massachusetts: The MIT Press. \tbsurl{doi.org/10.7551/mitpress/12200.003.0015}.}
+
+%These are likely to be added for unicode discussion
+% https://pure.mpg.de/rest/items/item_58925/component/file_58926/content unicode
+%https://www.researchgate.net/profile/Hennie-Brugman/publication/238473992_Annotating_Multimedia_Multi-modal_resources_with_ELAN/links/53fd90320cf22f21c2f80afd/Annotating-Multimedia-Multi-modal-resources-with-ELAN.pdf
+%PSTricks https://www.tug.org/TUGboat/tb31-1/tb97complete.pdf#38
+
+%1. LaTeX and text mining.
+%2. Language code in the XML
+%3. IGTs are old.
+%4. Leipzig is a publishing standard which is making its way into corpora.
+%5. There are non-leipzig abbrs, and extensions to leipzig.
+%6. XLingPaper has been used as a transfer from flex to LaTeX.
+
+%IGTs
+%\cite{lehmann:2004}
+
+%Hughes, Baden, Steven Bird, and Catherine Bow. 2003. ``Encoding and Presenting Interlinear Text Using XML Technologies.'' In Proceedings of the Australasian Language Technology Workshop 2003, 61--69. Melbourne, Australia. https://www.aclweb.org/anthology/U03-1008.
+%Sachse, Frauke, and Michael Dürr. 2016. ``Morphological Glossing of Mayan Languages under XML: Preliminary Results: Working Paper 4.'' PDF. Textdatenbank und Wörterbuch des Klassischen Maya. doi:10.20376/IDIOM-23665556.16.WP004.EN.
+%Lahaussois, Aimée. 2016. ``The Translation Tier in Interlinear Glossed Text: Changing Practices in the Description of Endangered Languages.'' In Translation as Innovation: Bridging the Sciences and the Humanities, edited by Patricia Phillips-Batoma and Florence Zhang, 261--78. Dalkey Archive Press. https://hal.archives-ouvertes.fr/hal-01895439.
+%Lehmann, Christian. 1982. ``Directions for Interlinear Morphemic Translations.'' Folia Linguistica 16 (1--4): 199--224. doi:10.1515/flin.1982.16.1-4.199.
+%Schmidt, Thomas. 2003. ``Visualising Linguistic Annotation as Interlinear Text.'' In Arbeiten Zur Mehrsprachigkeit. Folge B, Sonderforschungsbereich 538. Hamburg, Germany: Universität Hamburg. https://www.exmaralda.org/files/Visualising-final.pdf.
+%Xia, Fei, William D. Lewis, Michael Wayne Goodman, Glenn Slayden, Ryan Georgi, Joshua Crowgey, and Emily M. Bender. 2016. ``Enriching a Massively Multilingual Database of Interlinear Glossed Text.'' Language Resources and Evaluation 50 (2): 321--49. doi:10.1007/s10579-015-9325-4.
+%Zhou, Zhong, Lori Levin, David R. Mortensen, and Alex Waibel. 2020. ``Using Interlinear Glosses as Pivot in Low-Resource Multilingual Machine Translation.'' ArXiv:1911.02709 [Cs], March. http://arxiv.org/abs/1911.02709.
+%Arkadiev, Peter, and Nicole Nau. 2015. ``Towards a Standard of Glossing Baltic Languages: The Salos Glossing Rules.'' Baltic Linguistics 6 (December): 195--241. doi:10.32798/bl.398.
+%There is also the Madakan rigor, and the african database.
+%CHEN, Yujie, Hilario de Sousa, Jian WANG, Jian NI, Xingxing LI, Weirong CHEN, and Hilary Chappell. 2014. ``The Leipzig Glossing Rules and Its Application in the Research of Chinese Grammar--《Dialect》2014年01期.'' 方言 [Dialect, lect]. http://en.cnki.com.cn/Article_en/CJFDTOTAL-FYZA201401001.htm.

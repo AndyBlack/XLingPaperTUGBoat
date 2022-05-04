@@ -239,8 +239,7 @@ packages \texttt{unitipa}\footnote{\tbsurl{ctan.org/pkg/unitipa}} and
 address different implications of not publishing with Unicode while
 giving access to the beautiful typeface of
 \texttt{tipa}. Understanding the long history of publishing and the
-%Is this the start of a new section?  interdependency that packages
-have (including the order of loading packages) constitutes barriers of
+interdependency that packages have (including the order of loading packages) constitutes barriers of
 adoption to new \TeX{} users.
 
 We discuss \TeX{} barriers of adoption for two reasons. First, it
@@ -551,13 +550,6 @@ discussed by Thiel in \cite{thiele:1995}. These macros were used to
 solve similar use cases, among others, to those already implemented by
 \XLP{}. Their approaches and outputs, however, had more limitations
 than what \XLP{} already offered.
-% Seems we don't need the following commented material.
-%Some of the
-%more commonly implemented typesetting use cases are outlined in
-%Section~4.  Initial analysis of \texttt{covington} and other packages
-%revealed limitations in the number of rows an interlinear text
-%example could display, a typesetting capability \XLP{} had already
-%overcome via \XSLFO{} processing using \RenderX{}.
 \XLP{} had the following capabilities for typesetting
 interlinears:
 
@@ -670,7 +662,7 @@ fork of \texttt{gb4e}, supports the {\em Leipzig Glossing
 a commonly adopted set of linguistic typesetting conventions.  While
 the Leipzig Glossing Rules do call for the language name or identifier
 to appear on the right hand side of the interlinear glossed text,
-however, it does not have a place for the citation. The package
+it does not have a place for the citation. The package
 \texttt{linguex} does not have either language or citation content
 places built in. With these considerations, it was clear in 2009 that
 \XLP{} offered more to authors than any single package in the \TeX{}
@@ -879,8 +871,8 @@ TrueType font and effectively extends the font allowing for additional
 glyph selection and context shaping. \cite{kew:2007}
 \cite{Correll:2000} \cite{sil:2021} Figure~\ref{fig:awami} illustrates
 the special font handling needed for the Awami Nastaliq font.  Of the
-four output renderings, the only one that renders correctly is the
-\XeLaTeX{} one that uses \Graphite{}.\footnote{One must use \XLP{}'s
+four output renderings, the only one which renders correctly is the
+\XeLaTeX{} implementing \Graphite{}.\footnote{One must use \XLP{}'s
 \XeLaTeX{} package from \TeX{}Live
 2020 (\tbsurl{software.sil.org/xlingpaper/xelatex-package-from-tex-live-2020/})
 for this particular font.  The \Graphite{} included in the 2010
@@ -941,8 +933,7 @@ Background color is not available for section titles.
 
 Section 11.17.1.1 ``Known limitations of using
 \XeLaTeX{}'' in the \XLP{} user documentation lists known
-problems.
-%  See \tbsurl{software.sil.org/downloads/r/xlingpaper/resources/documentation/xxe7/UserDocXMLmind.htm#sXeTeXLimitations}.
+problems \cite{black:2020}. \footnote{\tbsurl{software.sil.org/downloads/r/xlingpaper/resources/documentation/xxe7/UserDocXMLmind.htm#sXeTeXLimitations}}
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -1086,6 +1077,9 @@ Welsh&cy&cym\\
 \bibitem{black:2017}{Black, H Andrew. 2017. {\em Why Learn to Use
     \XLP{}}. Dallas, Texas: \SIL{}
   International. \tbsurl{software.sil.org/downloads/r/xlingpaper/resources/documentation/WhyUseXLingPaper.pdf}.}
+
+\bibitem{black:2020}{Black, H Andrew. 2020. {\em \XLP{} User Documentation} [Software Documentation]. Dallas, Texas: \SIL{}
+  International. \tbsurl{http://software.sil.org/downloads/r/xlingpaper/resources/documentation/xxe7/UserDocXMLmind.htm}.}
 
 \bibitem{brownie:2013}{Brownie, John. 2013. Adverbs in the
   Mussau-Emira Verb Phrase. {\em Language \& Linguistics in Melanesia}
