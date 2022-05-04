@@ -1,9 +1,7 @@
-% This template file is public domain.
+% XLingPaper's use of TeX Technologies
+% H. Andrew Black and Hugh J. Paterson III
 %
-% TUGboat class documentation is at:
-%   http://mirrors.ctan.org/macros/latex/contrib/tugboat/ltubguid.pdf
-% or
-%   texdoc tugboat
+% TUGboat submission
 
 \documentclass{ltugboat}
 
@@ -13,7 +11,6 @@
 \usepackage[hidelinks,pdfa]{hyperref}
 \usepackage{fontspec}
 
-%%% Some product name macros
 \newcommand{\ELAN}{\acro{ELAN}}
 \newcommand{\FLEx}{\acro{FLE}x}
 \newcommand{\Graphite}{Graphite}
@@ -25,11 +22,8 @@
 \newcommand{\XXE}{\acro{XML}mind \XML{} Editor}
 \newfontfamily{\SpecialCharactersFont}{Arial}
 
-%%% Start of metadata %%%
+\title{\XLP{}'s use of \TeX{} Technologies}
 
-\title{\XLP{}’s use of \TeX{} Technologies}
-
-% repeat info for each author; comment out items that don't apply.
 \author{H.\ Andrew Black}
 %\address{Street Address \\ Town, Postal \\ Country}
 \netaddress{blackhandrew (at) gmail dot com}
@@ -37,11 +31,6 @@
 %\address{Street Address \\ Town, Postal \\ Country}
 \netaddress{i (at) hp3 dot me}
 \personalURL{http://hp3.me}
-%\ORCID{0}
-% To receive a physical copy of the TUGboat issue, please include the
-% mailing address we should use, as a comment if you prefer it not be printed.
-
-%%% End of metadata %%%
 
 \begin{document}
 \maketitle
@@ -191,7 +180,7 @@ writes of a personal communication with Don Knuth where Knuth suggests
 that linguists were some of the earliest adopters outside of
 mathematicians.  Thiele \cite{thiele:2007} in an interview given in
 2007 states that she was typesetting linguistic journals via \TeX{} in
-1983---a date prior to the release of Knuth's book on using the \TeX{}
+1983\Dash{}a date prior to the release of Knuth's book on using the \TeX{}
 typesetting system \cite{knuth:1984}. Thiele \cite{thiele:1995} gives
 an early overview of \TeX{} use in linguistics with mention of
 significant repositories outside of \CTAN{}. A slightly more recent
@@ -239,8 +228,8 @@ packages \texttt{unitipa}\footnote{\tbsurl{ctan.org/pkg/unitipa}} and
 address different implications of not publishing with Unicode while
 giving access to the beautiful typeface of
 \texttt{tipa}. Understanding the long history of publishing and the
-interdependency that packages have (including the order of loading packages) constitutes barriers of
-adoption to new \TeX{} users.
+interdependency that packages have (including the order of loading
+packages) constitutes barriers of adoption to new \TeX{} users.
 
 We discuss \TeX{} barriers of adoption for two reasons. First, it
 exemplifies some of the complexities that \XLP{} seeks to simplify as
@@ -299,31 +288,30 @@ Three goals have driven the development of \XLP{}:
 \item beautiful multi-format outputs.
 \end{itemize}
 
-\noindent Deciding how \TeX{} technologies fit within the project has been a
-journey. \XLP{} development started in 2001 without any use of \TeX{}
-technologies. In 2006, \XLP{} added \XSLFO{} for \PDF{}
-production. Prior to 2009, \XLP{} used
-\RenderX{}'s \acro{XEP}\footnote{\tbhurl{renderx.com/tools/xep.html}} product to produce \PDF{}
-documents.  As far as we know, there are two cross-platform \XSLFO{}
-processors written in Java: \RenderX{}'s \acro{XEP} application and
-the Apache \acro{FOP}
+\noindent Deciding how \TeX{} technologies fit within the project has
+been a journey.  The development of \XLP{} started in 2001 without any
+use of \TeX{} technologies. In 2006, \XLP{} added \XSLFO{} for \PDF{}
+production. Prior to 2009, \XLP{} used \RenderX{}'s
+\acro{XEP}\footnote{\tbhurl{renderx.com/tools/xep.html}} product to
+produce \PDF{} documents.  As far as we know, there are two
+cross-platform \XSLFO{} processors written in Java: \RenderX{}'s
+\acro{XEP} application and the Apache \acro{FOP}
 project.\footnote{\tbsurl{xmlgraphics.apache.org/fop/index.html}}
 Using a Java implementation reduces the size of the required stack
-because the \XXE{} requires Java.
-\XSLFO{} processors can have various degrees of implementation of the
-\XSLFO{} standard. \RenderX{} has some limitations which affect page
-layout but has more complete coverage than the Apache FOP project
-which lacks certain required table-oriented
+because the \XXE{} requires Java.  \XSLFO{} processors can have
+various degrees of implementation of the \XSLFO{} standard. \RenderX{}
+has some limitations which affect page layout but has more complete
+coverage than the Apache FOP project which lacks certain required
+table-oriented
 capabilities.\footnote{\tbsurl{xmlgraphics.apache.org/fop/compliance.html}}
 The limitations of \RenderX{} are discussed in
 Section~\ref{sec:outputs}. In 2009 plans were made to add
 \XeLaTeX-based output to \XLP{} because, while there was a free
 version of \RenderX{}, the output contained a watermark.  By
-implementing the ability to export to \PDF{} via
- \XeLaTeX,
-watermarks could be avoided all together. The \XeLaTeX{} method of
-\PDF{} production is now the default method to produce \PDF{}
-documents, although the \RenderX{} method is still possible.
+implementing the ability to export to \PDF{} via \XeLaTeX, watermarks
+could be avoided all together. The \XeLaTeX{} method of \PDF{}
+production is now the default method to produce \PDF{} documents,
+although the \RenderX{} method is still possible.
 
 Maintaining a separation of content and style in the \XLP{}
 environment was a key design requirement. When the \XeLaTeX{} method
@@ -358,13 +346,13 @@ indents, etc.\\
 Examples & Example number and example content, where
 the content can be a line, a list of lines, a set of words, a list of
 a set of words, interlinear, a list of interlinears, etc.\\
-Indexes & Handle keeping track of \XLP{}’s indexing
+Indexes & Handle keeping track of \XLP{}'s indexing
 capability, including page numbers.\\
 Interlinears & Handle lines in an interlinear text or example,
 including dealing with an \acro{ISO} 639-3 code in an interlinear
 example.\\
 Block quotes & Handle special cases needed for block quotes.\\
-Table headers & Attempt to calculate a column’s width via its
+Table headers & Attempt to calculate a column's width via its
 contents.\\
 \hline
 \end{tabular}
@@ -549,9 +537,8 @@ recommended by the Ling-\TeX{} website, suggested using
 discussed by Thiel in \cite{thiele:1995}. These macros were used to
 solve similar use cases, among others, to those already implemented by
 \XLP{}. Their approaches and outputs, however, had more limitations
-than what \XLP{} already offered.
-\XLP{} had the following capabilities for typesetting
-interlinears:
+than what \XLP{} already offered.  \XLP{} had the following
+capabilities for typesetting interlinears:
 
 \begin{itemize}
 \item no limits on the number of lines within an interlinear grouping;
@@ -625,12 +612,8 @@ in three dimensions:
 
 \begin{itemize}
 \item content elements,
-  % (headings, line limits for gloss tier, original tier, translation
-  % tier, free translation tier),
 \item data-structure of the encoded elements, and
 \item page layout (visual display of the elements).
-  % (wrapping, word alignment/morpheme alignment, grouping of lines,
-  % sub-examples)
 \end{itemize}
 
 \noindent A full demonstration of the variation in content and its positioning
@@ -661,15 +644,13 @@ fork of \texttt{gb4e}, supports the {\em Leipzig Glossing
   Rules},\footnote{\tbsurl{eva.mpg.de/lingua/pdf/Glossing-Rules.pdf}}
 a commonly adopted set of linguistic typesetting conventions.  While
 the Leipzig Glossing Rules do call for the language name or identifier
-to appear on the right hand side of the interlinear glossed text,
-it does not have a place for the citation. The package
-\texttt{linguex} does not have either language or citation content
-places built in. With these considerations, it was clear in 2009 that
-\XLP{} offered more to authors than any single package in the \TeX{}
+to appear on the right hand side of the interlinear glossed text, it
+does not have a place for the citation. The package \texttt{linguex}
+does not have either language or citation content places built
+in. With these considerations, it was clear in 2009 that \XLP{}
+offered more to authors than any single package in the \TeX{}
 ecosystem. In order to implement existing \XLP{} features, it meant
 creating custom \TeX{} scripts to implement interlinear texts.
-%This is an example of the kind of pain people go through:
-%%https://tex.stackexchange.com/questions/284454/multiline-language-linguistic-glosses
 
 There are also some reasons related to data structure for considering
 \XLP{} over alternatives. Interlinear glossed texts are often stored
@@ -781,7 +762,7 @@ example of a bibliography created with \XLP{}.
 \label{fig:mixedLatinChinese}
 \end{figure}
 
-\section{Outputs \LaTeX{} allow that others do not}
+\section{Outputs \LaTeX{} allows that others do not}
 \label{sec:outputs}
 
 While \XLP{} has a large array of linguistically-oriented formatting
@@ -817,7 +798,7 @@ issues while \XeLaTeX{} does not.
 \raisebox{1.5ex}{\includegraphics[scale=0.86]{images/FontAlignmentXeLaTeX.png}}
 \caption{Ascender/descender font differences: The \RenderX{} output is
   on the left; \XHTML{} output is in the middle; the \XeLaTeX{} output
-  is on the right. Fonts used are Times New Roman 12pt, and Charis SIL 14pt.}
+  is on the right. Fonts used are Times New Roman 12pt and Charis SIL 14pt.}
 \label{fig:ascenderdescender}
 \end{figure*}
 
@@ -838,7 +819,6 @@ primary font.
   right.}
 \label{fig:stacked}
 \end{figure*}
-%By the way, this is just plain unicode not anything special.
 
 Second, the \RenderX{} way of producing \PDF{} cannot handle stacked
 diacritics, but the \XeLaTeX{} way does it very well.  See
@@ -868,13 +848,13 @@ Third, \XeLaTeX{} can even handle special features requiring
 processing. \Graphite{} is a multi-part technology which includes a
 rendering engine and a rule-based grammar which compiles against a
 TrueType font and effectively extends the font allowing for additional
-glyph selection and context shaping. \cite{kew:2007}
-\cite{Correll:2000} \cite{sil:2021} Figure~\ref{fig:awami} illustrates
+glyph selection and context shaping \cite{kew:2007}
+\cite{Correll:2000} \cite{sil:2021}. Figure~\ref{fig:awami} illustrates
 the special font handling needed for the Awami Nastaliq font.  Of the
 four output renderings, the only one which renders correctly is the
 \XeLaTeX{} implementing \Graphite{}.\footnote{One must use \XLP{}'s
-\XeLaTeX{} package from \TeX{}Live
-2020 (\tbsurl{software.sil.org/xlingpaper/xelatex-package-from-tex-live-2020/})
+\XeLaTeX{} package from \TeX{}Live 2020
+(\tbsurl{software.sil.org/xlingpaper/xelatex-package-from-tex-live-2020/})
 for this particular font.  The \Graphite{} included in the 2010
 version of \XeLaTeX{} is not capable of rendering Awami Nastaliq
 well.}
@@ -931,9 +911,9 @@ great.
 
 Background color is not available for section titles.
 
-Section 11.17.1.1 ``Known limitations of using
-\XeLaTeX{}'' in the \XLP{} user documentation lists known
-problems \cite{black:2020}. \footnote{\tbsurl{software.sil.org/downloads/r/xlingpaper/resources/documentation/xxe7/UserDocXMLmind.htm#sXeTeXLimitations}}
+Section 11.17.1.1 ``Known limitations of using \XeLaTeX{}'' in the
+\XLP{} user documentation lists known problems
+\cite{black:2020}.\footnote{\tbsurl{software.sil.org/downloads/r/xlingpaper/resources/documentation/xxe7/UserDocXMLmind.htm\#sXeTeXLimitations}}
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -944,11 +924,11 @@ that it can produce great looking output via \XeLaTeX{} makes the
 learning curve rewarding.  We feel that being able to produce \PDF{}
 via \XeLaTeX{} has made \XLP{} a fantastic tool for linguists.
 
-Additionally, \XLP{} serves as a model for other developers who are
-seeking a modular approach to creating custom publishing
-solutions. That is, one does not need to deploy the whole \TeX Live
-system to create great looking outputs. Specific packages can be
-combined and redistributed to fit market needs.
+Additionally, \XLP{} serves as a model for other developers who seek a
+modular approach to creating custom publishing solutions. That is, one
+does not need to deploy the whole \TeX Live system to create great
+looking outputs. Specific packages can be combined and redistributed
+to fit market needs.
 
 \appendix
 \section{Hyphenation supported languages}
@@ -1021,8 +1001,6 @@ Welsh&cy&cym\\
 \end{supertabular}
 
 \bibliographystyle{tugboat}
-%\nocite{book-minimal}      % make the bibliography non-empty
-%\bibliography{xampl}       % xampl.bib comes with BibTeX
 \begin{thebibliography}{99}
 
 \bibitem{bartholomew:2019}{Bartholomew, Doris A, and Louise C
@@ -1078,7 +1056,8 @@ Welsh&cy&cym\\
     \XLP{}}. Dallas, Texas: \SIL{}
   International. \tbsurl{software.sil.org/downloads/r/xlingpaper/resources/documentation/WhyUseXLingPaper.pdf}.}
 
-\bibitem{black:2020}{Black, H Andrew. 2020. {\em \XLP{} User Documentation} [Software Documentation]. Dallas, Texas: \SIL{}
+\bibitem{black:2020}{Black, H Andrew. 2020. {\em \XLP{} User
+    Documentation} [Software Documentation]. Dallas, Texas: \SIL{}
   International. \tbsurl{http://software.sil.org/downloads/r/xlingpaper/resources/documentation/xxe7/UserDocXMLmind.htm}.}
 
 \bibitem{brownie:2013}{Brownie, John. 2013. Adverbs in the
@@ -1241,7 +1220,7 @@ Welsh&cy&cym\\
 
 \bibitem{rastorgueva:2012}{Rastorgueva, V. S., A. A. Kerimova,
   A. K. Mamedzade, L. A. Pireiko, and
-  D. I. Edel’man. 2012. {\em The Gilaki Language}. Edited by
+  D. I. Edel'man. 2012. {\em The Gilaki Language}. Edited by
   Ronald M. Lockwood. Acta Universitatis Upsaliensis; Studia Iranica
   Upsaliensia 19. Uppsala, Sweden: Acta Universitatis
   Upsaliensis. \tbsurl{urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-182789}.}
@@ -1314,8 +1293,8 @@ Welsh&cy&cym\\
   of Applied Linguistics
   M.A. thesis. \tbsurl{diu.edu/documents/theses/Wood_Joyce-thesis.pdf}.}
 
-\bibitem{Woods:inprep}{Woods, Frances. In preparation. {\em
-    Halbi Interlinear Texts: Everyday Village Life}. ms.}
+\bibitem{Woods:inprep}{Woods, Frances. In preparation. {\em Halbi
+    Interlinear Texts: Everyday Village Life}. Electronic Manuscript.}
 
 \end{thebibliography}
 
